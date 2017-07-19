@@ -13,8 +13,6 @@ compilation:
     image: clicdp/cc7-base
     before_script:
         - curl --silent -L https://github.com/gohugoio/hugo/releases/download/v0.25.1/hugo_0.25.1_Linux-64bit.tar.gz | tar zxf -
-        - git submodule sync --recursive
-        - git submodule update --init --recursive
     script:
         - source .gitlab-ci.d/init_x86_64.sh
         - export GIT_COMMIT_SHA=`git rev-parse --verify HEAD`
