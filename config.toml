@@ -8,7 +8,7 @@ pygmentCodeFences = true
 
 [Params]
   subtitle = "Generic Pixel Detector Simulation Framework"
-  commit = "https://gitlab.cern.ch/simonspa/allpix-squared/website/tree/"
+  commit = "https://gitlab.cern.ch/simonspa/allpix-squared-website/commit/"
   logo = "img/logo_small.png"
   favicon = "img/favicon.png"
 
