@@ -1,6 +1,3 @@
-[submodule "ap2website/themes/beautifulhugo"]
-	path = ap2website/themes/beautifulhugo
-	url = https://github.com/halogenica/beautifulhugo.git
-[submodule "ap2website/themes/allpix-squared-webtheme"]
-	path = ap2website/themes/allpix-squared-webtheme
+[submodule "themes/allpix-squared-webtheme"]
+	path = themes/allpix-squared-webtheme
 	url = https://simonspa@gitlab.cern.ch/simonspa/allpix-squared-webtheme.git
