@@ -13,8 +13,8 @@ compilation:
     script:
         - mkdir public
         - cp .htaccess public
-	- cp *.html public
-	- cp *.css public
+        - cp *.html public
+        - cp *.css public
     # Generation of website
     artifacts:
         paths:
@@ -33,4 +33,3 @@ deployment:
     # do not run any globally defined before_script or after_script for this step
     before_script: []
     after_script: []
-
