@@ -27,15 +27,27 @@ pygmentCodeFences = true
     weight = 3
 
 [[menu.main]]
-    identifier = "samples"
-    name = "Examples"
+    identifier = "resources"
+    name = "Resources"
     weight = 2
 
 [[menu.main]]
-    parent = "samples"
-    name = "Big Image Sample"
-    url = "post/2017-03-07-bigimg-sample"
+    parent = "resources"
+    name = "Repository"
+    url = "https://gitlab.cern.ch/simonspa/allpix-squared"
     weight = 1
+
+[[menu.main]]
+    parent = "resources"
+    name = "Code Reference Manual"
+    url = "reference/html"
+    weight = 2
+
+[[menu.main]]
+    parent = "resources"
+    name = "Issue Tracker"
+    url = "https://gitlab.cern.ch/simonspa/allpix-squared/issues"
+    weight = 3
 
 [[menu.main]]
     name = "Code Reference"
