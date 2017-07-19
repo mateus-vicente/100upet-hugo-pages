@@ -1,0 +1,7 @@
+baseURL = "http://cern.ch/allpix-square/"
+languageCode = "en-us"
+title = "Allpix Squared"
+
+[Params]
+  Author = "Simon Spannagel"
+  commit = "https://gitlab.cern.ch/simonspa/allpix-squared/website/tree/"
