@@ -4,9 +4,9 @@ date: 2017-07-20T00:53:44+02:00
 draft: true
 ---
 
-## About Allpix Squared
+## About {{% allpix %}}
 
-Allpix Squared is a generic simulation framework for silicon tracker and vertex detectors written in modern C++. It is the successor of a previously developed simulation framework called [AllPix](http://github.com/allpix/allpix). The goal of the Allpix Squared framework is to provide a complete and easy-to-use package for simulating the performance of detectors from a general source of particles until the digitization of hits in the detector chip. 
+{{% allpix %}} is a generic simulation framework for silicon tracker and vertex detectors written in modern C++. It is the successor of a previously developed simulation framework called [AllPix](http://github.com/allpix/allpix). The goal of the Allpix Squared framework is to provide a complete and easy-to-use package for simulating the performance of detectors from a general source of particles until the digitization of hits in the detector chip. 
 
 The framework builds upon other packages to perform tasks in the simulation chain, most notably Geant4 for the deposition of charge carriers in the sensor and ROOT for producing histograms and saving the produced data to storage. The core of the framework focuses on the simulation of charge transport in semiconductor detectors and the digitization to hits in the frontend electronics. The framework does not perform a reconstruction of the particle tracks.
 
