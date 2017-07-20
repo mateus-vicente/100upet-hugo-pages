@@ -1,7 +1,7 @@
 ---
 title: "Installation"
 date: 2017-07-20T11:23:28+02:00
-draft: true
+draft: false
 ---
 
 ## Dependencies
@@ -20,7 +20,7 @@ In order to install {{% allpix %}} on the CERN LXPLUS batch cluster, a LXPLUS se
 ```
 $ source etc/scripts/setup_lxplus.sh
 ```
-Then, continue as described below in the compiliation section.
+Then, continue as described below in the compilation section.
 
 ### Installation on a private machine
 
