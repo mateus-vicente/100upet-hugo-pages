@@ -17,24 +17,43 @@ pygmentCodeFences = true
   email = "allpix.squared@cern.ch"
 
 [[menu.main]]
-    name = "Blog"
+    name = "News"
     url = ""
     weight = 1
 
 [[menu.main]]
-    name = "About"
-    url = "page/about/"
+    identifier = "about"
+    name = "About Allpix2"
     weight = 2
 
 [[menu.main]]
+    parent = "about"
+    name = "Introduction"
+    url = "page/about/"
+    weight = 1
+
+[[menu.main]]
+    parent = "about"
     name = "Features"
     url = "page/features/"
+    weight = 2
+
+[[menu.main]]
+    parent = "about"
+    name = "Installation"
+    url = "page/installation/"
     weight = 3
+
+[[menu.main]]
+    parent = "about"
+    name = "Screenshots"
+    url = "page/screenshots/"
+    weight = 4
 
 [[menu.main]]
     identifier = "doc"
     name = "Documentations"
-    weight = 4
+    weight = 3
 
 [[menu.main]]
     parent = "doc"
@@ -57,7 +76,7 @@ pygmentCodeFences = true
 [[menu.main]]
     identifier = "resources"
     name = "Help & Resources"
-    weight = 5
+    weight = 4
 
 [[menu.main]]
     parent = "resources"
