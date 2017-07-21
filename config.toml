@@ -64,7 +64,7 @@ pygmentCodeFences = true
 [[menu.main]]
     parent = "doc"
     name = "User Manual (PDF)"
-    url = ""
+    url = "usermanual/allpix-manual.pdf"
     weight = 2
 
 [[menu.main]]
