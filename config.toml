@@ -70,7 +70,7 @@ pygmentCodeFences = true
 [[menu.main]]
     parent = "doc"
     name = "Code Reference"
-    url = "reference/html"
+    url = "reference"
     weight = 3
 
 [[menu.main]]
