@@ -1,7 +1,7 @@
 ---
 title: "Screenshots"
 date: 2017-08-09T15:42:04+02:00
-draft: true
+draft: false
 ---
 
 In the following, a few screenshots from a standard {{% allpix %}} simulation are presented.
@@ -42,12 +42,16 @@ The influence of the charge carrier diffusion can be revealed by looking at the 
 
 The `DetectorHistogrammer` module can be used to retrieve basic per-detector monitoring plots such as detector hit maps or cluster size distributions as demonstrated below. This module does not require a special configuration to produce these histograms.
 
-The following histograms for the DUT are the output of a simulation with 20'000 events using the setup displayed above.
+The following histogram for the DUT is the output of a simulation with 20'000 events using the setup displayed above.
 
 ![hitmap](/img/screenshots/hitmap.png)
 
+## Analysis with External Tools
 
+The following plots exemplary show an analysis of the simulation result using the [EUTelescope framework](http://eutelescope.web.cern.ch/). The simulation result is stored in EUTelescope's native format using the `LCIOWriter` module.
 
-## Correlations
+Shown is the cluster charge distribution of one detector in detector-specific units (i.e. not calibrated to electrons) and a track residual on one of the telescope planes.
 
-Despite the analysis fo test beam data not being part of the {{% allpix %}} framework, the following plots show correlation and a residual between two different sensors simulated with the framework.
+![Landau distribution](/img/screenshots/eutel_landau.png)
+
+![Residual](/img/screenshots/eutel_residual_x.png)
