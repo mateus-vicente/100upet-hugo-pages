@@ -33,7 +33,7 @@ $ cmake ..
 $ make install
 ```
 
-For more detailed installation instructions, please refer to the [documentation](usermanual/allpix-manual.html).
+For more detailed installation instructions, please refer to the [documentation]({{< baseurl >}}usermanual/allpix-manual.html).
 
 ## Issues
 If you encounter any issues, please ensure your ROOT6 and Geant4 environments are properly set up (with their respective environment file sourced) and functional. If the problem persists, please report it in our [issue tracker](https://gitlab.cern.ch/simonspa/allpix-squared/issues) to help fixing it.
