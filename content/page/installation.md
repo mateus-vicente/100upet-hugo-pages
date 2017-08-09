@@ -25,7 +25,7 @@ Then, continue as described under the compilation section.
 The dependencies listen above have to be satisfied. Both ROOT6 and Geant4 libraries and headers have to be in the path, this is usually achieved by sourcing the `thisroot.sh` or `geant4.sh` scripts. After this, continue as described below.
 
 ### Compilation
-To compile and install a default installation of Allpix<sup>2</sup>, run the following commands
+To compile and install a default installation of {{% allpix %}}, run the following commands
 
 ```
 $ mkdir build && cd build/
@@ -33,7 +33,7 @@ $ cmake ..
 $ make install
 ```
 
-For more detailed installation instructions, please refer to the [documentation]({{< relref "usermanual/allpix-manual.html" >}}) .
+For more detailed installation instructions, please refer to the [documentation]("usermanual/allpix-manual.html") .
 
 ## Issues
 If you encounter any issues, please ensure your ROOT6 and Geant4 environments are properly set up (with their respective environment file sourced) and functional. If the problem persists, please report it in our [issue tracker](https://gitlab.cern.ch/simonspa/allpix-squared/issues) to help fixing it.
