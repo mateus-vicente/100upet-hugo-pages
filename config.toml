@@ -1,4 +1,5 @@
 baseURL = "https://project-allpix-squared.web.cern.ch/project-allpix-squared/"
+canonifyURLs = true
 languageCode = "en-us"
 title = "Allpix Squared"
 DefaultContentLanguage = "en"
