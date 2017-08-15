@@ -5,6 +5,7 @@ draft: false
 ---
 
 A few of the main features of {{% allpix %}} are
+
 * Full simulation of charge deposition with Geant4
 * Fast charge propagation using drift-diffusion model
 * Output of produced ROOT objects in TTrees with full history
