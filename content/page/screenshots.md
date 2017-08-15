@@ -12,6 +12,7 @@ Below is a short screencast of a typical simulation run with a full beam telesco
 
 {{< figure src="/img/screenshots/simulationcast.gif" caption="Screencast of short simulation" >}}
 
+
 ## Event Displays
 
 This event display represents two Pi+ particles with an energy of 2 GeV crossing a detector setup with six Mimosa26 planes, one Timepix as DUT and a second Timepix as reference detector after the last downstream plane.
@@ -24,20 +25,26 @@ A secondary particle produced in the DUT can be observed, the color coding repre
 This event display is rendered using the {{% allpix %}} standard visualization module `VisualizationGeant4` without additional configuration or changes.
 
 
-## Electric Field
-
-{{% allpix %}} provides basic visualization of the electric fields used in the different sensors. The plots shown below are produced by the `ElectricFieldReader` module with the appropriate parameter configuration, i.e. `output_plots = true`.
-
-
 ## Charge Drift & Diffusion
 
-The following plots present a visualization of the charge carrier drift as can be produced by the `GenericPropagation` module with its parameter `output_plots = true`. Shown is a single particle track crossing the sensor at an angle of 45 degrees. Electrons and holes drift to their respective electrodes under the influence of the electric field.
+The following plots present a visualization of the charge carrier drift as can be produced by the `GenericPropagation` module with its parameter `output_plots = true`. Shown is a single particle track crossing the sensor at an angle of 45 degrees. Electrons and holes drift to their respective electrodes under the influence of a linear electric field.
 
 {{< figure src="/img/screenshots/eh-drift-3d.png" caption="3D visualization of charge carrier movement" >}}
 
 The influence of the charge carrier diffusion can be revealed by looking at the projection of the same event along the particle trajectory as shown below.
 
 {{< figure src="/img/screenshots/eh-pairs-drift.png" caption="Projection along particle trajectory to visualize diffusion" >}}
+
+
+## Electric Field
+
+{{% allpix %}} provides basic visualization of the electric fields used in the different sensors. The plot below shows an converted TCAD field generated using the DF-ISE converter tool which constructs regular grid using a barycentric interpolation scheme. The plot is produced by the `ElectricFieldReader` module with the appropriate parameter configuration, i.e. `output_plots = true`.
+
+{{< figure src="/img/screenshots/electric-field-tcad.png" caption="Imported electric field from TCAD" >}}
+
+Visualization of propagated charges using this electric field is shown below:
+
+{{< figure src="/img/screenshots/electric-field-propagation.gif" caption="Propagation of charge carriers in the electric field" >}}
 
 
 ## Hitmaps
