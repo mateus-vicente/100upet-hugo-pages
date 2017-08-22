@@ -42,10 +42,6 @@ The influence of the charge carrier diffusion can be revealed by looking at the 
 
 {{< figure src="/img/screenshots/electric-field-tcad.png" caption="Imported electric field from TCAD" >}}
 
-Visualization of propagated charges using this electric field is shown below:
-
-{{< figure src="/img/screenshots/electric-field-propagation.gif" caption="Propagation of charge carriers in the electric field" >}}
-
 
 ## Hitmaps
 
