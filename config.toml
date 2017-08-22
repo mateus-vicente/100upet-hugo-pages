@@ -14,7 +14,7 @@ pygmentCodeFences = true
   favicon = "img/favicon.png"
 
 [Author]
-  name = "Daniel Hynds, Simon Spannagel, Koen Wolters"
+  name = "The Allpix Squared Authors"
   email = "allpix.squared@cern.ch"
 
 [[menu.main]]
