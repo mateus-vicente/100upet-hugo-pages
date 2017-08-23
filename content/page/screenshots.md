@@ -38,10 +38,13 @@ The influence of the charge carrier diffusion can be revealed by looking at the 
 
 ## Electric Field
 
-{{% allpix %}} provides basic visualization of the electric fields used in the different sensors. The plot below shows an converted TCAD field generated using the DF-ISE converter tool which constructs regular grid using a barycentric interpolation scheme. The plot is produced by the `ElectricFieldReader` module with the appropriate parameter configuration, i.e. `output_plots = true`.
+{{% allpix %}} provides basic visualization of the electric fields used in the different sensors. The plot below shows an converted TCAD field of a single pixel, generated using the DF-ISE converter tool which constructs regular grids using a barycentric interpolation scheme. The plot is produced by the `ElectricFieldReader` module with the appropriate parameter configuration, i.e. `output_plots = true`.
 
 {{< figure src="/img/screenshots/electric-field-tcad.png" caption="Imported electric field from TCAD" >}}
 
+An animation of the propagation of deposited charges in a single pixel of this electric field is shown below. This animation (without the electric field on the background) can be produced with `output_animations = true` in the `GenericPropagation` module.
+
+{{< figure src="/img/screenshots/propagation-tcad.gif" caption="Animation of propagation in electric field" >}}
 
 ## Hitmaps
 
