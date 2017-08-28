@@ -6,7 +6,7 @@ draft: false
 
 ## About {{% allpix %}}
 
-{{% allpix %}} is a generic simulation framework for silicon tracker and vertex detectors written in modern C++. It builds upon and extends the idea of a previously developed simulation framework called [AllPix](http://github.com/allpix/allpix). The goal of the {{% allpix %}} framework is to provide a complete and easy-to-use package for simulating the performance of detectors from a general source of particles until the digitization of hits in the detector chip.
+{{% allpix %}} is a generic simulation framework for silicon tracker and vertex detectors written in modern C++. The goal of the {{% allpix %}} framework is to provide a complete and easy-to-use package for simulating the performance of detectors from a general source of particles until the digitization of hits in the detector chip.
 
 The framework builds upon other packages to perform tasks in the simulation chain, most notably Geant4 for the deposition of charge carriers in the sensor and ROOT for producing histograms and saving the produced data to storage. The core of the framework focuses on the simulation of charge transport in semiconductor detectors and the digitization to hits in the frontend electronics. The framework does not perform a reconstruction of the particle tracks.
 
@@ -25,8 +25,24 @@ The framework builds upon other packages to perform tasks in the simulation chai
   * Possibility to run multiple different modules on different detectors
   * Limit flexibility for the sake of simplicity and ease of use
 
-### History
 
-Development of AllPix (the original version) started around 2012 as a generic simulation framework for pixel detectors. It has been succesfully used for simulating a variety of different detector setups through the years. Originally written as a Geant4 user application the framework has grown "organically" after new features continued to be added. Around 2016 discussions between collaborators started to discuss a rewrite of the software from scratch. Primary possibilities for improvements included better modularity, more extensive configuration options and an easier geometry setup.
+## Development of {{% allpix %}}
 
-Early development of {{% allpix %}} started in end of 2016, but most of the initial rework in modern C++ has been carried out in the framework of a technical student project in the beginning of 2017. The core of the framework starts to mature and initial versions of various generic core modules have been created at the time of writing.
+{{% allpix %}} has been developed and is maintained by
+
+* Koen Walters, CERN
+* Daniel Hynds, CERN
+* Simon Spannagel, CERN
+
+The following authors, in alphabetical order, have contributed to {{% allpix %}}:
+
+* Neal Gauvin, Université de Genève
+* Moritz Kiehn, Université de Genève
+* Salman Maqbool, CERN Summer Student
+* Andreas Matthias Nürnberg, CERN
+* Marko Petric, CERN
+* Edoardo Rossi, DESY
+* Paul Schütze, DESY
+* Mateus Vicente Barreto Pinto, Université de Genève
+
+The authors would also like to express their thanks to the developers of [AllPix](https://twiki.cern.ch/twiki/bin/view/Main/AllPix).
