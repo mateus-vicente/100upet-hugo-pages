@@ -30,7 +30,7 @@ The framework builds upon other packages to perform tasks in the simulation chai
 
 {{% allpix %}} has been developed and is maintained by
 
-* Koen Walters, CERN
+* Koen Wolters, CERN
 * Daniel Hynds, CERN
 * Simon Spannagel, CERN
 
