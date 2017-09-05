@@ -24,6 +24,14 @@ The following commands might help adding content and testing the website generat
     hugo new page/pagetitle.md
     ```
     and a new markdown file with the appropriate header will be created. The draft status is set to `true` by default.
+* __Add a new post to the blog roll__
+
+    In order to add a new post to the blog/new roll, run
+    ```
+    hugo new post/YYYY-MM-DD-post-title.md
+    ```
+    and a new markdown file with the appropriate header will be created. The draft status is set to `true` by default.
+
 * __Add page to the main menu__
 
     the main menu is defined in the `config.toml` file. Simply add a new entry to `[[menu.main]]`, potentially setting the `parent` key to add the item in one of the dropdown menus.
