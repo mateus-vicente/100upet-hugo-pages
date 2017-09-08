@@ -1,7 +1,7 @@
 ---
 title: "First Stable Release"
 date: 2017-09-05T11:49:04+02:00
-draft: true
+draft: false
 ---
 
 we are happy to announce the first stable and full-featured **{{% allpix %}} version 1.0**. It is available from the [repository](https://gitlab.cern.ch/simonspa/allpix-squared/) as of now. The software is released under the MIT license, thus you are free to use it in whatever way you like.
@@ -30,3 +30,6 @@ The software is a completely newly written framework and we have taken great car
 In addition to the well-documented code and this website with a few [examples and plots](/page/screenshots/) we have prepared an extensive [HTML](/usermanual/allpix-manual.html) and [PDF user manual](/usermanual/allpix-manual.pdf), which provides detailed information on the installation process, a "getting started" section with configuration examples, and additional information for potential contributors.
 
 Please share your opinion, experience, issues with us - either via e-mail or the issue tracker of the repository. Contributions from your side are very welcome, and we already have a long list of potential features to be added in the future.
+
+Best regards,
+Koen Wolters, Daniel Hynds, Simon Spannagel
