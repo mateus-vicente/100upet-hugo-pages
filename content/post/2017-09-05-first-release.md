@@ -5,7 +5,7 @@ draft: false
 ---
 
 we are happy to announce the first stable and full-featured **{{% allpix %}} version 1.0**. It is available from the [repository](https://gitlab.cern.ch/simonspa/allpix-squared/) as of now. The software is released under the MIT license, thus you are free to use it in whatever way you like.
-
+<!--more-->
 Please go ahead, test the framework, implement your own simulations and report back your experience.
 
 A few of the main physics features are:
@@ -31,5 +31,5 @@ In addition to the well-documented code and this website with a few [examples an
 
 Please share your opinion, experience, issues with us - either via e-mail or the issue tracker of the repository. Contributions from your side are very welcome, and we already have a long list of potential features to be added in the future.
 
-Best regards,
+Best regards,   
 Koen Wolters, Daniel Hynds, Simon Spannagel
