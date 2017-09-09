@@ -81,12 +81,24 @@ pygmentCodeFences = true
 
 [[menu.main]]
     parent = "resources"
+    name = "✉ User Mailing List"
+    url = "https://e-groups.cern.ch/e-groups/Egroup.do?egroupId=10262858"
+    weight = 1
+
+[[menu.main]]
+    parent = "resources"
+    name = "✉ Dev. Mailing List"
+    url = "https://e-groups.cern.ch/e-groups/Egroup.do?egroupId=10231013"
+    weight = 2
+
+[[menu.main]]
+    parent = "resources"
     name = "Repository"
     url = "https://gitlab.cern.ch/simonspa/allpix-squared"
-    weight = 2
+    weight = 4
 
 [[menu.main]]
     parent = "resources"
     name = "Issue Tracker"
     url = "https://gitlab.cern.ch/simonspa/allpix-squared/issues"
-    weight = 1
+    weight = 3
