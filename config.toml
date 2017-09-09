@@ -24,7 +24,7 @@ pygmentCodeFences = true
 
 [[menu.main]]
     identifier = "about"
-    name = "About Allpix2"
+    name = "About"
     weight = 2
 
 [[menu.main]]
@@ -53,7 +53,7 @@ pygmentCodeFences = true
 
 [[menu.main]]
     identifier = "doc"
-    name = "Documentations"
+    name = "Documentation"
     weight = 3
 
 [[menu.main]]
