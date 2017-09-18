@@ -7,7 +7,7 @@ draft: false
 ## About {{% allpix %}}
 
 {{% allpix %}} is a generic simulation framework for silicon tracker and vertex detectors written in modern C++. The goal of the {{% allpix %}} framework is to provide a complete and easy-to-use package for simulating the performance of detectors from incident ionizing radiation until the digitization of hits in the detector chip.
-It builds upon the ideas implemented in the [AllPix](https://twiki.cern.ch/twiki/bin/view/Main/AllPix) software, a Geant4 user application written to ease the simulation of pixel detectors.
+It builds upon the ideas implemented in the original  [AllPix](https://twiki.cern.ch/twiki/bin/view/Main/AllPix) software, a Geant4 user application written to ease the simulation of pixel detectors.
 
 The framework builds upon other packages to perform tasks in the simulation chain, most notably [Geant4](https://cern.ch/geant4/) for the deposition of charge carriers in the sensor and [ROOT](https://root.cern.ch/) for producing histograms and saving the produced data to storage. The core of the framework focuses on the simulation of charge transport in semiconductor detectors and the digitization to hits in the front-end electronics. The framework does not perform a reconstruction of the particle tracks.
 
@@ -46,4 +46,7 @@ The following authors, in alphabetical order, have contributed to {{% allpix %}}
 * Paul Schütze, DESY
 * Mateus Vicente Barreto Pinto, Université de Genève
 
-The authors would also like to express their thanks to the developers of [AllPix](https://twiki.cern.ch/twiki/bin/view/Main/AllPix), M. Benoit and J. Idarraga.
+The original [AllPix](https://twiki.cern.ch/twiki/bin/view/Main/AllPix) has been developed by:
+
+* Mathieu Benoit, Université de Genève
+* John Idarraga, Leiden University
