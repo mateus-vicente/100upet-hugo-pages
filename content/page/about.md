@@ -29,7 +29,7 @@ The framework builds upon other packages to perform tasks in the simulation chai
 
 ## Development of {{% allpix %}}
 
-{{% allpix %}} has been developed and is maintained by
+{{% allpix %}} has been developed and is maintained by:
 
 * Koen Wolters, CERN
 * Daniel Hynds, CERN
