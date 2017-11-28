@@ -4,7 +4,7 @@ date: 2017-09-05T11:49:04+02:00
 draft: false
 ---
 
-we are happy to announce the first stable and full-featured **{{% allpix %}} version 1.0**. It is available from the [repository](https://gitlab.cern.ch/allpix-squared/allpix-squared/) as of now. The software is released under the MIT license, thus you are free to use it in whatever way you like.
+We are happy to announce the first stable and full-featured **{{% allpix %}} version 1.0**. It is available from the [repository](https://gitlab.cern.ch/allpix-squared/allpix-squared/) as of now. The software is released under the MIT license, thus you are free to use it in whatever way you like.
 <!--more-->
 Please go ahead, test the framework, implement your own simulations and report back your experience.
 
