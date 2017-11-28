@@ -88,7 +88,7 @@ pygmentCodeFences = true
 [[menu.main]]
     parent = "resources"
     name = "✉ Dev. Mailing List"
-    url = "https://e-groups.cern.ch/e-groups/Egroup.do?egroupId=10231013"
+    url = "https://e-groups.cern.ch/e-groups/Egroup.do?egroupId=10273730"
     weight = 2
 
 [[menu.main]]
