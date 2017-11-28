@@ -9,7 +9,7 @@ pygmentCodeFences = true
 
 [Params]
   subtitle = "Generic Pixel Detector Simulation Framework"
-  commit = "https://gitlab.cern.ch/simonspa/allpix-squared-website/commit/"
+  commit = "https://gitlab.cern.ch/allpix-squared/allpix-squared-website/commit/"
   logo = "img/logo_small.png"
   favicon = "img/favicon.png"
 
@@ -94,11 +94,11 @@ pygmentCodeFences = true
 [[menu.main]]
     parent = "resources"
     name = "Repository"
-    url = "https://gitlab.cern.ch/simonspa/allpix-squared"
+    url = "https://gitlab.cern.ch/allpix-squared/allpix-squared"
     weight = 4
 
 [[menu.main]]
     parent = "resources"
     name = "Issue Tracker"
-    url = "https://gitlab.cern.ch/simonspa/allpix-squared/issues"
+    url = "https://gitlab.cern.ch/allpix-squared/allpix-squared/issues"
     weight = 3
