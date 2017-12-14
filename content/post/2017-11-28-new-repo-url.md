@@ -4,7 +4,7 @@ date: 2017-11-28T14:03:55+01:00
 draft: false
 ---
 
-we have **moved the main development repository of {{% allpix %}}** to live under a common group on the CERN GitLab instance. As a result, the URL under which the repository can be reached, has changed. The repository can now be found at
+The main development repository of {{% allpix %}} has been **moved** to live under a common group on the CERN GitLab instance. As a result, the URL under which the repository can be reached, has changed. The repository can now be found at
 
  https://gitlab.cern.ch/allpix-squared/allpix-squared
 <!--more-->
