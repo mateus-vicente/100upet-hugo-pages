@@ -12,7 +12,7 @@ compilation:
         - docker
     image: clicdp/cc7-base
     before_script:
-        - curl --silent -L https://github.com/gohugoio/hugo/releases/download/v0.32.4/hugo_0.32.4_Linux-64bit.tar.gz | tar zxf -
+        - curl --silent -L https://github.com/gohugoio/hugo/releases/download/v0.32.4/hugo_0.40_Linux-64bit.tar.gz | tar zxf -
     script:
         - source .gitlab-ci.d/init_x86_64.sh
         - export GIT_COMMIT_SHA=`git rev-parse --verify HEAD`
