@@ -37,12 +37,15 @@ The framework builds upon other packages to perform tasks in the simulation chai
 
 The following authors, in alphabetical order, have contributed to {{% allpix %}}:
 
+* Thomas Billoud, Université de Montréal
+* Tobias Bisanz, Georg-August-Universität Göttingen
 * Neal Gauvin, Université de Genève
 * Moritz Kiehn, Université de Genève
 * Salman Maqbool, CERN Summer Student
 * Andreas Matthias Nürnberg, CERN
 * Marko Petric, CERN
 * Edoardo Rossi, DESY
+* Andre Sailer, CERN
 * Paul Schütze, DESY
 * Mateus Vicente Barreto Pinto, Université de Genève
 
