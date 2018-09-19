@@ -11,6 +11,10 @@ Nucl. Instr. Meth. A 901 (2018) 164 – 172, [doi:10.1016/j.nima.2018.06.020](ht
 
 ## Presentations
 
+T. Billoud, **New features of the Allpix Squared simulation framework**,  
+Medipix Collaboration Meeting,
+*19 September 2018, CERN, Switzerland*
+
 S. Spannagel, [**Combining TCAD and Monte Carlo Methods to Simulate High-Resistivity CMOS Pixel Detectors using the Allpix Squared Framework**](https://indico.cern.ch/event/703821/contributions/3107881/),  
 CLIC Detector and Physics Collaboration Meeting,
 *28-29 August, CERN, Switzerland*
