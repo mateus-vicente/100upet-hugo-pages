@@ -1,6 +1,7 @@
 variables:
     EOS_PATH: "/eos/project/a/allpix-squared/www/"
     GIT_SUBMODULE_STRATEGY: recursive
+    GIT_SSL_NO_VERIFY: "true"
 
 stages:
     - compile
