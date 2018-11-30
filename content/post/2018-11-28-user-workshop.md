@@ -1,5 +1,5 @@
 ---
-title: "1st Allpix Squared User Workshop"
+title: "1st User Workshop held"
 date: 2018-11-28T14:00:00+01:00
 draft: false
 ---
