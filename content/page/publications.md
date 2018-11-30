@@ -9,6 +9,15 @@ draft: false
 S. Spannagel et al., [**Allpix2: A modular simulation framework for silicon detectors**](https://doi.org/10.1016/j.nima.2018.06.020),  
 Nucl. Instr. Meth. A 901 (2018) 164 – 172, [doi:10.1016/j.nima.2018.06.020](https://doi.org/10.1016/j.nima.2018.06.020), [arXiv:1806.05813](https://arxiv.org/abs/1806.05813)
 
+## Workshops & Tutorials
+
+[**1st Allpix Squared User Workshop**](https://indico.cern.ch/event/738283/),  
+*26-27 November 2018, CERN, Switzerland*
+
+S. Spannagel, [**Hands-On: The Allpix Squared Simulation Framework**](https://indico.desy.de/indico/event/18050/session/3/contribution/65),  
+6th Beam Telescopes and Test Beams Workshop,
+*16-19 January 2018, Zurich, Switzerland*
+
 ## Presentations
 
 T. Billoud, **New features of the Allpix Squared simulation framework**,  
