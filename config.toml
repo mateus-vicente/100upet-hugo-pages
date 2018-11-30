@@ -93,9 +93,15 @@ pygmentCodeFences = true
 
 [[menu.main]]
     parent = "resources"
+    name = "Forum"
+    url = "https://cern.ch/allpix-squared-forum/"
+    weight = 2
+
+[[menu.main]]
+    parent = "resources"
     name = "✉ Mailing Lists"
     url = "https://e-groups.cern.ch/e-groups/EgroupsSearch.do?searchValue=allpix-squared"
-    weight = 2
+    weight = 3
 
 [[menu.main]]
     parent = "resources"
