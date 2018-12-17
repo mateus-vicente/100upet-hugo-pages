@@ -15,7 +15,7 @@ This release has seen some major improvements in different areas, an overview of
 
 ### Scaling and Shifting of Electric Fields
 
-{{% allpix %}} now allows the usage of different electric field map sizes. Up till now, only electric fields of a single pixel unit cell could be used and TCAD simulations had to be adapted accordingly. Now, two new parameters of the ElectricFieldReader module, `field_scale` and `field_offset` allow to both scale (strech/shrink) and shift the field.
+{{% allpix %}} now allows the usage of different electric field map sizes. Up till now, only electric fields of a single pixel unit cell could be used and TCAD simulations had to be adapted accordingly. Now, two new parameters of the ElectricFieldReader module, `field_scale` and `field_offset` allow to both scale (stretch/shrink) and shift the field.
 
 As an example, it is very common to only simulate a quarter of a pixel unit cell in TCAD (half-pitch in both x and y direction). These fields can now be used by instantiating the ElectricFieldReader module with below configuration. The field is scaled into 0.5 of the pixel cell and mirrored at the border to satisfy periodic boundary conditions.
 
@@ -100,7 +100,7 @@ Apart from this, the converter has a plethora of minor improvements such as more
 Often it is interesting to get an immediate feedback from the simulation on the chosen setup or the detector under study.
 For this propose, the DetectorHistogrammer has previously provided a few histograms such as cluster size distributions.
 
-With version 1.3, the module significantly extends this analysis. It uses the Monte Calro truth information available to calculate several observables such as residuals, efficiency or cluster charge, both as 1D distribution as well as 2D histogram, mapping the dependence of the observable as a function of the in-pixel impact position of the primary Monte Carlo particle.
+With version 1.3, the module significantly extends this analysis. It uses the Monte Carlo truth information available to calculate several observables such as residuals, efficiency or cluster charge, both as 1D distribution as well as 2D histogram, mapping the dependence of the observable as a function of the in-pixel impact position of the primary Monte Carlo particle.
 An example showing the cluster size distribution and the in-pixel map for the same quantity is shown below.
 
 {{< figure src="/img/histogrammer.png">}}
