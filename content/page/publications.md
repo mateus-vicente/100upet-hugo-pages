@@ -11,6 +11,10 @@ Nucl. Instr. Meth. A 901 (2018) 164 – 172, [doi:10.1016/j.nima.2018.06.020](ht
 
 ## Workshops & Tutorials
 
+S. Spannagel, [**Hands-On: The Allpix Squared Simulation Framework**](https://indico.cern.ch/event/731649/contributions/3253672/),  
+7th Beam Telescopes and Test Beams Workshop,  
+*14-18 January 2019, CERN, Switzerland*
+
 [**1st Allpix Squared User Workshop**](https://indico.cern.ch/event/738283/),  
 *26-27 November 2018, CERN, Switzerland*
 
@@ -19,6 +23,18 @@ S. Spannagel, [**Hands-On: The Allpix Squared Simulation Framework**](https://in
 *16-19 January 2018, Zurich, Switzerland*
 
 ## Presentations
+
+S. Spannagel, [**The Allpix Squared Framework**](https://indico.cern.ch/event/804477/),  
+EP-SFT Group Meeting,  
+*8 April 2019, CERN, Switzerland*
+
+S. Spannagel, [**Status and Plans for Allpix Squared**](https://indico.cern.ch/event/753671/contributions/3278131/),  
+CLIC Workshop,  
+*21-25 January 2019, CERN, Switzerland*
+
+S. Spannagel, [**Updates on Allpix Squared**](https://indico.cern.ch/event/731649/contributions/3237196/),  
+7th Beam Telescopes and Test Beams Workshop,  
+*14-18 January 2019, CERN, Switzerland*
 
 T. Billoud, **New features of the Allpix Squared simulation framework**,  
 Medipix Collaboration Meeting,  
