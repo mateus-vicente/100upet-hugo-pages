@@ -24,6 +24,10 @@ S. Spannagel, [**Hands-On: The Allpix Squared Simulation Framework**](https://in
 
 ## Presentations
 
+S. Spannagel, [**Monte Carlo Simulations for Silicon Detectors: Bridging the Gap between Detector Design and Prototype Testing**](https://indico.cern.ch/event/811852/),  
+CERN Detector Seminar,  
+*12 April 2019, CERN, Switzerland*
+
 S. Spannagel, [**The Allpix Squared Framework**](https://indico.cern.ch/event/804477/),  
 EP-SFT Group Meeting,  
 *8 April 2019, CERN, Switzerland*
