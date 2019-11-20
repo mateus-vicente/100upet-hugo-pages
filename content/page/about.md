@@ -37,17 +37,28 @@ The framework builds upon other packages to perform tasks in the simulation chai
 
 The following authors, in alphabetical order, have contributed to {{% allpix %}}:
 
+* Mohamed Moanis Ali, Free University of Bozen-Bolzano
+* Mathieu Benoit, Université de Genève
 * Thomas Billoud, Université de Montréal
 * Tobias Bisanz, Georg-August-Universität Göttingen
+* Koen van den Brandt, Nikhef National Institute for Subatomic Physics
+* Liejian Chen, Institute of High Energy Physics Beijing
+* Katharina Dort, CERN Summer Student
 * Neal Gauvin, Université de Genève
+* Maoqiang Jing, University of South China, Institute of High Energy Physics Beijing
 * Moritz Kiehn, Université de Genève
 * Salman Maqbool, CERN Summer Student
+* Sebastien Murphy, ETHZ
 * Andreas Matthias Nürnberg, CERN
 * Marko Petric, CERN
+* Nashad Rahman, The Ohio State University
 * Edoardo Rossi, DESY
 * Andre Sailer, CERN
 * Paul Schütze, DESY
+* Xin Shi, Institute of High Energy Physics Beijing
+* Ondrej Theiner, Charles University
 * Mateus Vicente Barreto Pinto, Université de Genève
+* Morag Williams, University of Glasgow
 
 The original [AllPix](https://twiki.cern.ch/twiki/bin/view/Main/AllPix) has been developed by:
 
