@@ -37,28 +37,28 @@ The framework builds upon other packages to perform tasks in the simulation chai
 
 The following authors, in alphabetical order, have contributed to {{% allpix %}}:
 
-* Mohamed Moanis Ali, Free University of Bozen-Bolzano, @mmoanis
-* Mathieu Benoit, Université de Genève, @mbenoit
-* Thomas Billoud, Université de Montréal, @tbilloud
-* Tobias Bisanz, Georg-August-Universität Göttingen, @tbisanz
-* Koen van den Brandt, Nikhef National Institute for Subatomic Physics, @kvandenb
-* Liejian Chen, Institute of High Energy Physics Beijing, @chenlj
-* Katharina Dort, CERN Summer Student, @kdort
-* Neal Gauvin, Université de Genève, @ngauvin
-* Maoqiang Jing, University of South China, Institute of High Energy Physics Beijing, @mjing
-* Moritz Kiehn, Université de Genève, @msmk
-* Salman Maqbool, CERN Summer Student, @smaqbool
-* Sebastien Murphy, ETHZ, @smurphy
-* Andreas Matthias Nürnberg, CERN, @nurnberg
-* Marko Petric, CERN, @mpetric
-* Nashad Rahman, The Ohio State University, @nashadroid
-* Edoardo Rossi, DESY, @edrossi
-* Andre Sailer, CERN, @sailer
-* Paul Schütze, DESY, @pschutze
-* Xin Shi, Institute of High Energy Physics Beijing, @xshi
-* Ondrej Theiner, Charles University, @otheiner
-* Mateus Vicente Barreto Pinto, Université de Genève, @mvicente
-* Morag Williams, University of Glasgow, @williamm
+* Mohamed Moanis Ali, Free University of Bozen-Bolzano
+* Mathieu Benoit, Université de Genève
+* Thomas Billoud, Université de Montréal
+* Tobias Bisanz, Georg-August-Universität Göttingen
+* Koen van den Brandt, Nikhef National Institute for Subatomic Physics
+* Liejian Chen, Institute of High Energy Physics Beijing
+* Katharina Dort, CERN Summer Student
+* Neal Gauvin, Université de Genève
+* Maoqiang Jing, University of South China, Institute of High Energy Physics Beijing
+* Moritz Kiehn, Université de Genève
+* Salman Maqbool, CERN Summer Student
+* Sebastien Murphy, ETHZ
+* Andreas Matthias Nürnberg, CERN
+* Marko Petric, CERN
+* Nashad Rahman, The Ohio State University
+* Edoardo Rossi, DESY
+* Andre Sailer, CERN
+* Paul Schütze, DESY
+* Xin Shi, Institute of High Energy Physics Beijing
+* Ondrej Theiner, Charles University
+* Mateus Vicente Barreto Pinto, Université de Genève
+* Morag Williams, University of Glasgow
 
 The original [AllPix](https://twiki.cern.ch/twiki/bin/view/Main/AllPix) has been developed by:
 
