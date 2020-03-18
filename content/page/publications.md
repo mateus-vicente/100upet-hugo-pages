@@ -14,6 +14,10 @@ Nucl. Instr. Meth. A 964 (2020), [doi:10.1016/j.nima.2018.06.020](https://doi.or
 
 ## Workshops & Tutorials
 
+D. Hynds, S. Spannagel, [**Hands-On: Silicon Detector Monte-Carlo Simulations with Allpix Squared**](https://indico.cern.ch/event/813822/contributions/3648304/),  
+8th Beam Telescopes and Test Beams Workshop,  
+*27-31 January 2020, Tbilisi, Georgia*
+
 S. Spannagel, [**Hands-On: The Allpix Squared Simulation Framework**](https://indico.cern.ch/event/731649/contributions/3253672/),  
 7th Beam Telescopes and Test Beams Workshop,  
 *14-18 January 2019, CERN, Switzerland*
