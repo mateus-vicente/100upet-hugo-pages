@@ -31,6 +31,10 @@ S. Spannagel, [**Hands-On: The Allpix Squared Simulation Framework**](https://in
 
 ## Presentations
 
+S. Spannagel, [**The Importance of Insight: Monte Carlo Simulations in Silicon Pixel Detector Development**](https://instrumentationseminar.desy.de/sites2009/site_instrumentationseminar/content/e70397/e282395/e289794/2019-08-09-DESY-Instrumentation-Seminar_MC-Si-Detectors.pdf),  
+DESY Joint Instrumentation Seminar,  
+*09 August 2019, DESY, Hamburg, Germany*
+
 S. Spannagel, [**Monte Carlo Simulations for Silicon Detectors: Bridging the Gap between Detector Design and Prototype Testing**](https://indico.cern.ch/event/811852/),  
 CERN Detector Seminar,  
 *12 April 2019, CERN, Switzerland*
