@@ -72,7 +72,7 @@ All planes are randomly mis-aligned at the beginning of the simulation.
 The energy deposition module uses Geant4 to replicate the beam conditions found in the CERN SPS North Area beam lines, i.e. a 120GeV Pion beam with a Gaussian width of about 2mm.
 The simulation uses different processing paths for the telescope planes and the DUT in order to configure a different electric field, a different granularity for the charge propagation and different settings for the digitization in the front-end.
 
-The results in the data for both the telescope planes and the DUT to be written to a ROOT output file using the CorryvreckanWriter module, defining the detector to be used as reference plane in the reconstruction and the DUT as detector to be excluded from the track fits. 
+The results in the data for both the telescope planes and the DUT to be written to a ROOT output file using the CorryvreckanWriter module, defining the detector to be used as reference plane in the reconstruction and the DUT as detector to be excluded from the track fits.
 More information on these detector roles can be found in the [Corryvreckan user manual](https://project-corryvreckan.web.cern.ch/project-corryvreckan/usermanual/corryvreckan-manual.pdf) and the example configuration is available in the {{% allpix %}} repository and user manual.
 
 
@@ -150,3 +150,8 @@ More information can be found in the [user manual, chapter 5.7](https://project-
 * **MeshConverter:** The default value for the neighbor search radius has been improved and the error message in case no valid neighbors could be found has been clarified.
 * **Tools:** The Python example script for simulation data analysis has seen several improvements and is now Python3 compatible. Some improvements have been made for the script to recover configurations from data files.
 * The configuration class has been improved an now allows to set default values for matrices.
+
+## Development Visualization
+
+As usual, an animation of the development can be found at the end of the release notes:
+{{< vimeo 407535137 >}}
