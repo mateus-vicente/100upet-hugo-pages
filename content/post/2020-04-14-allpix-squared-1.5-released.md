@@ -6,9 +6,9 @@ draft: false
 
 We are happy to announce a new stable feature release **{{% allpix %}} version 1.5** with a total of **504 commits** added to the repository by **ten contributors** since version 1.4. The release tarball can be downloaded from the repository:
 
-https://gitlab.cern.ch/allpix-squared/allpix-squared/tags/v1.5
+https://gitlab.cern.ch/allpix-squared/allpix-squared/tags/v1.5.0
 
-The new version is also available as docker image in the [project's docker registry](https://gitlab.cern.ch/allpix-squared/allpix-squared/container_registry), as read-to-use [version on CVMFS](https://project-allpix-squared.web.cern.ch/project-allpix-squared/usermanual/allpix-manualch10.html#x11-15200010.4.1) and as binary release [from the website](https://project-allpix-squared.web.cern.ch/project-allpix-squared/releases/).
+The new version is also available as docker image in the [project's docker registry](https://gitlab.cern.ch/allpix-squared/allpix-squared/container_registry), as read-to-use [version on CVMFS](https://project-allpix-squared.web.cern.ch/project-allpix-squared/usermanual/allpix-manualch10.html#x11-19800010.4.1) and as binary release [from the website](https://project-allpix-squared.web.cern.ch/project-allpix-squared/releases/).
 
 ### Changes in the Core Development Team
 
