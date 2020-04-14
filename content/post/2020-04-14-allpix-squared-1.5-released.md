@@ -1,7 +1,7 @@
 ---
 title: "Allpix Squared 1.5 Released"
 date: 2020-04-14T11:24:33+02:00
-draft: true
+draft: false
 ---
 
 We are happy to announce a new stable feature release **{{% allpix %}} version 1.5** with a total of **504 commits** added to the repository by **ten contributors** since version 1.4. The release tarball can be downloaded from the repository:
