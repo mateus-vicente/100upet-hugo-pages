@@ -45,6 +45,7 @@ With the output_plots parameter activated, the module produces histograms of the
 
 Currently two data sources are supported, ROOT trees and CSV text files.
 A detailed description of the expected formats are provided in the [module's README file](https://gitlab.cern.ch/allpix-squared/allpix-squared/-/blob/master/src/modules/DepositionReader/README.md) or the [user manual](https://project-allpix-squared.web.cern.ch/project-allpix-squared/usermanual/allpix-manual.pdf).
+In addition, a python script serving as an example on how to generate the expected formats is available.
 
 
 ### New Module: DatabaseWiter
@@ -52,8 +53,8 @@ A detailed description of the expected formats are provided in the [module's REA
 A new module called `DatabaseWriter` enables writing of simulation output directly into a postgreSQL database.
 This can be useful e.g. when fast I/O between applications is needed such as in real time visualization and/or analysis applications.
 
-The database can hold information of all objects produced during the simulation, can store multiple simulations identified by individual run IDs.
-Being a relational database, it also replicated the references between individual simulation objects which allows to fully reconstruct the history and Monte Carlo truth of each object.
+The database can hold information of all objects produced during the simulation and store multiple simulations identified by individual run IDs.
+Being a relational database, it also replicates the references between individual simulation objects which allows to fully reconstruct the history and Monte Carlo truth of each object.
 
 This module is not built by default since it requires PostegreSQL as additional dependency. It is, however, included in the {{% allpix %}} Docker image.
 More information can be found in the [module's README](https://gitlab.cern.ch/allpix-squared/allpix-squared/-/blob/master/src/modules/DatabaseWriter/README.md) or the [user manual](https://project-allpix-squared.web.cern.ch/project-allpix-squared/usermanual/allpix-manual.pdf).
@@ -71,7 +72,8 @@ All planes are randomly mis-aligned at the beginning of the simulation.
 The energy deposition module uses Geant4 to replicate the beam conditions found in the CERN SPS North Area beam lines, i.e. a 120GeV Pion beam with a Gaussian width of about 2mm.
 The simulation uses different processing paths for the telescope planes and the DUT in order to configure a different electric field, a different granularity for the charge propagation and different settings for the digitization in the front-end.
 
-The results for both the telescope planes and the DUT are written to a ROOT output file using the CorryvreckanWriter module, defining the detector to be used as reference plane in the reconstruction and the DUT as detector to be excluded from the track fits. More information in these detector roles can be found in the [Corryvreckan user manual](https://project-corryvreckan.web.cern.ch/project-corryvreckan/usermanual/corryvreckan-manual.pdf), the example configuration is available in the {{% allpix %}} repository and user manual.
+The results in the data for both the telescope planes and the DUT to be written to a ROOT output file using the CorryvreckanWriter module, defining the detector to be used as reference plane in the reconstruction and the DUT as detector to be excluded from the track fits. 
+More information on these detector roles can be found in the [Corryvreckan user manual](https://project-corryvreckan.web.cern.ch/project-corryvreckan/usermanual/corryvreckan-manual.pdf) and the example configuration is available in the {{% allpix %}} repository and user manual.
 
 
 ### PulseTransfer
@@ -102,9 +104,9 @@ In order to load modules which have been compiled and installed in a different l
 
 The build system has seen many improvements to keep up with recent developments and requests from the user community:
 
-* {{% allpix %}} uses CMake targets for all dependencies where available
+* {{% allpix %}} uses CMake targets for all dependencies where available.
 * The CMake feature `link_what_you_use` is now used where available to automatically exclude statically linked libraries which are not directly used by the program.
-* The default build of {{% allpix %}} uses the C++17 standard now
+* The default build of {{% allpix %}} uses the C++17 standard now.
 * The compiler flag `Werror` now is only used in the CI for the reference compilers. This provides a better out-of-the-box experience for users compiling {{% allpix %}} themselves with different, potentially newer, compiler versions with different warnings.
 * Along with the updated CI path (see below), the formatting of the source code has changed from `clang-format-4` to `clang-format-8`.
 * The setup file automatically prepared for installations of {{% allpix %}}, e.g. on CVMFS, now supports the `zsh` shell.
@@ -118,9 +120,9 @@ Currently, the `LCG_96b` version is used for Linux builds and `LCG_97` for macOS
 Other changes to the CI are:
 
 * The default build for LXPLUS has been switched to CentOS7 since no SLC6 nodes are available anymore.
-* The Docker images have been updated with the latest dependencies ROOT 6.20 and Geant4 10.06
-* The support for LLVM builds on SLC6 has been dropped since this compiler7OS combination is not available on LCG
-* The macOS builds have been updated to 10.15 Catalina
+* The Docker images have been updated with the latest dependencies ROOT 6.20 and Geant4 10.06.
+* The support for LLVM builds on SLC6 has been dropped since this compiler/OS combination is not available on LCG.
+* The macOS builds have been updated to 10.15 Catalina.
 * The CI now provides coverage reports for unit tests concerning the code in the framework core and objects library.
 
 
@@ -137,14 +139,14 @@ More information can be found in the [user manual, chapter 5.7](https://project-
 
 ### Other Notable Features and Improvements
 
-* A new detector model for **ALPIDE sensors** has been added to the repository
+* A new detector model for **ALPIDE sensors** has been added to the repository.
 * **PixelHit:** The object now has a new member function `getPrimaryMCParticles()` which allows to directly filter Monte Carlo particles for primary particles, i.e. those entering the sensor from the outside.
 * **MCParticle:** A new member function has been added which allows to calculate reference position in sensor center plane by interpolating start and end point of the trajectory.
 * **CorryvreckanWriter:** The module has been updated for compatibility with the latest release for the [Corryvreckan reconstruction software](http://cern.ch/corryvreckan).
-* **DepositionGeant4:** It is now possible to change the direction of the beam
+* **DepositionGeant4:** It is now possible to change the direction of the beam.
 * **DepositionGeant4:** Messages are now dispatched in the "correct" order in the simulation, i.e. MCTracks are emitted before MCParticles and DepositedCharge messages. This ensures that any module listening to all objects will receive them in the correct order for resolving dependencies between them.
 * **DepositionPointCharge:** The module now allows to use the `position` parameter to set the starting position in case a scan is performed. Also, an issue of depositing energy in the sensor has been fixed when a scan was performed in combination with the `mip` model.
 * **ROOTObjectReader:** This module now automatically appends the file extension `.root` to the file name if not present.
 * **MeshConverter:** The default value for the neighbor search radius has been improved and the error message in case no valid neighbors could be found has been clarified.
-* **Tools:** The Python example script for simulation data analysis has seen several improvements and is now Pythin3 compatible. Some improvements have been made for the script to recover configurations from data files.
+* **Tools:** The Python example script for simulation data analysis has seen several improvements and is now Python3 compatible. Some improvements have been made for the script to recover configurations from data files.
 * The configuration class has been improved an now allows to set default values for matrices.
