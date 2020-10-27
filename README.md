@@ -17,6 +17,8 @@ The following commands might help adding content and testing the website generat
     ```
     The server will listen on the address defined in the `config.toml` file, e.g. http://localhost:1313/.
     The additional command line argument `-D` also enables all documents currently in draft mode.
+
+    Make sure to have the themes fetched as well (`git submodule init && git submodule update`).
 * __Add a new page__
 
     In order to add a new static page, run
