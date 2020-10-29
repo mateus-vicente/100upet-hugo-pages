@@ -1,18 +1,17 @@
 ---
-title: "2020 10 19 Allpix Squared 1"
-date: 2020-10-27T10:36:24+01:00
-draft: true
+title: "Allpix Squared 1.6 Released"
+date: 2020-10-29T14:00:00+01:00
+draft: false
 ---
 
-We are happy to announce a new stable feature release **{{% allpix %}} version 1.6** with a total of **FIXME commits** added to the repository by **NINE contributors** since version 1.5. The release tarball can be downloaded from the repository:
+We are happy to announce a new stable feature release **{{% allpix %}} version 1.6** with a total of **736 commits** added to the repository by **NINE contributors** since version 1.5. The release tarball can be downloaded from the repository:
 
 https://gitlab.cern.ch/allpix-squared/allpix-squared/tags/v1.6.0
 
-The new version is also available as docker image in the [project's docker registry](https://gitlab.cern.ch/allpix-squared/allpix-squared/container_registry), as read-to-use [version on CVMFS](FIXME https://project-allpix-squared.web.cern.ch/project-allpix-squared/usermanual/allpix-manualch10.html#x11-19800010.4.1) and as binary release [from the website](https://project-allpix-squared.web.cern.ch/project-allpix-squared/releases/).
+The new version is also available as docker image in the [project's docker registry](https://gitlab.cern.ch/allpix-squared/allpix-squared/container_registry), as read-to-use [version on CVMFS](https://project-allpix-squared.web.cern.ch/project-allpix-squared/usermanual/allpix-manualch10.html#x11-21100010.4.1) and as binary release [from the website](https://project-allpix-squared.web.cern.ch/project-allpix-squared/releases/).
 
-{{% allpix %}} was ehnanced by several new features and modules and has seen a large number of improvements. In the following, an overview over the most important changes and new features is provided:
+{{% allpix %}} was enhanced by several new features and modules and has seen a large number of improvements. In the following, an overview over the most important changes and new features is provided:
 <!--more-->
-
 
 ### New Module: CSADigitizer
 
@@ -22,7 +21,7 @@ The CSA with a Krummenacher feedback can be parametrized either by supplying inf
 
 While the response pulse can be stored as a graph, the ToA and ToT are determined and stored in the pixel hit. The latter is stored either in units of clock cycles of a user-defined clock or in units of nanoseconds, depending on the module configuration. For the determination of these values, the pulse and threshold polarity can be configured to be ignored. Furthermore, it is possible to store the integral of the pulse instead of the ToT value.
 
-## Respecting Charge Polarity
+#### Respecting Charge Polarity
 
 To enable proper handling of pulse polarities within the `CSADigitizer`, precedent objects had to be enhanced to carry information on the charge sign. This affects the objects `SensorCharge` and `PixelCharge`. Several modules were altered to maintain backwards compatibility.
 
@@ -42,9 +41,9 @@ All passive objects are visualized within the `VisualizationGeant4` module.
 
 Time is implemented as a proper fourth dimension. A global and a local reference for timestamps are introduced and, wherever applicable, global and local timestamps are stored.
 
-The global reference for time measurements is the beginning of the event, i.e. the start of the particle tracking through the setup. The local time reference is specific to a sensor and defined by the time of entry of the first primary particle of the event into the sensor. This means that secondary particles created within or outside the sensor inherit the local time reference from their parent particles in order to have a uniform time reference in the sensor.
+The global reference for time measurements is the beginning of the event, i.e. the start of the particle tracking through the setup. The local time reference is specific to a sensor and defined by the time of entry of the first primary particle of the event into the sensor. This means that secondary particles created within the sensor inherit the local time reference from their parent particles in order to have a uniform time reference in the sensor.
 
-All charge objects as well as the `MCParticle` and `PixelHit` objects are stored with a global and a local timestamp and are amended with corresponding getter functions. For all deposition modules except `DepositionGeant4` the time offsets are set to `0` if not defined otherwise and the module `DepositionReader` respects the rules above if time stamps for several `MCParticle` objects are given.
+All charge objects as well as the `MCParticle` and `PixelHit` objects are stored with a global and a local timestamp and are amended with corresponding getter functions. The modules `DepositionGeant4` and `DepositionReader` correctly respect these rules, where for the latter timestamps have to be provided within the input data. The simplified `DepositionPointCharge` module sets all local and global timestamps of deposited charges to `0`.
 
 In case of a defined `integration_time` for the charge carrier propagation as well as for the storage of `Pulse` objects, local timestamps are used.
 
@@ -71,61 +70,35 @@ The use of different passive object models is demonstrated in the example `passi
 
 ### Other Notable Features and Improvements
 
-* **Manual:** Corrected some typos and journal references
-* **Build system:**
-   * Detector models are now correctly installed again, git hooks have been corrected to properly detect tags, CMake regex escaping in test pass conditions has been improved.
-   * When checking for installed Git hooks, CMake now considers all and not just one.
-   * Update included third party software (Cereal, Octree).
-   * Require CMake version >= 3.6.3.
-   * Update docker image to recent stable versions of third party frameworks.
-* **CI:**
-   * Enable all modules for our Docker image build.
-   * Now completely moved to the latest LCG_98python3 release.
-   * New job for spell checking in code.
-   * Start timeout measurement for core, module and performance tests only once the event loop has been entered.
-   * Restrict Deployment Jobs to Main Repository.
-   * Use the _Direct Acyclic Graph_ feature of gitlab to run pipeline jobs in parallel.
-   * Update formatting to clang-format-10 and aplly new clang-tidy rules.
-* **Release tagging:** The pre-push hook now always prints on success to make sure we are properly tagging the release.
-* **Core:** Add multiple checks to catch corner cases with invalid input data:
-    * Initialize magnetic field to zero.
-    * Initialize ConfigManager to `nullptr`.
-    * Improve variable usage in ModuleManager.
-    * Avoid division by zero and always provide proper return codes in field tools.
-    * Initialize members of Pulse objects.
+* **Core:**
+    * Add multiple checks to catch corner cases with invalid input data.
     * ConfigManager now checks if config file really is a valid file and not a directory.
 * **Detector:** Allow for cylindrical holes in the support layer.
-* **Module CorryvreckanWriter:**
-    * Properly initialize MCParticle data members.
-    * Store the material budget in the output geometry.
-    * Fix memory leak.
+* **Module CorryvreckanWriter:** Store the material budget in the output geometry.
 * **Module DepositionGeant4:**
     * The energy of a photon is now deposited at the end of its path instead along its track.
     * Improve cutoff time for individual events, now affecting both particle decays and particle tracking. Renaming of the corresponding parameter to `cutoff_time`.
-    * Remove unnecessary dynamic casts when converting track information.
-    * Change integer cast for deposited charge calculation, which can lead to a differing number of charge carriers.
-    * The README now properly states that the source energy refers to the kinetic energy only.
 * **Module DepositionPointCharge:**
-    * Fix order of message dispatch (MCParticles first, DepositedCharges second), properly initialize data members, avoid division by zero in calculating deposition points.
-    *`model` is now a required parameter without default value.
+    * Fix order of message dispatch (MCParticles first, DepositedCharges second).
+    * `model` is now a required parameter without default value.
     * The `position` parameter now has `source_position` as alias to allow a more coherent syntax among deposition modules.
 * **Module DepositionReader:** Make reading in timestamps and Monte-Carlo particles optional.
-* **Module GeometryBuilderGeant4:** Properly override parametrization class from Geant4 instead of shadowing it.
-* **Module GenericPropagation:**
-    * Check return code of deleting animation files.
-    * Fix off-by-one error on axis labes for line graphs.
-* **Module DatabaseWriter:** Remove unused database index.
+* **Module GenericPropagation:** Fix off-by-one error on axis labes for line graphs.
 * **Module WeightingPotentialReader:** Use the correct pitch in 2D weighting potential plot.
 * **Module PulseTransfer:** New histograms for accumulated pulse shapes, as well as overall improved plotting and correct axis labels stating the current induced.
-* **Module TransientPropagation:** Correctly reflect module status "Functional" in README
 * **Module DetectorHistogrammer:** Add histograms for total cluster, pixel and event charge distributions as well as detector sized residual maps.
 * **Tools / MeshConverter:**
    * The TCAD MeshConverter tool now properly reports if a requested region is not found.
    * Prepared MeshConverter for the use of different input formats.
+* **Build system & CI:**
+   * Update included third party software (Cereal, Octree).
+   * Require CMake version >= 3.6.3.
+   * Now completely moved to the latest LCG_98python3 release.
+   * Use the _Direct Acyclic Graph_ feature of gitlab to run pipeline jobs in parallel.
+   * Update formatting to clang-format-10 and apply new clang-tidy rules.
 
 
 ## Development Visualization
 
-FIXME
 An updated version of the development visualized is provided below:
-{{< vimeo 346886738 >}}
+{{< vimeo 473420167 >}}
