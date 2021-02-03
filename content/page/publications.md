@@ -14,6 +14,14 @@ Nucl. Instr. Meth. A 964 (2020), [doi:10.1016/j.nima.2018.06.020](https://doi.or
 
 ## Workshops & Tutorials
 
+P. Schütze, S. Spannagel, [**Hands-On: Silicon Detector Monte-Carlo Simulations with Allpix Squared - Beginners**](https://indico.cern.ch/event/945675/contributions/4181048/),  
+9th Beam Telescopes and Test Beams Workshop,  
+*08-10 February 2021, Virtual*
+
+P. Schütze, S. Spannagel, [**Hands-On: Everything you would like to know about Allpix Squared - Advanced**](https://indico.cern.ch/event/945675/contributions/4181049/),  
+9th Beam Telescopes and Test Beams Workshop,  
+*08-10 February 2021, Virtual*
+
 D. Hynds, S. Spannagel, [**Hands-On: Silicon Detector Monte-Carlo Simulations with Allpix Squared**](https://indico.cern.ch/event/813822/contributions/3648304/),  
 8th Beam Telescopes and Test Beams Workshop,  
 *27-31 January 2020, Tbilisi, Georgia*
@@ -30,6 +38,10 @@ S. Spannagel, [**Hands-On: The Allpix Squared Simulation Framework**](https://in
 *16-19 January 2018, Zurich, Switzerland*
 
 ## Presentations
+
+S. Spannagel, [**What's new on Allpix Squared?**](https://indico.cern.ch/event/945675/contributions/4159534/),  
+9th Beam Telescopes and Test Beams Workshop,  
+*08-10 February 2021, Virtual*
 
 S. Spannagel, [**The Importance of Insight: Monte Carlo Simulations in Silicon Pixel Detector Development**](https://instrumentationseminar.desy.de/sites2009/site_instrumentationseminar/content/e70397/e282395/e289794/2019-08-09-DESY-Instrumentation-Seminar_MC-Si-Detectors.pdf),  
 DESY Joint Instrumentation Seminar,  
