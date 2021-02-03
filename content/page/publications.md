@@ -43,6 +43,14 @@ S. Spannagel, [**What's new on Allpix Squared?**](https://indico.cern.ch/event/9
 9th Beam Telescopes and Test Beams Workshop,  
 *08-10 February 2021, Virtual*
 
+P. Schütze, [**Status and Plans for Allpix Squared¶**](https://indico.cern.ch/event/984049/),  
+CERN EP R&D WP1.4 Meeting: Monolithic Sensor Simulations,  
+*16 December 2020, Virtual*
+
+S. Spannagel, [**The Allpix Squared Framework: New Developments**](https://indico.cern.ch/event/958135/contributions/4030964/),  
+CLIC Detector and Physics Collaboration,  
+*01 October 2020, Virtual*
+
 S. Spannagel, [**The Importance of Insight: Monte Carlo Simulations in Silicon Pixel Detector Development**](https://instrumentationseminar.desy.de/sites2009/site_instrumentationseminar/content/e70397/e282395/e289794/2019-08-09-DESY-Instrumentation-Seminar_MC-Si-Detectors.pdf),  
 DESY Joint Instrumentation Seminar,  
 *09 August 2019, DESY, Hamburg, Germany*
