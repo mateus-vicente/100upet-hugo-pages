@@ -43,7 +43,7 @@ S. Spannagel, [**What's new on Allpix Squared?**](https://indico.cern.ch/event/9
 9th Beam Telescopes and Test Beams Workshop,  
 *08-10 February 2021, Virtual*
 
-P. Schütze, [**Status and Plans for Allpix Squared¶**](https://indico.cern.ch/event/984049/),  
+P. Schütze, [**Status and Plans for Allpix Squared**](https://indico.cern.ch/event/984049/),  
 CERN EP R&D WP1.4 Meeting: Monolithic Sensor Simulations,  
 *16 December 2020, Virtual*
 
