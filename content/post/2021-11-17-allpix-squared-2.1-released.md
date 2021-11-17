@@ -1,6 +1,6 @@
 ---
 title: "Allpix Squared 2.1 Released"
-date: 2021-11-179T13:45:00+01:00
+date: 2021-11-17T13:45:00+01:00
 draft: false
 ---
 
