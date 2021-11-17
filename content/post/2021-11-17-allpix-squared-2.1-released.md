@@ -76,7 +76,7 @@ The version of {{% allpix %}} itself is reported more verbosely now, making use 
 
 ### Other Notable Features and Improvements
 
-* **Module: DetectorHistogrammer** We changed how the seed charge of clusters is calculated and plotted. Before, the pixel in which the truth MCParticle was found was designated the seed pixel. Now, the seed pixel is defined as the pixel in the cluster with the largest signal, more in coherence with analyses performed in the field. Also, the member methods of the `Cluster` class have been adapted to return the actual weighted cluster position in local coordinates instead of the fractional index position. THis makes the class robust for future changes in pixel shape and pixel matrix composition.
+* **Module: DetectorHistogrammer** We changed how the seed charge of clusters is calculated and plotted. Before, the pixel in which the truth MCParticle was found was designated the seed pixel. Now, the seed pixel is defined as the pixel in the cluster with the largest signal, more in coherence with analyses performed in the field. Also, the member methods of the `Cluster` class have been adapted to return the actual weighted cluster position in local coordinates instead of the fractional index position. This makes the class robust for future changes in pixel shape and pixel matrix composition.
 * **Manual:**
     * Updates to the required build flags of dependency libraries, mostly concerning C++17 and multithreading
     * Fixing a mistake in stating default rotation axis
