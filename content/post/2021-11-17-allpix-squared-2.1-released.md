@@ -18,20 +18,7 @@ The new version is also available as docker image in the [project's docker regis
 The new module called `DepositionCosmics` simulates cosmic ray particle shower distributions and their energy deposition in all sensors of the setup. The cosmic ray particle showers are simulated using the Cosmic-ray shower generator (CRY) [@cry], the generated particles are transported through the setup by Geant4. More detailed information about CRY can be found in its physics description [@cryphysics] and user manual [@crymanual].
 
 This module inherits functionality from the DepositionGeant4 modules and several of its parameters have their origin there.
-A detailed description of these configuration parameters can be found in the respective module documentation.
-The parameter `number_of_particles` here refers to full shower developments instead of individual particles, there can be multiple particles per shower.
-The deposited energy is converted into electron-hole pairs, the number of pairs created is calculated using the mean pair creation energy `charge_creation_energy`, fluctuations are modeled using a Fano factor `fano_factor` assuming Gaussian statistics.
-
-The coordinate system for this module defines the `z` axis orthogonal to the earth surface, pointing upwards.
-This means shower particles travel along the negative `z` axis and all detectors should be placed below the incidence plane at `z = 0`.
-The area on which incident particles will be simulated is automatically inferred from the total setup size, and the next larger set of tabulated data available is selected.
-Data are tabulated for areas of 1m, 3m, 10m, 30m, 100m, and 300m. Particles outside the selected window are dropped.
-
-The first shower particle arriving in the event has a timestamp of `0ns`, all subsequent particles of the same shower have the appropriate spacing in time.
-It should be noted that the time difference between the arrival of different particles of the same shower can amount up to hundreds of microseconds.
-If this behavior is not desired, all particle timestamps can be forced to `0ns` by enabling the `reset_particle_time` switch.
-
-The module is capable of fully exploiting the multithreading capabilities of {{% allpix %}} and provides reproducible outputs.
+It is capable of fully exploiting the multithreading capabilities of {{% allpix %}} and provides reproducible outputs.
 The surface area required for simulation of the cosmic shower is calculated automatically from the total size of the detector setup in the current simulation geometry.
 The tabulated reference data used by the CRY framework is downloaded at build time by CMake and placed in the build folder of {{% allpix %}}.
 
