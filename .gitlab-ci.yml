@@ -11,7 +11,7 @@ compilation:
     stage: compile
     tags:
         - docker
-    image: clicdp/cc7-base
+    image: gitlab-registry.cern.ch/sft/docker/centos7:latest
     before_script:
         - curl --silent -L https://github.com/gohugoio/hugo/releases/download/v0.55.4/hugo_0.55.4_Linux-64bit.tar.gz | tar zxf -
     script:
