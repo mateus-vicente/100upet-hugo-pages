@@ -4,7 +4,7 @@ date: 2022-02-28T11:43:13+01:00
 draft: false
 ---
 
-We are happy to announce a new stable feature release **{{% allpix %}} version 2.2** with a total of **105 commits** added to the repository by **three contributors** since version 2.1. The release tarball can be downloaded from the repository:
+We are happy to announce a new stable feature release **{{% allpix %}} version 2.2** with a total of **105 commits** added to the repository by **two contributors** since version 2.1. The release tarball can be downloaded from the repository:
 
 https://gitlab.cern.ch/allpix-squared/allpix-squared/tags/v2.2.0
 
