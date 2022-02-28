@@ -4,7 +4,7 @@ date: 2022-02-28T11:43:13+01:00
 draft: false
 ---
 
-We are happy to announce a new stable feature release **{{% allpix %}} version 2.2** with a total of **105 commits** added to the repository by **two contributors** since version 2.1. The release tarball can be downloaded from the repository:
+We are happy to announce a new stable feature release **{{% allpix %}} version 2.2** with a total of **123 commits** added to the repository by **two contributors** since version 2.1. The release tarball can be downloaded from the repository:
 
 https://gitlab.cern.ch/allpix-squared/allpix-squared/tags/v2.2.0
 
@@ -54,7 +54,8 @@ This makes it possible to also trace back secondary particles with respect to th
 * **Core**:
     * Interpretation of file paths now make use of `std::filesystem` methods wherever possible
 * **Mobility models**:
-    * Mobility models now make use of the parent module configuration instead of parsing individual para* **DetectorHistogrammer**:
+    * Mobility models now make use of the parent module configuration instead of parsing individual parameters
+* **DetectorHistogrammer**:
     * Restructuring of histogram storage by renaming and grouping histograms
 * **MeshConverter**:
     * Automatically determine dimensions of input mesh
