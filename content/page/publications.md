@@ -15,8 +15,8 @@ Nucl. Instr. Meth. A 964 (2020), [doi:10.1016/j.nima.2018.06.020](https://doi.or
 S. Spannagel and P. Schütze, [**Allpix Squared - Silicon Detector Monte Carlo Simulations for Particle Physics and Beyond**](https://arxiv.org/abs/2112.08642),  
 accepted for publication in J. Instr., [arXiv:2112.08642](https://arxiv.org/abs/2112.08642)
 
-R. Ballabriga et al., [**Transient Monte Carlo Simulations for the Optimisation and Characterisation of Monolithic Silicon Sensors**](https://arxiv.org/abs/2202.03221),  
-accepted for publication in Nucl. Instr. Meth. A, [arXiv:2202.03221](https://arxiv.org/abs/2202.03221)
+R. Ballabriga et al., [**Transient Monte Carlo Simulations for the Optimisation and Characterisation of Monolithic Silicon Sensors**](https://doi.org/10.1016/j.nima.2022.166491),  
+Nucl. Instr. Meth. A 1031 (2022) 166491, [doi:10.1016/j.nima.2022.166491](https://doi.org/10.1016/j.nima.2022.166491), [arXiv:2202.03221](https://arxiv.org/abs/2202.03221)
 
 Many publications employing {{% allpix %}} can be found [on InspireHEP](https://inspirehep.net/literature?sort=mostrecent&q=refersto%3Arecid%3A1678119).
 
