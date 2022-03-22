@@ -6,11 +6,18 @@ draft: false
 
 ## Reference Publications
 
-S. Spannagel et al., [**Allpix Squared: A modular simulation framework for silicon detectors**](https://doi.org/10.1016/j.nima.2018.06.020),  
+S. Spannagel et al., [**Allpix Squared: A modular simulation framework for silicon detectors**](https://doi.org/10.1016/j.nima.2018.06.020),
 Nucl. Instr. Meth. A 901 (2018) 164 – 172, [doi:10.1016/j.nima.2018.06.020](https://doi.org/10.1016/j.nima.2018.06.020), [arXiv:1806.05813](https://arxiv.org/abs/1806.05813)
 
 D. Dannheim et al., [**Combining TCAD and Monte Carlo methods to simulate CMOS pixel sensors with a small collection electrode using the Allpix Squared framework**](https://doi.org/10.1016/j.nima.2020.163784),  
-Nucl. Instr. Meth. A 964 (2020), [doi:10.1016/j.nima.2018.06.020](https://doi.org/10.1016/j.nima.2020.163784), [arXiv:1806.05813](https://arxiv.org/abs/2002.12602)
+Nucl. Instr. Meth. A 964 (2020), [doi:10.1016/j.nima.2018.06.020](https://doi.org/10.1016/j.nima.2020.163784), [arXiv:2002.12602](https://arxiv.org/abs/2002.12602)
+
+S. Spannagel and P. Schütze, [**Allpix Squared - Silicon Detector Monte Carlo Simulations for Particle Physics and Beyond**](https://arxiv.org/abs/2112.08642),  
+accepted for publication in J. Instr., [arXiv:2112.08642](https://arxiv.org/abs/2112.08642)
+
+R. Ballabriga et al., [**Transient Monte Carlo Simulations for the Optimisation and Characterisation of Monolithic Silicon Sensors**](https://arxiv.org/abs/2202.03221),  
+accepted for publication in Nucl. Instr. Meth. A, [arXiv:2202.03221](https://arxiv.org/abs/2202.03221)
+
 
 ## Workshops & Tutorials
 
@@ -38,6 +45,14 @@ S. Spannagel, [**Hands-On: The Allpix Squared Simulation Framework**](https://in
 *16-19 January 2018, Zurich, Switzerland*
 
 ## Presentations
+
+S. Spannagel, [**Allpix Squared - Silicon Detector Monte Carlo Simulations for Particle Physics and Beyond**](https://dpnc.unige.ch/seminaire/talks/2021_22_allPix.pdf),
+Université de Genève DPNC Seminar,
+*27 October 2021, Geneva, Switzerland*
+
+S. Spannagel, [**Allpix Squared - Silicon Detector Monte Carlo Simulations for Particle Physics and Beyond**](https://indico.cern.ch/event/797047/contributions/4455189/),
+12th International Conference on Position Sensitive Detectors,
+*17 September 2021, Birmingham, UK*
 
 S. Spannagel, [**What's new on Allpix Squared?**](https://indico.cern.ch/event/945675/contributions/4159534/),  
 9th Beam Telescopes and Test Beams Workshop,  
