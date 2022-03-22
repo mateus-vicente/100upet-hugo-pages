@@ -18,6 +18,7 @@ accepted for publication in J. Instr., [arXiv:2112.08642](https://arxiv.org/abs/
 R. Ballabriga et al., [**Transient Monte Carlo Simulations for the Optimisation and Characterisation of Monolithic Silicon Sensors**](https://arxiv.org/abs/2202.03221),  
 accepted for publication in Nucl. Instr. Meth. A, [arXiv:2202.03221](https://arxiv.org/abs/2202.03221)
 
+Many publications employing {{% allpix %}} can be found [on InspireHEP](https://inspirehep.net/literature?sort=mostrecent&q=refersto%3Arecid%3A1678119).
 
 ## Workshops & Tutorials
 
