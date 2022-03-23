@@ -29,40 +29,52 @@ The framework builds upon other packages to perform tasks in the simulation chai
 
 ## Development of {{% allpix %}}
 
-{{% allpix %}} has been developed and is maintained by:
+{{% allpix %}} is developed and maintained by
 
-* Koen Wolters, (CERN)
-* Daniel Hynds, Nikhef
 * Paul Schütze, DESY
 * Simon Spannagel, DESY
+* Koen Wolters
 
-The following authors, in alphabetical order, have contributed to {{% allpix %}}:
+The following authors, in alphabetical order, have developed or contributed to {{% allpix %}}:
 
-* Mohamed Moanis Ali, Free University of Bozen-Bolzano
+* Mohamed Moanis Ali, GSOC2019 Student
 * Mathieu Benoit, BNL
 * Thomas Billoud, Université de Montréal
 * Tobias Bisanz, CERN
+* Marco Bomben, Université de Paris
 * Koen van den Brandt, Nikhef
+* Carsten Daniel Burgard, DESY
+* Maximilian Felix Caspar, DESY
 * Liejian Chen, Institute of High Energy Physics Beijing
+* Manuel Alejandro Del Rio Viera, DESY
 * Katharina Dort, University of Gie\ss en
 * Neal Gauvin, Université de Genève
+* Lennart Huth, DESY
+* Daniel Hynds, University of Oxford
 * Maoqiang Jing, University of South China, Institute of High Energy Physics Beijing
 * Moritz Kiehn, Université de Genève
+* Rafaella Eleni Kotitsa, CERN
+* Stephan Lachnit, Heidelberg University
 * Salman Maqbool, CERN Summer Student
+* Stefano Mersi, CERN
+* Ryuji Moriya, CERN Summer Student, University of Glasgow
 * Sebastien Murphy, ETHZ
 * Andreas Matthias Nürnberg, KIT
+* Sebastian Pape, TU Dortmund University
 * Marko Petric, CERN
+* Radek Privara, Palacky University Olomouc
 * Nashad Rahman, The Ohio State University
 * Edoardo Rossi, DESY
 * Andre Sailer, CERN
 * Enrico Jr. Schioppa, Unisalento and INFN Lecce
+* Sebastian Schmidt, FAU Erlangen
+* Sanchit Sharma, Kansas State University
 * Xin Shi, Institute of High Energy Physics Beijing
+* Viktor Sonesten, GSOC2018 Student
+* Reem Taibah, Université de Paris
 * Ondrej Theiner, Charles University
+* Annika Vauth, University of Hamburg
 * Mateus Vicente Barreto Pinto, CERN
+* Håkan Wennlöf, DESY
 * Andy Wharton, Lancaster University
 * Morag Williams, University of Glasgow
-
-The original [AllPix](https://twiki.cern.ch/twiki/bin/view/Main/AllPix) has been developed by:
-
-* Mathieu Benoit, Université de Genève
-* John Idarraga, Leiden University
