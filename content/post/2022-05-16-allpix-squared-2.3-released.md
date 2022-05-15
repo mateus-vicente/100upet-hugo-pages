@@ -78,4 +78,6 @@ While the same effect can also be achieved using the `custom` mobility model, th
 * **Core / CI**:
     * A new CI target `fmt:cc7-llvm-lint-diff` allows to only run the linter tool `clang-tidy` on the difference of the merge request files with respect to the target branch. This reduces the average running time of the job from 40min to below 40sec.
     * An issue with the upload of testing results to the CI has been discovered and fixed.
-* **VisualizationGeant4**: A few issues in starting the Geant4 visualization have been resolved.
+* **VisualizationGeant4**: A few issues with the Geant4 visualization have been resolved, such as the segmentation violation often appearing when exiting the UI or the printing of Geant4 information to the terminal despite the log level excluding this.
+* **Python analysis example**: An additional check on the existence of the requested detector in simulation data has been added.
+* **Manual**: Several typos as well as a few labels in formulas have been corrected.
