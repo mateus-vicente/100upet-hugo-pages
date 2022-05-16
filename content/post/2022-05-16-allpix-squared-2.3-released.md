@@ -29,7 +29,6 @@ The selected material is checked against a list of known materials, which curren
 The material is used by the `GeometryBuilderGeant4` module to construct the correct sensor material for the simulation of the interaction with the incident radiation in Geant4.
 Furthermore, appropriate values for the charge creation (or ionization) energy as well as the Fano factor are used for the respective material.
 These values can be overwritten via the module configuration of the selected deposition module.
-These values can be overwritten via the module configuration of the selected deposition module.
 Mobility and recombination models are not selected automatically, but need to be configured by the user such that they properly describe the charge carrier behavior in the simulated sensor.
 
 An additional mobility model ("Ruch-Kino") specifically targeting Gallium Arsenide sensors has been added.
