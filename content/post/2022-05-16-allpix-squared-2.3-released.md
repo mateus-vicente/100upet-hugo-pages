@@ -29,11 +29,13 @@ The selected material is checked against a list of known materials, which curren
 The material is used by the `GeometryBuilderGeant4` module to construct the correct sensor material for the simulation of the interaction with the incident radiation in Geant4.
 Furthermore, appropriate values for the charge creation (or ionization) energy as well as the Fano factor are used for the respective material.
 These values can be overwritten via the module configuration of the selected deposition module.
+These values can be overwritten via the module configuration of the selected deposition module.
+Mobility and recombination models are not selected automatically, but need to be configured by the user such that they properly describe the charge carrier behavior in the simulated sensor.
 
-An additional mobility model ("Ruck-Kino") specifically targeting Gallium Arsenide sensors has been added, but neither mobility nor recombination models are automatically selected.
-These need to be configured by the user sch that they properly describe the charge carrier behavior in the simulated sensor.
+An additional mobility model ("Ruch-Kino") specifically targeting Gallium Arsenide sensors has been added.
 
 A dedicated section has been added to the user manual, describing the implemented models and parameters for all available sensor materials.
+New sections in the FAQ indicate required changes and caveats in the configuration when changing the sensor material, as well as guide through the addition of new sensor materials to the framework's source code.
 Additions to the sensor material list or the available mobility models are very welcome.
 
 In our last user workshop, [Petr Smolyanskiy presented](https://indico.cern.ch/event/1126306/contributions/4847038/) his Gallium-Arsenide simulations and also gave a brief introduction into what parameters need to be adjusted for running simulations with sensor materials other than silicon.
@@ -62,7 +64,7 @@ A more detailed description on this as well as all predefined models can be foun
 
 ### MeshConverter now supports Silvaco Fields
 
-The MeshConverter tool can now read and interpolate field data exported from the Silvaco TCAD tool.
+The `MeshConverter` tool can now read and interpolate field data exported from the Silvaco TCAD tool.
 It expects two separate files as input, specifying the field vertices and field values respectively, both 2D and 3D fields are supported.
 
 
