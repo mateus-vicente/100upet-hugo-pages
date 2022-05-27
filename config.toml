@@ -1,116 +1,129 @@
-baseURL = "https://project-allpix-squared.web.cern.ch/project-allpix-squared/"
-canonifyURLs = true
-languageCode = "en-us"
+# SPDX-FileCopyrightText: 2022 CERN and the Allpix Squared authors
+# SPDX-License-Identifier: CC-BY-4.0
+
+baseURL = "https://project-allpix-squared.web.cern.ch/"
 title = "Allpix Squared"
-DefaultContentLanguage = "en"
-theme = "beautifulhugo"
-pygmentsUseClasses = true
-pygmentCodeFences = true
+description = "Generic simulation framework for semiconductor detectors"
 
-[Params]
-  subtitle = "Generic Pixel Detector Simulation Framework"
-  commit = "https://gitlab.cern.ch/allpix-squared/allpix-squared-website/commit/"
-  logo = "img/logo_small.png"
-  favicon = "img/favicon.png"
+enableRobotsTXT = true
+enableGitInfo = false
 
-[Author]
-  name = "The Allpix Squared Authors"
-  email = "allpix.squared@cern.ch"
+theme = ["docsy"]
+contentDir = "content"
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
 
-[[menu.main]]
-    name = "News"
-    url = ""
-    weight = 1
+# Image processing configuration.
+[imaging]
+resampleFilter = "CatmullRom"
+quality = 75
+anchor = "smart"
 
-[[menu.main]]
-    identifier = "about"
-    name = "About"
-    weight = 2
+# Markdown settings
+[markup]
+defaultMarkdownHandler = 'goldmark'
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = true
 
-[[menu.main]]
-    parent = "about"
-    name = "Introduction"
-    url = "page/about/"
-    weight = 1
+[outputs]
+section = ["HTML", "RSS"]
 
-[[menu.main]]
-    parent = "about"
-    name = "Features"
-    url = "page/features/"
-    weight = 2
+[params]
+copyright = "The Allpix Squared Authors."
 
-[[menu.main]]
-    parent = "about"
-    name = "Publications"
-    url = "page/publications/"
-    weight = 3
+# First one is picked as the Twitter card image if not set on page.
+# images = ["images/project-illustration.png"]
 
-[[menu.main]]
-    parent = "about"
-    name = "Installation"
-    url = "page/installation/"
-    weight = 4
+# Menu title if your navbar has a versions selector to access old versions of your site.
+# This menu appears only if you have at least one [params.versions] set.
+version_menu = "Releases"
 
-[[menu.main]]
-    parent = "about"
-    name = "Screenshots"
-    url = "page/screenshots/"
-    weight = 5
+# Flag used in the "version-banner" partial to decide whether to display a
+# banner on every page indicating that this is an archived version of the docs.
+# Set this flag to "true" if you want to display the banner.
+archived_version = false
 
-[[menu.main]]
-    identifier = "doc"
-    name = "Documentation"
-    weight = 3
+# The version number for the version of the docs represented in this doc set.
+# Used in the "version-banner" partial to display a version number for the
+# current doc set.
+version = "latest-stable"
 
-[[menu.main]]
-    parent = "doc"
-    name = "Online User Manual"
-    url = "usermanual/allpix-manual.html"
-    weight = 1
+# A link to latest version of the docs. Used in the "version-banner" partial to
+# point people to the main doc site.
+url_latest_version = "https://project-allpix-squared.web.cern.ch/docs/"
 
-[[menu.main]]
-    parent = "doc"
-    name = "User Manual (PDF)"
-    url = "usermanual/allpix-manual.pdf"
-    weight = 2
+# Repository configuration (URLs for in-page links to opening issues and suggesting changes)
+#github_repo = "https://gitlab.cern.ch/allpix-squared/allpix-squared"
+# Specify a value here if you have would like to reference a different branch
+#github_branch = "master"
+# Specify a value here if your content directory is not in your repo's root directory
+#github_subdir = "doc/usermanual"
+# An optional link to a related project repo. For example, the sibling repository where your product code lives.
+#github_project_repo = "https://gitlab.cern.ch/allpix-squared/allpix-squared"
 
-[[menu.main]]
-    parent = "doc"
-    name = "Code Reference"
-    url = "reference"
-    weight = 3
+# Enable Lunr.js offline search
+offlineSearch = true
 
-[[menu.main]]
-    identifier = "resources"
-    name = "Help & Resources"
-    weight = 4
+# Enable syntax highlighting and copy buttons on code blocks with Prism
+# Used config: https://prismjs.com/download.html#themes=prism-tomorrow&languages=clike+bash+c+cpp+cmake+ini+yaml&plugins=autolinker+show-language+toolbar+copy-to-clipboard
+prism_syntax_highlighting = true
 
-[[menu.main]]
-    parent = "resources"
-    name = "Download releases"
-    url = "releases/"
-    weight = 1
+[params.ui]
+#  Set to true to disable breadcrumb navigation.
+breadcrumb_disable = false
+# Set to true to disable the About link in the site footer
+footer_about_disable = true
+# Set to false if you don't want to display a logo (/assets/icons/logo.svg) in the top navbar
+navbar_logo = false
+# Set to true if you don't want the top navbar to be translucent when over a `block/cover`, like on the homepage.
+navbar_translucent_over_cover_disable = false
+# Enable to show the side bar menu in its compact state.
+sidebar_menu_compact = true
+# Set to true to hide the sidebar search box (the top nav search box will still be displayed if search is enabled)
+sidebar_search_disable = false
+# Show expand/collapse icon for sidebar sections
+sidebar_menu_foldable = false
 
-[[menu.main]]
-    parent = "resources"
-    name = "Forum"
-    url = "https://cern.ch/allpix-squared-forum/"
-    weight = 2
+# Adds a H2 section titled "Feedback" to the bottom of each doc. The responses are sent to Google Analytics as events.
+# This feature depends on [services.googleAnalytics] and will be disabled if "services.googleAnalytics.id" is not set.
+# If you want this feature, but occasionally need to remove the "Feedback" section from a single page,
+# add "hide_feedback: true" to the page's front matter.
+[params.ui.feedback]
+enable = false
 
-[[menu.main]]
-    parent = "resources"
-    name = "✉ Mailing Lists"
+# Adds a reading time to the top of each doc.
+# If you want this feature, but occasionally need to remove the Reading time from a single page,
+# add "hide_readingtime: true" to the page's front matter
+[params.ui.readingtime]
+enable = false
+
+[params.links]
+# End user relevant links. These will show up on left side of footer and in the community page if you have one.
+[[params.links.user]]
+    name = "User Forum"
+    url = "https://allpix-squared-forum.web.cern.ch/"
+    icon = "fas fa-users"
+    desc = "Forum for questions and discussions"
+[[params.links.user]]
+    name = "Mailing lists"
     url = "https://e-groups.cern.ch/e-groups/EgroupsSearch.do?searchValue=allpix-squared"
-    weight = 3
-
-[[menu.main]]
-    parent = "resources"
-    name = "Repository"
+    icon = "fas fa-envelope"
+    desc = "CERN e-groups for Allpix Squared"
+# Developer relevant links. These will show up on right side of footer and in the community page if you have one.
+[[params.links.developer]]
+    name = "GitLab"
     url = "https://gitlab.cern.ch/allpix-squared/allpix-squared"
-    weight = 5
+    icon = "fab fa-gitlab"
+    desc = "Development takes place on the CERN GitLab"
+[[params.links.developer]]
+    name = "GitHub"
+    url = "https://github.com/allpix-squared/allpix-squared"
+    icon = "fab fa-github"
+    desc = "GitHub repository for people without a CERN account"
 
-[[menu.main]]
-    parent = "resources"
-    name = "Issue Tracker"
-    url = "https://gitlab.cern.ch/allpix-squared/allpix-squared/issues"
-    weight = 4
+# latex support in markdown
+[params.katex]
+enable = true
+[params.katex.mhchem]
+enable = true

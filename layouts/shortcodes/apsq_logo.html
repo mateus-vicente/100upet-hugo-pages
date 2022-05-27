@@ -1,0 +1,10 @@
+<style>
+.apsq-logo svg {
+    max-width: 80%;
+    width: auto;
+    height: auto;
+}
+</style>
+<span class="apsq-logo">
+{{ with resources.Get "icons/logo.svg" }}{{ ( . | minify).Content | safeHTML }}{{ end }}
+</span>
