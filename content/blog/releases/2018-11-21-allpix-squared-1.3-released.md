@@ -21,7 +21,7 @@ Allpix Squared now allows the usage of different electric field map sizes. Up ti
 
 As an example, it is very common to only simulate a quarter of a pixel unit cell in TCAD (half-pitch in both x and y direction). These fields can now be used by instantiating the ElectricFieldReader module with below configuration. The field is scaled into 0.5 of the pixel cell and mirrored at the border to satisfy periodic boundary conditions.
 
-```toml
+```ini
 [ElectricFieldReader]
 model = "init"
 field_scale = 0.5 0.5
@@ -29,7 +29,7 @@ field_scale = 0.5 0.5
 
 Another possibility is that the pixel implants and thus the electric field are different e.g. for even and odd columns of the chip. In this case, the full TCAD simulation would span multiple pixels, e.g. a 2x2 pixel grid. This field can now be used by setting:
 
-```toml
+```ini
 [ElectricFieldReader]
 model = "init"
 field_scale = 2.0 2.0
@@ -37,7 +37,7 @@ field_scale = 2.0 2.0
 
 Some TCAD simulations might have been performed from pixel center to pixel center instead of edge-to-edge. The parameter `field_offset` allows to shift the field by a certain amount, given in fractions of the pixel pitch. As an example, a field simulated with 4x1 pixels, center-to-center in x and edge-to-edge in y could then be used with:
 
-```toml
+```ini
 [ElectricFieldReader]
 model = "init"
 field_scale = 4.0 1.0
@@ -46,7 +46,7 @@ field_offset = 0.5 0.0
 
 The resulting field within one pixel cell is shown in the following image, without any setting, with just scaling, and with scaling and offset applied:
 
-{{< figure src="/img/field_scaling.png">}}
+{{< figure src="/img/blog/field_scaling.png">}}
 
 More information can be found in the manual and the [corresponding merge request !168](https://gitlab.cern.ch/allpix-squared/allpix-squared/merge_requests/168).
 
@@ -60,7 +60,7 @@ Currently, the following radioactive isotopes are supported: `Fe55`, `Am241`, `S
 
 Ions can be used as particles by setting their atomic properties, i.e. the atomic number Z, the atomic mass A, their charge Q and the excitation energy E via the following syntax:
 
-```toml
+```ini
 [DepositionGeant4]
 particle_type = "ion/Z/A/Q/E"
 ```
@@ -105,7 +105,7 @@ For this propose, the DetectorHistogrammer has previously provided a few histogr
 With version 1.3, the module significantly extends this analysis. It uses the Monte Carlo truth information available to calculate several observables such as residuals, efficiency or cluster charge, both as 1D distribution as well as 2D histogram, mapping the dependence of the observable as a function of the in-pixel impact position of the primary Monte Carlo particle.
 An example showing the cluster size distribution and the in-pixel map for the same quantity is shown below.
 
-{{< figure src="/img/histogrammer.png">}}
+{{< figure src="/img/blog/histogrammer.png">}}
 
 A "track resolution" can be specified via the module configuration, with which the known true Monte Carlo particle position is smeared in order to reproduce the effect of reference tracks with known position uncertainty.
 
