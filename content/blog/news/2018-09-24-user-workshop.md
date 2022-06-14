@@ -14,4 +14,4 @@ The workshop will consist of an introductory tutorial, a question and answer ses
 We kindly ask you to **register for the event**. The registration form can be found on the [Indico page of the event](https://indico.cern.ch/event/738283/), the poster can be downloaded as PDF from [here](/pdf/apsq-workshop-poster.pdf).
 
 
-{{< figure src="/img/apsq-workshop-poster.png">}}
+{{< figure src="/img/blog/apsq-workshop-poster.png">}}

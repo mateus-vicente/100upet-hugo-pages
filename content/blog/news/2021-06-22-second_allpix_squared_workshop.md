@@ -14,5 +14,5 @@ We kindly ask you to **register** through the [Indico page of the event](https:/
 The poster of the event can be downloaded [here](/pdf/apsq_workshop_2_poster.pdf).
 
 
-{{< figure src="/img/apsq_workshop_2_poster.png">}}
+{{< figure src="/img/blog/apsq_workshop_2_poster.png">}}
 
