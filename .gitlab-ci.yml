@@ -114,7 +114,6 @@ hugo:
         - cp upstream/artifacts/latest/allpix-manual.pdf static/usermanual/allpix-manual-latest.pdf
         # Build with hugo
         - hugo
-        - cp .htaccess public
         # Copy Doxygen
         - cp -r upstream/artifacts/latest/reference public/
     artifacts:
@@ -123,24 +122,23 @@ hugo:
         expire_in: 1 hour
 
 
-#################
-# Deploy to EOS #
-#################
+##########################
+# Deploy to GitLab pages #
+##########################
 
-deployment:
+pages:
     stage: deploy
     only:
-      - master
-    # Custom docker image providing the needed tools to deploy in EOS
-    image: gitlab-registry.cern.ch/ci-tools/ci-web-deployer:latest
+      - p/docsy  # FIXME: change to master
+      - pipelines
     needs:
         - job: hugo
           artifacts: true
     variables:
-        GIT_STRATEGY: none
-        EOS_PATH: "/eos/project/a/allpix-squared/www/"
+        GIT_STRATEGY: fetch
     script:
-        - deploy-eos
-    # do not run any globally defined before_script or after_script for this step
-    before_script: []
-    after_script: []
+        - cp .htaccess public
+    artifacts:
+        paths:
+            - public
+        expire_in: 1 hour
