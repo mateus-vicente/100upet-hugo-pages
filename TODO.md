@@ -15,6 +15,7 @@
 * Check if we need `canonifyURLs = true`
 * Merge this branch into a testing branch, create commit for deploying testing branch w/ in test EOS subdir
 * Make the CI work on tag push
+* Redirects from old URL
 
 ### For the future:
 
