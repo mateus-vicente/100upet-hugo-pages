@@ -93,11 +93,11 @@
 # Website Compilation #
 #######################
 
-hugo:
-    stage: build-hugo
-    tags:
-        - docker
-    image: klakegg/hugo:ext-debian-ci
+#hugo:
+#    stage: build-hugo
+#    tags:
+#        - docker
+#    image: klakegg/hugo:ext-debian-ci
 #    needs:
 #        - job: doxygen
 #          artifacts: true
@@ -105,21 +105,21 @@ hugo:
 #          artifacts: true
 #        - job: usermanual-pdf
 #          artifacts: true
-    variables:
-        GIT_SUBMODULE_STRATEGY: recursive
+#    variables:
+#        GIT_SUBMODULE_STRATEGY: recursive
 #    script:
 #        # Copy Markdown sources to source tree
 #        - cp -r upstream/artifacts/latest/usermanual_hugo/* content/docs/
 #        # Copy PDF to static
 #        - cp upstream/artifacts/latest/allpix-manual.pdf static/usermanual/allpix-manual-latest.pdf
-        # Build with hugo
-        - hugo
+#        # Build with hugo
+#        - hugo
 #        # Copy Doxygen
 #        - cp -r upstream/artifacts/latest/reference public/
-    artifacts:
-        paths:
-            - public
-        expire_in: 1 hour
+#    artifacts:
+#        paths:
+#            - public
+#        expire_in: 1 hour
 
 
 ##########################
