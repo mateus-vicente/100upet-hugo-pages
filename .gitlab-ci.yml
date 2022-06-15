@@ -1,40 +1,144 @@
-variables:
-    EOS_PATH: "/eos/project/a/allpix-squared/www/"
-    GIT_SUBMODULE_STRATEGY: recursive
-    GIT_SSL_NO_VERIFY: "true"
+# SPDX-FileCopyrightText: 2022 CERN and the Allpix Squared authors
+# SPDX-License-Identifier: MIT
 
 stages:
-    - compile
+    - prepare
+    - build-artifacts
+    - build-hugo
     - deploy
 
-compilation:
-    stage: compile
+
+#####################################
+# Prepare Documentation Compilation #
+#####################################
+
+clone-repo:
+    stage: prepare
     tags:
         - docker
     image: gitlab-registry.cern.ch/sft/docker/centos7:latest
-    before_script:
-        - curl --silent -L https://github.com/gohugoio/hugo/releases/download/v0.55.4/hugo_0.55.4_Linux-64bit.tar.gz | tar zxf -
+    variables:
+        GIT_STRATEGY: none
+        UPSTREAM_GIT_REPO: "https://gitlab.cern.ch/allpix-squared/allpix-squared.git"
     script:
-        - source .gitlab-ci.d/init_x86_64.sh
-        - export GIT_COMMIT_SHA=`git rev-parse --verify HEAD`
-        - export GIT_COMMIT_SHA_SHORT=`git rev-parse --short HEAD`
-        - ./hugo
-        - cp .htaccess public
-    # Generation of website
+        - mkdir -p upstream
+        - cd upstream
+        - git clone $UPSTREAM_GIT_REPO repo
+        - cd repo
+        - git checkout master # FIXME: for deployment checkout latest tag
+        - git tag > ../taglist.txt  # FIXME: for versioning split in different lists depending on build command
+    artifacts:
+        paths:
+            - upstream
+        expire_in: 1 hour
+
+
+#############################
+# Documentation Compilation #
+#############################
+
+.artifacts:
+    stage: build-artifacts
+    needs:
+        - job: clone-repo
+          artifacts: true
+    tags:
+        - docker
+    variables:
+        GIT_STRATEGY: none
+    artifacts:
+        paths:
+            - upstream
+        expire_in: 1 hour
+    before_script:
+        - cd upstream
+        - mkdir -p artifacts/latest
+        - cd repo
+
+# Compile Doxygen reference
+doxygen:
+    extends: .artifacts
+    image: gitlab-registry.cern.ch/sft/docker/centos7:latest
+    script:
+        - source .ci/init_x86_64.sh
+        - mkdir build-latest && cd build-latest
+        - cmake -GNinja -DBUILD_DOCS_ONLY=ON ..
+        - ninja apsq_docs_reference
+        - mv doc/reference/html ../../artifacts/latest/reference
+
+# Create file tree for hugo
+usermanual-hugo:
+    extends: .artifacts
+    image: gitlab-registry.cern.ch/sft/docker/centos7:latest
+    script:
+        - source .ci/init_x86_64.sh
+        - mkdir build-latest && cd build-latest
+        - cmake -GNinja -DBUILD_DOCS_ONLY=ON ..
+        - ninja apsq_docs_hugo
+        - mv doc/usermanual_hugo  ../../artifacts/latest/usermanual_hugo
+
+# Compile LaTeX user manual:
+usermanual-pdf:
+    extends: .artifacts
+    image: thomasweise/docker-texlive-full:latest
+    script:
+        - apt update && apt install -y cmake ninja-build python3-yaml pandoc
+        - mkdir build-latest && cd build-latest
+        - cmake -GNinja -DBUILD_DOCS_ONLY=ON ..
+        - ninja apsq_docs_pdf
+        - mv doc/usermanual_pdf/allpix-manual.pdf ../../artifacts/latest/
+
+
+#######################
+# Website Compilation #
+#######################
+
+hugo:
+    stage: build-hugo
+    tags:
+        - docker
+    image: klakegg/hugo:ext-debian-ci
+    needs:
+        - job: doxygen
+          artifacts: true
+        - job: usermanual-hugo
+          artifacts: true
+        - job: usermanual-pdf
+          artifacts: true
+    variables:
+        GIT_SUBMODULE_STRATEGY: recursive
+    script:
+        # Copy Markdown sources to source tree
+        - cp -r upstream/artifacts/latest/usermanual_hugo/* content/docs/
+        # Copy PDF to static
+        - cp upstream/artifacts/latest/allpix-manual.pdf static/usermanual/allpix-manual-latest.pdf
+        # Build with hugo
+        - hugo
+        # Copy Doxygen
+        - cp -r upstream/artifacts/latest/reference public/
     artifacts:
         paths:
             - public
         expire_in: 1 hour
 
-# Deploy to EOS folder
-deployment:
+
+##########################
+# Deploy to GitLab pages #
+##########################
+
+pages:
     stage: deploy
     only:
-      - master
-    # Custom docker image providing the needed tools to deploy in EOS
-    image: gitlab-registry.cern.ch/ci-tools/ci-web-deployer:latest
+      - p/docsy  # FIXME: change to master
+      - pipelines
+    needs:
+        - job: hugo
+          artifacts: true
+    variables:
+        GIT_STRATEGY: fetch
     script:
-        - deploy-eos
-    # do not run any globally defined before_script or after_script for this step
-    before_script: []
-    after_script: []
+        - cp .htaccess public
+    artifacts:
+        paths:
+            - public
+        expire_in: 1 hour
