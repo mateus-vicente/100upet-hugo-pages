@@ -131,9 +131,9 @@ pages:
     only:
       - master  # FIXME: change to master
 #      - pipelines
-    needs:
-        - job: hugo
-          artifacts: true
+#    needs:
+#        - job: hugo
+#          artifacts: true
     variables:
         GIT_STRATEGY: fetch
     script:
