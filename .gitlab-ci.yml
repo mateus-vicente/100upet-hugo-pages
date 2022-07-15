@@ -128,6 +128,9 @@
 
 pages:
     stage: deploy
+    tags:
+        - docker
+    image: klakegg/hugo:ext-debian-ci
     only:
       - master  # FIXME: change to master
 #      - pipelines
@@ -135,9 +138,9 @@ pages:
 #        - job: hugo
 #          artifacts: true
     variables:
-        GIT_STRATEGY: fetch
+        GIT_SUBMODULE_STRATEGY: recursive
     script:
-        - cp .htaccess public
+        - hugo
     artifacts:
         paths:
             - public
