@@ -1,9 +1,9 @@
 # SPDX-FileCopyrightText: 2022 CERN and the Allpix Squared authors
 # SPDX-License-Identifier: CC-BY-4.0
 
-baseURL = "https://allpix-squared-test.docs.cern.ch/"  # FIXME: change to proper URL
-title = "Allpix Squared"
-description = "Generic simulation framework for semiconductor detectors"
+baseURL = "https://100upet-specifications.docs.cern.ch"  # FIXME: change to proper URL
+title = "100µPET"
+description = "Molecular Imaging at Ultra-High Resoluiton"
 
 enableRobotsTXT = true
 enableGitInfo = false
@@ -30,7 +30,7 @@ unsafe = true
 section = ["HTML", "RSS"]
 
 [params]
-copyright = "The Allpix Squared Authors."
+copyright = "The 100µPET collaboration."
 
 # First one is picked as the Twitter card image if not set on page.
 # images = ["images/project-illustration.png"]
