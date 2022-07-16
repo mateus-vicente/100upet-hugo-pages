@@ -63,6 +63,10 @@ offlineSearch = true
 # Enable syntax highlighting and copy buttons on code blocks with Prism
 prism_syntax_highlighting = true
 
+# Comment out if you don't want the "print entire section" link enabled.
+[outputs]
+section = ["HTML", "print", "RSS"]
+
 [params.ui]
 #  Set to true to disable breadcrumb navigation.
 breadcrumb_disable = false
