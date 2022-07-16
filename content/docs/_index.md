@@ -7,9 +7,6 @@ menu:
     weight: 40
 ---
 
-**This is the online version of the documentation. To download the PDF version
-[click here](/usermanual/allpix-manual-latest.pdf).**
-
 # Introduction
 
 This document is meant to help as a guide line for the design of the 100µPET ASIC. This monolithic pixel detector ASIC must be **noise-free**, and operate with its complete thickness of 250 µm fully depleted (hence, a wafer with high substrate resistivity will be used).
@@ -67,10 +64,7 @@ Possible to still wire-bond? ---> Yes, NiAu electroplating finishing (IZM)\
 Delivery time? ---> 3-4 months (IZM)\
 Cost? ---> >20 kCHF (IZM)
 
-## ASIC specification table
+**This is the online version of the documentation. To download the PDF version
+[click here](/usermanual/allpix-manual-latest.pdf).**
 
-[Specifications table](specs\_table.md)
 
-## TODO section
-
-[TODO list](specs\_table.md)
