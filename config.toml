@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2022 CERN and the Allpix Squared authors
 # SPDX-License-Identifier: CC-BY-4.0
 
-baseURL = "https://100upet-specifications.docs.cern.ch"  # FIXME: change to proper URL
+baseURL = "https://100upet-specifications.docs.cern.ch/en"  # FIXME: change to proper URL
 title = "100µPET"
 description = "Molecular Imaging at Ultra-High Resoluiton"
 
@@ -9,7 +9,7 @@ enableRobotsTXT = true
 enableGitInfo = false
 
 theme = ["docsy"]
-contentDir = "content"
+contentDir = "content/en"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
 
@@ -43,12 +43,12 @@ version_menu = "Releases"
 # Flag used in the "version-banner" partial to decide whether to display a
 # banner on every page indicating that this is an archived version of the docs.
 # Set this flag to "true" if you want to display the banner.
-archived_version = false
+archived_version = true
 
 # The version number for the version of the docs represented in this doc set.
 # Used in the "version-banner" partial to display a version number for the
 # current doc set.
-version = "latest-stable"
+version = "1.0"
 
 # A link to latest version of the docs. Used in the "version-banner" partial to
 # point people to the main doc site.
@@ -73,7 +73,7 @@ breadcrumb_disable = false
 # Set to true to disable the About link in the site footer
 footer_about_disable = true
 # Set to false if you don't want to display a logo (/assets/icons/logo.svg) in the top navbar
-navbar_logo = false
+navbar_logo = true
 # Set to true if you don't want the top navbar to be translucent when over a `block/cover`, like on the homepage.
 navbar_translucent_over_cover_disable = false
 # Enable to show the side bar menu in its compact state.
@@ -81,20 +81,20 @@ sidebar_menu_compact = true
 # Set to true to hide the sidebar search box (the top nav search box will still be displayed if search is enabled)
 sidebar_search_disable = false
 # Show expand/collapse icon for sidebar sections
-sidebar_menu_foldable = false
+sidebar_menu_foldable = true
 
 # Adds a H2 section titled "Feedback" to the bottom of each doc. The responses are sent to Google Analytics as events.
 # This feature depends on [services.googleAnalytics] and will be disabled if "services.googleAnalytics.id" is not set.
 # If you want this feature, but occasionally need to remove the "Feedback" section from a single page,
 # add "hide_feedback: true" to the page's front matter.
 [params.ui.feedback]
-enable = false
+enable = true
 
 # Adds a reading time to the top of each doc.
 # If you want this feature, but occasionally need to remove the Reading time from a single page,
 # add "hide_readingtime: true" to the page's front matter
 [params.ui.readingtime]
-enable = false
+enable = true
 
 [params.links]
 # End user relevant links. These will show up on left side of footer and in the community page if you have one.
