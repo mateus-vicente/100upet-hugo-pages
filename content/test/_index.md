@@ -1,6 +1,6 @@
 +++
 title: "test234"
-type: "docs"
+type = "docs"
 #menu:
 #main:
 weight: 60
