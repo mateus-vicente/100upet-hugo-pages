@@ -55,8 +55,7 @@ version = "latest-stable"
 url_latest_version = "https://project-allpix-squared.web.cern.ch/docs/"
 
 # Custom repository configuration
-gitlab_project_repo = "https://gitlab.cern.ch/allpix-squared/allpix-squared"
-gitlab_website_repo = "https://gitlab.cern.ch/allpix-squared/allpix-squared-website"
+gitlab_repo = "https://gitlab.cern.ch/mupet/100upet-hugo-pages"
 
 # Enable Lunr.js offline search
 offlineSearch = true
