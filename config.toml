@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2022 CERN and the Allpix Squared authors
 # SPDX-License-Identifier: CC-BY-4.0
 
-baseURL = "https://100upet-specifications.docs.cern.ch/en"  # FIXME: change to proper URL
+baseURL = "https://100upet-specifications.docs.cern.ch/"  # FIXME: change to proper URL
 title = "100µPET"
 description = "Molecular Imaging at Ultra-High Resoluiton"
 
@@ -11,7 +11,7 @@ enableGitInfo = false
 theme = ["docsy"]
 contentDir = "content"
 defaultContentLanguage = "en"
-defaultContentLanguageInSubdir = true
+defaultContentLanguageInSubdir = false
 
 # Image processing configuration.
 [imaging]
