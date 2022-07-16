@@ -58,6 +58,8 @@ url_latest_version = "https://project-allpix-squared.web.cern.ch/docs/"
 #gitlab_project_repo = "https://gitlab.cern.ch/allpix-squared/allpix-squared"
 #gitlab_website_repo = "https://gitlab.cern.ch/allpix-squared/allpix-squared-website"
 github_repo = "https://gitlab.cern.ch/mupet/100upet-hugo-pages"
+github_project_repo = "https://gitlab.cern.ch/mupet/allpix2_simulation"
+github_branch = "master"
 
 # Enable Lunr.js offline search
 offlineSearch = true
