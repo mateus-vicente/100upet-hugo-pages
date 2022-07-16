@@ -1,4 +1,4 @@
 ---
-title: "News"
+title: "The Project"
 weight: 10
 ---
