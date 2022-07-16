@@ -11,7 +11,7 @@ enableGitInfo = false
 theme = ["docsy"]
 contentDir = "content"
 defaultContentLanguage = "en"
-defaultContentLanguageInSubdir = false
+defaultContentLanguageInSubdir = true
 
 # Image processing configuration.
 [imaging]
