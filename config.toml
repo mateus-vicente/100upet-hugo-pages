@@ -9,7 +9,7 @@ enableRobotsTXT = true
 enableGitInfo = false
 
 theme = ["docsy"]
-contentDir = "content/en"
+contentDir = "content"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
 
