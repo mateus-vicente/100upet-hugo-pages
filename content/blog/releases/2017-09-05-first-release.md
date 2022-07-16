@@ -33,5 +33,5 @@ In addition to the well-documented code and this website with a few [examples an
 
 Please share your opinion, experience, issues with us - either via e-mail or the issue tracker of the repository. Contributions from your side are very welcome, and we already have a long list of potential features to be added in the future.
 
-Best regards,   
+Best regards,
 Koen Wolters, Daniel Hynds, Simon Spannagel
