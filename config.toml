@@ -9,9 +9,24 @@ enableRobotsTXT = true
 enableGitInfo = false
 
 theme = ["docsy"]
-contentDir = "content"
+contentDir = "content/en"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
+
+[languages]
+[languages.en]
+title = "100µPET en"
+description = "100µPET in english"
+languageName ="English"
+# Weight used for sorting.
+weight = 1
+[languages.fr]
+title = "100µPET fr"
+description = "100µPET en francais"
+languageName ="French"
+contentDir = "content/fr"
+time_format_default = "02.01.2006"
+time_format_blog = "02.01.2006"
 
 # Image processing configuration.
 [imaging]
