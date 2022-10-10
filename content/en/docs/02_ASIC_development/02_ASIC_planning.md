@@ -34,7 +34,7 @@ From 07.10.2022
     - Full cluster charge?
     - No Charge?
 
-{{% alert title="Warning" color="Warning" %}}
+{{% alert title="Note" color="Note" %}}
 Prepare minimum specifications of two versions : Charge readout / no charge readout .
 For 20th October
 Decision to take between the two by 27 October??
@@ -45,10 +45,13 @@ Decision to take between the two by 27 October??
     - CMOS or BJT?
     - Auto zeros
         - **Priority 1 Thanu. Dead line TBD, long task**
+
 [ ] Total variation data transmission time top to bottom for Faser (Measurement). Plus simulation (Monolith)
     - **Priority 1 Lorenzo and Antonio Deadline 20 October**
+
 [ ] Measure power of ACF
     - **Priority 1 Luca/Mateus Dead Line ASAP**
+
 [ ] Evaluate Calibration time
     - **Priority 1 Roberto Dead Line 20 October**
 [ ] Matrix placement distribution (Lorenzo)
