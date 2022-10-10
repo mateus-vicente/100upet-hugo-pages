@@ -41,19 +41,19 @@ Decision to take between the two by 27 October??
 {{% /alert %}}
 
 ## TASK list
-- [ ] Charge Threshold calibration. Target 3000 e threshold, evaluate mismatch and calculate time for calibration
+[ ] Charge Threshold calibration. Target 3000 e threshold, evaluate mismatch and calculate time for calibration
     - CMOS or BJT?
     - Auto zeros
         - ** Priority 1 Thanu. Dead line TBD, long task **
-- [ ] Total variation data transmission time top to bottom for Faser (Measurement). Plus simulation (Monolith)
+[ ] Total variation data transmission time top to bottom for Faser (Measurement). Plus simulation (Monolith)
     - **Priority 1 Lorenzo and Antonio Deadline 20 October**
-- [ ] Measure power of ACF
+[ ] Measure power of ACF
     - **Priority 1 Luca/Mateus Dead Line ASAP**
-- [ ] Evaluate Calibration time
+[ ] Evaluate Calibration time
     - **Priority 1 Roberto Dead Line 20 October**
-- [ ] Matrix placement distribution (Lorenzo)
+[ ] Matrix placement distribution (Lorenzo)
     - **Priority 2 Lorenzo Dead line TBD**
-- [ ] I/Os: Faser case TASK : evaluate the PET case and evaluate
+[ ] I/Os: Faser case TASK : evaluate the PET case and evaluate
     - 3 chip ID
     - 6 Trigger Fast for debugging (Test Only)
     - 2 trigger slow (Test only)
@@ -66,15 +66,15 @@ Decision to take between the two by 27 October??
     - 2 Reset
         - Introduce a read from SPI
             - **Priority 2  Roberto / Lorenzo**
-- [ ] Power Domain evaluation: DRAW A POWER SCHEMA
+[ ] Power Domain evaluation: DRAW A POWER SCHEMA
     - BJT analog / digital / threshold
     - CMOS analog /digital
         - **Priority 2 Antonio Deadline TBD**
-- [ ] 125um +125 um pitch : Evaluate voltage drop and PADS multiplicity
+[ ] 125um +125 um pitch : Evaluate voltage drop and PADS multiplicity
     - 11ohm  resistance super column. 20mA of digital
     - Target is to have a pad at least one pad of 20mA
         - **Priority 2 Lorenzo / Roberto  Deadline TBD**
-- [ ] Evaluate Chip to Chip communication
+[ ] Evaluate Chip to Chip communication
     - **Priority 3 not assigned**
-- [ ] Introduce GITlab task system:
+[ ] Introduce GITlab task system:
     - **Background task Thanu**
