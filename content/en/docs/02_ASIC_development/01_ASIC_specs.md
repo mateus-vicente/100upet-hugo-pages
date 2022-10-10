@@ -6,8 +6,3 @@ weight: 1
 ---
 
 ## ASIC details
-
-```sh
-git clone https://gitlab.cern.ch/allpix-squared/allpix-squared
-cd allpix-squared
-```
