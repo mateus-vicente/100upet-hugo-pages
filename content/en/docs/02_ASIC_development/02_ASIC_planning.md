@@ -44,7 +44,7 @@ Decision to take between the two by 27 October??
 [ ] Charge Threshold calibration. Target 3000 e threshold, evaluate mismatch and calculate time for calibration
     - CMOS or BJT?
     - Auto zeros
-        - ** Priority 1 Thanu. Dead line TBD, long task **
+        - **Priority 1 Thanu. Dead line TBD, long task**
 [ ] Total variation data transmission time top to bottom for Faser (Measurement). Plus simulation (Monolith)
     - **Priority 1 Lorenzo and Antonio Deadline 20 October**
 [ ] Measure power of ACF
