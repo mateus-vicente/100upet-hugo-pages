@@ -15,13 +15,13 @@ defaultContentLanguageInSubdir = false
 
 [languages]
 [languages.en]
-title = "100µPET en"
+title = "100µPET"
 description = "100µPET in english"
 languageName ="English"
 # Weight used for sorting.
 weight = 1
 [languages.fr]
-title = "100µPET fr"
+title = "100µPET"
 description = "100µPET en francais"
 languageName ="French"
 contentDir = "content/fr"

@@ -1,11 +1,11 @@
 ---
-# SPDX-FileCopyrightText: 2022 CERN and the Allpix Squared authors
+# SPDX-FileCopyrightText: 2022 100µPET
 # SPDX-License-Identifier: CC-BY-4.0
-title: "Supported Operating Systems and Compilers"
+title: "ASIC specifications"
 weight: 1
 ---
 
-## Operating Systems
+## ASIC details
 
 ```sh
 git clone https://gitlab.cern.ch/allpix-squared/allpix-squared

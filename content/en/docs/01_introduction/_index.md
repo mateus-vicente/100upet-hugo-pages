@@ -1,5 +1,5 @@
 ---
-# SPDX-FileCopyrightText: 2022 100µOET
+# SPDX-FileCopyrightText: 2022 100µPET
 # SPDX-License-Identifier: CC-BY-4.0
 title: "Introduction"
 description: "Introduction to the 100µPET project."
