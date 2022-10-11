@@ -34,6 +34,12 @@ From 07.10.2022
     - Full cluster charge?
     - No Charge?
 
+{{% alert title="Warning" color="warning" %}}
+Prepare minimum specifications of two versions : Charge readout / no charge readout .
+For 20th October
+Decision to take between the two by 27 October??
+{{% /alert %}}
+
 > ⚠️ **Prepare minimum specifications of two versions : Charge readout / no charge readout .
 For 20th October
 Decision to take between the two by 27 October??**
