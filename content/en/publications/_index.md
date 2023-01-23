@@ -16,7 +16,7 @@ menu:
 # Reference Publications
 
 The 100uPET project: A small-animal PET scanner for ultra-high resolution molecular imaging with monolithic silicon pixel detectors  
-[Nuclear Inst. and Methods in Physics Research, A 1048 (2023) 167952]([http://dpnc.unige.ch/THESES/THESE_HAYAKAWA.pdf](https://doi.org/10.1016/j.nima.2022.167952)
+[Nuclear Inst. and Methods in Physics Research, A 1048 (2023) 167952](https://doi.org/10.1016/j.nima.2022.167952)
 
 Demonstrator chip achieved target performance  
 P. Valerio et al., JINST 14 (P07013) (2018)  
