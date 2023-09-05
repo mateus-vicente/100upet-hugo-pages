@@ -4,11 +4,8 @@
 title: "Publications"
 menu:
   main:
-    weight: 20
+    weight: 30
 ---
-
-{{< blocks/cover title="Publications" height="auto" >}}
-{{< /blocks/cover >}}
 
 
 {{% blocks/section type="section" color="white" %}}
