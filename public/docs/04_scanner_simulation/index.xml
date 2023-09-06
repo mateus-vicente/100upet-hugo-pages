@@ -1,0 +1,192 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home – Scanner simulation</title>
+    <link>https://100upet-specifications.docs.cern.ch/docs/04_scanner_simulation/</link>
+    <description>Recent content in Scanner simulation on Home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://100upet-specifications.docs.cern.ch/docs/04_scanner_simulation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Configuration Files</title>
+      <link>https://100upet-specifications.docs.cern.ch/docs/04_scanner_simulation/01_configuration_files/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://100upet-specifications.docs.cern.ch/docs/04_scanner_simulation/01_configuration_files/</guid>
+      <description>
+        
+        
+        &lt;p&gt;The framework is configured with simple human-readable configuration files. The configuration format is described in detail
+in &lt;a href=&#34;../../04_framework/03_configuration#file-format&#34;&gt;Section 4.3&lt;/a&gt;. It consists of several section headers within &lt;code&gt;[&lt;/code&gt; and &lt;code&gt;]&lt;/code&gt;
+brackets, and a section without header at the start. Each of these sections contains a set of key/value pairs separated by
+the &lt;code&gt;=&lt;/code&gt; character. Comments are indicated using the hash symbol (&lt;code&gt;#&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;The framework has the following three required layers of configuration files:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;strong&gt;main&lt;/strong&gt; configuration:
+The most important configuration file and the file that is passed directly to the binary. Contains both the global
+framework configuration and the list of modules to instantiate together with their configuration. An example can be found
+in the repository at &lt;code&gt;examples/example.conf&lt;/code&gt;. More details and a more thorough example are found in
+&lt;a href=&#34;.././02_main_configuration&#34;&gt;Section 3.2&lt;/a&gt;, several advanced simulation chain configurations are presented in
+&lt;a href=&#34;../../08_examples&#34;&gt;Chapter 8&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;strong&gt;geometry&lt;/strong&gt; configuration:
+It is passed to the framework to determine the detector setup and passive materials. Describes the detector setup,
+containing the position, orientation and model type of all detectors. Optionally, passive materials can be added to this
+configuration. Examples are available in the repository at &lt;code&gt;examples/ example_detector.conf&lt;/code&gt; or
+&lt;code&gt;examples/example_detector_passive.conf&lt;/code&gt;. Introduced in &lt;a href=&#34;.././03_detector_configuration&#34;&gt;Section 3.3&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The detector &lt;strong&gt;model&lt;/strong&gt; configuration:
+Contains the parameters describing a particular type of detector. Several models are already provided by the framework,
+but new types of detectors can easily be added. See &lt;code&gt;models/test.conf&lt;/code&gt; in the repository for an example. Please refer to
+&lt;a href=&#34;../../09_development/05_new_detector_model&#34;&gt;Section 9.5&lt;/a&gt; for more details about adding new models.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;parsing-types-and-units&#34;&gt;Parsing Types and Units&lt;/h2&gt;
+&lt;p&gt;The Allpix Squared framework supports the use of a variety of types for all configuration values. The module specifies how
+the value type should be interpreted. An error will be raised if either the key is not specified in the configuration file,
+the conversion to the desired type is not possible, or if the given value is outside the domain of possible options. Please
+refer to the &lt;a href=&#34;../../07_modules&#34;&gt;Chapter 7&lt;/a&gt; for the list of module parameters and their types. Parsing the value
+roughly follows common-sense (more details can be found in
+&lt;a href=&#34;../../04_framework/03_configuration#accessing-parameters&#34;&gt;Section 4.3&lt;/a&gt;). A few special rules do apply:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;If the value is a &lt;strong&gt;string&lt;/strong&gt;, it may be enclosed by a single pair of double quotation marks (&lt;code&gt;&amp;quot;&lt;/code&gt;), which are stripped
+before passing the value to the modules. If the string is not enclosed by quotation marks, all whitespace before and
+after the value is erased. If the value is an array of strings, the value is split at every whitespace or comma (&lt;code&gt;,&lt;/code&gt;)
+that is not enclosed in quotation marks.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If the value is a &lt;strong&gt;boolean&lt;/strong&gt;, either numerical (&lt;code&gt;0&lt;/code&gt;, &lt;code&gt;1&lt;/code&gt;) or textual (&lt;code&gt;false&lt;/code&gt;, &lt;code&gt;true&lt;/code&gt;) representations are accepted.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If the value is a &lt;strong&gt;relative path&lt;/strong&gt;, that path will be made absolute by adding the absolute path of the directory that
+contains the configuration file where the key is defined.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If the value is an &lt;strong&gt;arithmetic&lt;/strong&gt; type, it may have a suffix indicating the unit. The list of base units is given in the
+table below.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Quantity&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Default unit&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Auxiliary units&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Unity&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Length&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;mm (millimeter)&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;nm (nanometer), &lt;br&gt; um (micrometer), &lt;br&gt; cm (centimeter), &lt;br&gt; dm (decimeter), &lt;br&gt; m (meter), &lt;br&gt; km (kilometer)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Time&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;ns (nanosecond)&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;ps (picosecond), &lt;br&gt; us (microsecond), &lt;br&gt; ms (millisecond), &lt;br&gt; s (second)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Energy&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;MeV (megaelectronvolt)&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;eV (electronvolt), &lt;br&gt; keV (kiloelectronvolt), &lt;br&gt; GeV (gigaelectronvolt)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Temperature&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;K (kelvin)&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Charge&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;e (elementary charge)&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;ke (kiloelectrons), &lt;br&gt; fC (femtocoulomb), &lt;br&gt; C (coulomb)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Voltage&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;MV (megavolt)&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;V (volt), &lt;br&gt; kV (kilovolt)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Magnetic field strength&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;T (tesla)&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;mT (millitesla)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Angle&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;rad (radian)&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;deg (degree), &lt;br&gt; mrad (milliradian)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Radiation fluence&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Neq (1-MeV neutron-equivalent)&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Warning&lt;/h4&gt;
+
+    If no units are specified, values will always be interpreted in the base units of the framework. In some cases this can lead
+to unexpected results. E.g. specifying a bias voltage as &lt;code&gt;bias_voltage = 50&lt;/code&gt; results in an applied voltage of 50 MV.
+Therefore it is strongly recommended to always specify units in the configuration files.
+
+&lt;/div&gt;
+
+&lt;p&gt;The internal base units of the framework are not chosen for user convenience but for maximum precision of the calculations
+and in order to avoid the necessity of conversions in the code.&lt;/p&gt;
+&lt;p&gt;Combinations of base units can be specified by using the multiplication sign &lt;code&gt;*&lt;/code&gt; and the division sign &lt;code&gt;/&lt;/code&gt; that are parsed in
+linear order (thus $&lt;code&gt;\frac{V m}{s^2}&lt;/code&gt;$ should be specified as &lt;code&gt;V*m/s/s&lt;/code&gt;). The framework assumes the default units if the unit
+is not explicitly specified. It is recommended to always specify the unit explicitly for all parameters that are not
+dimensionless as well as for angles.&lt;/p&gt;
+&lt;p&gt;Examples of specifying key/values pairs of various types are given below:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# All whitespace at the front and back is removed&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;first_string&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;   &lt;span style=&#34;color:#e6db74&#34;&gt;string_without_quotation&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# All whitespace within the quotation marks is preserved&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;second_string&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;  string with quotation marks  &amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Keys are split on whitespace and commas&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;string_array&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;first element&amp;#34; &amp;#34;second element&amp;#34;,&amp;#34;third element&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Elements of matrices with more than one dimension are separated&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# using square brackets&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;string_matrix_3x3&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;[[&amp;#34;1&amp;#34;,&amp;#34;0&amp;#34;,&amp;#34;0&amp;#34;], [&amp;#34;0&amp;#34;,&amp;#34;cos&amp;#34;,&amp;#34;-sin&amp;#34;], [&amp;#34;0&amp;#34;,&amp;#34;sin&amp;#34;,cos]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# If the matrix is of dimension 1xN, the outer brackets have to be&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# added explicitly&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;integer_matrix_1x3&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;[[10, 11, 12]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Integer and floats can be specified in standard formats&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;int_value&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;42&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;float_value&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;123.456e9&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Units can be passed to arithmetic types&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;energy_value&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;1.23MeV&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;time_value&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;42ns&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Units are combined in linear order without grouping or implicit brackets&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;acceleration_value&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;1.0m/s/s&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Thus the quantity below is the same as 1.0deg*kV*K/m/s&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;random_quantity&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;1.0deg*kV/m/s*K&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Relative paths are expanded to absolute paths, e.g. the following value&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# will become &amp;#34;/home/user/test&amp;#34; if the configuration file is located&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# at &amp;#34;/home/user&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;output_path&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;test&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Booleans can be represented in numerical or textual style&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;my_switch&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;my_other_switch&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+  </channel>
+</rss>

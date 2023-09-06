@@ -1,0 +1,87 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home – Introduction</title>
+    <link>https://100upet-specifications.docs.cern.ch/docs/01_introduction/</link>
+    <description>Recent content in Introduction on Home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://100upet-specifications.docs.cern.ch/docs/01_introduction/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Scope of these pages</title>
+      <link>https://100upet-specifications.docs.cern.ch/docs/01_introduction/01_scope/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://100upet-specifications.docs.cern.ch/docs/01_introduction/01_scope/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This document is meant to be the primary point of information for the development of the project.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Scanner description</title>
+      <link>https://100upet-specifications.docs.cern.ch/docs/01_introduction/02_scanner_description/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://100upet-specifications.docs.cern.ch/docs/01_introduction/02_scanner_description/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This page describes the scanner.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: ASIC description</title>
+      <link>https://100upet-specifications.docs.cern.ch/docs/01_introduction/03_asic/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://100upet-specifications.docs.cern.ch/docs/01_introduction/03_asic/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This page describes final specifications of the scanner&amp;rsquo;s pixel ASIC.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Scanner simulation</title>
+      <link>https://100upet-specifications.docs.cern.ch/docs/01_introduction/04_simulation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://100upet-specifications.docs.cern.ch/docs/01_introduction/04_simulation/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This page describes the scanner simulation.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Imaging reconstruction</title>
+      <link>https://100upet-specifications.docs.cern.ch/docs/01_introduction/05_imaging/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://100upet-specifications.docs.cern.ch/docs/01_introduction/05_imaging/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This page describes the imaging reconstruction.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
