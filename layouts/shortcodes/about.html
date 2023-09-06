@@ -1,0 +1,10 @@
+<style>
+.about svg {
+    max-width: 10%;
+    width: auto;
+    height: auto;
+}
+</style>
+<span class="abaout">
+{{ with resources.Get "icons/featured-background.svg" }}{{ ( . | minify).Content | safeHTML }}{{ end }}
+</span>
