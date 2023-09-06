@@ -1,0 +1,178 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home – ASIC R&amp;D</title>
+    <link>https://100upet-specifications.docs.cern.ch/docs/02_asic_development/</link>
+    <description>Recent content in ASIC R&amp;D on Home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://100upet-specifications.docs.cern.ch/docs/02_asic_development/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: ASIC specifications</title>
+      <link>https://100upet-specifications.docs.cern.ch/docs/02_asic_development/01_asic_specs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://100upet-specifications.docs.cern.ch/docs/02_asic_development/01_asic_specs/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;asic-details&#34;&gt;ASIC details&lt;/h2&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: ASIC discussion</title>
+      <link>https://100upet-specifications.docs.cern.ch/docs/02_asic_development/02_asic_planning/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://100upet-specifications.docs.cern.ch/docs/02_asic_development/02_asic_planning/</guid>
+      <description>
+        
+        
+        &lt;p&gt;From 07.10.2022&lt;/p&gt;
+&lt;h3 id=&#34;differences-with-faser&#34;&gt;Differences with FASER&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Dead Area is not an issue&lt;/li&gt;
+&lt;li&gt;Keep same analog&lt;/li&gt;
+&lt;li&gt;No need of keeping charge information in the matrix&lt;/li&gt;
+&lt;li&gt;Small Cluster (7 pixel rare but possible )&lt;/li&gt;
+&lt;li&gt;Possible charge info: &lt;strong&gt;10 keV to 500 keV&lt;/strong&gt; per cluster
+&lt;ol&gt;
+&lt;li&gt;Peak Charge?&lt;/li&gt;
+&lt;li&gt;Full cluster charge?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Charge Threshold &lt;strong&gt;3000e-&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Power Density &lt;strong&gt;80 mW/cmˆ2&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;HitRate &lt;strong&gt;5kHz/chip&lt;/strong&gt; ==&amp;gt; 200us to readout. We don&amp;rsquo;t have idle&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;FASER power consumption&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2uA per pixel FE&lt;/li&gt;
+&lt;li&gt;5uA per pixel Discriminator&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;open-questions&#34;&gt;Open questions&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Do we need pixel calibration?&lt;/li&gt;
+&lt;li&gt;256 x208 pixels: 53k pixels. How long it takes to calibrate?&lt;/li&gt;
+&lt;li&gt;Mismatch: where does it come from? Can we improve it?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;to-be-answered-by-monte-carlo-simulations&#34;&gt;To be answered by Monte Carlo simulations:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Possible charge info: 10 keV  to 500 keV per cluster
+&lt;ul&gt;
+&lt;li&gt;Peak Charge?&lt;/li&gt;
+&lt;li&gt;Full cluster charge?&lt;/li&gt;
+&lt;li&gt;No Charge?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+
+    ⚠️ &lt;strong&gt;Prepare minimum specifications of two versions : Charge readout / no charge readout .
+For 20th October
+Decision to take between the two by 27 October??&lt;/strong&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;task-list&#34;&gt;Task list&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Charge Threshold calibration. Target 3000 e threshold, evaluate mismatch and calculate time for calibration
+&lt;ul&gt;
+&lt;li&gt;CMOS or BJT?&lt;/li&gt;
+&lt;li&gt;Auto zeros
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Priority 1 Thanu. Dead line TBD, long task&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Total variation data transmission time top to bottom for Faser (Measurement). Plus simulation (Monolith)
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Priority 1 Lorenzo and Antonio Deadline 20 October&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Measure power of ACF
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Priority 1 Luca/Mateus Dead Line ASAP&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Evaluate Calibration time
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Priority 1 Roberto Dead Line 20 October&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Matrix placement distribution (Lorenzo)
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Priority 2 Lorenzo Dead line TBD&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; I/Os: Faser case TASK : evaluate the PET case and evaluate
+&lt;ul&gt;
+&lt;li&gt;3 chip ID&lt;/li&gt;
+&lt;li&gt;6 Trigger Fast for debugging (Test Only)&lt;/li&gt;
+&lt;li&gt;2 trigger slow (Test only)&lt;/li&gt;
+&lt;li&gt;2 Readout clock&lt;/li&gt;
+&lt;li&gt;4 Data out&lt;/li&gt;
+&lt;li&gt;1 THR&lt;/li&gt;
+&lt;li&gt;2 test pulse&lt;/li&gt;
+&lt;li&gt;3 SPI&lt;/li&gt;
+&lt;li&gt;1 HV needs more spacing&lt;/li&gt;
+&lt;li&gt;2 Reset
+&lt;ul&gt;
+&lt;li&gt;Introduce a read from SPI
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Priority 2  Roberto / Lorenzo&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Power Domain evaluation: DRAW A POWER SCHEMA
+&lt;ul&gt;
+&lt;li&gt;BJT analog / digital / threshold&lt;/li&gt;
+&lt;li&gt;CMOS analog /digital
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Priority 2 Antonio Deadline TBD&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 125um +125 um pitch : Evaluate voltage drop and PADS multiplicity
+&lt;ul&gt;
+&lt;li&gt;11ohm  resistance super column. 20mA of digital&lt;/li&gt;
+&lt;li&gt;Target is to have a pad at least one pad of 20mA
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Priority 2 Lorenzo / Roberto  Deadline TBD&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Evaluate Chip to Chip communication
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Priority 3 not assigned&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Introduce GITlab task system:
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Background task Thanu&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

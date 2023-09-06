@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "autoprefixer": "^10.4.15",
+    "postcss": "^8.4.29",
+    "three": "^0.156.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.15",
+    "@babel/preset-env": "^7.22.15",
+    "babel-loader": "^9.1.3"
+  }
+}

@@ -1,0 +1,16 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>100µPET – 100µPET</title>
+    <link>https://100upet-specifications.docs.cern.ch/fr/</link>
+    <description>Recent content on 100µPET</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://100upet-specifications.docs.cern.ch/fr/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+      
+    
+    
+  </channel>
+</rss>

@@ -1,0 +1,525 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.100.2" />
+<link rel="canonical" type="text/html" href="https://100upet-specifications.docs.cern.ch/docs/02_asic_development/">
+<link rel="alternate" type="application/rss&#43;xml" href="https://100upet-specifications.docs.cern.ch/docs/02_asic_development/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>ASIC R&amp;D | Home</title>
+<meta name="description" content="100µPET ASIC details.">
+<meta property="og:title" content="ASIC R&amp;D" />
+<meta property="og:description" content="100µPET ASIC details." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://100upet-specifications.docs.cern.ch/docs/02_asic_development/" /><meta property="og:site_name" content="Home" />
+
+<meta itemprop="name" content="ASIC R&amp;D">
+<meta itemprop="description" content="100µPET ASIC details."><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ASIC R&amp;D"/>
+<meta name="twitter:description" content="100µPET ASIC details."/>
+
+
+
+
+<link rel="preload" href="/scss/main.min.7d7b295ad52d51228531299e171ae38d396787869d0fadee736c37a5d733eaf7.css" as="style">
+<link href="/scss/main.min.7d7b295ad52d51228531299e171ae38d396787869d0fadee736c37a5d733eaf7.css" rel="stylesheet" integrity="">
+
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
+  crossorigin="anonymous"></script>
+<script
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/css/prism.css"/>
+
+  </head>
+  <body class="td-section">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/">
+		<span class="navbar-logo"></span><span class="font-weight-bold">Home</span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/about/" ><span>Project</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/people/" ><span>People</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/publications/" ><span>Publications</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="/docs/" ><span class="active">Internal</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/app/" ><span>App</span></a>
+			</li>
+			
+			
+			
+			<li class="nav-item dropdown mr-4 d-none d-lg-block">
+				
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	English
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="/fr/">French</a>
+	
+</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block"><input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="/offline-search-index.06f682555360de8dcc062f699bb1255b.json"
+  data-offline-search-base-href="/"
+  data-offline-search-max-results="10"
+>
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/docs/02_asic_development/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">ASIC R&amp;D</h1>
+<div class="lead">100µPET ASIC details.</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-b69dd4591a73fb14d83cf340701fc44d">ASIC specifications</a></li>
+
+
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-ffac7a43af84b11b416044970ce07d29">ASIC discussion</a></li>
+
+
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      <p>This section aims to list the specifications of the 100µPET scanner.</p>
+
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-b69dd4591a73fb14d83cf340701fc44d">1 - ASIC specifications</h1>
+    
+	<h2 id="asic-details">ASIC details</h2>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-ffac7a43af84b11b416044970ce07d29">2 - ASIC discussion</h1>
+    
+	<p>From 07.10.2022</p>
+<h3 id="differences-with-faser">Differences with FASER</h3>
+<ol>
+<li>Dead Area is not an issue</li>
+<li>Keep same analog</li>
+<li>No need of keeping charge information in the matrix</li>
+<li>Small Cluster (7 pixel rare but possible )</li>
+<li>Possible charge info: <strong>10 keV to 500 keV</strong> per cluster
+<ol>
+<li>Peak Charge?</li>
+<li>Full cluster charge?</li>
+</ol>
+</li>
+<li>Charge Threshold <strong>3000e-</strong></li>
+<li>Power Density <strong>80 mW/cmˆ2</strong></li>
+<li>HitRate <strong>5kHz/chip</strong> ==&gt; 200us to readout. We don&rsquo;t have idle</li>
+</ol>
+<p><strong>FASER power consumption</strong></p>
+<ul>
+<li>2uA per pixel FE</li>
+<li>5uA per pixel Discriminator</li>
+</ul>
+<h3 id="open-questions">Open questions</h3>
+<ul>
+<li>Do we need pixel calibration?</li>
+<li>256 x208 pixels: 53k pixels. How long it takes to calibrate?</li>
+<li>Mismatch: where does it come from? Can we improve it?</li>
+</ul>
+<h3 id="to-be-answered-by-monte-carlo-simulations">To be answered by Monte Carlo simulations:</h3>
+<ul>
+<li>Possible charge info: 10 keV  to 500 keV per cluster
+<ul>
+<li>Peak Charge?</li>
+<li>Full cluster charge?</li>
+<li>No Charge?</li>
+</ul>
+</li>
+</ul>
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">Note</h4>
+
+    ⚠️ <strong>Prepare minimum specifications of two versions : Charge readout / no charge readout .
+For 20th October
+Decision to take between the two by 27 October??</strong>
+
+</div>
+
+<h2 id="task-list">Task list</h2>
+<ul>
+<li><input disabled="" type="checkbox"> Charge Threshold calibration. Target 3000 e threshold, evaluate mismatch and calculate time for calibration
+<ul>
+<li>CMOS or BJT?</li>
+<li>Auto zeros
+<ul>
+<li><strong>Priority 1 Thanu. Dead line TBD, long task</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Total variation data transmission time top to bottom for Faser (Measurement). Plus simulation (Monolith)
+<ul>
+<li><strong>Priority 1 Lorenzo and Antonio Deadline 20 October</strong></li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Measure power of ACF
+<ul>
+<li><strong>Priority 1 Luca/Mateus Dead Line ASAP</strong></li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Evaluate Calibration time
+<ul>
+<li><strong>Priority 1 Roberto Dead Line 20 October</strong></li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Matrix placement distribution (Lorenzo)
+<ul>
+<li><strong>Priority 2 Lorenzo Dead line TBD</strong></li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> I/Os: Faser case TASK : evaluate the PET case and evaluate
+<ul>
+<li>3 chip ID</li>
+<li>6 Trigger Fast for debugging (Test Only)</li>
+<li>2 trigger slow (Test only)</li>
+<li>2 Readout clock</li>
+<li>4 Data out</li>
+<li>1 THR</li>
+<li>2 test pulse</li>
+<li>3 SPI</li>
+<li>1 HV needs more spacing</li>
+<li>2 Reset
+<ul>
+<li>Introduce a read from SPI
+<ul>
+<li><strong>Priority 2  Roberto / Lorenzo</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Power Domain evaluation: DRAW A POWER SCHEMA
+<ul>
+<li>BJT analog / digital / threshold</li>
+<li>CMOS analog /digital
+<ul>
+<li><strong>Priority 2 Antonio Deadline TBD</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> 125um +125 um pitch : Evaluate voltage drop and PADS multiplicity
+<ul>
+<li>11ohm  resistance super column. 20mA of digital</li>
+<li>Target is to have a pad at least one pad of 20mA
+<ul>
+<li><strong>Priority 2 Lorenzo / Roberto  Deadline TBD</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Evaluate Chip to Chip communication
+<ul>
+<li><strong>Priority 3 not assigned</strong></li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Introduce GITlab task system:
+<ul>
+<li><strong>Background task Thanu</strong></li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="User Forum" aria-label="User Forum">
+    <a class="text-white" target="_blank" rel="noopener" href="https://allpix-squared-forum.web.cern.ch/" aria-label="User Forum">
+      <i class="fas fa-users"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Mailing lists" aria-label="Mailing lists">
+    <a class="text-white" target="_blank" rel="noopener" href="https://e-groups.cern.ch/e-groups/EgroupsSearch.do?searchValue=allpix-squared" aria-label="Mailing lists">
+      <i class="fas fa-envelope"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitLab" aria-label="GitLab">
+    <a class="text-white" target="_blank" rel="noopener" href="https://gitlab.cern.ch/allpix-squared/allpix-squared" aria-label="GitLab">
+      <i class="fab fa-gitlab"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitHub" aria-label="GitHub">
+    <a class="text-white" target="_blank" rel="noopener" href="https://github.com/allpix-squared/allpix-squared" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2023 The 100µPET collaboration. Documentation available under the CC-BY-4.0 license.</small>
+        
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+    integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA=="
+    crossorigin="anonymous"></script>
+
+
+
+
+
+<script src='/js/tabpane-persist.js'></script>
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css"
+    integrity="sha512-vJqxkZ+Sugf/6WRlpcxN01qVfX/29hF6qc33eHF1va3NgoV+U+wCi+uTAsQ10sDoGyBxHLdaHvGwDlV3yVYboA==" crossorigin="anonymous">
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"
+    integrity="sha512-5ufNcHqOYgilGEHPfuRIQ5B/vDS1M8+UC+DESZ5CwVgGTg+b2Ol/15rYL/GiCWJ/Sx8oVo0FPFok1dPk8U9INQ=="
+    crossorigin="anonymous"></script>
+
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/mhchem.min.js"
+    integrity="sha512-HWb6LyQhO6UkmYLjdSblpgiOvvbdkoMRjln0POPhOVbZu3l4QdqwZnMJ/cuwKScU5pWARejB495TAAAz0WNsXQ=="
+    crossorigin="anonymous"></script>
+
+
+<script defer src='https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js'
+    integrity='sha512-ZA/RPrAo88DlwRnnoNVqKINnQNcWERzRK03PDaA4GIJiVZvGFIWQbdWCsUebMZfkWohnfngsDjXzU6PokO4jGw==' crossorigin='anonymous' 
+    onload='renderMathInElement(document.body, null);'></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.min.63f7ccf0f6f052be82a52cc628622eadcdaa7d38aa242c60a3cad13badb12dd9.js" integrity="sha256-Y/fM8PbwUr6CpSzGKGIurc2qfTiqJCxgo8rRO62xLdk=" crossorigin="anonymous"></script>
+
+
+
+<script src='/js/prism.js'></script>
+
+
+<script>
+document.body.innerHTML = document.body.innerHTML.replaceAll(/\$<code>(.+?)<\/code>\$/g, '\\($1\\)');
+</script>
+
+
+  </body>
+</html>

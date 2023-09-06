@@ -1,0 +1,454 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.100.2" />
+<meta name="robots" content="index, follow">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>ASIC description | Home</title>
+<meta name="description" content="This page describes final specifications of the scanner&rsquo;s pixel ASIC.
+">
+<meta property="og:title" content="ASIC description" />
+<meta property="og:description" content="This page describes final specifications of the scanner&rsquo;s pixel ASIC." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://100upet-specifications.docs.cern.ch/docs/01_introduction/03_asic/" /><meta property="article:section" content="docs" />
+
+<meta property="og:site_name" content="Home" />
+
+<meta itemprop="name" content="ASIC description">
+<meta itemprop="description" content="This page describes final specifications of the scanner&rsquo;s pixel ASIC.">
+
+<meta itemprop="wordCount" content="10">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ASIC description"/>
+<meta name="twitter:description" content="This page describes final specifications of the scanner&rsquo;s pixel ASIC."/>
+
+
+
+
+<link rel="preload" href="/scss/main.min.7d7b295ad52d51228531299e171ae38d396787869d0fadee736c37a5d733eaf7.css" as="style">
+<link href="/scss/main.min.7d7b295ad52d51228531299e171ae38d396787869d0fadee736c37a5d733eaf7.css" rel="stylesheet" integrity="">
+
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
+  crossorigin="anonymous"></script>
+<script
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/css/prism.css"/>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/">
+		<span class="navbar-logo"></span><span class="font-weight-bold">Home</span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/about/" ><span>Project</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/people/" ><span>People</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/publications/" ><span>Publications</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="/docs/" ><span class="active">Internal</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/app/" ><span>App</span></a>
+			</li>
+			
+			
+			
+			<li class="nav-item dropdown mr-4 d-none d-lg-block">
+				
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	English
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="/fr/">French</a>
+	
+</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block"><input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="/offline-search-index.06f682555360de8dcc062f699bb1255b.json"
+  data-offline-search-base-href="/"
+  data-offline-search-max-results="10"
+>
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  <div id="content-mobile">
+  <form class="td-sidebar__search d-flex align-items-center">
+    <input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="/offline-search-index.06f682555360de8dcc062f699bb1255b.json"
+  data-offline-search-base-href="/"
+  data-offline-search-max-results="10"
+>
+
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  </div>
+  <div id="content-desktop"></div>
+  <nav class="collapse td-sidebar-nav" id="td-section-nav">
+    <div class="nav-item dropdown d-block d-lg-none">
+      
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	English
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="/fr/">French</a>
+	
+</div>
+    </div>
+    <ul class="td-sidebar-nav__section pr-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docs-li">
+  <a href="/docs/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-docs"><span class="">Internal</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docs01_introduction-li">
+  <a href="/docs/01_introduction/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-docs01_introduction"><span class="">Introduction</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docs01_introduction01_scope-li">
+  <a href="/docs/01_introduction/01_scope/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docs01_introduction01_scope"><span class="">Scope of these pages</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docs01_introduction02_scanner_description-li">
+  <a href="/docs/01_introduction/02_scanner_description/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docs01_introduction02_scanner_description"><span class="">Scanner description</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docs01_introduction03_asic-li">
+  <a href="/docs/01_introduction/03_asic/" class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id="m-docs01_introduction03_asic"><span class="td-sidebar-nav-active-item">ASIC description</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docs01_introduction04_simulation-li">
+  <a href="/docs/01_introduction/04_simulation/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docs01_introduction04_simulation"><span class="">Scanner simulation</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docs01_introduction05_imaging-li">
+  <a href="/docs/01_introduction/05_imaging/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docs01_introduction05_imaging"><span class="">Imaging reconstruction</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docs02_asic_development-li">
+  <a href="/docs/02_asic_development/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-docs02_asic_development"><span class="">ASIC R&amp;D</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docs02_asic_development01_asic_specs-li">
+  <a href="/docs/02_asic_development/01_asic_specs/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docs02_asic_development01_asic_specs"><span class="">ASIC specifications</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docs02_asic_development02_asic_planning-li">
+  <a href="/docs/02_asic_development/02_asic_planning/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docs02_asic_development02_asic_planning"><span class="">ASIC discussion</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docs03_detector_assembly-li">
+  <a href="/docs/03_detector_assembly/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-docs03_detector_assembly"><span class="">Detector assembly</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docs03_detector_assembly01_interconnection_qualification-li">
+  <a href="/docs/03_detector_assembly/01_interconnection_qualification/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docs03_detector_assembly01_interconnection_qualification"><span class="">Configuration Files</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docs04_scanner_simulation-li">
+  <a href="/docs/04_scanner_simulation/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-docs04_scanner_simulation"><span class="">Scanner simulation</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docs04_scanner_simulation01_configuration_files-li">
+  <a href="/docs/04_scanner_simulation/01_configuration_files/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docs04_scanner_simulation01_configuration_files"><span class="">Configuration Files</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            
+<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+<a href="https://gitlab.cern.ch/mupet/100upet-hugo-pages/tree/master/content/en/docs/01_introduction/03_ASIC.md" class="td-page-meta--view" target="_blank" rel="noopener"><i class="fa fa-file-alt fa-fw"></i> View page source</a>
+  <a href="https://gitlab.cern.ch/mupet/100upet-hugo-pages/edit/master/content/en/docs/01_introduction/03_ASIC.md" class="td-page-meta--edit" target="_blank" rel="noopener"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+  <a href="https://gitlab.cern.ch/mupet/100upet-hugo-pages/new/master/content/en/docs/01_introduction/03_ASIC.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" class="td-page-meta--child" target="_blank" rel="noopener"><i class="fa fa-edit fa-fw"></i> Create child page</a>
+  <a href="https://gitlab.cern.ch/mupet/100upet-hugo-pages/issues/new?title=ASIC%20description" class="td-page-meta--issue" target="_blank" rel="noopener"><i class="fas fa-tasks fa-fw"></i> Create documentation issue</a>
+  <a href="https://gitlab.cern.ch/mupet/allpix2_simulation/issues/new" class="td-page-meta--project-issue" target="_blank" rel="noopener"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
+  <a id="print" href="https://100upet-specifications.docs.cern.ch/docs/01_introduction/_print/"><i class="fa fa-print fa-fw"></i> Print entire section</a>
+
+</div>
+
+            
+
+
+
+
+            
+
+	
+		
+
+
+
+  
+  
+
+	
+		
+
+
+
+  
+  
+
+	
+
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="https://100upet-specifications.docs.cern.ch/docs/">Internal</a>
+    </li>
+  <li class="breadcrumb-item"><a href="https://100upet-specifications.docs.cern.ch/docs/01_introduction/">Introduction</a>
+    </li>
+  <li class="breadcrumb-item active">
+      <span>ASIC description</span>
+    </li>
+  </ol>
+</nav>
+            
+<div class="td-content">
+	<h1>ASIC description</h1>
+	
+	<header class="article-meta">
+		
+
+  
+    
+
+
+  
+    
+
+
+  
+
+		
+	</header>    
+	<p>This page describes final specifications of the scanner&rsquo;s pixel ASIC.</p>
+
+	
+	
+	
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="User Forum" aria-label="User Forum">
+    <a class="text-white" target="_blank" rel="noopener" href="https://allpix-squared-forum.web.cern.ch/" aria-label="User Forum">
+      <i class="fas fa-users"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Mailing lists" aria-label="Mailing lists">
+    <a class="text-white" target="_blank" rel="noopener" href="https://e-groups.cern.ch/e-groups/EgroupsSearch.do?searchValue=allpix-squared" aria-label="Mailing lists">
+      <i class="fas fa-envelope"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitLab" aria-label="GitLab">
+    <a class="text-white" target="_blank" rel="noopener" href="https://gitlab.cern.ch/allpix-squared/allpix-squared" aria-label="GitLab">
+      <i class="fab fa-gitlab"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitHub" aria-label="GitHub">
+    <a class="text-white" target="_blank" rel="noopener" href="https://github.com/allpix-squared/allpix-squared" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2023 The 100µPET collaboration. Documentation available under the CC-BY-4.0 license.</small>
+        
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+    integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA=="
+    crossorigin="anonymous"></script>
+
+
+
+
+
+<script src='/js/tabpane-persist.js'></script>
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css"
+    integrity="sha512-vJqxkZ+Sugf/6WRlpcxN01qVfX/29hF6qc33eHF1va3NgoV+U+wCi+uTAsQ10sDoGyBxHLdaHvGwDlV3yVYboA==" crossorigin="anonymous">
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"
+    integrity="sha512-5ufNcHqOYgilGEHPfuRIQ5B/vDS1M8+UC+DESZ5CwVgGTg+b2Ol/15rYL/GiCWJ/Sx8oVo0FPFok1dPk8U9INQ=="
+    crossorigin="anonymous"></script>
+
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/mhchem.min.js"
+    integrity="sha512-HWb6LyQhO6UkmYLjdSblpgiOvvbdkoMRjln0POPhOVbZu3l4QdqwZnMJ/cuwKScU5pWARejB495TAAAz0WNsXQ=="
+    crossorigin="anonymous"></script>
+
+
+<script defer src='https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js'
+    integrity='sha512-ZA/RPrAo88DlwRnnoNVqKINnQNcWERzRK03PDaA4GIJiVZvGFIWQbdWCsUebMZfkWohnfngsDjXzU6PokO4jGw==' crossorigin='anonymous' 
+    onload='renderMathInElement(document.body, null);'></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.min.63f7ccf0f6f052be82a52cc628622eadcdaa7d38aa242c60a3cad13badb12dd9.js" integrity="sha256-Y/fM8PbwUr6CpSzGKGIurc2qfTiqJCxgo8rRO62xLdk=" crossorigin="anonymous"></script>
+
+
+
+<script src='/js/prism.js'></script>
+
+
+<script>
+document.body.innerHTML = document.body.innerHTML.replaceAll(/\$<code>(.+?)<\/code>\$/g, '\\($1\\)');
+</script>
+
+
+  </body>
+</html>
