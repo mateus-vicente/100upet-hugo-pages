@@ -1,0 +1,24 @@
+<div class="card mb-4">
+	<div class="card-body">
+		<h6 class="card-title mb-2 text-muted">
+			{{ with $.Get "authors" }}{{ $.Get "authors" | markdownify }}{{ end }}
+			{{ with $.Get "journal" }}, <em>{{ $.Get "journal" | markdownify }}</em>{{ end }}
+		</h6>
+		{{ with $.Get "title" }}
+		<h5 class="card-title mb-1">
+			{{ $.Get "title" | markdownify }}
+		</h5>
+		{{ end }}
+		{{ with $.Get "desc" }}
+		<p class="card-text mb-0">
+			{{ $.Get "desc" | markdownify }}
+		</p>
+		{{ end }}
+		{{ with $.Get "reference" }}
+		<div class="text-right">
+			{{ $.Get "reference" | markdownify }}
+		</div>
+		{{ end }}
+	</div>
+</div>
+

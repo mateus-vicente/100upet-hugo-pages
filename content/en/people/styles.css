@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+  font-family: Avenir;
+}
+
+body {
+  margin: 0;
+}
+
+html {
+  height: 100%;
+  font-size: 100%;
+}
+
+.module {
+  clear: both;
+}
+
+.imgContainer, .intro {
+  float: left;
+}
+
+.imgContainer {
+  width: 300px;
+  margin-bottom: 100px;
+}
+
+.imgContainer img {
+  width: 100%;
+}
+
+.intro {
+  width: 55%;
+  padding-left: 20px;
+}
+
+.contact-form {
+  height: 500px;
+}
+
+/* ============================================================
+  PRIMARY STRUCTURE
+============================================================ */
+.container {
+/*   max-width: 960px; */
+  margin: 100px auto;
+}
+/* ============================================================
+  SECTIONS
+============================================================ */
+section.module:last-child {
+  margin-bottom: 0;
+}
+section.module h2 {
+  margin-bottom: 40px;
+  font-size: 30px;
+}
+section.module p {
+  margin-bottom: 40px;
+  font-size: 16px;
+  font-weight: 300;
+}
+section.module p:last-child {
+  margin-bottom: 0;
+}
+section.module.content {
+  padding: 40px;
+}
+section.module.parallax {
+  height: 300px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+section.module.parallax h1 {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 3em;
+  line-height: 300px;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+section.module.parallax-1 {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/125980/stPauls2.jpg");
+}
+section.module.parallax-2 {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/125980/blueprint.jpg");
+}
+section.module.parallax-3 {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/125980/typewriter.jpg");
+}
+
+/* @media all and (min-width: 600px) {
+  section.module h2 {
+    font-size: 42px;
+  }
+  section.module p {
+    font-size: 20px;
+  }
+  section.module.parallax h1 {
+    font-size: 20px;
+  }
+}
+@media all and (min-width: 960px) {
+  section.module.parallax h1 {
+    font-size: 160px;
+  }
+} */
