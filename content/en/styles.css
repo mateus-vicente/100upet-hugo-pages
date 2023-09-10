@@ -3,6 +3,7 @@ body {
   padding: 0px;
   font-family: "Asap", sans-serif;
   background-color: #000000;
+  overflow-x: hidden;
 }
 
 header {
@@ -98,9 +99,6 @@ section.module.parallax-2 {
   background-image: url("picture.png");
   height: 300px;
 }
-section.module.parallax-3 {
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/125980/typewriter.jpg");
-}
 
 p {
   color: white;
@@ -127,12 +125,6 @@ p {
 .image-container img {
   max-width: 100%; /* Ensure images don't exceed the container width */
   height: auto; /* Maintain the aspect ratio */
-}
-
-svg {
-  width: 100px; /* Set the desired width for the SVG */
-  height: 100px; /* Set the desired height for the SVG */
-  fill: #000; /* Set the desired fill color for the SVG */
 }
 
 .centered-div {
