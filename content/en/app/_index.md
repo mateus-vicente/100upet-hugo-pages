@@ -7,6 +7,10 @@ menu:
     weight: 50
 ---
 
+{{% blocks/lead %}}
 Here is my content.
+{{% /blocks/lead %}}
 
-{{< js_app >}}
+<iframe>
+	{{< js_app >}}
+</iframe>
