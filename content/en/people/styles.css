@@ -1,23 +1,46 @@
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html{
     background: black;
     margin-top: 0em;
      
 }
 .container{
+	width: 100%;
 	margin-top:70px;
-    background: #000;
+	margin-bottom:70px;
+    background: #0;
+	display: flex;
+	flex-direction: column;
+	align-items: center; /* Horizontally center the contents */
+	justify-content: center; /* Vertically center the contents */
+	min-height: 100vh; /* Ensure the container takes at least the full viewport height */
 }
  
+/* Optional: Adjust row styles if needed */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0; /* Remove any top margin */
+  justify-content: center; /* Center the columns horizontally within the row */
+}
+
 header {
   width: 100%;
   height: 3em;
   display: inline-block;
   flex-direction: column;
   align-items: center;
+  text-align: center; /* Center text within the header */
 }
 header h1 {
   position: relative;
-  left: 25%;
+  left: 0%;
   width: 100%;
   font-size: 60px;
   font-weight: 600;
@@ -29,13 +52,13 @@ header .header-1{
   background-image: linear-gradient(45deg, #3f8fa2, #1e4cba);
 }
 .our-team{
-	height: 400px; /* Set the desired height */
+	height: auto; /* Set the desired height */
 	width: auto; /* Set the desired width */
-    padding: 20px 15px 60px;
+    padding: 20px 5px 30px;
     background: black;
     border-radius: 15px;
     text-align: center;
-   border:1px solid #004dc1;
+    border:1px solid #004dc1;
 }
 
 .our-team:hover{
@@ -47,7 +70,7 @@ transition: .5s;
     width: 70%;
     height: 70%;
     background: white;
-    padding: 15px;
+    padding: 5px;
     margin-bottom: 5px;
     transition: all 0.5s ease 0s;
    border-radius: 50%;
@@ -62,7 +85,7 @@ transition: .5s;
     border-radius: 50%;
 }
 .our-team .title{
-    display: block;
+    display: inline-block;
     font-size: 20px;
     font-weight: 600;
     color: #fff;
