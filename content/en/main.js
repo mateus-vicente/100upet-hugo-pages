@@ -1,4 +1,3 @@
-
 import * as THREE from 'https://unpkg.com/three@0.155.0/build/three.module.js';
 import { OrbitControls } from 'https://unpkg.com/three@0.155.0/examples/jsm/controls/OrbitControls.js';
 import { GUI } from "https://unpkg.com/dat.gui@0.7.7/build/dat.gui.module.js";
@@ -42,6 +41,7 @@ async function main() {
     //camera.position.z = MAX;
 
     const controls = new OrbitControls(camera, renderer.domElement);
+	controls.enableZoom = false;
     controls.target.set(0, 0, 0);
 
     let buf = new Uint8Array(dm3.split("	").map(x => +x));
