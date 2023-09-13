@@ -23,6 +23,11 @@ html{
 	justify-content: center; /* Vertically center the contents */
 	min-height: 100vh; /* Ensure the container takes at least the full viewport height */
 }
+
+.scene-container {
+  width: 100%;
+position: fixed;
+}
  
 /* Optional: Adjust row styles if needed */
 .row {
@@ -208,11 +213,11 @@ section.module.parallax-1 {
 }
 section.module.parallax-2 {
   background-image: url("back_1.png");
-  height: 100vh;
+  height: 85vh;
 }
 section.module.parallax-3 {
   background-image: url("back_3.png");
-  height: 100vh;
+  height: 85vh;
 }
 
 p {
