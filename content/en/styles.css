@@ -29,6 +29,15 @@ html{
 position: fixed;
 }
  
+#gui_container{
+  position: absolute;
+  top: 18%;
+  right: 0%;
+}
+#gui{
+  transform:translate(-50%, -75px);
+}
+
 /* Optional: Adjust row styles if needed */
 .row {
   display: flex;

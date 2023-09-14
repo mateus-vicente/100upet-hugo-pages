@@ -37,6 +37,7 @@ menu:
 			<button onclick="set45()">45</button>
 		</div>
 		<div style="display: flex; flex-direction: column; align-items: center; margin-top: 0em;">
+			<div id="gui_container"></div>
 			<div id="scene-container" style="height: 80vh;"></div>
 			<script src="https://cdn.jsdelivr.net/npm/three@0.155.0/build/three.js"></script>
 			<script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/loaders/GLTFLoader.js"></script>
