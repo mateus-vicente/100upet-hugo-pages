@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	var config_scanner_vis = {
 		scaner_transparency: 0.5,
 		 side: sideOptions['DoubleSide'],
-		 wire_frame: false,
+		 wire_frame: true,
 		 depth_write: true,
 	};
 
@@ -27,11 +27,11 @@ document.addEventListener('DOMContentLoaded', function () {
 		camera = new THREE.PerspectiveCamera(75,window.innerWidth / window.innerHeight,	0.1,1000);
 		//camera = new THREE.OrthographicCamera(window.innerWidth, window.innerWidth window.innerHeight, window.innerHeight, 100, 100000);
 		camera.position.set(-50, 0, 0);
-		//camera.lookAt(new THREE.Vector3(0, 0, 0));
+		camera.lookAt(new THREE.Vector3(0, 0, 0));
 		//camera.zoom = 0.5;
 
 		// Create a renderer
-		renderer = new THREE.WebGLRenderer( { antialias: true });
+		renderer = new THREE.WebGLRenderer();
 		renderer.setSize(window.innerWidth, window.innerHeight);
 		document.getElementById('scene-container').appendChild(renderer.domElement);
 
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			scene.add( gltf.scene );
 
 			scanner_anim_tl
-				.to(camera.position, { x: -120 }, "test")
+				.to(camera.position, { x: -100 }, "test")
 				.to(scannerobj.position,  {  x: 0, y: 19, z: -19 }, "test") 
 				.to(scannerobj1.position, {  x: 0, y: -19, z: 19 }, "test") 
 				.to(scannerobj2.position, {  x: 0, y: 19, z: 19 }, "test") 
