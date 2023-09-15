@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-
 	// Define variables
 	let scene, camera, renderer, cube;
 	var sideOptions = {

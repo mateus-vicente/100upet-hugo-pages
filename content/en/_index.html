@@ -4,117 +4,112 @@ title = "100µPET"
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-
-
-<body>
-<section class="module parallax parallax-1">
-  <div style="display: flex; flex-direction: column; align-items: center; margin-top: -8vh">
-    <object data="100uPET_LOGO_2_adobe_express.svg" width="70%"></object>
-  </div>
-</section>
-
-<span style="margin-top: 0em; margin-bottom: 0em;">
-	<header>
-		<h1 class="header-1" style="margin-top: 1em; margin-bottom: 0em;">
-			The 100µPET collaboration
-		</h1>
-	</header>
-	<style>
-		p {
-    		width: 80%;
-    		margin: 8em auto; /* Center the paragraph horizontally */
-		}
-	</style>
-	<p> <br>The University of Geneva, the University Hospital of Luzern and the École Polytechnique Fédérale de Lausanne have launched the 100µPET project that aims to produce a small-animal PET scanner with ultra-high resolution. This prototype, which will use a stack of 60 monolithic silicon pixel sensors as a detection medium, will provide volumetric spatial resolution one order of magnitude better than today’s best operating PET scanners.</p>
-	<div class="item" style="margin-top: -5em; margin-bottom: 5em">
-		<div class="image-container">
-			<img src="logos/T--UniGE-Geneva--unige-igem-scifac-logo.png" width="80%" alt="Image 1">
-			<span class="caption" style="margin-top: 5em;"><br><br>Design and production of the 100μPET small-animal scanner</span>
-		</div>
-		<div class="image-container">
-			<img src="logos/2560px-Logo_EPFL.svg.png" width="80%" alt="Image 2">
-			<span class="caption"><br><br>Imaging with Machine Learning and Neural Networks to cope with the 10^15 possible lines-of-response</span>
-		</div>
-		<div class="image-container">
-			<img src="logos/Logo-Universitaet-Luzern-2.png" width="80%" alt="Image 3">
-			<span class="caption"><br><br>Study the onset and progression of atherosclerotic plaques in arteries to better understand, monitor and treat atherosclerosis in ApoE+/- mice.</span>
-		</div>
-	</div>
-</span>
-
-<section class="module parallax parallax-a" style="margin-top: 0px; display: flex; align-items: top; justify-content: center; text-align: center;">
-    <div>
-        <div style="width: 100vw; font-size: 80px; font-weight: 1000; color: black; text-align: center; letter-spacing: 4px; -webkit-text-stroke: 4px white;">
-            Imaging the unseen
-        </div>
-        <div style="width: 100vw; font-size: 40px; font-weight: 1000; color: black; text-align: center; letter-spacing: 4px; -webkit-text-stroke: 2px white; margin-top: 0em;">
-            We are developing high-resolution virtual models of mouse phantoms to exploit ultra-high resolution scanner.
-        </div>
-    </div>
-</section>
-
-<section class="module parallax parallax-a2" style="margin-top: 0px; display: flex; align-items: top; justify-content: center; text-align: center;">
-    <div>
-        <div style="width: 100vw; font-size: 80px; font-weight: 1000; color: black; text-align: center; letter-spacing: 4px; -webkit-text-stroke: 4px white;">
-            Lines-of-response
-        </div>
-    </div>
-</section>
-
-<section class="module parallax parallax-2" style="margin-top: 0px; display: flex; align-items: top; justify-content: center; text-align: center;">
-    <div>
-        <div style="width: 100vw; font-size: 40px; font-weight: 1000; color: black; text-align: center; letter-spacing: 4px; -webkit-text-stroke: 2px white;">
-            Highly granular detection field-of-view allows to reconstruct with high accuracy volumetric shapes
-        </div>
-    </div>
-</section>
-
-
-<section class="module parallax parallax-3" style="margin-top: 0px;">
-    <div style="text-align: center;">
-        <div style="width: 100vw; font-size: 80px; font-weight: 1000; color: black; text-align: top; letter-spacing: 4px; -webkit-text-stroke: 4px white;">
-            New imaging techniques
-        </div>
-        <div style="width: 100vw; font-size: 40px; font-weight: 1000; color: black; text-align: center; letter-spacing: 4px; -webkit-text-stroke: 2px white; margin-top: 0em;">
-            To probe the smallest features, data reconstruction algorithms are being developed to exploit the highly granular measurement field-of-view.
-        </div>
-    </div>
-</section>
-
-<div class="container">
-<span style="margin-top: 0em; margin-bottom: 0px;">
-	<header>
-		<h1 class="header-1" style="margin-top: 1em;  margin-bottom: 0em;">
-				The 100µPET scanner
-		</h1>
-	</header>
-	<div class="container" style="margin-top: 3em;">
-		<div id="scene-container"></div>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
-
-		<script src="https://cdn.jsdelivr.net/npm/three@0.155.0/build/three.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/loaders/GLTFLoader.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
-
-		<script src="FontLoader.js"></script>
-
-	    <script type="importmap"> { "imports": { "three": "https://unpkg.com/three@0.155.0/build/three.module.js" } } </script>
-    	<script src="main.js"></script>
-		<!--
-		<div class="text">
-			<p>The 100µPET is a project in the filed of ultra-high-resolution medical imaging, supported by a SNSF SINERGIA grant (<a href="https://data.snf.ch/grants/grant/198569">CRSII5_198569</a>, Period: June 1, 2021 - May 31, 2025). This project aims to pioneer ultra-high resolution molecular imaging and to make this technology available for novel cutting-edge medical applications. It aims to develop a prototype of an ultra-high resolution PET scanner for small animals in combination with advanced image reconstruction algorithms. The first step of this project is to perform, as the first biomedical application, ultra-high resolution molecular imaging of the onset and progression of atherosclerosis in ApoE-/- mice.</p>
-		</div>
-		-->
-	</div>
-</span>
-</div>
-
-</body>
+	<head>
+	    <meta charset="UTF-8" />
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+	
+	<body>
+		<section class="module parallax parallax-1">
+		  <div style="display: flex; flex-direction: column; align-items: center; margin-top: -8vh">
+		    <object data="100uPET_LOGO_2_adobe_express.svg" width="70%"></object>
+		  </div>
+		</section>
+		
+		<span style="margin-top: 0em; margin-bottom: 0em;">
+			<header>
+				<h1 class="header-1" style="margin-top: 1em; margin-bottom: 0em;">
+					The 100µPET collaboration
+				</h1>
+			</header>
+			<style>
+				p {
+		    		width: 80%;
+		    		margin: 8em auto; /* Center the paragraph horizontally */
+				}
+			</style>
+			<p> <br>The University of Geneva, the University Hospital of Luzern and the École Polytechnique Fédérale de Lausanne have launched the 100µPET project that aims to produce a small-animal PET scanner with ultra-high resolution. This prototype, which will use a stack of 60 monolithic silicon pixel sensors as a detection medium, will provide volumetric spatial resolution one order of magnitude better than today’s best operating PET scanners.</p>
+			<div class="item" style="margin-top: -5em; margin-bottom: 5em">
+				<div class="image-container">
+					<img src="logos/T--UniGE-Geneva--unige-igem-scifac-logo.png" width="80%" alt="Image 1">
+					<span class="caption" style="margin-top: 5em;"><br><br>Design and production of the 100μPET small-animal scanner</span>
+				</div>
+				<div class="image-container">
+					<img src="logos/2560px-Logo_EPFL.svg.png" width="80%" alt="Image 2">
+					<span class="caption"><br><br>Imaging with Machine Learning and Neural Networks to cope with the 10^15 possible lines-of-response</span>
+				</div>
+				<div class="image-container">
+					<img src="logos/Logo-Universitaet-Luzern-2.png" width="80%" alt="Image 3">
+					<span class="caption"><br><br>Study the onset and progression of atherosclerotic plaques in arteries to better understand, monitor and treat atherosclerosis in ApoE+/- mice.</span>
+				</div>
+			</div>
+		</span>
+		
+		<section class="module parallax parallax-a" style="margin-top: 0px; display: flex; align-items: top; justify-content: center; text-align: center;">
+		    <div>
+		        <div style="width: 100vw; font-size: 80px; font-weight: 1000; color: black; text-align: center; letter-spacing: 4px; -webkit-text-stroke: 4px white;">
+		            Imaging the unseen
+		        </div>
+		        <div style="width: 100vw; font-size: 40px; font-weight: 1000; color: black; text-align: center; letter-spacing: 4px; -webkit-text-stroke: 2px white; margin-top: 0em;">
+		            We are developing high-resolution virtual models of mouse phantoms to exploit ultra-high resolution scanner.
+		        </div>
+		    </div>
+		</section>
+		
+		<section class="module parallax parallax-a2" style="margin-top: 0px; display: flex; align-items: top; justify-content: center; text-align: center;">
+		    <div>
+		        <div style="width: 100vw; font-size: 80px; font-weight: 1000; color: black; text-align: center; letter-spacing: 4px; -webkit-text-stroke: 4px white;">
+		            Lines-of-response
+		        </div>
+		    </div>
+		</section>
+		
+		<section class="module parallax parallax-2" style="margin-top: 0px; display: flex; align-items: top; justify-content: center; text-align: center;">
+		    <div>
+		        <div style="width: 100vw; font-size: 40px; font-weight: 1000; color: black; text-align: center; letter-spacing: 4px; -webkit-text-stroke: 2px white;">
+		            Highly granular detection field-of-view allows to reconstruct with high accuracy volumetric shapes
+		        </div>
+		    </div>
+		</section>
+		
+		<section class="module parallax parallax-3" style="margin-top: 0px;">
+		    <div style="text-align: center;">
+		        <div style="width: 100vw; font-size: 80px; font-weight: 1000; color: black; text-align: top; letter-spacing: 4px; -webkit-text-stroke: 4px white;">
+		            New imaging techniques
+		        </div>
+		        <div style="width: 100vw; font-size: 40px; font-weight: 1000; color: black; text-align: center; letter-spacing: 4px; -webkit-text-stroke: 2px white; margin-top: 0em;">
+		            To probe the smallest features, data reconstruction algorithms are being developed to exploit the highly granular measurement field-of-view.
+		        </div>
+		    </div>
+		</section>
+		
+		<span style="margin-top: 0em; margin-bottom: 0px;">
+			<header>
+				<h1 class="header-1" style="margin-top: 1em;  margin-bottom: 0em;">
+						The 100µPET scanner
+				</h1>
+			</header>
+			<div class="container" style="margin-top: 3em;">
+				<div id="scene-container"></div>
+		
+				<script src="https://cdn.jsdelivr.net/npm/three@0.155.0/build/three.js"></script>
+				<script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/loaders/GLTFLoader.js"></script>
+				<script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
+		
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+		
+		    	<script src="main.js"></script>
+				<!--
+				<script src="https://cdn.jsdelivr.net/npm/three@0.155.0/examples/jsm/loaders/FontLoader.js"></script>
+				<script src="FontLoader.js"></script>
+				<div class="text">
+					<p>The 100µPET is a project in the filed of ultra-high-resolution medical imaging, supported by a SNSF SINERGIA grant (<a href="https://data.snf.ch/grants/grant/198569">CRSII5_198569</a>, Period: June 1, 2021 - May 31, 2025). This project aims to pioneer ultra-high resolution molecular imaging and to make this technology available for novel cutting-edge medical applications. It aims to develop a prototype of an ultra-high resolution PET scanner for small animals in combination with advanced image reconstruction algorithms. The first step of this project is to perform, as the first biomedical application, ultra-high resolution molecular imaging of the onset and progression of atherosclerosis in ApoE-/- mice.</p>
+				</div>
+				-->
+			</div>
+		</span>
+	</body>
 </html>
