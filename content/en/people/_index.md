@@ -13,7 +13,7 @@ menu:
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body style="background: black; margin-top: 100px;">
-    <div class="container">
+    <div class="container" style=" margin-bottom: 200px">
 		<header>
 			<h1 class="header-1" style="margin-top: -30px;">
 				The 100µPET Principal Investigators
@@ -75,24 +75,9 @@ menu:
     	    <div class="col-md-3 col-sm-6">
     	        <div class="our-team">
     	            <div class="pic">
-    	                <img src="picture1.png">
+    	                <img src="aleix.png">
     	            </div>
-    	            <h3 class="title">Giuseppe Iacobucci</h3>
-    	            <span class="post">DPNC - UNIGE</span>
-    	            <ul class="social">
-    	                <li><a href="#" class="fa fa-facebook"></a></li>
-    	                <li><a href="#" class="fa fa-twitter"></a></li>
-    	                <li><a href="#" class="fa fa-google-plus"></a></li>
-    	                <li><a href="#" class="fa fa-linkedin"></a></li>
-    	            </ul>
-    	        </div>
-    	    </div>
-    	    <div class="col-md-3 col-sm-6">
-    	        <div class="our-team">
-    	            <div class="pic">
-    	                <img src="picture3.png">
-    	            </div>
-    	            <h3 class="title">Michaël Unser</h3>
+    	            <h3 class="title">Aleix Boquet I Pujadas</h3>
     	            <span class="post">LIB - EPFL</span>
     	            <ul class="social">
     	                <li><a href="#" class="fa fa-facebook"></a></li>
@@ -105,10 +90,25 @@ menu:
     	    <div class="col-md-3 col-sm-6">
     	        <div class="our-team">
     	            <div class="pic">
-    	                <img src="picture2.png">
+    	                <img src="pablo.png">
     	            </div>
-    	            <h3 class="title">Martin Walter</h3>
+    	            <h3 class="title">Pablo Jané</h3>
     	            <span class="post">UNILU</span>
+    	            <ul class="social">
+    	                <li><a href="#" class="fa fa-facebook"></a></li>
+    	                <li><a href="#" class="fa fa-twitter"></a></li>
+    	                <li><a href="#" class="fa fa-google-plus"></a></li>
+    	                <li><a href="#" class="fa fa-linkedin"></a></li>
+    	            </ul>
+    	        </div>
+    	    </div>
+    	    <div class="col-md-3 col-sm-6">
+    	        <div class="our-team">
+    	            <div class="pic">
+    	                <img src="jihad.png">
+    	            </div>
+    	            <h3 class="title">Jihad Saidi</h3>
+    	            <span class="post">DPNC - UNIGE</span>
     	            <ul class="social">
     	                <li><a href="#" class="fa fa-facebook"></a></li>
     	                <li><a href="#" class="fa fa-twitter"></a></li>
@@ -122,40 +122,25 @@ menu:
     	    <div class="col-md-3 col-sm-6">
     	        <div class="our-team">
     	            <div class="pic">
-    	                <img src="picture1.png">
+    	                <img src="vincent.png">
     	            </div>
-    	            <h3 class="title">Giuseppe Iacobucci</h3>
-    	            <span class="post">DPNC - UNIGE</span>
-    	            <ul class="social">
-    	                <li><a href="#" class="fa fa-facebook"></a></li>
-    	                <li><a href="#" class="fa fa-twitter"></a></li>
-    	                <li><a href="#" class="fa fa-google-plus"></a></li>
-    	                <li><a href="#" class="fa fa-linkedin"></a></li>
-    	            </ul>
-    	        </div>
-    	    </div>
-    	    <div class="col-md-3 col-sm-6">
-    	        <div class="our-team">
-    	            <div class="pic">
-    	                <img src="picture3.png">
-    	            </div>
-    	            <h3 class="title">Michaël Unser</h3>
-    	            <span class="post">LIB - EPFL</span>
-    	            <ul class="social">
-    	                <li><a href="#" class="fa fa-facebook"></a></li>
-    	                <li><a href="#" class="fa fa-twitter"></a></li>
-    	                <li><a href="#" class="fa fa-google-plus"></a></li>
-    	                <li><a href="#" class="fa fa-linkedin"></a></li>
-    	            </ul>
-    	        </div>
-    	    </div>
-    	    <div class="col-md-3 col-sm-6">
-    	        <div class="our-team">
-    	            <div class="pic">
-    	                <img src="picture2.png">
-    	            </div>
-    	            <h3 class="title">Martin Walter</h3>
+    	            <h3 class="title">Vincent Taelman</h3>
     	            <span class="post">UNILU</span>
+    	            <ul class="social">
+    	                <li><a href="#" class="fa fa-facebook"></a></li>
+    	                <li><a href="#" class="fa fa-twitter"></a></li>
+    	                <li><a href="#" class="fa fa-google-plus"></a></li>
+    	                <li><a href="#" class="fa fa-linkedin"></a></li>
+    	            </ul>
+    	        </div>
+    	    </div>
+    	    <div class="col-md-3 col-sm-6">
+    	        <div class="our-team">
+    	            <div class="pic">
+    	                <img src="mateus.png">
+    	            </div>
+    	            <h3 class="title">Mateus Vicente</h3>
+    	            <span class="post">DPNC - UNIGE</span>
     	            <ul class="social">
     	                <li><a href="#" class="fa fa-facebook"></a></li>
     	                <li><a href="#" class="fa fa-twitter"></a></li>
@@ -166,10 +151,11 @@ menu:
     	    </div>
 		</div>
 		<header>
-			<h1 class="header-1" style="margin-top: 20px;">
+			<h1 class="header-1" style="margin-top: 20px; margin-bottom: 200px">
 				Other collaborators
 			</h1>
 		</header>
+		<!--
     	<div class="row" style="margin-top: 80px;">
     	    <div class="col-md-3 col-sm-6">
     	        <div class="our-team">
@@ -247,6 +233,7 @@ menu:
     	        </div>
     	    </div>
 		</div>
+		-->
  	</div>
 
 </body>

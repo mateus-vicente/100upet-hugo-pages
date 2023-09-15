@@ -88,7 +88,7 @@ transition: .5s;
     height: 70%;
     background: white;
     padding: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
     transition: all 0.5s ease 0s;
    border-radius: 50%;
 }
@@ -210,6 +210,14 @@ section.module.parallax h1 {
 section.module.parallax-1 {
   background-image: url("background.png");
   height: 100vh;
+}
+section.module.parallax-a {
+  background-image: url("back_0.png");
+  height: 85vh;
+}
+section.module.parallax-a2 {
+  background-image: url("back_0a.png");
+  height: 85vh;
 }
 section.module.parallax-2 {
   background-image: url("back_1.png");
