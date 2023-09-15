@@ -24,9 +24,27 @@ html{
 	min-height: 100vh; /* Ensure the container takes at least the full viewport height */
 }
 
+.div1,
+.div2 {
+  height: 10vh;
+}
+
+.div1 {
+  background-color: pink;
+}
+.div2 {
+  background-color: salmon;
+}
+.square {
+  width: 800px;
+  height: 50px;
+  position: absolute;
+  right: -800px;
+}
+
 .scene-container {
   width: 100%;
-position: fixed;
+  position: fixed;
 }
  
 /* Optional: Adjust row styles if needed */

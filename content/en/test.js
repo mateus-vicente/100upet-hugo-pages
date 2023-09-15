@@ -1,81 +1,56 @@
-function addModelToBG() {
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
-	//Variables for setup
+document.addEventListener('DOMContentLoaded', function () {
+	    // Set up the scene
+        const scene = new THREE.Scene();
 
-	let container;
-	let camera;
-	let renderer;
-	let scene;
-	let box;
+        // Create a camera
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.z = 5;
 
-	function init() {
-		container = document.querySelector(".scene.one");
+        // Create a renderer
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+		document.getElementById('scene-container').appendChild(renderer.domElement);
 
-		scene = new THREE.Scene();
-		camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-		renderer = new THREE.WebGLRenderer({antialias: true,alpha: true});
-		renderer.setSize(container.clientWidth, container.clientHeight);
-		renderer.setPixelRatio(window.devicePixelRatio);
-		container.appendChild(renderer.domElement);
+        // Create a green material
+        const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
 
-		function render() {
-			renderer.render(scene, camera);
-		}
+        // Create a cube geometry
+        const geometry = new THREE.BoxGeometry();
 
-		var geometry = new THREE.BoxGeometry();
-		var material = new THREE.MeshNormalMaterial();
-		var box = new THREE.Mesh( geometry, material );
-		box.scale.set(1.0, 1.0, 1.0);
-		box.position.set(0.0, 0.0, 0.0);
-		scene.add( box );
-		animate();
-	}
+        // Create a cube mesh with the material
+        const cube = new THREE.Mesh(geometry, material);
 
+        // Add the cube to the scene
+        scene.add(cube);
 
-	function animate() {
-		requestAnimationFrame(animate);      
-		renderer.render(scene, camera);
-	}
+		const controls = new OrbitControls(camera, renderer.domElement);
 
-	init();
+        // Create an animation function to rotate the cube
+        const animate = () => {
+            requestAnimationFrame(animate);
 
-	function onWindowResize() {
-		camera.aspect = container.clientWidth / container.clientHeight;
-		camera.updateProjectionMatrix();
-		renderer.setSize(container.clientWidth, container.clientHeight);
-	}
+            // Rotate the cube
+            cube.rotation.x += 0.01;
+            cube.rotation.y += 0.01;
 
-	window.addEventListener("resize", onWindowResize);
+            renderer.render(scene, camera);
+        };
 
-	gsap.registerPlugin(ScrollTrigger);
+        // Start the animation
+        animate();
 
-	scene.rotation.set(0, 1.88, 0)
-	camera.position.set(2, 0, 5)
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            const newWidth = window.innerWidth;
+            const newHeight = window.innerHeight;
 
+            camera.aspect = newWidth / newHeight;
+            camera.updateProjectionMatrix();
 
-	ScrollTrigger.defaults({
-		immediateRender: false,
-		ease: "power1.inOut",
-	});
-
-	let car_anim_tl = gsap.timeline({
-		scrollTrigger: {
-			trigger: ".section-two",
-			start: "top top", 
-			endTrigger: ".section-five",
-			end: "bottom bottom", 
-			scrub: 1, 
-		}
-	});
-
-
-	car_anim_tl
-		.to(scene.rotation, { y: 4.79 })
-		.to(camera.position, { x: -0.1 }) 
-		.to(scene.rotation, { z: 1.6 })
-		.to(scene.rotation, { z: 0.02, y: 3.1 }, "simultaneously")
-		.to(camera.position, { x: 0.16 }, "simultaneously")
-		.to(".scene.one", { opacity: 0, scale: 0 }, "simultaneously");
-}
-
-addModelToBG();
+            renderer.setSize(newWidth, newHeight);
+        });
+});

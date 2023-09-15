@@ -1,3 +1,8 @@
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+//import { FontLoader } from 'three/addons/loaders/FontLoader.js';
+
 document.addEventListener('DOMContentLoaded', function () {
 	// Define variables
 	let scene, camera, renderer, cube;
@@ -34,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		renderer.setSize(window.innerWidth, window.innerHeight);
 		document.getElementById('scene-container').appendChild(renderer.domElement);
 
-		const controls = new THREE.OrbitControls(camera, renderer.domElement);
+		const controls = new OrbitControls(camera, renderer.domElement);
 		controls.enableZoom = false;
 
 		const light1 = new THREE.AmbientLight(0xffffff, 1); // soft white light
@@ -42,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		scene.add(light1);
 		scene.add(light2);
 
-		const loader = new THREE.GLTFLoader();
+		const loader = new GLTFLoader();
 		loader.load( 'tower_w_2blocks.gltf', function ( gltf ) {
 			gltf.scene.traverse(child => {
 							if (child.isMesh) {
@@ -92,18 +97,30 @@ document.addEventListener('DOMContentLoaded', function () {
 			scene.add( gltf.scene );
 
 			scanner_anim_tl
+				.to(".square", { y: -370}, "test")
 				.to(camera.position, { x: -100}, "test")
 				.to(scannerobj.position,  {  x: 0, y: 19, z: -19 }, "test") 
 				.to(scannerobj1.position, {  x: 0, y: -19, z: 19 }, "test") 
 				.to(scannerobj2.position, {  x: 0, y: 19, z: 19 }, "test") 
-				.to(scannerobj3.position, {  x: 0, y: -19, z: -19 }, "test")//; 
+				.to(scannerobj3.position, {  x: 0, y: -19, z: -19 }, "test") 
 				.to(camera.position, { z: 50 }, "test2") 
-				.to(scene.rotation, { y: Math.PI/4 }, "test2"); 
+				.to(".square", { x: -900, y: -370}, "test2")
+				.to(scene.rotation, { y: Math.PI/4 }, "test2")
+				; 
+
+			//text_anim_tl
+			//	.to(".square", { x: -1500 })
+			//	; 
 
 		});
 		/*
 						const loader_txt = new FontLoader();
-				loader_txt.load( 'fonts/helvetiker_regular.typeface.json', function ( font ) {
+				loader_txt.load( 
+						/// resource url
+								'https://unpkg.com/browse/three@0.155.0/examples/fonts/helvetiker_regular.typeface.json', 
+								//'fonts/helvetiker_regular.typeface.json', 
+								// onLoad callback
+								function ( font ) {
 
 					const color = 0x006699;
 
@@ -134,54 +151,22 @@ document.addEventListener('DOMContentLoaded', function () {
 					// make shape ( N.B. edge view not visible )
 
 					const text = new THREE.Mesh( geometry, matLite );
-					text.position.z = - 150;
+					text.position.z = 0;
 					scene.add( text );
 
-					// make line shape ( N.B. edge view remains visible )
+					console.log( font );
+				}, 
+				// onProgress callback
+	function ( xhr ) {
+		console.log( (xhr.loaded / xhr.total * 100) + '% loaded' );
+	},
 
-					const holeShapes = [];
-
-					for ( let i = 0; i < shapes.length; i ++ ) {
-
-						const shape = shapes[ i ];
-
-						if ( shape.holes && shape.holes.length > 0 ) {
-
-							for ( let j = 0; j < shape.holes.length; j ++ ) {
-
-								const hole = shape.holes[ j ];
-								holeShapes.push( hole );
-
-							}
-
-						}
-
-					}
-
-					shapes.push.apply( shapes, holeShapes );
-
-					const lineText = new THREE.Object3D();
-
-					for ( let i = 0; i < shapes.length; i ++ ) {
-
-						const shape = shapes[ i ];
-
-						const points = shape.getPoints();
-						const geometry = new THREE.BufferGeometry().setFromPoints( points );
-
-						geometry.translate( xMid, 0, 0 );
-
-						const lineMesh = new THREE.Line( geometry, matDark );
-						lineText.add( lineMesh );
-
-					}
-
-					scene.add( lineText );
-
-					//render();
-
-				} ); //end load function
-	*/
+	// onError callback
+	function ( err ) {
+		console.log( 'An error happened' );
+	}
+				); //end load function
+	//*/
 
 		animate();
 	}
@@ -212,6 +197,15 @@ document.addEventListener('DOMContentLoaded', function () {
 			trigger: ".container",
 			start: "50% 100%", 
 			end: "bottom bottom", 
+			markers: false,
+			scrub: 1, 
+		}
+	});
+	let text_anim_tl = gsap.timeline({
+		scrollTrigger: {
+			trigger: ".container",
+			start: "25% 50%", 
+			end: "75% 100%", 
 			markers: true,
 			scrub: 1, 
 		}
