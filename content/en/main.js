@@ -1,7 +1,6 @@
 import * as THREE from 'three';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+//import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-//import { FontLoader } from 'three/addons/loaders/FontLoader.js';
 
 document.addEventListener('DOMContentLoaded', function () {
 	// Define variables
@@ -39,8 +38,8 @@ document.addEventListener('DOMContentLoaded', function () {
 		renderer.setSize(window.innerWidth, window.innerHeight);
 		document.getElementById('scene-container').appendChild(renderer.domElement);
 
-		const controls = new OrbitControls(camera, renderer.domElement);
-		controls.enableZoom = false;
+		//const controls = new OrbitControls(camera, renderer.domElement);
+		//controls.enableZoom = false;
 
 		const light1 = new THREE.AmbientLight(0xffffff, 1); // soft white light
 		const light2 = new THREE.AmbientLight(0xFFFFC1, 1); // soft white light
@@ -108,65 +107,8 @@ document.addEventListener('DOMContentLoaded', function () {
 				.to(scene.rotation, { y: Math.PI/4 }, "test2")
 				; 
 
-			//text_anim_tl
-			//	.to(".square", { x: -1500 })
-			//	; 
 
 		});
-		/*
-						const loader_txt = new FontLoader();
-				loader_txt.load( 
-						/// resource url
-								'https://unpkg.com/browse/three@0.155.0/examples/fonts/helvetiker_regular.typeface.json', 
-								//'fonts/helvetiker_regular.typeface.json', 
-								// onLoad callback
-								function ( font ) {
-
-					const color = 0x006699;
-
-					const matDark = new THREE.LineBasicMaterial( {
-						color: color,
-						side: THREE.DoubleSide
-					} );
-
-					const matLite = new THREE.MeshBasicMaterial( {
-						color: color,
-						transparent: true,
-						opacity: 0.4,
-						side: THREE.DoubleSide
-					} );
-
-					const message = '   Three.js\nSimple text.';
-
-					const shapes = font.generateShapes( message, 100 );
-
-					const geometry = new THREE.ShapeGeometry( shapes );
-
-					geometry.computeBoundingBox();
-
-					const xMid = - 0.5 * ( geometry.boundingBox.max.x - geometry.boundingBox.min.x );
-
-					geometry.translate( xMid, 0, 0 );
-
-					// make shape ( N.B. edge view not visible )
-
-					const text = new THREE.Mesh( geometry, matLite );
-					text.position.z = 0;
-					scene.add( text );
-
-					console.log( font );
-				}, 
-				// onProgress callback
-	function ( xhr ) {
-		console.log( (xhr.loaded / xhr.total * 100) + '% loaded' );
-	},
-
-	// onError callback
-	function ( err ) {
-		console.log( 'An error happened' );
-	}
-				); //end load function
-	//*/
 
 		animate();
 	}
@@ -198,15 +140,6 @@ document.addEventListener('DOMContentLoaded', function () {
 			start: "50% 100%", 
 			end: "bottom bottom", 
 			markers: false,
-			scrub: 1, 
-		}
-	});
-	let text_anim_tl = gsap.timeline({
-		scrollTrigger: {
-			trigger: ".container",
-			start: "25% 50%", 
-			end: "75% 100%", 
-			markers: true,
 			scrub: 1, 
 		}
 	});
