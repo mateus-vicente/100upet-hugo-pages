@@ -5,7 +5,7 @@
 # 100µPET Website
 
 This repository contains the static website pages of the 100µPET project. The deployed website can be found
-[here](https://100upet-specifications.docs.cern.ch).
+[here](https://100upet.web.cern.ch).
 
 All commits to the master branch of this repository are automatically deployed to the EOS space of the project and thus
 directly reflect on the published website.
