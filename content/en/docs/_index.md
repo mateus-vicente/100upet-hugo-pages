@@ -6,3 +6,18 @@ menu:
   main:
     weight: 40
 ---
+
+<html>
+   <body>
+      <script>
+         var password = "100upet";
+         (function passcodeprotect() {
+            var passcode = prompt("Internal pages. Please, enter the password");
+            while (passcode !== password) {
+               alert("Incorrect PassCode");
+               return passcodeprotect();
+            }
+         }());
+      </script>
+   </body>
+</html>
