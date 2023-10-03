@@ -23,7 +23,18 @@ The PT-XYZ RTD is the small ladder-and-snake pattern and is made of Ti/Pt. With 
 
 There are groups of 3 pads that are shorted together via the Ti/Al layer. These are intended to be probed with 4-wires as described in the image bellow (from Flip Chip Technologies by John H. Lau), allowing to measure the contact resistance of a single bond. These groups are 3 pads conected are placed in the 4 edges of the chip, as well as in the center of it.
 
-<img src="../bonding.png" width="70%">
+<img src="../bonding.png" width="50%">
 
-Finally, the last structures on the test-chip are the chain links designed to close a complete chain when bonded to the test-FPC. These are intended to be used for stress tests of the bonding by injecting some high currents (DC up to 300 mA).
+<br>Finally, the last structures on the test-chip are the chain links designed to close a complete chain when bonded to the test-FPC. These are intended to be used for stress tests of the bonding by injecting some high currents (DC up to 300 mA).
 
+Considering that the final ASICs on the final FPC will have some signals that are shared among the other ASICs, while some other signals are connected in a chain through the chips, the relative orientation of the chips on the flex will have a large impact in routing the many power and signal lines through the FPC. It is important to note that the performance of the scanner is impacted by the thickness of the FPC (and hance how many layers are used), and a thinner FPC is preferrable.
+
+Some possible options for the orientation of the chips is shown in the image below.
+<img src="../ASIC-FLEX_orientation.png" width="100%">
+
+In option A all chips have the same orientation ((digital) periphery to bottom).
+<br>Option B has chips #2 and #3 rotated 180 degrees, possibily easing the connetcion between chips #1 and #2 of the signals in chain.
+<br>Option C has chips #1 and #2 rotated 180 degrees, so all chips has their digital periphery closer to the top/bottom edges of the FPC, where decoupling capacitors and other passive components of the FPC are hosted.
+<br>Option D is the oposite as option C, having the digital periphery of all chips the furthest from the decoupling capacitors but offering the shortest distance for the chip-to-chip signals.
+
+As the chips has the HV connection pads in all of their 4 edges, independent of the chip's orientation it will be always possible to have the HV line routed from the HV tail towards the center of the flex, allowing to HV bias all 4 chips with the shortest path.
