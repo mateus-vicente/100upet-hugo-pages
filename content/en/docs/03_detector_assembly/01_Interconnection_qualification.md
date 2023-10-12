@@ -8,18 +8,36 @@ weight: 1
 The scanner prototype will use test-chips to validate the simultaneous bonding of multiple chips, the stacking of the layer modules, and the cooling performance.
 The test-chip is designed on top of the original 100µPET ASIC layout, using its pads in the top metal layer and passivation openings to connect structures arranged in the chip. Therefore, it is intended to be identical to the final ASIC in terms of dimensions and interface.
 
-In addition to a few chain segments for bonding continuity tests, will also have a 4-wire probing points to measure the single bond resistance, a spiral heater in the center of the chip, and a PT-XYZ-like RTD (temperature sensor). Au stud bumps will be deposited on all bonding pads for flip-chip connection with test-FPC.
-More details on the design are available below, and the GDS file on the following link:
+In addition to a few chain segments for bonding continuity tests, will also have a 4-wire probing points to measure the single bond resistance, a spiral heater in the center of the chip, and two PT-XYZ-like RTD (Resistive Temperature Detector). Au stud bumps will be deposited on all bonding pads for flip-chip connection with test-FPC. The test-chip will be produced on 300 µm thick Si wafers (4-inch) and will have a Ti/Pt/Ti/Al stack (3-10 µm Ti, 100 nm Pt and 300 nm Al). 
 
-<img src="../test-chip.png" width="70%">
+<img src="../test-chip_2.png" width="70%">
 
-The test-chip will be produced on 300 µm thick Si wafers (4-inch) and will have a Ti/Pt/Ti/Al stack (3-10 µm Ti, 30 nm Pt and 300 nm Al). 
+The picture above shows the layout of the test-chip. The large spiral in the center is made of Ti/Al with a total length of approximately 24 cm. 6 Au stud bumps on each end of the line connects it to a voltage source to dissipate 1 W of power (as a working scanner chip). With a trace width of 704.6 µm, the wire resistance results in 27 Ohms (at 0 degC, using 2.7 µOhm.cm for the Al resistivity and 0.0043 for temperature coeficient alpha). The estimated current going through the trace is about 200 mA.
 
-The picture above shows the layout of the test-chip. The large spiral in the center is made of Ti/Al with a total length of approximately 24 cm. 3 Au stud bumps on each end of the line connects it to a voltage source to dissipate 1 W of power (as a working scanner chip). With a trace width of 704.6 µm, the wire resistance results in 27 Ohms (at 0 degC, using 2.7 µOhm.cm for the Al resistivity and 0.0043 for temperature coeficient alpha).
+<div style="display: flex;
+            justify-content: space-between;
+            align-items: flex-start;">
+   <div style="text-align: center;
+            flex: 0 0 45%; /* Adjust the width as needed */
+            margin: 10px;">
+        <img src="../test-chip2_2.png" alt="Image 1" width="100%" style="border: 2px solid black;">
+        <div style="margin-top: 5px;
+            font-size: 14px;
+            text-align: center;">Bottom left corner</div>
+    </div>
+   <div style="text-align: center;
+            flex: 0 0 45%; /* Adjust the width as needed */
+            margin: 10px;">
+        <img src="../test-chip2_2a.png" alt="Image 2" width="100%" style="border: 2px solid black;">
+        <div style="margin-top: 5px;
+            font-size: 14px;
+            text-align: center;">Top right corner</div>
+    </div>
+</div>
 
-The PT-XYZ RTD is the small ladder-and-snake pattern and is made of Ti/Pt. With 30 nm thick Pt, 30 µm wide traces and 10.6 µOhm.cm for Pt resistivity we get 1156 Ohms for the total resistance of the RTD.
+The PT-XYZ RTD is the small ladder-and-snake pattern and is made of Ti/Pt. With 100 nm thick Pt, 50 µm wide traces and about 54 mm length, using 10.6 µOhm.cm for Pt resistivity, we have 1033 Ohms at 0 degC for the total resistance of the RTD.
 
-<img src="../test-chip2.png" width="70%">
+<img src="../test-chip2_2b.png" width="40%" style="border: 2px solid black;">
 
 There are groups of 3 pads that are shorted together via the Ti/Al layer. These are intended to be probed with 4-wires as described in the image bellow (from Flip Chip Technologies by John H. Lau), allowing to measure the contact resistance of a single bond. These groups are 3 pads conected are placed in the 4 edges of the chip, as well as in the center of it.
 
@@ -38,3 +56,8 @@ In option A all chips have the same orientation ((digital) periphery to bottom).
 <br>Option D is the oposite as option C, having the digital periphery of all chips the furthest from the decoupling capacitors but offering the shortest distance for the chip-to-chip signals.
 
 As the chips has the HV connection pads in all of their 4 edges, independent of the chip's orientation it will be always possible to have the HV line routed from the HV tail towards the center of the flex, allowing to HV bias all 4 chips with the shortest path.
+
+The test assembly of the 4 test-chips on the test-flex will connect a few functionalities of each chip, as illustrated below.
+
+
+<img src="../module.png" width="100%">

@@ -16,7 +16,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
 <meta name=ProgId content=Excel.Sheet>
 <meta name=Generator content="Microsoft Excel 15">
 <link rel=File-List href="IO_pads_100uPET.fld/filelist.xml">
-<style id="IO_pads_100uPET_22613_Styles">
+<style id="IO_pads_100uPET_19535_Styles">
 <!--table
 	{mso-displayed-decimal-separator:"\.";
 	mso-displayed-thousand-separator:"\0027";}
@@ -221,7 +221,7 @@ tags will be replaced.-->
 <!--START OF OUTPUT FROM EXCEL PUBLISH AS WEB PAGE WIZARD -->
 <!----------------------------->
 
-<div id="IO_pads_100uPET_22613" align=center x:publishsource="Excel">
+<div id="IO_pads_100uPET_19535" align=center x:publishsource="Excel">
 
 <table border=0 cellpadding=0 cellspacing=0 width=1111 style='border-collapse:
  collapse;table-layout:fixed;width:834pt'>
@@ -359,9 +359,9 @@ tags will be replaced.-->
   <td class=xl70 style='border-top:none;border-left:none'>power</td>
   <td class=xl70 style='border-top:none;border-left:none'>VDD_DIG</td>
   <td class=xl67 align=right style='border-top:none;border-left:none'>117</td>
-  <td class=xl72 style='border-top:none;border-left:none'>VSS</td>
-  <td class=xl72 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl72 style='border-top:none;border-left:none'>GND</td>
+  <td class=xl74 style='border-top:none;border-left:none'>DATA_IN-</td>
+  <td class=xl74 style='border-top:none;border-left:none'>LVDS IN</td>
+  <td class=xl74 style='border-top:none;border-left:none'>DATA-&lt;i-1&gt;</td>
   <td class=xl67 align=right style='border-top:none;border-left:none'>173</td>
   <td class=xl69 style='border-top:none;border-left:none'>VCC_A</td>
   <td class=xl69 style='border-top:none;border-left:none'>power</td>
@@ -377,9 +377,9 @@ tags will be replaced.-->
   <td class=xl72 style='border-top:none;border-left:none'>ground</td>
   <td class=xl72 style='border-top:none;border-left:none'>GND</td>
   <td class=xl67 align=right style='border-top:none;border-left:none'>118</td>
-  <td class=xl74 style='border-top:none;border-left:none'>DATA_IN-</td>
+  <td class=xl74 style='border-top:none;border-left:none'>DATA_IN+</td>
   <td class=xl74 style='border-top:none;border-left:none'>LVDS IN</td>
-  <td class=xl74 style='border-top:none;border-left:none'>DATA-&lt;i-1&gt;</td>
+  <td class=xl74 style='border-top:none;border-left:none'>DATA+&lt;i-1&gt;</td>
   <td class=xl67 align=right style='border-top:none;border-left:none'>174</td>
   <td class=xl71 style='border-top:none;border-left:none'>GND_DISC</td>
   <td class=xl71 style='border-top:none;border-left:none'>ground</td>
@@ -395,9 +395,9 @@ tags will be replaced.-->
   <td class=xl72 style='border-top:none;border-left:none'>power</td>
   <td class=xl72 style='border-top:none;border-left:none'>VDD_DIG</td>
   <td class=xl67 align=right style='border-top:none;border-left:none'>119</td>
-  <td class=xl74 style='border-top:none;border-left:none'>DATA_IN+</td>
-  <td class=xl74 style='border-top:none;border-left:none'>LVDS IN</td>
-  <td class=xl74 style='border-top:none;border-left:none'>DATA+&lt;i-1&gt;</td>
+  <td class=xl72 style='border-top:none;border-left:none'>VSS</td>
+  <td class=xl72 style='border-top:none;border-left:none'>ground</td>
+  <td class=xl72 style='border-top:none;border-left:none'>GND</td>
   <td class=xl67 align=right style='border-top:none;border-left:none'>175</td>
   <td class=xl71 style='border-top:none;border-left:none'>VDD_DISC</td>
   <td class=xl71 style='border-top:none;border-left:none'>power</td>
