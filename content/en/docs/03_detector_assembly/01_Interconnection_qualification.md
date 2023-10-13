@@ -59,5 +59,7 @@ As the chips has the HV connection pads in all of their 4 edges, independent of 
 
 The test assembly of the 4 test-chips on the test-flex will connect a few functionalities of each chip, as illustrated below.
 
-
 <img src="../module.png" width="100%">
+
+While the total amount of wires to route is 46, only two wires are used to control all the heaters as they are daisy chained in the flex. Threfore, the amount of wires going to the flex tail and to the ZIF connector is 40. The ZIF connector to be used is the <a href="https://www.hirose.com/product/series/FH41">Hirose FH41 series</a> with 40 positions
+
