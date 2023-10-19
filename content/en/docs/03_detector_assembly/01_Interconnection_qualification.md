@@ -5,6 +5,7 @@ title: "Scanner prototype"
 weight: 1
 ---
 
+## Test-chip details
 The scanner prototype will use test-chips to validate the simultaneous bonding of multiple chips, the stacking of the layer modules, and the cooling performance.
 The test-chip is designed on top of the original 100µPET ASIC layout, using its pads in the top metal layer and passivation openings to connect structures arranged in the chip. Therefore, it is intended to be identical to the final ASIC in terms of dimensions and interface.
 
@@ -12,6 +13,7 @@ In addition to a few chain segments for bonding continuity tests, will also have
 
 <img src="../test-chip_2.png" width="70%">
 
+### Heater
 The picture above shows the layout of the test-chip. The large spiral in the center is made of Ti/Al with a total length of approximately 24 cm. 6 Au stud bumps on each end of the line connects it to a voltage source to dissipate 1 W of power (as a working scanner chip). With a trace width of 704.6 µm, the wire resistance results in 27 Ohms (at 0 degC, using 2.7 µOhm.cm for the Al resistivity and 0.0043 for temperature coeficient alpha). The estimated current going through the trace is about 200 mA.
 
 <div style="display: flex;
@@ -35,18 +37,22 @@ The picture above shows the layout of the test-chip. The large spiral in the cen
     </div>
 </div>
 
+### Resistive Temperature Detector
 The PT-XYZ RTD is the small ladder-and-snake pattern and is made of Ti/Pt. With 100 nm thick Pt, 50 µm wide traces and about 54 mm length, using 10.6 µOhm.cm for Pt resistivity, we have 1033 Ohms at 0 degC for the total resistance of the RTD.
 
 <img src="../test-chip2_2b.png" width="40%" style="border: 2px solid black;">
 
+### Contact resistance measurement
 There are groups of 3 pads that are shorted together via the Ti/Al layer. These are intended to be probed with 4-wires as described in the image bellow (from Flip Chip Technologies by John H. Lau), allowing to measure the contact resistance of a single bond. These groups are 3 pads conected are placed in the 4 edges of the chip, as well as in the center of it.
 
 <img src="../bonding.png" width="50%">
 
+### Chains
 <br>Finally, the last structures on the test-chip are the chain links designed to close a complete chain when bonded to the test-FPC. These are intended to be used for stress tests of the bonding by injecting some high currents (DC up to 200 mA).
 
 Considering that the final ASICs on the final FPC will have some signals that are shared among the other ASICs, while some other signals are connected in a chain through the chips, the relative orientation of the chips on the flex will have a large impact in routing the many power and signal lines through the FPC. It is important to note that the performance of the scanner is impacted by the thickness of the FPC (and hance how many layers are used), and a thinner FPC is preferrable.
 
+## ASIC orientation
 Some possible options for the orientation of the chips is shown in the image below.
 <img src="../ASIC-FLEX_orientation.png" width="100%">
 
@@ -57,12 +63,14 @@ In option A all chips have the same orientation ((digital) periphery to bottom).
 
 As the chips has the HV connection pads in all of their 4 edges, independent of the chip's orientation it will be always possible to have the HV line routed from the HV tail towards the center of the flex, allowing to HV bias all 4 chips with the shortest path.
 
+## Test-chip wiring
 The test assembly of the 4 test-chips on the test-flex will connect a few functionalities of each chip, as illustrated below.
 
 <img src="../module.png" width="100%">
 
 While the total amount of wires to route is 46, only two wires are used to control all the heaters as they are daisy chained in the flex. Threfore, the amount of wires going to the flex tail and to the ZIF connector is 40. The ZIF connector to be used is the <a href="https://www.hirose.com/product/series/FH41">Hirose FH41 series</a> with 40 positions
 
+### Test-structure pads
 Considering the 100µPET final ASIC IO pad numbering, the structures on the test-schip are connected to the following pads.
 
 
