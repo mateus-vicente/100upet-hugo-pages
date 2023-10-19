@@ -43,7 +43,7 @@ There are groups of 3 pads that are shorted together via the Ti/Al layer. These 
 
 <img src="../bonding.png" width="50%">
 
-<br>Finally, the last structures on the test-chip are the chain links designed to close a complete chain when bonded to the test-FPC. These are intended to be used for stress tests of the bonding by injecting some high currents (DC up to 300 mA).
+<br>Finally, the last structures on the test-chip are the chain links designed to close a complete chain when bonded to the test-FPC. These are intended to be used for stress tests of the bonding by injecting some high currents (DC up to 200 mA).
 
 Considering that the final ASICs on the final FPC will have some signals that are shared among the other ASICs, while some other signals are connected in a chain through the chips, the relative orientation of the chips on the flex will have a large impact in routing the many power and signal lines through the FPC. It is important to note that the performance of the scanner is impacted by the thickness of the FPC (and hance how many layers are used), and a thinner FPC is preferrable.
 
@@ -63,3 +63,20 @@ The test assembly of the 4 test-chips on the test-flex will connect a few functi
 
 While the total amount of wires to route is 46, only two wires are used to control all the heaters as they are daisy chained in the flex. Threfore, the amount of wires going to the flex tail and to the ZIF connector is 40. The ZIF connector to be used is the <a href="https://www.hirose.com/product/series/FH41">Hirose FH41 series</a> with 40 positions
 
+Considering the 100µPET final ASIC IO pad numbering, the structures on the test-schip are connected to the following pads.
+
+
+| Test structure                    | #Pads                          |
+|:----------------------------------|:-------------------------------|
+| Bottom left CR                    | 2, 4\*, 6                      |
+| Bottom right CR                   | 190, 192\*, 194                |
+| Top left CR                       | 197, 198, 199                  |
+| Top right CR                      | 293, 294, 295                  |
+| Heater +                          | 7, 8, 9, 10, 11, 12            |
+| Heater -                          | 297, 288, 289, 290, 291, 292   |
+| Left RTD                          | 21 (+), 23 (-)                 |
+| Right RTD                         | 294 (+), 295 (-)               |
+| Bottom chain                      | 24 (+), 188 (-)                |
+| Top chain                         | 200 (+), 293 (-)               |
+
+\*Pads #4 and #192 should each be connected to 2 wires for a 4-wires measurement.
