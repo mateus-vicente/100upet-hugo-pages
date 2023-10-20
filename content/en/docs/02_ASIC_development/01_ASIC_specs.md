@@ -5,6 +5,10 @@ title: "ASIC I/O"
 weight: 1
 ---
 
+## Pads numbering
+The numbering of the pads of the 100µPET ASIC is done as illustrated below
+<img src="../ASIC_pads.png" width="70%">
+
 ## I/O list:
 
 <html xmlns:o="urn:schemas-microsoft-com:office:office"
@@ -16,7 +20,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
 <meta name=ProgId content=Excel.Sheet>
 <meta name=Generator content="Microsoft Excel 15">
 <link rel=File-List href="IO_pads_100uPET.fld/filelist.xml">
-<style id="IO_pads_100uPET_30414_Styles">
+<style id="IO_pads_100uPET_19636_Styles">
 <!--table
 	{mso-displayed-decimal-separator:"\.";
 	mso-displayed-thousand-separator:"\0027";}
@@ -71,141 +75,177 @@ td
 	mso-protection:locked visible;
 	white-space:nowrap;
 	mso-rotate:0;}
-.xl63
+.xl65
+	{mso-style-parent:style0;
+	color:black;
+	font-size:18.0pt;
+	font-weight:700;}
+.xl66
+	{mso-style-parent:style0;
+	color:black;}
+.xl67
 	{mso-style-parent:style0;
 	color:black;
 	font-weight:700;
 	text-align:right;
 	border:.5pt solid windowtext;}
-.xl64
-	{mso-style-parent:style0;
-	color:black;
-	font-weight:700;
-	border:.5pt solid windowtext;}
-.xl65
-	{mso-style-parent:style0;
-	color:black;
-	border:.5pt solid windowtext;}
-.xl66
-	{mso-style-parent:style0;
-	color:black;
-	border:.5pt solid windowtext;
-	background:#BFBFBF;
-	mso-pattern:black none;}
-.xl67
-	{mso-style-parent:style0;
-	color:black;
-	border:.5pt solid windowtext;
-	background:#FFA1A1;
-	mso-pattern:black none;}
 .xl68
 	{mso-style-parent:style0;
 	color:black;
-	border:.5pt solid windowtext;
-	background:#D9D9D9;
-	mso-pattern:black none;}
+	font-weight:700;
+	border-top:.5pt solid windowtext;
+	border-right:.5pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;}
 .xl69
 	{mso-style-parent:style0;
 	color:black;
-	border:.5pt solid windowtext;
-	background:#FCE4D6;
-	mso-pattern:black none;}
+	font-weight:700;
+	text-align:right;
+	border-top:.5pt solid windowtext;
+	border-right:.5pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;}
 .xl70
 	{mso-style-parent:style0;
 	color:black;
-	border:.5pt solid windowtext;
-	background:#FCE19D;
-	mso-pattern:black none;}
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:.5pt solid windowtext;}
 .xl71
 	{mso-style-parent:style0;
 	color:black;
-	border:.5pt solid windowtext;
-	background:#8EA9DB;
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;
+	background:#BFBFBF;
 	mso-pattern:black none;}
 .xl72
 	{mso-style-parent:style0;
 	color:black;
-	border:.5pt solid windowtext;
-	background:#A9D08E;
-	mso-pattern:black none;}
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;}
 .xl73
 	{mso-style-parent:style0;
-	border:.5pt solid windowtext;}
+	color:black;
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;
+	background:#FFA1A1;
+	mso-pattern:black none;}
 .xl74
 	{mso-style-parent:style0;
-	border:.5pt solid windowtext;
-	background:#A9D08E;
+	color:black;
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;
+	background:#D9D9D9;
 	mso-pattern:black none;}
 .xl75
 	{mso-style-parent:style0;
 	color:black;
-	border:.5pt solid windowtext;
-	background:#9BC2E6;
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;
+	background:#FCE4D6;
 	mso-pattern:black none;}
 .xl76
 	{mso-style-parent:style0;
 	color:black;
-	border-top:.5pt solid windowtext;
-	border-right:none;
+	border-top:none;
+	border-right:.5pt solid windowtext;
 	border-bottom:.5pt solid windowtext;
-	border-left:.5pt solid windowtext;
-	background:#A9D08E;
+	border-left:none;
+	background:#FCE19D;
 	mso-pattern:black none;}
 .xl77
 	{mso-style-parent:style0;
 	color:black;
-	border-top:.5pt solid windowtext;
-	border-right:none;
+	border-top:none;
+	border-right:.5pt solid windowtext;
 	border-bottom:.5pt solid windowtext;
-	border-left:.5pt solid windowtext;
-	background:#FCE19D;
+	border-left:none;
+	background:#8EA9DB;
 	mso-pattern:black none;}
 .xl78
 	{mso-style-parent:style0;
 	color:black;
-	border-top:.5pt solid windowtext;
-	border-right:none;
+	border-top:none;
+	border-right:.5pt solid windowtext;
 	border-bottom:.5pt solid windowtext;
-	border-left:.5pt solid windowtext;
-	background:#FFA1A1;
+	border-left:none;
+	background:#A9D08E;
 	mso-pattern:black none;}
 .xl79
 	{mso-style-parent:style0;
 	color:black;
-	border-top:.5pt solid windowtext;
+	border-top:none;
 	border-right:none;
 	border-bottom:.5pt solid windowtext;
-	border-left:.5pt solid windowtext;
-	background:#FCE4D6;
+	border-left:none;
+	background:#A9D08E;
 	mso-pattern:black none;}
 .xl80
 	{mso-style-parent:style0;
 	color:black;
-	border-top:.5pt solid windowtext;
-	border-right:none;
-	border-bottom:.5pt solid windowtext;
-	border-left:.5pt solid windowtext;
-	background:#D9D9D9;
-	mso-pattern:black none;}
-.xl81
-	{mso-style-parent:style0;
 	border-top:none;
 	border-right:none;
 	border-bottom:none;
 	border-left:.5pt solid windowtext;}
+.xl81
+	{mso-style-parent:style0;
+	color:black;
+	border-top:none;
+	border-right:none;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;
+	background:#FCE19D;
+	mso-pattern:black none;}
 .xl82
 	{mso-style-parent:style0;
-	color:black;}
+	color:black;
+	border-top:none;
+	border-right:none;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;
+	background:#FFA1A1;
+	mso-pattern:black none;}
 .xl83
 	{mso-style-parent:style0;
 	color:black;
 	border-top:none;
 	border-right:none;
-	border-bottom:none;
-	border-left:.5pt solid windowtext;}
+	border-bottom:.5pt solid windowtext;
+	border-left:none;
+	background:#FCE4D6;
+	mso-pattern:black none;}
 .xl84
 	{mso-style-parent:style0;
-	font-size:18.0pt;
+	color:black;
+	border-top:none;
+	border-right:none;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;
+	background:#D9D9D9;
+	mso-pattern:black none;}
+.xl85
+	{mso-style-parent:style0;
+	color:black;
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;
+	background:#9BC2E6;
+	mso-pattern:black none;}
+.xl86
+	{mso-style-parent:style0;
 	font-weight:700;}
 -->
 </style>
@@ -221,10 +261,12 @@ tags will be replaced.-->
 <!--START OF OUTPUT FROM EXCEL PUBLISH AS WEB PAGE WIZARD -->
 <!----------------------------->
 
-<div id="IO_pads_100uPET_30414" align=center x:publishsource="Excel">
+<div id="IO_pads_100uPET_19636" align=center x:publishsource="Excel"><!--The following information was generated by Microsoft Excel's Publish as Web
+Page wizard.--><!--If the same item is republished from Excel, all information between the DIV
+tags will be replaced.--><!-----------------------------><!--START OF OUTPUT FROM EXCEL PUBLISH AS WEB PAGE WIZARD --><!----------------------------->
 
-<table border=0 cellpadding=0 cellspacing=0 width=1119 style='border-collapse:
- collapse;table-layout:fixed;width:840pt'>
+<table border=0 cellpadding=0 cellspacing=0 width=1293 style='border-collapse:
+ collapse;table-layout:fixed;width:970pt'>
  <col width=33 style='mso-width-source:userset;mso-width-alt:1066;width:25pt'>
  <col width=81 style='mso-width-source:userset;mso-width-alt:2602;width:61pt'>
  <col width=83 style='mso-width-source:userset;mso-width-alt:2645;width:62pt'>
@@ -241,1582 +283,1954 @@ tags will be replaced.-->
  <col width=81 style='mso-width-source:userset;mso-width-alt:2602;width:61pt'>
  <col width=83 style='mso-width-source:userset;mso-width-alt:2645;width:62pt'>
  <col width=65 style='mso-width-source:userset;mso-width-alt:2090;width:49pt'>
+ <col width=87 span=2 style='width:65pt'>
  <tr height=32 style='height:24.0pt'>
-  <td height=32 class=xl84 colspan=5 width=295 style='height:24.0pt;mso-ignore:
+  <td height=32 class=xl65 colspan=5 width=295 style='height:24.0pt;mso-ignore:
   colspan;width:222pt'>Bottom I/O (periphery side)</td>
+  <td class=xl66 width=87 style='width:65pt'></td>
+  <td class=xl66 width=88 style='width:66pt'></td>
+  <td class=xl66 width=99 style='width:74pt'></td>
+  <td class=xl66 width=33 style='width:25pt'></td>
+  <td class=xl66 width=100 style='width:75pt'></td>
+  <td class=xl66 width=75 style='width:56pt'></td>
+  <td class=xl66 width=80 style='width:60pt'></td>
+  <td class=xl66 width=33 style='width:25pt'></td>
+  <td class=xl66 width=81 style='width:61pt'></td>
+  <td class=xl66 width=83 style='width:62pt'></td>
+  <td class=xl66 width=65 style='width:49pt'></td>
   <td width=87 style='width:65pt'></td>
-  <td width=88 style='width:66pt'></td>
-  <td width=99 style='width:74pt'></td>
-  <td width=33 style='width:25pt'></td>
-  <td width=100 style='width:75pt'></td>
-  <td width=75 style='width:56pt'></td>
-  <td width=80 style='width:60pt'></td>
-  <td width=33 style='width:25pt'></td>
-  <td width=81 style='width:61pt'></td>
-  <td width=83 style='width:62pt'></td>
-  <td width=65 style='width:49pt'></td>
+  <td width=87 style='width:65pt'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 colspan=16 style='height:15.0pt;mso-ignore:colspan'></td>
+  <td height=20 class=xl66 style='height:15.0pt'></td>
+  <td class=xl86 colspan=3 style='mso-ignore:colspan'>Counting from left to
+  right</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl63 style='height:15.0pt'>#</td>
-  <td class=xl64 style='border-left:none'>Name</td>
-  <td class=xl64 style='border-left:none'>Type</td>
-  <td class=xl64 style='border-left:none'>Flex net</td>
-  <td class=xl63 style='border-left:none'>#</td>
-  <td class=xl64 style='border-left:none'>Name</td>
-  <td class=xl64 style='border-left:none'>Type</td>
-  <td class=xl64 style='border-left:none'>Flex net</td>
-  <td class=xl63 style='border-left:none'>#</td>
-  <td class=xl64 style='border-left:none'>Name</td>
-  <td class=xl64 style='border-left:none'>Type</td>
-  <td class=xl64 style='border-left:none'>Flex net</td>
-  <td class=xl63 style='border-left:none'>#</td>
-  <td class=xl64 style='border-left:none'>Name</td>
-  <td class=xl64 style='border-left:none'>Type</td>
-  <td class=xl64 style='border-left:none'>Flex net</td>
+  <td height=20 class=xl66 style='height:15.0pt'></td>
+  <td class=xl86 colspan=3 style='mso-ignore:colspan'>Pad pitch on a row: 300
+  µm</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>1</td>
-  <td class=xl66 style='border-top:none;border-left:none'>HV_SUB</td>
-  <td class=xl66 style='border-top:none;border-left:none'>high voltage</td>
-  <td class=xl66 style='border-top:none;border-left:none'>HV</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>57</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>113</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>power</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>169</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_OSC</td>
-  <td class=xl68 style='border-top:none;border-left:none'>power</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_DIG</td>
+  <td height=20 class=xl66 style='height:15.0pt'></td>
+  <td class=xl86 colspan=5 style='mso-ignore:colspan'>Pads staggered on two
+  rows: final pitch 150 µm</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>2</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>58</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>power</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>114</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>170</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VSS</td>
-  <td class=xl70 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl70 style='border-top:none;border-left:none'>GND</td>
+  <td height=20 class=xl66 style='height:15.0pt'></td>
+  <td class=xl86>vertical pitc<span style='display:none'>h:</span></td>
+  <td class=xl86>250 µm</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>3</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>power</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>59</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>115</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>power</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>171</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD</td>
-  <td class=xl70 style='border-top:none;border-left:none'>power</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD_DIG</td>
+  <td height=20 class=xl66 style='height:15.0pt'></td>
+  <td class=xl86>Pad size:</td>
+  <td class=xl86>120 x 100</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>4</td>
-  <td class=xl71 style='border-top:none;border-left:none'>THRESHOLD</td>
-  <td class=xl71 style='border-top:none;border-left:none'>threshold</td>
-  <td class=xl71 style='border-top:none;border-left:none'>THR</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>60</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>power</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>116</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_OSC</td>
-  <td class=xl68 style='border-top:none;border-left:none'>power</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>172</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND</td>
+  <td height=20 class=xl66 style='height:15.0pt'></td>
+  <td class=xl86 colspan=3 style='mso-ignore:colspan'>Extra distance for HV_sub
+  pads</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>5</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_OSC</td>
-  <td class=xl68 style='border-top:none;border-left:none'>power</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>61</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_OSC</td>
-  <td class=xl68 style='border-top:none;border-left:none'>power</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>117</td>
-  <td class=xl72 style='border-top:none;border-left:none'>DATA_IN-</td>
-  <td class=xl72 style='border-top:none;border-left:none'>LVDS IN</td>
-  <td class=xl72 style='border-top:none;border-left:none'>DATA-&lt;i-1&gt;</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>173</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>power</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
+  <td height=20 class=xl66 style='height:15.0pt'></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>6</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VSS</td>
-  <td class=xl70 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl70 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>62</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VSS</td>
-  <td class=xl70 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl70 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>118</td>
-  <td class=xl72 style='border-top:none;border-left:none'>DATA_IN+</td>
-  <td class=xl72 style='border-top:none;border-left:none'>LVDS IN</td>
-  <td class=xl72 style='border-top:none;border-left:none'>DATA+&lt;i-1&gt;</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>174</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND</td>
+  <td height=20 class=xl67 style='height:15.0pt'>#</td>
+  <td class=xl68>Name</td>
+  <td class=xl68>Type</td>
+  <td class=xl68>Flex net</td>
+  <td class=xl69>#</td>
+  <td class=xl68>Name</td>
+  <td class=xl68>Type</td>
+  <td class=xl68>Flex net</td>
+  <td class=xl69>#</td>
+  <td class=xl68>Name</td>
+  <td class=xl68>Type</td>
+  <td class=xl68>Flex net</td>
+  <td class=xl69>#</td>
+  <td class=xl68>Name</td>
+  <td class=xl68>Type</td>
+  <td class=xl68>Flex net</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>7</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD</td>
-  <td class=xl70 style='border-top:none;border-left:none'>power</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>63</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD</td>
-  <td class=xl70 style='border-top:none;border-left:none'>power</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>119</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VSS</td>
-  <td class=xl70 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl70 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>175</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>power</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DIG</td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>1</td>
+  <td class=xl71>HV_SUB</td>
+  <td class=xl71>high voltage</td>
+  <td class=xl71>HV</td>
+  <td class=xl72 align=right>57</td>
+  <td class=xl73>GND_A</td>
+  <td class=xl73>ground</td>
+  <td class=xl73>GND</td>
+  <td class=xl72 align=right>113</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl73>power</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl72 align=right>169</td>
+  <td class=xl74>VDD_OSC</td>
+  <td class=xl74>power</td>
+  <td class=xl74>VDD_DIG</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>8</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>64</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>120</td>
-  <td class=xl72 style='border-top:none;border-left:none'>DATA_OUT-</td>
-  <td class=xl72 style='border-top:none;border-left:none'>LVDS OUT</td>
-  <td class=xl72 style='border-top:none;border-left:none'>DATA-&lt;i&gt;</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>176</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_OSC</td>
-  <td class=xl68 style='border-top:none;border-left:none'>power</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_DIG</td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>2</td>
+  <td class=xl75>GND_DISC</td>
+  <td class=xl75>ground</td>
+  <td class=xl75>GND</td>
+  <td class=xl72 align=right>58</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl73>power</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl72 align=right>114</td>
+  <td class=xl75>GND_DISC</td>
+  <td class=xl75>ground</td>
+  <td class=xl75>GND</td>
+  <td class=xl72 align=right>170</td>
+  <td class=xl76>VSS</td>
+  <td class=xl76>ground</td>
+  <td class=xl76>GND</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>9</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>power</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>65</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>power</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>121</td>
-  <td class=xl72 style='border-top:none;border-left:none'>DATA_OUT+</td>
-  <td class=xl72 style='border-top:none;border-left:none'>LVDS OUT</td>
-  <td class=xl72 style='border-top:none;border-left:none'>DATA+&lt;i&gt;</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>177</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VSS</td>
-  <td class=xl70 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl70 style='border-top:none;border-left:none'>GND</td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>3</td>
+  <td class=xl75>VDD_DISC</td>
+  <td class=xl75>power</td>
+  <td class=xl75>VDD_DIG</td>
+  <td class=xl72 align=right>59</td>
+  <td class=xl75>GND_DISC</td>
+  <td class=xl75>ground</td>
+  <td class=xl75>GND</td>
+  <td class=xl72 align=right>115</td>
+  <td class=xl75>VDD_DISC</td>
+  <td class=xl75>power</td>
+  <td class=xl75>VDD_DIG</td>
+  <td class=xl72 align=right>171</td>
+  <td class=xl76>VDD</td>
+  <td class=xl76>power</td>
+  <td class=xl76>VDD_DIG</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>10</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>66</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>122</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD</td>
-  <td class=xl70 style='border-top:none;border-left:none'>power</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>178</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD</td>
-  <td class=xl70 style='border-top:none;border-left:none'>power</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD_DIG</td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>4</td>
+  <td class=xl77>THRESHOLD</td>
+  <td class=xl77>threshold</td>
+  <td class=xl77>THR</td>
+  <td class=xl72 align=right>60</td>
+  <td class=xl75>VDD_DISC</td>
+  <td class=xl75>power</td>
+  <td class=xl75>VDD_DIG</td>
+  <td class=xl72 align=right>116</td>
+  <td class=xl74>VDD_OSC</td>
+  <td class=xl74>power</td>
+  <td class=xl74>VDD_DIG</td>
+  <td class=xl72 align=right>172</td>
+  <td class=xl73>GND_A</td>
+  <td class=xl73>ground</td>
+  <td class=xl73>GND</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>11</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>power</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>67</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>power</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>123</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>179</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND</td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>5</td>
+  <td class=xl74>VDD_OSC</td>
+  <td class=xl74>power</td>
+  <td class=xl74>VDD_DIG</td>
+  <td class=xl72 align=right>61</td>
+  <td class=xl74>VDD_OSC</td>
+  <td class=xl74>power</td>
+  <td class=xl74>VDD_DIG</td>
+  <td class=xl72 align=right>117</td>
+  <td class=xl78>DATA_IN-</td>
+  <td class=xl78>LVDS IN</td>
+  <td class=xl78>DATA-&lt;i-1&gt;</td>
+  <td class=xl72 align=right>173</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl73>power</td>
+  <td class=xl73>VCC_A</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>12</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_OSC</td>
-  <td class=xl68 style='border-top:none;border-left:none'>power</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>68</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_OSC</td>
-  <td class=xl68 style='border-top:none;border-left:none'>power</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>124</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>power</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>180</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>power</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>6</td>
+  <td class=xl76>VSS</td>
+  <td class=xl76>ground</td>
+  <td class=xl76>GND</td>
+  <td class=xl72 align=right>62</td>
+  <td class=xl76>VSS</td>
+  <td class=xl76>ground</td>
+  <td class=xl76>GND</td>
+  <td class=xl72 align=right>118</td>
+  <td class=xl78>DATA_IN+</td>
+  <td class=xl78>LVDS IN</td>
+  <td class=xl78>DATA+&lt;i-1&gt;</td>
+  <td class=xl72 align=right>174</td>
+  <td class=xl75>GND_DISC</td>
+  <td class=xl75>ground</td>
+  <td class=xl75>GND</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>13</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VSS</td>
-  <td class=xl70 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl70 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>69</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VSS</td>
-  <td class=xl70 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl70 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>125</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>181</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND</td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>7</td>
+  <td class=xl76>VDD</td>
+  <td class=xl76>power</td>
+  <td class=xl76>VDD_DIG</td>
+  <td class=xl72 align=right>63</td>
+  <td class=xl76>VDD</td>
+  <td class=xl76>power</td>
+  <td class=xl76>VDD_DIG</td>
+  <td class=xl72 align=right>119</td>
+  <td class=xl76>VSS</td>
+  <td class=xl76>ground</td>
+  <td class=xl76>GND</td>
+  <td class=xl72 align=right>175</td>
+  <td class=xl75>VDD_DISC</td>
+  <td class=xl75>power</td>
+  <td class=xl75>VDD_DIG</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>14</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD</td>
-  <td class=xl70 style='border-top:none;border-left:none'>power</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>70</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD</td>
-  <td class=xl70 style='border-top:none;border-left:none'>power</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>126</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>power</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>182</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>power</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DIG</td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>8</td>
+  <td class=xl73>GND_A</td>
+  <td class=xl73>ground</td>
+  <td class=xl73>GND</td>
+  <td class=xl72 align=right>64</td>
+  <td class=xl73>GND_A</td>
+  <td class=xl73>ground</td>
+  <td class=xl73>GND</td>
+  <td class=xl72 align=right>120</td>
+  <td class=xl78>DATA_OUT-</td>
+  <td class=xl78>LVDS OUT</td>
+  <td class=xl78>DATA-&lt;i&gt;</td>
+  <td class=xl72 align=right>176</td>
+  <td class=xl74>VDD_OSC</td>
+  <td class=xl74>power</td>
+  <td class=xl74>VDD_DIG</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>15</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>71</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>127</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_OSC</td>
-  <td class=xl68 style='border-top:none;border-left:none'>power</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl73 align=right style='border-top:none;border-left:none'>183</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_OSC</td>
-  <td class=xl68 style='border-top:none;border-left:none'>power</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_DIG</td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>9</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl73>power</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl72 align=right>65</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl73>power</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl72 align=right>121</td>
+  <td class=xl78>DATA_OUT+</td>
+  <td class=xl78>LVDS OUT</td>
+  <td class=xl78>DATA+&lt;i&gt;</td>
+  <td class=xl72 align=right>177</td>
+  <td class=xl76>VSS</td>
+  <td class=xl76>ground</td>
+  <td class=xl76>GND</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>16</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>power</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>72</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>power</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>128</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VSS</td>
-  <td class=xl70 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl70 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl73 align=right style='border-top:none;border-left:none'>184</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VSS</td>
-  <td class=xl70 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl70 style='border-top:none;border-left:none'>GND</td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>10</td>
+  <td class=xl75>GND_DISC</td>
+  <td class=xl75>ground</td>
+  <td class=xl75>GND</td>
+  <td class=xl72 align=right>66</td>
+  <td class=xl75>GND_DISC</td>
+  <td class=xl75>ground</td>
+  <td class=xl75>GND</td>
+  <td class=xl72 align=right>122</td>
+  <td class=xl76>VDD</td>
+  <td class=xl76>power</td>
+  <td class=xl76>VDD_DIG</td>
+  <td class=xl72 align=right>178</td>
+  <td class=xl76>VDD</td>
+  <td class=xl76>power</td>
+  <td class=xl76>VDD_DIG</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>17</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>73</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>129</td>
-  <td class=xl72 style='border-top:none;border-left:none'>RESET_N</td>
-  <td class=xl72 style='border-top:none;border-left:none'>CMOS IN</td>
-  <td class=xl72 style='border-top:none;border-left:none'>POWER_ON</td>
-  <td class=xl73 align=right style='border-top:none;border-left:none'>185</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD</td>
-  <td class=xl70 style='border-top:none;border-left:none'>power</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD_DIG</td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>11</td>
+  <td class=xl75>VDD_DISC</td>
+  <td class=xl75>power</td>
+  <td class=xl75>VDD_DIG</td>
+  <td class=xl72 align=right>67</td>
+  <td class=xl75>VDD_DISC</td>
+  <td class=xl75>power</td>
+  <td class=xl75>VDD_DIG</td>
+  <td class=xl72 align=right>123</td>
+  <td class=xl73>GND_A</td>
+  <td class=xl73>ground</td>
+  <td class=xl73>GND</td>
+  <td class=xl72 align=right>179</td>
+  <td class=xl73>GND_A</td>
+  <td class=xl73>ground</td>
+  <td class=xl73>GND</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>18</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>power</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>74</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>power</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>130</td>
-  <td class=xl72 style='border-top:none;border-left:none'>RESET_N_sync-</td>
-  <td class=xl72 style='border-top:none;border-left:none'>LVDS IN</td>
-  <td class=xl72 style='border-top:none;border-left:none'>RESET_N-</td>
-  <td class=xl73 align=right style='border-top:none;border-left:none'>186</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND</td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>12</td>
+  <td class=xl74>VDD_OSC</td>
+  <td class=xl74>power</td>
+  <td class=xl74>VDD_DIG</td>
+  <td class=xl72 align=right>68</td>
+  <td class=xl74>VDD_OSC</td>
+  <td class=xl74>power</td>
+  <td class=xl74>VDD_DIG</td>
+  <td class=xl72 align=right>124</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl73>power</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl72 align=right>180</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl73>power</td>
+  <td class=xl73>VCC_A</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>19</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_OSC</td>
-  <td class=xl68 style='border-top:none;border-left:none'>power</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>75</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_OSC</td>
-  <td class=xl68 style='border-top:none;border-left:none'>power</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>131</td>
-  <td class=xl72 style='border-top:none;border-left:none'>RESET_N_sync+</td>
-  <td class=xl72 style='border-top:none;border-left:none'>LVDS IN</td>
-  <td class=xl72 style='border-top:none;border-left:none'>RESET_N+</td>
-  <td class=xl73 align=right style='border-top:none;border-left:none'>187</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>power</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>13</td>
+  <td class=xl76>VSS</td>
+  <td class=xl76>ground</td>
+  <td class=xl76>GND</td>
+  <td class=xl72 align=right>69</td>
+  <td class=xl76>VSS</td>
+  <td class=xl76>ground</td>
+  <td class=xl76>GND</td>
+  <td class=xl72 align=right>125</td>
+  <td class=xl75>GND_DISC</td>
+  <td class=xl75>ground</td>
+  <td class=xl75>GND</td>
+  <td class=xl72 align=right>181</td>
+  <td class=xl75>GND_DISC</td>
+  <td class=xl75>ground</td>
+  <td class=xl75>GND</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>20</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VSS</td>
-  <td class=xl70 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl70 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>76</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VSS</td>
-  <td class=xl70 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl70 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>132</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD</td>
-  <td class=xl70 style='border-top:none;border-left:none'>power</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl73 align=right style='border-top:none;border-left:none'>188</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND</td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>14</td>
+  <td class=xl76>VDD</td>
+  <td class=xl76>power</td>
+  <td class=xl76>VDD_DIG</td>
+  <td class=xl72 align=right>70</td>
+  <td class=xl76>VDD</td>
+  <td class=xl76>power</td>
+  <td class=xl76>VDD_DIG</td>
+  <td class=xl72 align=right>126</td>
+  <td class=xl75>VDD_DISC</td>
+  <td class=xl75>power</td>
+  <td class=xl75>VDD_DIG</td>
+  <td class=xl72 align=right>182</td>
+  <td class=xl75>VDD_DISC</td>
+  <td class=xl75>power</td>
+  <td class=xl75>VDD_DIG</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>21</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD</td>
-  <td class=xl70 style='border-top:none;border-left:none'>power</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>77</td>
-  <td class=xl74 style='border-top:none;border-left:none'>ACK_in</td>
-  <td class=xl74 style='border-top:none;border-left:none'>CMOS IN</td>
-  <td class=xl74 style='border-top:none;border-left:none'>ACK_C&lt;i+1&gt;</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>133</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl73 align=right style='border-top:none;border-left:none'>189</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>power</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DIG</td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>15</td>
+  <td class=xl73>GND_A</td>
+  <td class=xl73>ground</td>
+  <td class=xl73>GND</td>
+  <td class=xl72 align=right>71</td>
+  <td class=xl73>GND_A</td>
+  <td class=xl73>ground</td>
+  <td class=xl73>GND</td>
+  <td class=xl72 align=right>127</td>
+  <td class=xl74>VDD_OSC</td>
+  <td class=xl74>power</td>
+  <td class=xl74>VDD_DIG</td>
+  <td class=xl72 align=right>183</td>
+  <td class=xl74>VDD_OSC</td>
+  <td class=xl74>power</td>
+  <td class=xl74>VDD_DIG</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>22</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>78</td>
-  <td class=xl74 style='border-top:none;border-left:none'>ACK_out</td>
-  <td class=xl74 style='border-top:none;border-left:none'>CMOS OUT</td>
-  <td class=xl74 style='border-top:none;border-left:none'>ACK_C&lt;i&gt;</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>134</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>power</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl73 align=right style='border-top:none;border-left:none'>190</td>
-  <td class=xl71 style='border-top:none;border-left:none'>THRESHOLD</td>
-  <td class=xl71 style='border-top:none;border-left:none'>threshold</td>
-  <td class=xl71 style='border-top:none;border-left:none'>THR</td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>16</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl73>power</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl72 align=right>72</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl73>power</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl72 align=right>128</td>
+  <td class=xl76>VSS</td>
+  <td class=xl76>ground</td>
+  <td class=xl76>GND</td>
+  <td class=xl72 align=right>184</td>
+  <td class=xl76>VSS</td>
+  <td class=xl76>ground</td>
+  <td class=xl76>GND</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>23</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>power</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>79</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD</td>
-  <td class=xl70 style='border-top:none;border-left:none'>power</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>135</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl73 align=right style='border-top:none;border-left:none'>191</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_OSC</td>
-  <td class=xl68 style='border-top:none;border-left:none'>power</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_DIG</td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>17</td>
+  <td class=xl75>GND_DISC</td>
+  <td class=xl75>ground</td>
+  <td class=xl75>GND</td>
+  <td class=xl72 align=right>73</td>
+  <td class=xl75>GND_DISC</td>
+  <td class=xl75>ground</td>
+  <td class=xl75>GND</td>
+  <td class=xl72 align=right>129</td>
+  <td class=xl78>RESET_N</td>
+  <td class=xl78>CMOS IN</td>
+  <td class=xl78>POWER_ON</td>
+  <td class=xl72 align=right>185</td>
+  <td class=xl76>VDD</td>
+  <td class=xl76>power</td>
+  <td class=xl76>VDD_DIG</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>24</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>80</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>136</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>power</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl73 align=right style='border-top:none;border-left:none'>192</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VSS</td>
-  <td class=xl70 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl70 style='border-top:none;border-left:none'>GND</td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>18</td>
+  <td class=xl75>VDD_DISC</td>
+  <td class=xl75>power</td>
+  <td class=xl75>VDD_DIG</td>
+  <td class=xl72 align=right>74</td>
+  <td class=xl75>VDD_DISC</td>
+  <td class=xl75>power</td>
+  <td class=xl75>VDD_DIG</td>
+  <td class=xl72 align=right>130</td>
+  <td class=xl78>RESET_N_sync-</td>
+  <td class=xl78>LVDS IN</td>
+  <td class=xl78>RESET_N-</td>
+  <td class=xl72 align=right>186</td>
+  <td class=xl73>GND_A</td>
+  <td class=xl73>ground</td>
+  <td class=xl73>GND</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>25</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>power</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>81</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>power</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>137</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_OSC</td>
-  <td class=xl68 style='border-top:none;border-left:none'>power</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl73 align=right style='border-top:none;border-left:none'>193</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD</td>
-  <td class=xl70 style='border-top:none;border-left:none'>power</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD_DIG</td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>19</td>
+  <td class=xl74>VDD_OSC</td>
+  <td class=xl74>power</td>
+  <td class=xl74>VDD_DIG</td>
+  <td class=xl72 align=right>75</td>
+  <td class=xl74>VDD_OSC</td>
+  <td class=xl74>power</td>
+  <td class=xl74>VDD_DIG</td>
+  <td class=xl72 align=right>131</td>
+  <td class=xl78>RESET_N_sync+</td>
+  <td class=xl78>LVDS IN</td>
+  <td class=xl78>RESET_N+</td>
+  <td class=xl72 align=right>187</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl73>power</td>
+  <td class=xl73>VCC_A</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>26</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_OSC</td>
-  <td class=xl68 style='border-top:none;border-left:none'>power</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>82</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>138</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VSS</td>
-  <td class=xl70 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl70 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl73 align=right style='border-top:none;border-left:none'>194</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND</td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>20</td>
+  <td class=xl76>VSS</td>
+  <td class=xl76>ground</td>
+  <td class=xl76>GND</td>
+  <td class=xl72 align=right>76</td>
+  <td class=xl76>VSS</td>
+  <td class=xl76>ground</td>
+  <td class=xl76>GND</td>
+  <td class=xl72 align=right>132</td>
+  <td class=xl76>VDD</td>
+  <td class=xl76>power</td>
+  <td class=xl76>VDD_DIG</td>
+  <td class=xl72 align=right>188</td>
+  <td class=xl75>GND_DISC</td>
+  <td class=xl75>ground</td>
+  <td class=xl75>GND</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>27</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VSS</td>
-  <td class=xl70 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl70 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>83</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>power</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>139</td>
-  <td class=xl72 style='border-top:none;border-left:none'>SPI_MOSI</td>
-  <td class=xl72 style='border-top:none;border-left:none'>CMOS IN</td>
-  <td class=xl72 style='border-top:none;border-left:none'>SPI_MOSI</td>
-  <td class=xl73 align=right style='border-top:none;border-left:none'>195</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>power</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>21</td>
+  <td class=xl76>VDD</td>
+  <td class=xl76>power</td>
+  <td class=xl76>VDD_DIG</td>
+  <td class=xl72 align=right>77</td>
+  <td class=xl78>ACK_in</td>
+  <td class=xl78>CMOS IN</td>
+  <td class=xl78>ACK_C&lt;i+1&gt;</td>
+  <td class=xl72 align=right>133</td>
+  <td class=xl73>GND_A</td>
+  <td class=xl73>ground</td>
+  <td class=xl73>GND</td>
+  <td class=xl72 align=right>189</td>
+  <td class=xl75>VDD_DISC</td>
+  <td class=xl75>power</td>
+  <td class=xl75>VDD_DIG</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>28</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD</td>
-  <td class=xl70 style='border-top:none;border-left:none'>power</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>84</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_OSC</td>
-  <td class=xl68 style='border-top:none;border-left:none'>power</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>140</td>
-  <td class=xl72 style='border-top:none;border-left:none'>SPI_CLK</td>
-  <td class=xl72 style='border-top:none;border-left:none'>CMOS IN</td>
-  <td class=xl72 style='border-top:none;border-left:none'>SPI_CLK</td>
-  <td class=xl73 align=right style='border-top:none;border-left:none'>196</td>
-  <td class=xl66 style='border-top:none;border-left:none'>HV_SUB</td>
-  <td class=xl66 style='border-top:none;border-left:none'>high voltage</td>
-  <td class=xl66 style='border-top:none;border-left:none'>HV</td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>22</td>
+  <td class=xl73>GND_A</td>
+  <td class=xl73>ground</td>
+  <td class=xl73>GND</td>
+  <td class=xl72 align=right>78</td>
+  <td class=xl78>ACK_out</td>
+  <td class=xl78>CMOS OUT</td>
+  <td class=xl78>ACK_C&lt;i&gt;</td>
+  <td class=xl72 align=right>134</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl73>power</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl72 align=right>190</td>
+  <td class=xl77>THRESHOLD</td>
+  <td class=xl77>threshold</td>
+  <td class=xl77>THR</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>29</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>85</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VSS</td>
-  <td class=xl70 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl70 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>141</td>
-  <td class=xl72 style='border-top:none;border-left:none'>SPI_CS</td>
-  <td class=xl72 style='border-top:none;border-left:none'>CMOS IN</td>
-  <td class=xl76 style='border-top:none;border-left:none'>SPI_CS</td>
-  <td class=xl81>&nbsp;</td>
-  <td></td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>23</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl73>power</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl72 align=right>79</td>
+  <td class=xl76>VDD</td>
+  <td class=xl76>power</td>
+  <td class=xl76>VDD_DIG</td>
+  <td class=xl72 align=right>135</td>
+  <td class=xl75>GND_DISC</td>
+  <td class=xl75>ground</td>
+  <td class=xl75>GND</td>
+  <td class=xl72 align=right>191</td>
+  <td class=xl74>VDD_OSC</td>
+  <td class=xl74>power</td>
+  <td class=xl74>VDD_DIG</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>24</td>
+  <td class=xl75>GND_DISC</td>
+  <td class=xl75>ground</td>
+  <td class=xl75>GND</td>
+  <td class=xl72 align=right>80</td>
+  <td class=xl73>GND_A</td>
+  <td class=xl73>ground</td>
+  <td class=xl73>GND</td>
+  <td class=xl72 align=right>136</td>
+  <td class=xl75>VDD_DISC</td>
+  <td class=xl75>power</td>
+  <td class=xl75>VDD_DIG</td>
+  <td class=xl72 align=right>192</td>
+  <td class=xl76>VSS</td>
+  <td class=xl76>ground</td>
+  <td class=xl76>GND</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>25</td>
+  <td class=xl75>VDD_DISC</td>
+  <td class=xl75>power</td>
+  <td class=xl75>VDD_DIG</td>
+  <td class=xl72 align=right>81</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl73>power</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl72 align=right>137</td>
+  <td class=xl74>VDD_OSC</td>
+  <td class=xl74>power</td>
+  <td class=xl74>VDD_DIG</td>
+  <td class=xl72 align=right>193</td>
+  <td class=xl76>VDD</td>
+  <td class=xl76>power</td>
+  <td class=xl76>VDD_DIG</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>26</td>
+  <td class=xl74>VDD_OSC</td>
+  <td class=xl74>power</td>
+  <td class=xl74>VDD_DIG</td>
+  <td class=xl72 align=right>82</td>
+  <td class=xl75>GND_DISC</td>
+  <td class=xl75>ground</td>
+  <td class=xl75>GND</td>
+  <td class=xl72 align=right>138</td>
+  <td class=xl76>VSS</td>
+  <td class=xl76>ground</td>
+  <td class=xl76>GND</td>
+  <td class=xl72 align=right>194</td>
+  <td class=xl73>GND_A</td>
+  <td class=xl73>ground</td>
+  <td class=xl73>GND</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>27</td>
+  <td class=xl76>VSS</td>
+  <td class=xl76>ground</td>
+  <td class=xl76>GND</td>
+  <td class=xl72 align=right>83</td>
+  <td class=xl75>VDD_DISC</td>
+  <td class=xl75>power</td>
+  <td class=xl75>VDD_DIG</td>
+  <td class=xl72 align=right>139</td>
+  <td class=xl78>SPI_MOSI</td>
+  <td class=xl78>CMOS IN</td>
+  <td class=xl78>SPI_MOSI</td>
+  <td class=xl72 align=right>195</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl73>power</td>
+  <td class=xl73>VCC_A</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>28</td>
+  <td class=xl76>VDD</td>
+  <td class=xl76>power</td>
+  <td class=xl76>VDD_DIG</td>
+  <td class=xl72 align=right>84</td>
+  <td class=xl74>VDD_OSC</td>
+  <td class=xl74>power</td>
+  <td class=xl74>VDD_DIG</td>
+  <td class=xl72 align=right>140</td>
+  <td class=xl78>SPI_CLK</td>
+  <td class=xl78>CMOS IN</td>
+  <td class=xl78>SPI_CLK</td>
+  <td class=xl72 align=right>196</td>
+  <td class=xl71>HV_SUB</td>
+  <td class=xl71>high voltage</td>
+  <td class=xl71>HV</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>29</td>
+  <td class=xl73>GND_A</td>
+  <td class=xl73>ground</td>
+  <td class=xl73>GND</td>
+  <td class=xl72 align=right>85</td>
+  <td class=xl76>VSS</td>
+  <td class=xl76>ground</td>
+  <td class=xl76>GND</td>
+  <td class=xl72 align=right>141</td>
+  <td class=xl78>SPI_CS</td>
+  <td class=xl78>CMOS IN</td>
+  <td class=xl79>SPI_CS</td>
+  <td class=xl80>&nbsp;</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>30</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl73>power</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl72 align=right>86</td>
+  <td class=xl78>Req_in</td>
+  <td class=xl78>CMOS IN</td>
+  <td class=xl78>Req&lt;i-1&gt;</td>
+  <td class=xl72 align=right>142</td>
+  <td class=xl78>SPI_MISO</td>
+  <td class=xl78>CMOS OUT</td>
+  <td class=xl79>N/A</td>
+  <td class=xl80>&nbsp;</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>31</td>
+  <td class=xl75>GND_DISC</td>
+  <td class=xl75>ground</td>
+  <td class=xl75>GND</td>
+  <td class=xl72 align=right>87</td>
+  <td class=xl78>Req_out</td>
+  <td class=xl78>CMOS OUT</td>
+  <td class=xl78>Req&lt;i&gt;</td>
+  <td class=xl72 align=right>143</td>
+  <td class=xl76>VDD</td>
+  <td class=xl76>power</td>
+  <td class=xl81>VDD_DIG</td>
+  <td class=xl80>&nbsp;</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>32</td>
+  <td class=xl75>VDD_DISC</td>
+  <td class=xl75>power</td>
+  <td class=xl75>VDD_DIG</td>
+  <td class=xl72 align=right>88</td>
+  <td class=xl76>VDD</td>
+  <td class=xl76>power</td>
+  <td class=xl76>VDD_DIG</td>
+  <td class=xl72 align=right>144</td>
+  <td class=xl73>GND_A</td>
+  <td class=xl73>ground</td>
+  <td class=xl82>GND</td>
+  <td class=xl80>&nbsp;</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>33</td>
+  <td class=xl74>VDD_OSC</td>
+  <td class=xl74>power</td>
+  <td class=xl74>VDD_DIG</td>
+  <td class=xl72 align=right>89</td>
+  <td class=xl73>GND_A</td>
+  <td class=xl73>ground</td>
+  <td class=xl73>GND</td>
+  <td class=xl72 align=right>145</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl73>power</td>
+  <td class=xl82>VCC_A</td>
+  <td class=xl80>&nbsp;</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>34</td>
+  <td class=xl76>VSS</td>
+  <td class=xl76>ground</td>
+  <td class=xl76>GND</td>
+  <td class=xl72 align=right>90</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl73>power</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl72 align=right>146</td>
+  <td class=xl75>GND_DISC</td>
+  <td class=xl75>ground</td>
+  <td class=xl83>GND</td>
+  <td class=xl80>&nbsp;</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>35</td>
+  <td class=xl76>VDD</td>
+  <td class=xl76>power</td>
+  <td class=xl76>VDD_DIG</td>
+  <td class=xl72 align=right>91</td>
+  <td class=xl75>GND_DISC</td>
+  <td class=xl75>ground</td>
+  <td class=xl75>GND</td>
+  <td class=xl72 align=right>147</td>
+  <td class=xl75>VDD_DISC</td>
+  <td class=xl75>power</td>
+  <td class=xl83>VDD_DIG</td>
+  <td class=xl80>&nbsp;</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>36</td>
+  <td class=xl73>GND_A</td>
+  <td class=xl73>ground</td>
+  <td class=xl73>GND</td>
+  <td class=xl72 align=right>92</td>
+  <td class=xl75>VDD_DISC</td>
+  <td class=xl75>power</td>
+  <td class=xl75>VDD_DIG</td>
+  <td class=xl72 align=right>148</td>
+  <td class=xl74>VDD_OSC</td>
+  <td class=xl74>power</td>
+  <td class=xl84>VDD_DIG</td>
+  <td class=xl80>&nbsp;</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>37</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl73>power</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl72 align=right>93</td>
+  <td class=xl74>VDD_OSC</td>
+  <td class=xl74>power</td>
+  <td class=xl74>VDD_DIG</td>
+  <td class=xl72 align=right>149</td>
+  <td class=xl76>VSS</td>
+  <td class=xl76>ground</td>
+  <td class=xl81>GND</td>
+  <td class=xl80>&nbsp;</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>38</td>
+  <td class=xl75>GND_DISC</td>
+  <td class=xl75>ground</td>
+  <td class=xl75>GND</td>
+  <td class=xl72 align=right>94</td>
+  <td class=xl85>CHIP_ID_0</td>
+  <td class=xl85>POWER/GND</td>
+  <td class=xl85>GND/VDD_DIG</td>
+  <td class=xl72 align=right>150</td>
+  <td class=xl76>VDD</td>
+  <td class=xl76>power</td>
+  <td class=xl81>VDD_DIG</td>
+  <td class=xl80>&nbsp;</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>39</td>
+  <td class=xl75>VDD_DISC</td>
+  <td class=xl75>power</td>
+  <td class=xl75>VDD_DIG</td>
+  <td class=xl72 align=right>95</td>
+  <td class=xl85>CHIP_ID_1</td>
+  <td class=xl85>POWER/GND</td>
+  <td class=xl85>GND/VDD_DIG</td>
+  <td class=xl72 align=right>151</td>
+  <td class=xl73>GND_A</td>
+  <td class=xl73>ground</td>
+  <td class=xl82>GND</td>
+  <td class=xl80>&nbsp;</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>40</td>
+  <td class=xl74>VDD_OSC</td>
+  <td class=xl74>power</td>
+  <td class=xl74>VDD_DIG</td>
+  <td class=xl72 align=right>96</td>
+  <td class=xl85>CHIP_ID_2</td>
+  <td class=xl85>POWER/GND</td>
+  <td class=xl85>GND/VDD_DIG</td>
+  <td class=xl72 align=right>152</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl73>power</td>
+  <td class=xl82>VCC_A</td>
+  <td class=xl80>&nbsp;</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>41</td>
+  <td class=xl76>VSS</td>
+  <td class=xl76>ground</td>
+  <td class=xl76>GND</td>
+  <td class=xl72 align=right>97</td>
+  <td class=xl76>VSS</td>
+  <td class=xl76>ground</td>
+  <td class=xl76>GND</td>
+  <td class=xl72 align=right>153</td>
+  <td class=xl75>GND_DISC</td>
+  <td class=xl75>ground</td>
+  <td class=xl83>GND</td>
+  <td class=xl80>&nbsp;</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>42</td>
+  <td class=xl76>VDD</td>
+  <td class=xl76>power</td>
+  <td class=xl76>VDD_DIG</td>
+  <td class=xl72 align=right>98</td>
+  <td class=xl78>TRIG_SLOW-</td>
+  <td class=xl78>LVDS OUT</td>
+  <td class=xl78>N/A</td>
+  <td class=xl72 align=right>154</td>
+  <td class=xl75>VDD_DISC</td>
+  <td class=xl75>power</td>
+  <td class=xl83>VDD_DIG</td>
+  <td class=xl80>&nbsp;</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>43</td>
+  <td class=xl73>GND_A</td>
+  <td class=xl73>ground</td>
+  <td class=xl73>GND</td>
+  <td class=xl72 align=right>99</td>
+  <td class=xl78>TRIG_SLOW+</td>
+  <td class=xl78>LVDS OUT</td>
+  <td class=xl78>N/A</td>
+  <td class=xl72 align=right>155</td>
+  <td class=xl74>VDD_OSC</td>
+  <td class=xl74>power</td>
+  <td class=xl84>VDD_DIG</td>
+  <td class=xl80>&nbsp;</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>44</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl73>power</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl72 align=right>100</td>
+  <td class=xl78>TRIG_FAST-</td>
+  <td class=xl78>LVDS OUT</td>
+  <td class=xl78>N/A</td>
+  <td class=xl72 align=right>156</td>
+  <td class=xl76>VSS</td>
+  <td class=xl76>ground</td>
+  <td class=xl81>GND</td>
+  <td class=xl80>&nbsp;</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>45</td>
+  <td class=xl75>GND_DISC</td>
+  <td class=xl75>ground</td>
+  <td class=xl75>GND</td>
+  <td class=xl72 align=right>101</td>
+  <td class=xl78>TRIG_FAST+</td>
+  <td class=xl78>LVDS OUT</td>
+  <td class=xl78>N/A</td>
+  <td class=xl72 align=right>157</td>
+  <td class=xl76>VDD</td>
+  <td class=xl76>power</td>
+  <td class=xl81>VDD_DIG</td>
+  <td class=xl80>&nbsp;</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>46</td>
+  <td class=xl75>VDD_DISC</td>
+  <td class=xl75>power</td>
+  <td class=xl75>VDD_DIG</td>
+  <td class=xl72 align=right>102</td>
+  <td class=xl76>VDD</td>
+  <td class=xl76>power</td>
+  <td class=xl76>VDD_DIG</td>
+  <td class=xl72 align=right>158</td>
+  <td class=xl73>GND_A</td>
+  <td class=xl73>ground</td>
+  <td class=xl82>GND</td>
+  <td class=xl80>&nbsp;</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>47</td>
+  <td class=xl74>VDD_OSC</td>
+  <td class=xl74>power</td>
+  <td class=xl74>VDD_DIG</td>
+  <td class=xl72 align=right>103</td>
+  <td class=xl73>GND_A</td>
+  <td class=xl73>ground</td>
+  <td class=xl73>GND</td>
+  <td class=xl72 align=right>159</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl73>power</td>
+  <td class=xl82>VCC_A</td>
+  <td class=xl80>&nbsp;</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>48</td>
+  <td class=xl76>VSS</td>
+  <td class=xl76>ground</td>
+  <td class=xl76>GND</td>
+  <td class=xl72 align=right>104</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl73>power</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl72 align=right>160</td>
+  <td class=xl75>GND_DISC</td>
+  <td class=xl75>ground</td>
+  <td class=xl83>GND</td>
+  <td class=xl80>&nbsp;</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>49</td>
+  <td class=xl76>VDD</td>
+  <td class=xl76>power</td>
+  <td class=xl76>VDD_DIG</td>
+  <td class=xl72 align=right>105</td>
+  <td class=xl75>GND_DISC</td>
+  <td class=xl75>ground</td>
+  <td class=xl75>GND</td>
+  <td class=xl72 align=right>161</td>
+  <td class=xl75>VDD_DISC</td>
+  <td class=xl75>power</td>
+  <td class=xl83>VDD_DIG</td>
+  <td class=xl80>&nbsp;</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>50</td>
+  <td class=xl73>GND_A</td>
+  <td class=xl73>ground</td>
+  <td class=xl73>GND</td>
+  <td class=xl72 align=right>106</td>
+  <td class=xl75>VDD_DISC</td>
+  <td class=xl75>power</td>
+  <td class=xl75>VDD_DIG</td>
+  <td class=xl72 align=right>162</td>
+  <td class=xl74>VDD_OSC</td>
+  <td class=xl74>power</td>
+  <td class=xl84>VDD_DIG</td>
+  <td class=xl80>&nbsp;</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>51</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl73>power</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl72 align=right>107</td>
+  <td class=xl74>VDD_OSC</td>
+  <td class=xl74>power</td>
+  <td class=xl74>VDD_DIG</td>
+  <td class=xl72 align=right>163</td>
+  <td class=xl76>VSS</td>
+  <td class=xl76>ground</td>
+  <td class=xl81>GND</td>
+  <td class=xl80>&nbsp;</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>52</td>
+  <td class=xl75>GND_DISC</td>
+  <td class=xl75>ground</td>
+  <td class=xl75>GND</td>
+  <td class=xl72 align=right>108</td>
+  <td class=xl76>VSS</td>
+  <td class=xl76>ground</td>
+  <td class=xl76>GND</td>
+  <td class=xl72 align=right>164</td>
+  <td class=xl76>VDD</td>
+  <td class=xl76>power</td>
+  <td class=xl81>VDD_DIG</td>
+  <td class=xl80>&nbsp;</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>53</td>
+  <td class=xl75>VDD_DISC</td>
+  <td class=xl75>power</td>
+  <td class=xl75>VDD_DIG</td>
+  <td class=xl72 align=right>109</td>
+  <td class=xl78>RO_CLK-</td>
+  <td class=xl78>LVDS IN</td>
+  <td class=xl78>RO_CLK-</td>
+  <td class=xl72 align=right>165</td>
+  <td class=xl73>GND_A</td>
+  <td class=xl73>ground</td>
+  <td class=xl82>GND</td>
+  <td class=xl80>&nbsp;</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>54</td>
+  <td class=xl74>VDD_OSC</td>
+  <td class=xl74>power</td>
+  <td class=xl74>VDD_DIG</td>
+  <td class=xl72 align=right>110</td>
+  <td class=xl78>RO_CLK+</td>
+  <td class=xl78>LVDS IN</td>
+  <td class=xl78>RO_CLK+</td>
+  <td class=xl72 align=right>166</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl73>power</td>
+  <td class=xl82>VCC_A</td>
+  <td class=xl80>&nbsp;</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
   <td></td>
   <td></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>30</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>power</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>86</td>
-  <td class=xl74 style='border-top:none;border-left:none'>Req_in</td>
-  <td class=xl74 style='border-top:none;border-left:none'>CMOS IN</td>
-  <td class=xl74 style='border-top:none;border-left:none'>Req&lt;i-1&gt;</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>142</td>
-  <td class=xl72 style='border-top:none;border-left:none'>SPI_MISO</td>
-  <td class=xl72 style='border-top:none;border-left:none'>CMOS OUT</td>
-  <td class=xl76 style='border-top:none;border-left:none'>N/A</td>
-  <td class=xl81>&nbsp;</td>
-  <td></td>
-  <td></td>
-  <td></td>
- </tr>
- <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>31</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>87</td>
-  <td class=xl74 style='border-top:none;border-left:none'>Req_out</td>
-  <td class=xl74 style='border-top:none;border-left:none'>CMOS OUT</td>
-  <td class=xl74 style='border-top:none;border-left:none'>Req&lt;i&gt;</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>143</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD</td>
-  <td class=xl70 style='border-top:none;border-left:none'>power</td>
-  <td class=xl77 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl81>&nbsp;</td>
-  <td></td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>55</td>
+  <td class=xl76>VSS</td>
+  <td class=xl76>ground</td>
+  <td class=xl76>GND</td>
+  <td class=xl72 align=right>111</td>
+  <td class=xl76>VDD</td>
+  <td class=xl76>power</td>
+  <td class=xl76>VDD_DIG</td>
+  <td class=xl72 align=right>167</td>
+  <td class=xl75>GND_DISC</td>
+  <td class=xl75>ground</td>
+  <td class=xl83>GND</td>
+  <td class=xl80>&nbsp;</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
   <td></td>
   <td></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>32</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>power</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>88</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD</td>
-  <td class=xl70 style='border-top:none;border-left:none'>power</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>144</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl78 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl81>&nbsp;</td>
-  <td></td>
-  <td></td>
-  <td></td>
- </tr>
- <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>33</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_OSC</td>
-  <td class=xl68 style='border-top:none;border-left:none'>power</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>89</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>145</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>power</td>
-  <td class=xl78 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl81>&nbsp;</td>
-  <td></td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>56</td>
+  <td class=xl76>VDD</td>
+  <td class=xl76>power</td>
+  <td class=xl76>VDD_DIG</td>
+  <td class=xl72 align=right>112</td>
+  <td class=xl73>GND_A</td>
+  <td class=xl73>ground</td>
+  <td class=xl73>GND</td>
+  <td class=xl72 align=right>168</td>
+  <td class=xl75>VDD_DISC</td>
+  <td class=xl75>power</td>
+  <td class=xl83>VDD_DIG</td>
+  <td class=xl80>&nbsp;</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
   <td></td>
   <td></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>34</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VSS</td>
-  <td class=xl70 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl70 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>90</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>power</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>146</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl79 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl81>&nbsp;</td>
+  <td height=20 class=xl66 style='height:15.0pt'></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
   <td></td>
   <td></td>
-  <td></td>
- </tr>
- <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>35</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD</td>
-  <td class=xl70 style='border-top:none;border-left:none'>power</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>91</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>147</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>power</td>
-  <td class=xl79 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl81>&nbsp;</td>
-  <td></td>
-  <td></td>
-  <td></td>
- </tr>
- <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>36</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>92</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>power</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>148</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_OSC</td>
-  <td class=xl68 style='border-top:none;border-left:none'>power</td>
-  <td class=xl80 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl81>&nbsp;</td>
-  <td></td>
-  <td></td>
-  <td></td>
- </tr>
- <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>37</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>power</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>93</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_OSC</td>
-  <td class=xl68 style='border-top:none;border-left:none'>power</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>149</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VSS</td>
-  <td class=xl70 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl77 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl81>&nbsp;</td>
-  <td></td>
-  <td></td>
-  <td></td>
- </tr>
- <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>38</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>94</td>
-  <td class=xl75 style='border-top:none;border-left:none'>CHIP_ID_0</td>
-  <td class=xl75 style='border-top:none;border-left:none'>POWER/GND</td>
-  <td class=xl75 style='border-top:none;border-left:none'>GND/VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>150</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD</td>
-  <td class=xl70 style='border-top:none;border-left:none'>power</td>
-  <td class=xl77 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl81>&nbsp;</td>
-  <td></td>
-  <td></td>
-  <td></td>
- </tr>
- <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>39</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>power</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>95</td>
-  <td class=xl75 style='border-top:none;border-left:none'>CHIP_ID_1</td>
-  <td class=xl75 style='border-top:none;border-left:none'>POWER/GND</td>
-  <td class=xl75 style='border-top:none;border-left:none'>GND/VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>151</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl78 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl81>&nbsp;</td>
-  <td></td>
-  <td></td>
-  <td></td>
- </tr>
- <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>40</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_OSC</td>
-  <td class=xl68 style='border-top:none;border-left:none'>power</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>96</td>
-  <td class=xl75 style='border-top:none;border-left:none'>CHIP_ID_2</td>
-  <td class=xl75 style='border-top:none;border-left:none'>POWER/GND</td>
-  <td class=xl75 style='border-top:none;border-left:none'>GND/VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>152</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>power</td>
-  <td class=xl78 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl81>&nbsp;</td>
-  <td></td>
-  <td></td>
-  <td></td>
- </tr>
- <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>41</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VSS</td>
-  <td class=xl70 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl70 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>97</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VSS</td>
-  <td class=xl70 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl70 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>153</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl79 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl81>&nbsp;</td>
-  <td></td>
-  <td></td>
-  <td></td>
- </tr>
- <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>42</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD</td>
-  <td class=xl70 style='border-top:none;border-left:none'>power</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>98</td>
-  <td class=xl72 style='border-top:none;border-left:none'>TRIG_SLOW-</td>
-  <td class=xl72 style='border-top:none;border-left:none'>LVDS OUT</td>
-  <td class=xl72 style='border-top:none;border-left:none'>N/A</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>154</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>power</td>
-  <td class=xl79 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl81>&nbsp;</td>
-  <td></td>
-  <td></td>
-  <td></td>
- </tr>
- <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>43</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>99</td>
-  <td class=xl72 style='border-top:none;border-left:none'>TRIG_SLOW+</td>
-  <td class=xl72 style='border-top:none;border-left:none'>LVDS OUT</td>
-  <td class=xl72 style='border-top:none;border-left:none'>N/A</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>155</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_OSC</td>
-  <td class=xl68 style='border-top:none;border-left:none'>power</td>
-  <td class=xl80 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl81>&nbsp;</td>
-  <td></td>
-  <td></td>
-  <td></td>
- </tr>
- <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>44</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>power</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>100</td>
-  <td class=xl72 style='border-top:none;border-left:none'>TRIG_FAST-</td>
-  <td class=xl72 style='border-top:none;border-left:none'>LVDS OUT</td>
-  <td class=xl72 style='border-top:none;border-left:none'>N/A</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>156</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VSS</td>
-  <td class=xl70 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl77 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl81>&nbsp;</td>
-  <td></td>
-  <td></td>
-  <td></td>
- </tr>
- <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>45</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>101</td>
-  <td class=xl72 style='border-top:none;border-left:none'>TRIG_FAST+</td>
-  <td class=xl72 style='border-top:none;border-left:none'>LVDS OUT</td>
-  <td class=xl72 style='border-top:none;border-left:none'>N/A</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>157</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD</td>
-  <td class=xl70 style='border-top:none;border-left:none'>power</td>
-  <td class=xl77 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl81>&nbsp;</td>
-  <td></td>
-  <td></td>
-  <td></td>
- </tr>
- <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>46</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>power</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>102</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD</td>
-  <td class=xl70 style='border-top:none;border-left:none'>power</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>158</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl78 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl81>&nbsp;</td>
-  <td></td>
-  <td></td>
-  <td></td>
- </tr>
- <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>47</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_OSC</td>
-  <td class=xl68 style='border-top:none;border-left:none'>power</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>103</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>159</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>power</td>
-  <td class=xl78 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl81>&nbsp;</td>
-  <td></td>
-  <td></td>
-  <td></td>
- </tr>
- <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>48</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VSS</td>
-  <td class=xl70 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl70 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>104</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>power</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>160</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl79 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl81>&nbsp;</td>
-  <td></td>
-  <td></td>
-  <td></td>
- </tr>
- <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>49</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD</td>
-  <td class=xl70 style='border-top:none;border-left:none'>power</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>105</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>161</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>power</td>
-  <td class=xl79 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl81>&nbsp;</td>
-  <td></td>
-  <td></td>
-  <td></td>
- </tr>
- <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>50</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>106</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>power</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>162</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_OSC</td>
-  <td class=xl68 style='border-top:none;border-left:none'>power</td>
-  <td class=xl80 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl81>&nbsp;</td>
-  <td></td>
-  <td></td>
-  <td></td>
- </tr>
- <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>51</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>power</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>107</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_OSC</td>
-  <td class=xl68 style='border-top:none;border-left:none'>power</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>163</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VSS</td>
-  <td class=xl70 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl77 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl81>&nbsp;</td>
-  <td></td>
-  <td></td>
-  <td></td>
- </tr>
- <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>52</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>108</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VSS</td>
-  <td class=xl70 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl70 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>164</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD</td>
-  <td class=xl70 style='border-top:none;border-left:none'>power</td>
-  <td class=xl77 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl81>&nbsp;</td>
-  <td></td>
-  <td></td>
-  <td></td>
- </tr>
- <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>53</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>power</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>109</td>
-  <td class=xl72 style='border-top:none;border-left:none'>RO_CLK-</td>
-  <td class=xl72 style='border-top:none;border-left:none'>LVDS IN</td>
-  <td class=xl72 style='border-top:none;border-left:none'>RO_CLK-</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>165</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl78 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl81>&nbsp;</td>
-  <td></td>
-  <td></td>
-  <td></td>
- </tr>
- <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>54</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_OSC</td>
-  <td class=xl68 style='border-top:none;border-left:none'>power</td>
-  <td class=xl68 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>110</td>
-  <td class=xl72 style='border-top:none;border-left:none'>RO_CLK+</td>
-  <td class=xl72 style='border-top:none;border-left:none'>LVDS IN</td>
-  <td class=xl72 style='border-top:none;border-left:none'>RO_CLK+</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>166</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>power</td>
-  <td class=xl78 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl81>&nbsp;</td>
-  <td></td>
-  <td></td>
-  <td></td>
- </tr>
- <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>55</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VSS</td>
-  <td class=xl70 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl70 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>111</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD</td>
-  <td class=xl70 style='border-top:none;border-left:none'>power</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>167</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl79 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl81>&nbsp;</td>
-  <td></td>
-  <td></td>
-  <td></td>
- </tr>
- <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>56</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD</td>
-  <td class=xl70 style='border-top:none;border-left:none'>power</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>112</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>168</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>power</td>
-  <td class=xl79 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl81>&nbsp;</td>
-  <td></td>
-  <td></td>
-  <td></td>
- </tr>
- <tr height=40 style='height:30.0pt;mso-xlrowspan:2'>
-  <td height=40 colspan=16 style='height:30.0pt;mso-ignore:colspan'></td>
  </tr>
  <tr height=32 style='height:24.0pt'>
-  <td height=32 class=xl84 colspan=4 style='height:24.0pt;mso-ignore:colspan'>Top
+  <td height=32 class=xl65 colspan=4 style='height:24.0pt;mso-ignore:colspan'>Top
   I/O (power only)</td>
-  <td colspan=12 style='mso-ignore:colspan'></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td></td>
+  <td></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 colspan=16 style='height:15.0pt;mso-ignore:colspan'></td>
+  <td height=20 class=xl66 style='height:15.0pt'></td>
+  <td class=xl86 colspan=3 style='mso-ignore:colspan'>Counting from left to
+  right</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td></td>
+  <td></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl63 style='height:15.0pt'>#</td>
-  <td class=xl64 style='border-left:none'>Name</td>
-  <td class=xl64 style='border-left:none'>Type</td>
-  <td class=xl64 style='border-left:none'>Flex net</td>
-  <td class=xl63 style='border-left:none'>#</td>
-  <td class=xl64 style='border-left:none'>Name</td>
-  <td class=xl64 style='border-left:none'>Type</td>
-  <td class=xl64 style='border-left:none'>Flex net</td>
-  <td class=xl63 style='border-left:none'>#</td>
-  <td class=xl64 style='border-left:none'>Name</td>
-  <td class=xl64 style='border-left:none'>Type</td>
-  <td class=xl64 style='border-left:none'>Flex net</td>
-  <td class=xl63 style='border-left:none'>#</td>
-  <td class=xl64 style='border-left:none'>Name</td>
-  <td class=xl64 style='border-left:none'>Type</td>
-  <td class=xl64 style='border-left:none'>Flex net</td>
+  <td height=20 class=xl66 style='height:15.0pt'></td>
+  <td class=xl86 colspan=3 style='mso-ignore:colspan'>Pad pitch on a row: 300
+  µm</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td></td>
+  <td></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>197</td>
-  <td class=xl66 style='border-top:none;border-left:none'>HV_SUB</td>
-  <td class=xl66 style='border-top:none;border-left:none'>high voltage</td>
-  <td class=xl66 style='border-top:none;border-left:none'>HV</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>225</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD</td>
-  <td class=xl70 style='border-top:none;border-left:none'>power</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>253</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>power</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>281</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>power</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
+  <td height=20 class=xl66 style='height:15.0pt'></td>
+  <td class=xl86>Pad size:</td>
+  <td class=xl86>120 x 100</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td></td>
+  <td></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>198</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>226</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>254</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VSS</td>
-  <td class=xl70 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl70 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>282</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND</td>
+  <td height=20 class=xl66 style='height:15.0pt'></td>
+  <td class=xl86 colspan=3 style='mso-ignore:colspan'>Extra distance for HV_sub
+  pads</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td></td>
+  <td></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>199</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>power</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>227</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>power</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>255</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD</td>
-  <td class=xl70 style='border-top:none;border-left:none'>power</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>283</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>power</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DIG</td>
+  <td height=20 class=xl66 style='height:15.0pt'></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>200</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VSS</td>
-  <td class=xl70 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl70 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>228</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>256</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>284</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VSS</td>
-  <td class=xl70 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl70 style='border-top:none;border-left:none'>GND</td>
+  <td height=20 class=xl67 style='height:15.0pt'>#</td>
+  <td class=xl68>Name</td>
+  <td class=xl68>Type</td>
+  <td class=xl68>Flex net</td>
+  <td class=xl69>#</td>
+  <td class=xl68>Name</td>
+  <td class=xl68>Type</td>
+  <td class=xl68>Flex net</td>
+  <td class=xl69>#</td>
+  <td class=xl68>Name</td>
+  <td class=xl68>Type</td>
+  <td class=xl68>Flex net</td>
+  <td class=xl69>#</td>
+  <td class=xl68>Name</td>
+  <td class=xl68>Type</td>
+  <td class=xl68>Flex net</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>201</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD</td>
-  <td class=xl70 style='border-top:none;border-left:none'>power</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>229</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>power</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>257</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>power</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>285</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD</td>
-  <td class=xl70 style='border-top:none;border-left:none'>power</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD_DIG</td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>197</td>
+  <td class=xl71>HV_SUB</td>
+  <td class=xl71>high voltage</td>
+  <td class=xl71>HV</td>
+  <td class=xl72 align=right>225</td>
+  <td class=xl76>VDD</td>
+  <td class=xl76>power</td>
+  <td class=xl76>VDD_DIG</td>
+  <td class=xl72 align=right>253</td>
+  <td class=xl75>VDD_DISC</td>
+  <td class=xl75>power</td>
+  <td class=xl75>VDD_DIG</td>
+  <td class=xl72 align=right>281</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl73>power</td>
+  <td class=xl73>VCC_A</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>202</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>230</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VSS</td>
-  <td class=xl70 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl70 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>258</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>286</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND</td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>198</td>
+  <td class=xl75>GND_DISC</td>
+  <td class=xl75>ground</td>
+  <td class=xl75>GND</td>
+  <td class=xl72 align=right>226</td>
+  <td class=xl73>GND_A</td>
+  <td class=xl73>ground</td>
+  <td class=xl73>GND</td>
+  <td class=xl72 align=right>254</td>
+  <td class=xl76>VSS</td>
+  <td class=xl76>ground</td>
+  <td class=xl76>GND</td>
+  <td class=xl72 align=right>282</td>
+  <td class=xl75>GND_DISC</td>
+  <td class=xl75>ground</td>
+  <td class=xl75>GND</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>203</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>power</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>231</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD</td>
-  <td class=xl70 style='border-top:none;border-left:none'>power</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>259</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>power</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>287</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>power</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>199</td>
+  <td class=xl75>VDD_DISC</td>
+  <td class=xl75>power</td>
+  <td class=xl75>VDD_DIG</td>
+  <td class=xl72 align=right>227</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl73>power</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl72 align=right>255</td>
+  <td class=xl76>VDD</td>
+  <td class=xl76>power</td>
+  <td class=xl76>VDD_DIG</td>
+  <td class=xl72 align=right>283</td>
+  <td class=xl75>VDD_DISC</td>
+  <td class=xl75>power</td>
+  <td class=xl75>VDD_DIG</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>204</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>232</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>260</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VSS</td>
-  <td class=xl70 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl70 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>288</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND</td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>200</td>
+  <td class=xl76>VSS</td>
+  <td class=xl76>ground</td>
+  <td class=xl76>GND</td>
+  <td class=xl72 align=right>228</td>
+  <td class=xl75>GND_DISC</td>
+  <td class=xl75>ground</td>
+  <td class=xl75>GND</td>
+  <td class=xl72 align=right>256</td>
+  <td class=xl73>GND_A</td>
+  <td class=xl73>ground</td>
+  <td class=xl73>GND</td>
+  <td class=xl72 align=right>284</td>
+  <td class=xl76>VSS</td>
+  <td class=xl76>ground</td>
+  <td class=xl76>GND</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>205</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>power</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>233</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>power</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>261</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD</td>
-  <td class=xl70 style='border-top:none;border-left:none'>power</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>289</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>power</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DIG</td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>201</td>
+  <td class=xl76>VDD</td>
+  <td class=xl76>power</td>
+  <td class=xl76>VDD_DIG</td>
+  <td class=xl72 align=right>229</td>
+  <td class=xl75>VDD_DISC</td>
+  <td class=xl75>power</td>
+  <td class=xl75>VDD_DIG</td>
+  <td class=xl72 align=right>257</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl73>power</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl72 align=right>285</td>
+  <td class=xl76>VDD</td>
+  <td class=xl76>power</td>
+  <td class=xl76>VDD_DIG</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>206</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VSS</td>
-  <td class=xl70 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl70 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>234</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>262</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>290</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VSS</td>
-  <td class=xl70 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl70 style='border-top:none;border-left:none'>GND</td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>202</td>
+  <td class=xl73>GND_A</td>
+  <td class=xl73>ground</td>
+  <td class=xl73>GND</td>
+  <td class=xl72 align=right>230</td>
+  <td class=xl76>VSS</td>
+  <td class=xl76>ground</td>
+  <td class=xl76>GND</td>
+  <td class=xl72 align=right>258</td>
+  <td class=xl75>GND_DISC</td>
+  <td class=xl75>ground</td>
+  <td class=xl75>GND</td>
+  <td class=xl72 align=right>286</td>
+  <td class=xl73>GND_A</td>
+  <td class=xl73>ground</td>
+  <td class=xl73>GND</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>207</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD</td>
-  <td class=xl70 style='border-top:none;border-left:none'>power</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>235</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>power</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>263</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>power</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>291</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD</td>
-  <td class=xl70 style='border-top:none;border-left:none'>power</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD_DIG</td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>203</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl73>power</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl72 align=right>231</td>
+  <td class=xl76>VDD</td>
+  <td class=xl76>power</td>
+  <td class=xl76>VDD_DIG</td>
+  <td class=xl72 align=right>259</td>
+  <td class=xl75>VDD_DISC</td>
+  <td class=xl75>power</td>
+  <td class=xl75>VDD_DIG</td>
+  <td class=xl72 align=right>287</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl73>power</td>
+  <td class=xl73>VCC_A</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>208</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>236</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VSS</td>
-  <td class=xl70 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl70 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>264</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>292</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND</td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>204</td>
+  <td class=xl75>GND_DISC</td>
+  <td class=xl75>ground</td>
+  <td class=xl75>GND</td>
+  <td class=xl72 align=right>232</td>
+  <td class=xl73>GND_A</td>
+  <td class=xl73>ground</td>
+  <td class=xl73>GND</td>
+  <td class=xl72 align=right>260</td>
+  <td class=xl76>VSS</td>
+  <td class=xl76>ground</td>
+  <td class=xl76>GND</td>
+  <td class=xl72 align=right>288</td>
+  <td class=xl75>GND_DISC</td>
+  <td class=xl75>ground</td>
+  <td class=xl75>GND</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>209</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>power</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>237</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD</td>
-  <td class=xl70 style='border-top:none;border-left:none'>power</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>265</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>power</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>293</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>power</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>205</td>
+  <td class=xl75>VDD_DISC</td>
+  <td class=xl75>power</td>
+  <td class=xl75>VDD_DIG</td>
+  <td class=xl72 align=right>233</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl73>power</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl72 align=right>261</td>
+  <td class=xl76>VDD</td>
+  <td class=xl76>power</td>
+  <td class=xl76>VDD_DIG</td>
+  <td class=xl72 align=right>289</td>
+  <td class=xl75>VDD_DISC</td>
+  <td class=xl75>power</td>
+  <td class=xl75>VDD_DIG</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>210</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>238</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>266</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VSS</td>
-  <td class=xl70 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl70 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>294</td>
-  <td class=xl71 style='border-top:none;border-left:none'>THRESHOLD</td>
-  <td class=xl71 style='border-top:none;border-left:none'>threshold</td>
-  <td class=xl71 style='border-top:none;border-left:none'>THR</td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>206</td>
+  <td class=xl76>VSS</td>
+  <td class=xl76>ground</td>
+  <td class=xl76>GND</td>
+  <td class=xl72 align=right>234</td>
+  <td class=xl75>GND_DISC</td>
+  <td class=xl75>ground</td>
+  <td class=xl75>GND</td>
+  <td class=xl72 align=right>262</td>
+  <td class=xl73>GND_A</td>
+  <td class=xl73>ground</td>
+  <td class=xl73>GND</td>
+  <td class=xl72 align=right>290</td>
+  <td class=xl76>VSS</td>
+  <td class=xl76>ground</td>
+  <td class=xl76>GND</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>211</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>power</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>239</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>power</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>267</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD</td>
-  <td class=xl70 style='border-top:none;border-left:none'>power</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>295</td>
-  <td class=xl66 style='border-top:none;border-left:none'>HV_SUB</td>
-  <td class=xl66 style='border-top:none;border-left:none'>high voltage</td>
-  <td class=xl66 style='border-top:none;border-left:none'>HV</td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>207</td>
+  <td class=xl76>VDD</td>
+  <td class=xl76>power</td>
+  <td class=xl76>VDD_DIG</td>
+  <td class=xl72 align=right>235</td>
+  <td class=xl75>VDD_DISC</td>
+  <td class=xl75>power</td>
+  <td class=xl75>VDD_DIG</td>
+  <td class=xl72 align=right>263</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl73>power</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl72 align=right>291</td>
+  <td class=xl76>VDD</td>
+  <td class=xl76>power</td>
+  <td class=xl76>VDD_DIG</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>212</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VSS</td>
-  <td class=xl70 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl70 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>240</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>268</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl78 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl83>&nbsp;</td>
-  <td class=xl82></td>
-  <td class=xl82></td>
-  <td class=xl82></td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>208</td>
+  <td class=xl73>GND_A</td>
+  <td class=xl73>ground</td>
+  <td class=xl73>GND</td>
+  <td class=xl72 align=right>236</td>
+  <td class=xl76>VSS</td>
+  <td class=xl76>ground</td>
+  <td class=xl76>GND</td>
+  <td class=xl72 align=right>264</td>
+  <td class=xl75>GND_DISC</td>
+  <td class=xl75>ground</td>
+  <td class=xl75>GND</td>
+  <td class=xl72 align=right>292</td>
+  <td class=xl73>GND_A</td>
+  <td class=xl73>ground</td>
+  <td class=xl73>GND</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>213</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD</td>
-  <td class=xl70 style='border-top:none;border-left:none'>power</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>241</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>power</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>269</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>power</td>
-  <td class=xl78 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl83>&nbsp;</td>
-  <td class=xl82></td>
-  <td class=xl82></td>
-  <td class=xl82></td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>209</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl73>power</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl72 align=right>237</td>
+  <td class=xl76>VDD</td>
+  <td class=xl76>power</td>
+  <td class=xl76>VDD_DIG</td>
+  <td class=xl72 align=right>265</td>
+  <td class=xl75>VDD_DISC</td>
+  <td class=xl75>power</td>
+  <td class=xl75>VDD_DIG</td>
+  <td class=xl72 align=right>293</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl73>power</td>
+  <td class=xl73>VCC_A</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>214</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>242</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VSS</td>
-  <td class=xl70 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl70 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>270</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl79 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl83>&nbsp;</td>
-  <td class=xl82></td>
-  <td class=xl82></td>
-  <td class=xl82></td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>210</td>
+  <td class=xl75>GND_DISC</td>
+  <td class=xl75>ground</td>
+  <td class=xl75>GND</td>
+  <td class=xl72 align=right>238</td>
+  <td class=xl73>GND_A</td>
+  <td class=xl73>ground</td>
+  <td class=xl73>GND</td>
+  <td class=xl72 align=right>266</td>
+  <td class=xl76>VSS</td>
+  <td class=xl76>ground</td>
+  <td class=xl76>GND</td>
+  <td class=xl72 align=right>294</td>
+  <td class=xl77>THRESHOLD</td>
+  <td class=xl77>threshold</td>
+  <td class=xl77>THR</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>215</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>power</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>243</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD</td>
-  <td class=xl70 style='border-top:none;border-left:none'>power</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>271</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>power</td>
-  <td class=xl79 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl83>&nbsp;</td>
-  <td class=xl82></td>
-  <td class=xl82></td>
-  <td class=xl82></td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>211</td>
+  <td class=xl75>VDD_DISC</td>
+  <td class=xl75>power</td>
+  <td class=xl75>VDD_DIG</td>
+  <td class=xl72 align=right>239</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl73>power</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl72 align=right>267</td>
+  <td class=xl76>VDD</td>
+  <td class=xl76>power</td>
+  <td class=xl76>VDD_DIG</td>
+  <td class=xl72 align=right>295</td>
+  <td class=xl71>HV_SUB</td>
+  <td class=xl71>high voltage</td>
+  <td class=xl71>HV</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>216</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>244</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>272</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VSS</td>
-  <td class=xl70 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl77 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl83>&nbsp;</td>
-  <td class=xl82></td>
-  <td class=xl82></td>
-  <td class=xl82></td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>212</td>
+  <td class=xl76>VSS</td>
+  <td class=xl76>ground</td>
+  <td class=xl76>GND</td>
+  <td class=xl72 align=right>240</td>
+  <td class=xl75>GND_DISC</td>
+  <td class=xl75>ground</td>
+  <td class=xl75>GND</td>
+  <td class=xl72 align=right>268</td>
+  <td class=xl73>GND_A</td>
+  <td class=xl73>ground</td>
+  <td class=xl82>GND</td>
+  <td class=xl80>&nbsp;</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>217</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>power</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>245</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>power</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>273</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD</td>
-  <td class=xl70 style='border-top:none;border-left:none'>power</td>
-  <td class=xl77 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl83>&nbsp;</td>
-  <td class=xl82></td>
-  <td class=xl82></td>
-  <td class=xl82></td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>213</td>
+  <td class=xl76>VDD</td>
+  <td class=xl76>power</td>
+  <td class=xl76>VDD_DIG</td>
+  <td class=xl72 align=right>241</td>
+  <td class=xl75>VDD_DISC</td>
+  <td class=xl75>power</td>
+  <td class=xl75>VDD_DIG</td>
+  <td class=xl72 align=right>269</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl73>power</td>
+  <td class=xl82>VCC_A</td>
+  <td class=xl80>&nbsp;</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>218</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VSS</td>
-  <td class=xl70 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl70 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>246</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>274</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl78 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl83>&nbsp;</td>
-  <td class=xl82></td>
-  <td class=xl82></td>
-  <td class=xl82></td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>214</td>
+  <td class=xl73>GND_A</td>
+  <td class=xl73>ground</td>
+  <td class=xl73>GND</td>
+  <td class=xl72 align=right>242</td>
+  <td class=xl76>VSS</td>
+  <td class=xl76>ground</td>
+  <td class=xl76>GND</td>
+  <td class=xl72 align=right>270</td>
+  <td class=xl75>GND_DISC</td>
+  <td class=xl75>ground</td>
+  <td class=xl83>GND</td>
+  <td class=xl80>&nbsp;</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>219</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD</td>
-  <td class=xl70 style='border-top:none;border-left:none'>power</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>247</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>power</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>275</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>power</td>
-  <td class=xl78 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl83>&nbsp;</td>
-  <td class=xl82></td>
-  <td class=xl82></td>
-  <td class=xl82></td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>215</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl73>power</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl72 align=right>243</td>
+  <td class=xl76>VDD</td>
+  <td class=xl76>power</td>
+  <td class=xl76>VDD_DIG</td>
+  <td class=xl72 align=right>271</td>
+  <td class=xl75>VDD_DISC</td>
+  <td class=xl75>power</td>
+  <td class=xl83>VDD_DIG</td>
+  <td class=xl80>&nbsp;</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>220</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>248</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VSS</td>
-  <td class=xl70 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl70 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>276</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl79 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl83>&nbsp;</td>
-  <td class=xl82></td>
-  <td class=xl82></td>
-  <td class=xl82></td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>216</td>
+  <td class=xl75>GND_DISC</td>
+  <td class=xl75>ground</td>
+  <td class=xl75>GND</td>
+  <td class=xl72 align=right>244</td>
+  <td class=xl73>GND_A</td>
+  <td class=xl73>ground</td>
+  <td class=xl73>GND</td>
+  <td class=xl72 align=right>272</td>
+  <td class=xl76>VSS</td>
+  <td class=xl76>ground</td>
+  <td class=xl81>GND</td>
+  <td class=xl80>&nbsp;</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>221</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>power</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>249</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD</td>
-  <td class=xl70 style='border-top:none;border-left:none'>power</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>277</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>power</td>
-  <td class=xl79 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl83>&nbsp;</td>
-  <td class=xl82></td>
-  <td class=xl82></td>
-  <td class=xl82></td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>217</td>
+  <td class=xl75>VDD_DISC</td>
+  <td class=xl75>power</td>
+  <td class=xl75>VDD_DIG</td>
+  <td class=xl72 align=right>245</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl73>power</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl72 align=right>273</td>
+  <td class=xl76>VDD</td>
+  <td class=xl76>power</td>
+  <td class=xl81>VDD_DIG</td>
+  <td class=xl80>&nbsp;</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>222</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>250</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>278</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VSS</td>
-  <td class=xl70 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl77 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl83>&nbsp;</td>
-  <td class=xl82></td>
-  <td class=xl82></td>
-  <td class=xl82></td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>218</td>
+  <td class=xl76>VSS</td>
+  <td class=xl76>ground</td>
+  <td class=xl76>GND</td>
+  <td class=xl72 align=right>246</td>
+  <td class=xl75>GND_DISC</td>
+  <td class=xl75>ground</td>
+  <td class=xl75>GND</td>
+  <td class=xl72 align=right>274</td>
+  <td class=xl73>GND_A</td>
+  <td class=xl73>ground</td>
+  <td class=xl82>GND</td>
+  <td class=xl80>&nbsp;</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>223</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>power</td>
-  <td class=xl69 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>251</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>power</td>
-  <td class=xl67 style='border-top:none;border-left:none'>VCC_A</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>279</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VDD</td>
-  <td class=xl70 style='border-top:none;border-left:none'>power</td>
-  <td class=xl77 style='border-top:none;border-left:none'>VDD_DIG</td>
-  <td class=xl83>&nbsp;</td>
-  <td class=xl82></td>
-  <td class=xl82></td>
-  <td class=xl82></td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>219</td>
+  <td class=xl76>VDD</td>
+  <td class=xl76>power</td>
+  <td class=xl76>VDD_DIG</td>
+  <td class=xl72 align=right>247</td>
+  <td class=xl75>VDD_DISC</td>
+  <td class=xl75>power</td>
+  <td class=xl75>VDD_DIG</td>
+  <td class=xl72 align=right>275</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl73>power</td>
+  <td class=xl82>VCC_A</td>
+  <td class=xl80>&nbsp;</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
-  <td height=20 class=xl65 align=right style='height:15.0pt;border-top:none'>224</td>
-  <td class=xl70 style='border-top:none;border-left:none'>VSS</td>
-  <td class=xl70 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl70 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>252</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND_DISC</td>
-  <td class=xl69 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl69 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl65 align=right style='border-top:none;border-left:none'>280</td>
-  <td class=xl67 style='border-top:none;border-left:none'>GND_A</td>
-  <td class=xl67 style='border-top:none;border-left:none'>ground</td>
-  <td class=xl78 style='border-top:none;border-left:none'>GND</td>
-  <td class=xl83>&nbsp;</td>
-  <td class=xl82></td>
-  <td class=xl82></td>
-  <td class=xl82></td>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>220</td>
+  <td class=xl73>GND_A</td>
+  <td class=xl73>ground</td>
+  <td class=xl73>GND</td>
+  <td class=xl72 align=right>248</td>
+  <td class=xl76>VSS</td>
+  <td class=xl76>ground</td>
+  <td class=xl76>GND</td>
+  <td class=xl72 align=right>276</td>
+  <td class=xl75>GND_DISC</td>
+  <td class=xl75>ground</td>
+  <td class=xl83>GND</td>
+  <td class=xl80>&nbsp;</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>221</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl73>power</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl72 align=right>249</td>
+  <td class=xl76>VDD</td>
+  <td class=xl76>power</td>
+  <td class=xl76>VDD_DIG</td>
+  <td class=xl72 align=right>277</td>
+  <td class=xl75>VDD_DISC</td>
+  <td class=xl75>power</td>
+  <td class=xl83>VDD_DIG</td>
+  <td class=xl80>&nbsp;</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>222</td>
+  <td class=xl75>GND_DISC</td>
+  <td class=xl75>ground</td>
+  <td class=xl75>GND</td>
+  <td class=xl72 align=right>250</td>
+  <td class=xl73>GND_A</td>
+  <td class=xl73>ground</td>
+  <td class=xl73>GND</td>
+  <td class=xl72 align=right>278</td>
+  <td class=xl76>VSS</td>
+  <td class=xl76>ground</td>
+  <td class=xl81>GND</td>
+  <td class=xl80>&nbsp;</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>223</td>
+  <td class=xl75>VDD_DISC</td>
+  <td class=xl75>power</td>
+  <td class=xl75>VDD_DIG</td>
+  <td class=xl72 align=right>251</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl73>power</td>
+  <td class=xl73>VCC_A</td>
+  <td class=xl72 align=right>279</td>
+  <td class=xl76>VDD</td>
+  <td class=xl76>power</td>
+  <td class=xl81>VDD_DIG</td>
+  <td class=xl80>&nbsp;</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt'>224</td>
+  <td class=xl76>VSS</td>
+  <td class=xl76>ground</td>
+  <td class=xl76>GND</td>
+  <td class=xl72 align=right>252</td>
+  <td class=xl75>GND_DISC</td>
+  <td class=xl75>ground</td>
+  <td class=xl75>GND</td>
+  <td class=xl72 align=right>280</td>
+  <td class=xl73>GND_A</td>
+  <td class=xl73>ground</td>
+  <td class=xl82>GND</td>
+  <td class=xl80>&nbsp;</td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66><!-----------------------------><!--END OF OUTPUT FROM EXCEL PUBLISH AS WEB PAGE WIZARD--><!-----------------------------></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=18 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=18 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=18 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=18 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=18 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=18 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=18 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=18 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=18 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=18 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=18 style='height:15.0pt;mso-ignore:colspan'></td>
  </tr>
  <![if supportMisalignedColumns]>
  <tr height=0 style='display:none'>
@@ -1836,6 +2250,8 @@ tags will be replaced.-->
   <td width=81 style='width:61pt'></td>
   <td width=83 style='width:62pt'></td>
   <td width=65 style='width:49pt'></td>
+  <td width=87 style='width:65pt'></td>
+  <td width=87 style='width:65pt'></td>
  </tr>
  <![endif]>
 </table>

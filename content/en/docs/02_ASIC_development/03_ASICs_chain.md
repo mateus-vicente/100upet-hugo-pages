@@ -2,7 +2,7 @@
 # SPDX-FileCopyrightText: 2022 100µPET
 # SPDX-License-Identifier: CC-BY-4.0
 title: "ASICs chain"
-weight: 2
+weight: 3
 ---
 
 # Chip-to-chip communication:
