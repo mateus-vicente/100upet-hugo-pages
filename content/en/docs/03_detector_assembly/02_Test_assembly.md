@@ -36,11 +36,11 @@ Considering the 100µPET final ASIC IO pad numbering, the structures on the test
 | Heater +                          | 7, 8, 9, 10, 11, 12            |
 | Heater -                          | 287, 288, 289, 290, 291, 292   |
 | Left RTD                          | 21 (+), 23 (-)                 |
-| Right RTD                         | 294 (+), 295 (-)               |
+| Right RTD                         | 284 (+), 285 (-)               |
 | Bottom chain                      | 24 (+), 188 (-)                |
-| Top chain                         | 200 (+), 293 (-)               |
+| Top chain                         | 200 (+), 283 (-)               |
 
-\*Pads #4 and #192 should each be connected to 2 wires for a 4-wires measurement.
+\*Pads #4 #192 #198 and #294 should each be connected to 2 wires for a 4-wires measurement.
 
 ## Test-chip size
 
