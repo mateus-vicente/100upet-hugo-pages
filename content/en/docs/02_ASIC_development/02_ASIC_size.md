@@ -11,7 +11,7 @@ The gap between neighbouring chips in the same reticle is **100 µm** (see image
 
 <img src="../wafer_reticle.png" width="70%">
 
-The dicing will happen in the midle of such gap, therefore there is extra 50 µm of silicon on each of the four edges of the chip, summing up to **22887.8 µm x 30286 µm**./br>
+The dicing will happen in the midle of such gap, therefore there is extra 50 µm of silicon on each of the four edges of the chip, summing up to **22887.8 µm x 30286 µm**.</br>
 The final size of the ASIC must consider the dicing street reduction from the chosen dicing technique.
 
 {{% alert title="Note" color="warning" %}}
