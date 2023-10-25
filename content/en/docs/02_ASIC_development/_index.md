@@ -11,7 +11,7 @@ This section aims to list the specifications of the 100µPET scanner.
 <img src="plan.png" width="70%" alt="Image 3">
 
 {{% alert title="Note" color="warning" %}}
-⚠️ **submission booked for October 24th**
+✅**ASIC submited on October 24th**
 {{% /alert %}}
 
 | Main features                     |                                |

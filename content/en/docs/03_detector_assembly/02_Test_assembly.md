@@ -9,10 +9,10 @@ weight: 2
 Some possible options for the orientation of the chips is shown in the image below.
 <img src="../ASIC-FLEX_orientation.png" width="100%">
 
-In option A all chips have the same orientation ((digital) periphery to bottom).
-<br>Option B has chips #2 and #3 rotated 180 degrees, possibily easing the connetcion between chips #1 and #2 of the signals in chain.
-<br>Option C has chips #1 and #2 rotated 180 degrees, so all chips has their digital periphery closer to the top/bottom edges of the FPC, where decoupling capacitors and other passive components of the FPC are hosted.
-<br>Option D is the oposite as option C, having the digital periphery of all chips the furthest from the decoupling capacitors but offering the shortest distance for the chip-to-chip signals.
+In option **A** all chips have the same orientation ((digital) periphery to bottom).
+<br>Option **B** has chips #2 and #3 rotated 180 degrees, possibily easing the connetcion between chips #1 and #2 of the signals in chain.
+<br>Option **C** has chips #1 and #2 rotated 180 degrees, so all chips has their digital periphery closer to the top/bottom edges of the FPC, where decoupling capacitors and other passive components of the FPC are hosted.
+<br>Option **D** is the oposite as option C, having the digital periphery of all chips the furthest from the decoupling capacitors but offering the shortest distance for the chip-to-chip signals.
 
 As the chips has the HV connection pads in all of their 4 edges, independent of the chip's orientation it will be always possible to have the HV line routed from the HV tail towards the center of the flex, allowing to HV bias all 4 chips with the shortest path.
 
@@ -44,7 +44,7 @@ Considering the 100µPET final ASIC IO pad numbering, the structures on the test
 
 ## Test-chip size
 
-The test-chip is designed using the original 100µPET ASIC design (using the top metal and passivation layout), and its position on the test-wafer follows the same positioning as the final 100µPET wafer, with 240 µm of silicon margin between devices. </br> 
+The test-chip is designed using the original 100µPET ASIC design (using the top metal and passivation layout), and its position on the test-wafer follows the same positioning as the final 100µPET wafer, with 100 µm of silicon margin between devices. </br> 
 <div style="display: flex; justify-content: space-between; align-items: flex-start;">
    <div style="text-align: center; flex: 0 0 45%; margin: 0px;">
    		<img src="../test-wafer.png" alt="Image 1" width="72%" style="border: 0px solid black;">
@@ -60,7 +60,7 @@ The test-chip is designed using the original 100µPET ASIC design (using the top
    </div>
 </div>
 
-Therefore, as discussed in the *ASIC specifications -> ASIC size* section, the size of the test-chip after dicing is expected to be 23027.8 µm x 30426 µm minus the cut-width (illustrated as the black shaded bands in the right picture above).
+Therefore, as discussed in the *ASIC specifications -> ASIC size* section, the size of the test-chip after dicing is expected to be 22887.8 µm x 30286 µm **minus the cut-width** (illustrated as the black shaded bands in the right picture above).
 
 From our experience using the Femto second laser available at FCBG-NMP, the street reduction due to the cut width is < 50 µm, with no visible change (i.e. up to 10 µm) along the diced edge. A few pictures below illustrates the chip after dicing.
 
@@ -85,5 +85,21 @@ From our experience using the Femto second laser available at FCBG-NMP, the stre
    </div>
 </div></br>
 
-Therefore, the expected dimensions of the 100µPET test-chip, after dicing, is **22977.8 µm x 30376 µm**.
-</br>
+Therefore, the expected dimensions of the 100µPET test-chip, after dicing, is **22837.8 µm x 30236 µm**.
+
+### Test-wafer alignment marks
+The process flow for the production of our test-wafer will be uploaded soon. 
+There are 6 alignment marks over the wafer, as shown in the image below, that are used to align the multiple photolitography steps between each other.
+
+<img src="../test-wafer-alignment-marks.png" width="80%">
+
+The positons of the marks in absolute coordinates, having (0,0) in the center of the wafer, are:
+
+| # Alignment mark | X [µm] | Y [µm] |
+|:-----------------|:-------|:-------|
+| 1                | 24000  | 36000  |
+| 2                | 33000  | 18000  |
+| 3                | 33000  | -18000 |
+| 4                | -24000 | -36000 |
+| 5                | -33000 | -18000 |
+| 6                | -33000 | 18000  |
