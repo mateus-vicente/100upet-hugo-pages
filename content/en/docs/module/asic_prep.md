@@ -1,7 +1,7 @@
 ---
 # SPDX-FileCopyrightText: 2022 100µPET
 # SPDX-License-Identifier: CC-BY-4.0
-title: "ASIC post-process"
+title: "ASIC bumping"
 weight: 1
 ---
 
