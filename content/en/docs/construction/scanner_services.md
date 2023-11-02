@@ -2,7 +2,7 @@
 # SPDX-FileCopyrightText: 2022 100µPET
 # SPDX-License-Identifier: CC-BY-4.0
 title: "Scanner services"
-weight: 3
+weight: 4
 ---
 
 The scanner has a total of 960 chips. They are assembled in 240 modules (4 chips each) that are further grouped into double-layer modules (8 chips) via the TMI board.

@@ -5,3 +5,8 @@
 /resources/
 *.swp
 *.DS_store
+.DS_Store
+.DS_Store
+content/.DS_Store
+content/en/.DS_Store
+content/en/docs/.DS_Store

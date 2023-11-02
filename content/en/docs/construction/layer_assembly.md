@@ -5,32 +5,41 @@ title: "Layer assembly"
 weight: 1
 ---
 
-The assembly of the layer module consists in loading the 4 detector ASICs and the FPC into their respective parts of an assembly jig. 
-The two parts will be brought into proximity using alignment pins and micropositioners. 
-The alignemnt between the chips and the flex will be done using metalic fiducial marks in the FPC and the ASICs silicon edges. 
-The alignemt is done via the micropositioners through inspection holes in the assembly jig and FPC. 
-Having the adhesive glue already dispensed in the FPC, thermocompression will be applied to bond the chips to the flex. 
+The scanner assembly starts with the integration of 4 detectors ASICs into a Flexible-Printed-Circuit (FPC), creating a scanner's layer module, in a 2x2 arrangement with 300 µm gap between chip edges.
 
-So far the bonding qualification tests made allowed understanding a number of facts and fine tuning the process:
-- The thermal cycling tests allowed identifying delamination issue related to high stress accumulated at the extremities of the glue lines. Improvement of the glue distribution layer with an excess of glue filet at the edge allowed getting data that does not vary after thermal cycling between 0 and 60°C. This will also require having a gap between the chips and at the minimum of 300 microns and ideally 500 microns.
+<img src="../Images/plane_flex.png" width="70%" alt="Image 3">
+
+- The assembly of the layer module consists in loading the 4 detector ASICs and the FPC into their respective parts of an assembly jig. 
+    - The electromechanical bonding glue (NCP), Huntsman Araldite 2011, is dispensed in the flex using a stencil.
+- The two parts will be brought into proximity using alignment pins and micropositioners. 
+    - The alignemnt between the chips and the flex will be done using metalic fiducial marks in the FPC and the ASICs silicon edges. 
+    - The alignemt is done via the micropositioners through inspection holes in the assembly jig and FPC. 
+- Thermocompression will be applied to bond the chips to the flex. 
+    - 20 kgf bonding force was tested successfully with NCP, with 100% connection yield and no deterioration during and after stress current test
+
+The bonding qualification tests were done with:
+- Contact resistance measurements (2-wires of full chain)
+- High current injection tests, up to 200 mA\*, before and after thermal cycles.
+</br>
+\*6-10x more than what is expected per bonding pad on final ASIC)
+- Thermal cycles from 5 to 60°C.
+
+This allowed us to understand a number of facts and fine tuning the bonding process:
 - Bonding technique was fined tuned with a preheating step at 60°C in order to reduce the glue viscosity before applying the nominal compression force.
-- The nominal compression force was tested successfully with NCP at 50 kg leading to contact everywhere and with good behavior during and after stress current test
-- Further tests will be made with ACP in order to see if one can decrease the compression force to 10 kg and also identified if this can compensate some thickness non-uniformity especially when gluing 4 chips at a time.
+    - Need of such bonding step in final assembly is **TBC**
+- Thermal cycles shown that mechanical reinforcement at the chip corners is important. Therefore, in addition to the horizontal glue lines dispensed over the pad rows, two vertical lines are doposited at the end of each row.
+    - The contact resistance of the chain, when bonded with Higher forces (as 50 kgf for example) is less sensitive to the temperature cycles, while the 20 kgf contact got worse after the cycles.
+        - When the temperature cycles were performed on a dry enviroment, the samples bonded with 20 kgf did not show any deterioration.
+
+<img src="../Images/glue_shape.png" width="50%" alt="Image 3">
 
 ### Specs **TODO**
-- Gap in between modules (Mateus, Didier and all)
-- Bonding force to be applied on a 4 chip assembly. More tests to be made (Mateus, Didier) 
-- Which glue to be used (NCP or ACP) depending of the benefit (Mateus, Didier) 
 - Assembly qualification with home-made tools with heating and compression system. Design to be made by Franck with inputs from Coralie and Didier and with inputs from the flex and chip features/dimensions.  
-
-
-This assembly technique will be qualified by building a scanner mockup using devices and tool as close as possible to the final scanner to be built.
-This will be described in the following sections.
 
 ### Chips placement
 <img src="../Images/1-chip_assembly.png" width="100%">
 
-### Chips placement
+### Flex placement
 <img src="../Images/2-flex_assembly.png" width="100%">
 
 ### Jigs contact

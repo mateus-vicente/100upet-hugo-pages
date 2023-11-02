@@ -6,14 +6,10 @@ description: "Plans for ASIC integration into flex and tower assembly"
 weight: 5
 ---
 
-This section is meant to document the plans for the ASIC integration into the scanner.
+This section is meant to document the plans for the ASIC integration into the module, module into the tower, and tower into the scanner with mechanical supports, electronic and cooling services
 
-The scanner assembly starts with the integration of 4 detectors ASICs into a Flexible-Printed-Circuit (FPC), creating a scanner's layer module, in a 2x2 arrangement with 300 µm gap between chip edges. Figure X shows an illustration of the layer module.
-
-<img src="Images/plane_flex.png" width="70%" alt="Image 3">
+Regaridng optimization of the scanner sensitivity, highly influenced by scanner geometry, it is important to note that its design should avoid scanner's regions with different stopping power for the annihilation photons, as illustrated below. This will provide a more uniform smapling region for the lines-of-response detected, making sensitivity compensation a second order correction.
 
 
-60 layer modules will be stacked using alignment pins to constrain the relative position of the many layers.
-
-<img src="Images/tower_assembly.png" width="50%" alt="Image 4">
+<img src="Images/geometry.png" width="90%" alt="Image 3">
 
