@@ -3,26 +3,85 @@ document.addEventListener('DOMContentLoaded', function () {
 //////////////////////////////////////////////////		   BACK STAGE			//////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+let points = new THREE.Points();
+let test = 0;
+
 const scale_factor = 10; // to convert unit from from mm to 0.1 mm (ex. 0.1 mm pixels x 10 turns to 1 0.1 mm)
 var maxValue = -Infinity;
 var minValue = Infinity;
 
+let offset;
+
 const appParams = {
-	loader: 'Voxel threshold',
+	loader: 'Instanced voxels',
 	threshold: 1,
-	voxels_num: '20000',
+	voxels_num: '10000',
+	stdev: 2,
 	scene_anim: true,			//TODO
 	implosion_time: 2000, 		// [ms]
 	explosion_time: 1000, 		// [ms]
-	light1: 0.4, 		// [ms]
-	light2: 0.6, 		// [ms]
+	camera_fov: 40,
+	light1: 1, 		// [ms]
+	light2: 0, 		// [ms]
 	rotationEnabled: false,
 	backgroundColor: 0x000000,
 	remove_LOR_EPD: function(){},
 
-	planeConstant_X: 0,
-	planeConstant_Y: 0,
-	planeConstant_Z: 0,
+	setXY: function () {
+		const length = camera.position.length();
+		camera.position.x = 0;
+		camera.position.y = 0;
+		camera.position.z = length;
+		camera.up = new THREE.Vector3(0, 1, 0);
+		camera.lookAt(new THREE.Vector3(0, 0, 0));
+	},
+	setYZ: function () {
+		const length = camera.position.length();
+		camera.position.x = -length;
+		camera.position.y = 0;
+		camera.position.z = 0;
+		camera.up = new THREE.Vector3(0, 1, 0);
+		camera.lookAt(new THREE.Vector3(0, 0, 0));
+	},
+	settYZ: function () {
+		const length = camera.position.length();
+		camera.position.x = length;
+		camera.position.y = 0;
+		camera.position.z = 0;
+		camera.up = new THREE.Vector3(0, 1, 0);
+		camera.lookAt(new THREE.Vector3(0, 0, 0));
+	},
+	setXZ: function () {
+		const length = camera.position.length();
+		camera.position.x = 0;
+		camera.position.y = length;
+		camera.position.z = 0;
+		camera.up = new THREE.Vector3(1, 0, 0);
+		camera.lookAt(new THREE.Vector3(0, 0, 0));
+	},
+	set45: function () {
+		camera.position.x = -580;
+		camera.position.y = 580;
+		camera.position.z = -580;
+		camera.lookAt( scene.position );
+	},
+	updateRendererInfo: function () {
+		console.log(camera.position);
+		var info = renderer.info;
+		for (let prop in info.render) {
+			console.log(prop + " " + info.render[prop]);
+		}
+		if (info.memory) {
+			for (let prop in info.memory) {
+				console.log(prop + " " + info.memory[prop]);
+			}
+		}
+		console.log("Voxels loaded: ", num_voxels);
+	},
+
+	planeConstant_X: 550,
+	planeConstant_Y: 550,
+	planeConstant_Z: 550,
 	showHelpers: false
 };
 
@@ -34,12 +93,17 @@ const params = {
 	x_offset: '0',
 	y_offset: '0',
 	z_offset: '0',
-	LUT: 'viridis',
+	LUT: 'jet',
+	//LUT: 'viridis',
 	alphaHash: true,
+	//alpha: 0.5,
+	taa: false,
+	sampleLevel: 2,
 	min_scale_factor: appParams.threshold,	
+	max_scale_factor: 100,	
 	A: 0.3,
 	depth_write: true,
-	color_offset: false,
+	color_offset: true,
 	visible: true,
 	wireframe_color: 0x281f23,
 	wireframe_visible: false,
@@ -64,10 +128,10 @@ var sideOptions = {
 };
 
 var config_scanner_vis = {
-	scaner_transparency: 0.5,
+	scaner_transparency: 0.006,
 	side: sideOptions['DoubleSide'],
-	wire_frame: false,
-	depth_write: true,
+	wire_frame: true,
+	depth_write: false,
 	Visible: true,
 	clip_scanner: true,
 	scannerIntersection: false,
@@ -86,13 +150,14 @@ var config_scanner_vis = {
 	}
 };
 
-
 var config_voxel = {
 	voxel_transparency: 0.1,
 	voxel_color: 0xff501f,
 	LOR_clipping: false,
 	depth_write: false,
-	Visible: true
+	Visible: true,
+	clip_voxels: true,
+	clipIntersection: false,
 };
 
 var voxel_material = new THREE.MeshBasicMaterial({
@@ -110,7 +175,9 @@ var config_cylinder = {
 	cylinderRadius: 20,
 	cylinder_transparency: 0.2,
 	cylinder_color: 0xe00ff,
-	Visible: true
+	Visible: true,
+	clip_cylinders: true,
+	clipIntersection: false,
 };
 
 var cylinder_material = new THREE.MeshBasicMaterial({
@@ -129,14 +196,25 @@ var cylinder_material = new THREE.MeshBasicMaterial({
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 const scene = new THREE.Scene();
-var camera = new THREE.OrthographicCamera(window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 100, 100000);
+    const clientWidth = window.innerWidth;
+    const clientHeight = window.innerHeight;
+    const aspect = clientWidth / clientHeight;
+	const MAX = 382;
+    const camera =
+        new THREE.OrthographicCamera(-aspect * MAX / 2,
+            aspect * MAX / 2,
+            1 * MAX / 2, -1 * MAX / 2,
+            0.1,
+            MAX * 4
+        );
+    camera.position.x = -1000;
+    camera.position.y = 0;
+    camera.position.z = 0;
+	camera.zoom = 0.3;
+	camera.updateProjectionMatrix();
 //var camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 0.1, 1000000 );
-//var orthoCamera = new THREE.OrthographicCamera(window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 100, 100000);
-camera.position.set(-900, 300, 300);
-camera.zoom = 0.5;
-camera.updateProjectionMatrix();
 
-
+//TODO check if the render option is working
 //const renderer = new THREE.WebGLRenderer({ powerPreference: "high-performance" });
 const highPerformanceRenderer = new THREE.WebGLRenderer({ powerPreference: "high-performance" });
 const lowPowerRenderer = new THREE.WebGLRenderer({ powerPreference: "low-power" });
@@ -158,16 +236,12 @@ const containerWidth = container.clientWidth;
 const containerHeight = container.clientHeight;
 
 // Specify the desired height (in viewport height units)
-const desiredHeight = container.clientHeight; // 80vh in this example
-
-// Calculate the aspect ratio of your scene (width / height)
+const desiredHeight = container.clientHeight;
 const aspectRatio = window.innerWidth / window.innerHeight;
-
 // Calculate the new width based on the desired height and aspect ratio
 const newWidth = desiredHeight * aspectRatio;
 
 renderer.setSize(newWidth, containerHeight);
-//renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio( window.devicePixelRatio );
 renderer.localClippingEnabled = true;
 
@@ -186,10 +260,10 @@ const light2 = new THREE.AmbientLight(0xFFFFC1, appParams.light2); // soft white
 scene.add(light1);
 scene.add(light2);
 
-var scannerobj = new THREE.Object3D();
-var scannerobj1= new THREE.Object3D();
-var scannerobj2= new THREE.Object3D();
-var scannerobj3= new THREE.Object3D();
+let scannerobj = new THREE.Object3D();
+let scannerobj1= new THREE.Object3D();
+let scannerobj2= new THREE.Object3D();
+let scannerobj3= new THREE.Object3D();
 const loader = new THREE.GLTFLoader().setPath( 'models_and_data/' );
 loader.load( 'tower_w_2blocks.glb', function ( gltf ) {
 	gltf.scene.traverse(child => {
@@ -197,8 +271,8 @@ loader.load( 'tower_w_2blocks.glb', function ( gltf ) {
 			child.name = "Scanner";
 			child.material.depthWrite = config_scanner_vis.depth_write;
 			child.material.transparent = true;
+			child.material.wireframe = true;
 			child.material.opacity = config_scanner_vis.scaner_transparency;
-			//child.material.format = THREE.RGBAFormat;
 			child.material.side = config_scanner_vis.side;
 			child.material.clippingPlanes = clipPlanes;
 		}
@@ -240,44 +314,68 @@ scene.add( helpers );
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 var gui = new dat.GUI();
+gui.domElement.style.cssText = 'margin-top:5%;';
 
 var app = gui.addFolder('App control');
+app.close();
 
-var file_io = app.addFolder('File In/Out');
-var file_loader = file_io.addFolder('Loading');
+var file_loader = app.addFolder('File loader');
 var thresholdControl;
 var voxelsNumControl;
 function updateControls() {
-	if (thresholdControl && file_loader.__ul.contains(thresholdControl.domElement)) file_loader.remove(thresholdControl);
-	if (voxelsNumControl && file_loader.__ul.contains(voxelsNumControl.domElement)) file_loader.remove(voxelsNumControl);
-
-	if (appParams.loader === 'Voxel threshold') thresholdControl = file_loader.add(appParams, 'threshold', 0, 100).name('Voxel threshold');
-	else if (appParams.loader === 'Num of voxels') voxelsNumControl = file_loader.add(appParams, 'voxels_num', appParams.voxels_num).name('# Voxels');
+	//TODO fix enabling below
+	if (appParams.loader === 'Voxel threshold') {
+		threshold_control.enable(true);
+		voxels_control.enable(false);
+	}
+	else if (appParams.loader === 'Num of voxels') {
+		threshold_control.enable(false);
+		voxels_control.enable(true);
+	}
+	else {
+		threshold_control.enable = false;
+		voxels_control.enable = false;
+	}
 }
-
-file_loader.add(appParams, 'loader', ['Voxel threshold', 'Num of voxels', 'Instanced voxels']).name('Loader type').onChange(updateControls);
-// Call updateControls initially to set the correct control based on the initial value of 'loader'
+file_loader.add(appParams, 'loader', ['Voxel threshold', 'Num of voxels', 'Instanced voxels', 'MIP point cloud']).name('Loader type').onChange(updateControls);
+var threshold_control = file_loader.add(appParams, 'threshold', 0, 100).name('Voxel threshold');
+threshold_control.enable = false;
+var voxels_control = file_loader.add(appParams, 'voxels_num', appParams.voxels_num).name('# Voxels');
+voxels_control.enable = false;
+var stdev_control = file_loader.add(appParams, 'stdev', 1,20).step(1).name('St. dev.');
 updateControls();
 
-var anim = file_io.addFolder('Animation');
+var display = app.addFolder('Display');
+display.add(appParams, 'camera_fov',1,180).name('Camera FOV').onChange(value => { camera.fov = value; camera.updateProjectionMatrix(); } );
+var appear = display.addFolder('Appearance');
+//display.add({ useHighPerformance: true }, 'useHighPerformance').onChange(setRendererPreference);
+appear.add( appParams, 'light1',0,1).name('light1').onChange(value => { light1.intensity = value } );
+appear.add( appParams, 'light2',0,1).name('light2').onChange(value => { light2.intensity = value } );
+appear.add( appParams, 'rotationEnabled').name('Rotation').onChange(value => {
+	params.rotationEnabled = value;
+});
+appear.addColor(appParams, 'backgroundColor').name('Background color').onChange((colorValue) => {
+	const backgroundColor = new THREE.Color(colorValue);
+	renderer.setClearColor(backgroundColor);
+	console.log(backgroundColor);
+});
+display.add( appParams, 'setXY').name('XY view');
+display.add( appParams, 'setYZ').name('YZ view');
+//display.add( appParams, 'settYZ').name('-YZ view');
+display.add( appParams, 'setXZ').name('XZ view');
+display.add( appParams, 'set45').name('XY view');
+display.add( appParams, 'updateRendererInfo').name('Show render info');
+appear.close();
+var anim = display.addFolder('Animation');
 // TODO
 anim.add( appParams, 'scene_anim', appParams.scene_anim).name('Animation');//.onChange(value => {
 anim.add( appParams, 'implosion_time',).name('Implosion duration [ms]');
 anim.add( appParams, 'explosion_time',).name('Explosion duration [ms]');
+anim.close();
 
-var display = app.addFolder('Display');
-display.add({ useHighPerformance: true }, 'useHighPerformance').onChange(setRendererPreference);
-display.add( appParams, 'light1',0,1).name('light1').onChange(value => { light1.intensity = value } );
-display.add( appParams, 'light2',0,1).name('light2').onChange(value => { light2.intensity = value } );
-display.add( appParams, 'rotationEnabled').name('Rotation').onChange(value => {
-	params.rotationEnabled = value;
-});
-display.addColor(appParams, 'backgroundColor').name('Background color').onChange((colorValue) => {
-	const backgroundColor = new THREE.Color(colorValue);
-	renderer.setClearColor(backgroundColor);
-});
+display.close();
 
-var section = display.addFolder('Section view');
+var section = gui.addFolder('Cross-section view');
 //clip.add( params, 'clip_voxels' ).name( 'clip LOR voxels' ).onChange( function ( value ) {
 //	if(value)   voxels_mesh.material.clippingPlanes = clipPlanes;
 //	else voxels_mesh.material.clippingPlanes = null;
@@ -286,19 +384,21 @@ var section = display.addFolder('Section view');
 //	if(value)   cylinders_mesh.material.clippingPlanes = clipPlanes;
 //	else cylinders_mesh.material.clippingPlanes = null;
 //} );
-section.add( appParams, 'planeConstant_X', - 55 * scale_factor, 55 * scale_factor ).step( 0.05 * scale_factor ).name( 'plane constant X' ).onChange( function ( value ) {
+section.add( appParams, 'planeConstant_X', - 55 * scale_factor, 55 * scale_factor ).step( 0.05 * scale_factor ).name( 'Plane X' ).onChange( function ( value ) {
 		clipPlanes[ 0 ].constant = value;
 } );
-section.add( appParams, 'planeConstant_Y', - 55 * scale_factor, 55 * scale_factor ).step( 0.05 * scale_factor ).name( 'plane constant Y' ).onChange( function ( value ) {
+section.add( appParams, 'planeConstant_Y', - 55 * scale_factor, 55 * scale_factor ).step( 0.05 * scale_factor ).name( 'Plane Y' ).onChange( function ( value ) {
 		clipPlanes[ 1 ].constant = value;
 } );
-section.add( appParams, 'planeConstant_Z', - 55 * scale_factor, 55 * scale_factor ).step( 0.05 * scale_factor ).name( 'plane constant Z' ).onChange( function ( value ) {
+section.add( appParams, 'planeConstant_Z', - 55 * scale_factor, 55 * scale_factor ).step( 0.05 * scale_factor ).name( 'Plane Z' ).onChange( function ( value ) {
 		clipPlanes[ 2 ].constant = value;
 } );
-section.add( appParams, 'showHelpers' ).name( 'show helpers' ).onChange( function ( value ) {
+section.add( appParams, 'showHelpers' ).name( 'Show planes' ).onChange( function ( value ) {
 	helpers.visible = value;
 } );
+section.close();
 
+//*
 var scanner = gui.addFolder('Scanner');
 scanner.add(config_scanner_vis, 'scaner_transparency', 0, 1).onChange( function ( value ) {;
 	scannerobj.traverse(child => {
@@ -350,6 +450,9 @@ hide.add(config_scanner_vis, 'toggleScaner1').name('Bottom tower');
 hide.add(config_scanner_vis, 'toggleScaner2').name('Right tower');
 hide.add(config_scanner_vis, 'toggleScaner3').name('Left tower');
 scanner.add( config_scanner_vis, 'explode').name('Explode').onChange( function( value ){ explode("Scanner");} );
+hide.close();
+scanner.close();
+//*/
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////		   FILE LOADER			//////////////////////////////////////////////////
@@ -384,14 +487,19 @@ document.getElementById('file_GEN').onchange = function () {
 
 			var file_gui = gui.addFolder(fileTemplate);
 			//var file_gui = gui.addFolder(fileTemplate + " [" + params.width_X + "x" + params.width_Y + "x" + params.width_Z + "]");
-			file_gui.add( params, "voxel_size", params.voxel_size).name("Voxel size [mm]").onFinishChange( function( value ) {change_voxel_size(fileTemplate, value);});
-			file_gui.add( params, 'LUT', ['jet','fire','viridis','5ramps'] ).name( fileTemplate + 'LUT' ).onChange( function( value ){change_LUT(fileTemplate, value);} );
-			file_gui.add( params, 'depth_write').name('Depth write').onChange(function( value ) {
+			file_gui.add( params, 'visible').name('Visible').onChange( function( value ){ update_material(fileTemplate, value);} );
+			var voxel_folder = file_gui.addFolder('Voxels control');
+			voxel_folder.add( params, "voxel_size", params.voxel_size).name("Voxel size [mm]").onFinishChange( function( value ) {change_voxel_size(fileTemplate, value);});
+			voxel_folder.close();
+			var material_folder = file_gui.addFolder('Volume rendering');
+			material_folder.add( params, 'LUT', ['jet','fire','viridis','5ramps'] ).name( fileTemplate + 'LUT' ).onChange( function( value ){update_material(fileTemplate, value);} );
+			///*
+			material_folder.add( params, 'depth_write').onChange(function( value ) {
 				scene.traverse(function(child) {
 					if (child instanceof THREE.Mesh && child.name == fileTemplate) child.material.depthWrite = params.depth_write;
 				});
 			});
-			file_gui.add( params, 'color_offset').name('Color offset').onChange(value => {
+			material_folder.add( params, 'color_offset').name('Color offset').onChange(value => {
 				params.color_offset = value;
 				if(params.color_offset) offset = maxValue * params.min_scale_factor / 100;
 				if(!params.color_offset) offset = minValue;
@@ -406,10 +514,13 @@ document.getElementById('file_GEN').onchange = function () {
 					}
 				});
 			} );
-			file_gui.add( params, 'alphaHash' ).name( 'Alpha hash' ).onChange( function( value ){change_alpha_hash(fileTemplate, value);} );
-			file_gui.add( params, 'min_scale_factor', min_visibility_control, 100 ).step( 0.1 ).name( 'Visibility cut [%]' ).onChange( function( value ){change_min_transp(fileTemplate, value);} );
-			file_gui.add( params, 'A', 0, 100 ).step( 0.01 ).name( 'weight' ).onChange( function( value ){change_transp_scale(fileTemplate, value);} );
-			file_gui.add( params, 'clip' ).name( 'Section view' ).onChange( function ( value ) {
+			//*/
+			material_folder.add( params, 'alphaHash' ).name( 'Alpha hash' ).onChange( function( value ){change_alpha_hash(fileTemplate, value);} );
+			material_folder.add( params, 'min_scale_factor', min_visibility_control, 100 ).step( 0.1 ).name( 'Visibility cut [%]' ).onChange( function( value ){update_material(fileTemplate, value);} );
+			material_folder.add( params, 'max_scale_factor', min_visibility_control, 100 ).step( 0.1 ).name( 'Visibility ceiling [%]' ).onChange( function( value ){update_material(fileTemplate, value);} );
+			material_folder.add( params, 'A', 0, 100 ).step( 0.01 ).name( 'weight' ).onChange( function( value ){update_material(fileTemplate, value);} );
+			var section_folder = file_gui.addFolder('Cross-section config');
+			section_folder.add( params, 'clip' ).name( 'Section view' ).onChange( function ( value ) {
 				scene.traverse((obj) => {
 					if (obj instanceof THREE.Mesh && obj.name == fileTemplate){
 						if(value) obj.material.clippingPlanes = clipPlanes;
@@ -417,36 +528,51 @@ document.getElementById('file_GEN').onchange = function () {
 					}
 				});
 			} );
-			file_gui.add( params, 'clipIntersection' ).name( 'Inverted section' ).onChange( function ( value ) {
+			section_folder.add( params, 'clipIntersection' ).name( 'Inverted section' ).onChange( function ( value ) {
 				scene.traverse(function(obj){
 					if(obj.type === 'Mesh' && obj.name == fileTemplate){
 						obj.material.clipIntersection = value;
 					}
 				});
 			} );
-			file_gui.add( params, 'visible').name('Visible').onChange( function( value ){ change_visibility(fileTemplate, value);} );
-			file_gui.add( params, 'wireframe_visible').name('Wireframe visible').onChange(value => {
+			section_folder.close();
+			var wire_folder = file_gui.addFolder('Bounding box wireframe');
+			wire_folder.add( params, 'wireframe_visible').name('Wireframe visible').onChange(value => {
 				scene.traverse((obj) => {
 					if (obj instanceof THREE.Mesh && obj.name == fileTemplate + '-wireframe'){
 						obj.visible = value;
 					}
 				});
 			});
-			file_gui.addColor(params, 'wireframe_color').name('Wireframe color').onChange((colorValue) => {
+			wire_folder.addColor(params, 'wireframe_color').name('Wireframe color').onChange((colorValue) => {
 				scene.traverse((obj) => {
 					if (obj instanceof THREE.Mesh && obj.name == fileTemplate + '-wireframe'){
 						obj.material.color = new THREE.Color(colorValue);
 					}
 				});
 			} );
+			wire_folder.close();
 			var xyz_offset = file_gui.addFolder('XYZ offset');
 			xyz_offset.add( params, 'x_offset').name('X offset').onFinishChange( function( value ) { x_move(fileTemplate, value) } );
 			xyz_offset.add( params, 'y_offset').name('Y offset').onFinishChange( function( value ) { y_move(fileTemplate, value) } );
 			xyz_offset.add( params, 'z_offset').name('Z offset').onFinishChange( function( value ) { z_move(fileTemplate, value) } );
-			var experimental = file_gui.addFolder('Experimental');
-			experimental.add( params, 'bounding_box').name('Move').onChange( function( value ){ addBoundingBox(fileTemplate);} );
-			experimental.add( params, 'adjust_fps').name('Adjust FPS').onChange( function( value ){ checkFPS(20, appParams.threshold, 100, fileTemplate);} );
+			xyz_offset.close();
+			//var experimental = file_gui.addFolder('Experimental');
+			//experimental.add( params, 'bounding_box').name('Move').onChange( function( value ){ addBoundingBox(fileTemplate);} );
+			//experimental.add( params, 'adjust_fps').name('Adjust FPS').onChange( function( value ){ checkFPS(20, appParams.threshold, 100, fileTemplate);} );
 			file_gui.add( params, 'explode').name('Explode').onChange( function( value ){ explode(fileTemplate);} );
+
+			progressBarDiv = document.createElement( 'div' );
+			progressBarDiv.innerText = 'Loading file...';
+			progressBarDiv.style.fontSize = '6em';
+			progressBarDiv.style.color = '#FFFFFF';
+			progressBarDiv.style.display = 'block';
+			progressBarDiv.style.position = 'absolute';
+			progressBarDiv.style.top = '50%';
+			progressBarDiv.style.width = '100%';
+			progressBarDiv.style.textAlign = 'center';
+
+			document.body.appendChild( progressBarDiv );
 
 			console.log("Reading file " + fileName);
 			reader.onload = (event) => {
@@ -476,14 +602,21 @@ document.getElementById('file_GEN').onchange = function () {
 				}
 				texture_array.sort((a, b) => b.value - a.value);
 				maxValue = texture_array[0].value;
+				//maxValue = 500;
 				minValue = texture_array[texture_array.length - 1].value;
 				console.log('Texture maximum value:', maxValue);
 				console.log('Texture minimum value:', minValue);
-				if(appParams.loader != 'Instanced voxels') {
+
+				if(appParams.loader == 'MIP point cloud') {
+					loadPointCloud(fileTemplate, texture_array);
+					console.log('HEREPC');
+				}
+				if(appParams.loader == 'Voxel threshold' ||
+				   appParams.loader == 'Num of voxels') {
 					loadGenericTexture(fileTemplate, texture_array);
 					console.log('HERE');
 				}
-				else {
+				if(appParams.loader == 'Instanced voxels') {
 					console.log('HERE2');
 					for (const entry of texture_array) {
 						const normalizedValue = (entry.value - minValue) / (maxValue - minValue);
@@ -500,19 +633,26 @@ document.getElementById('file_GEN').onchange = function () {
 	if(fileExtension == "epd"){
 		var x1, x2, y1, y2, z1, z2;
 		const voxels_mesh = new THREE.InstancedMesh(new THREE.BoxGeometry(1, 1, 1), voxel_material, 1000000);
+		voxels_mesh.name = fileName;
 		const cylinders_mesh = new THREE.InstancedMesh(new THREE.CylinderGeometry(10, 10, 1, 6, 1), cylinder_material, 1000000);
 		scene.add(voxels_mesh);
 		scene.add(cylinders_mesh);
 
-		var LOR_EPD = gui.addFolder('LOR End-Point-Detection');
+		var LOR_EPD = gui.addFolder('LOR EPD' + fileName);
 		var voxels = LOR_EPD.addFolder('Voxels');
-		// TODO
-		//voxels.add(config_voxel, 'LOR_clipping');
+		voxels.add(config_voxel, 'Visible').onChange(function() {
+			voxels_mesh.visible = config_voxel.Visible;
+		});
 		voxels.add(config_voxel, 'voxel_transparency', 0, 1).onChange( function ( value ) {
 			voxel_material.opacity = config_voxel.voxel_transparency;
 		});
-		voxels.addColor(config_voxel, 'voxel_color').onChange( function () {
-			voxel_material.color.set(config_voxel.voxel_color);
+		voxels.addColor(config_voxel, 'voxel_color').onChange( function ( value ) {
+			scene.traverse(function(child) {
+				if (child instanceof THREE.Mesh && child.name == fileName) {
+					child.material.color.set(value);
+					//child.material.color.set(config_voxel.voxel_color);
+				}
+			});
 		});
 		voxels.add(config_voxel, 'depth_write').onChange( function() {
 			voxels_mesh.traverse(function(child) {
@@ -521,11 +661,24 @@ document.getElementById('file_GEN').onchange = function () {
 				}
 			});
 		});
-		voxels.add(config_voxel, 'Visible').onChange(function() {
-			voxels_mesh.visible = config_voxel.Visible;
-		});
+		voxels.add( config_voxel, 'clip_voxels' ).name( 'Section view' ).onChange( function ( value ) {
+			voxels_mesh.traverse(function(obj){
+				if(obj.type === 'Mesh'){
+					if(value)	obj.material.clippingPlanes = clipPlanes;
+					else obj.material.clippingPlanes = null;
+				}
+			});
+		} );
+		voxels.add( config_voxel, 'clipIntersection' ).name( 'Inverted section' ).onChange( function ( value ) {
+			voxels_mesh.traverse(function(obj){
+				if(obj.type === 'Mesh') obj.material.clipIntersection = value;
+			});
+		} );
 		//voxels.open();
 		var cylinders = LOR_EPD.addFolder('Cylinders');
+		cylinders.add(config_cylinder, 'Visible').onChange(function() {
+			cylinders_mesh.visible = config_cylinder.Visible;
+		});
 		cylinders.add(config_cylinder, 'cylinder_transparency', 0, 1).onChange( function () {
 			cylinder_material.opacity = config_cylinder.cylinder_transparency;
 		});
@@ -538,9 +691,19 @@ document.getElementById('file_GEN').onchange = function () {
 		cylinders.addColor(config_cylinder, 'cylinder_color').onChange( function () {
 			cylinder_material.color.set(config_cylinder.cylinder_color);
 		});
-		cylinders.add(config_cylinder, 'Visible').onChange(function() {
-			cylinders_mesh.visible = config_cylinder.Visible;
-		});
+		cylinders.add( config_cylinder, 'clip_cylinders' ).name( 'Section view' ).onChange( function ( value ) {
+			cylinders_mesh.traverse(function(obj){
+				if(obj.type === 'Mesh'){
+					if(value)	obj.material.clippingPlanes = clipPlanes;
+					else obj.material.clippingPlanes = null;
+				}
+			});
+		} );
+		cylinders.add( config_cylinder, 'clipIntersection' ).name( 'Inverted section' ).onChange( function ( value ) {
+			cylinders_mesh.traverse(function(obj){
+				if(obj.type === 'Mesh') obj.material.clipIntersection = value;
+			});
+		} );
 		// TODO, change below to make remove_LOR_EPD outside appParams 
 		LOR_EPD.add( appParams, 'remove_LOR_EPD').name('Remove LORs').onChange( function( value ){ 
 			removeFolderByName(gui, 'LOR End-Point-Detection');
@@ -618,12 +781,11 @@ function loadGenericTexture_instancedMesh(fileTemplate, texture_array, histogram
 	if(params.LUT == 'viridis') LUT = LUT_viridis_color;
 	if(params.LUT == '5ramps') LUT = LUT_5ramps_color;
 	for (let i = 0; i < histogram_array.length; i++) {
-		color_value = LUT( Math.ceil( ((i - offset) / (maxValue - offset)) * 255) );
 		const voxelMaterial = new THREE.MeshBasicMaterial({ clippingPlanes: clipPlanes,
 															clipIntersection: params.clipIntersection, 
-															side: THREE.DoubleSide,
+															//side: THREE.FrontSide,
 															depthWrite: params.depth_write,
-															color: color_value, 
+															color: LUT(i), 
 															//transparent: true });
 															alphaHash: params.alphaHash });
 		voxelMaterial.opacity = opacity_weight(i, 255, minValue, params.A);
@@ -634,7 +796,6 @@ function loadGenericTexture_instancedMesh(fileTemplate, texture_array, histogram
 		// Add the voxelsMesh to the scene
 		scene.add(voxelsMesh);
 		if (i < (params.min_scale_factor / 100) * 255) {
-		//if (offset + (i / 255) * (maxValue - offset) <  maxValue * params.min_scale_factor / 100) {
 			voxelsMesh.visible = false;
 		}
 	
@@ -645,6 +806,7 @@ function loadGenericTexture_instancedMesh(fileTemplate, texture_array, histogram
 	var index_value = 0;
 	const index_array = new Array(256).fill(0);
 	for (var entry = 0; entry < texture_array.length -1; entry = entry + 1) {
+		progressBarDiv.innerText = 'Loading... ' + Math.round((entry + 1) / texture_array.length * 100) + '%';
 		var x = texture_array[entry].x;
 		var y = texture_array[entry].y;
 		var z = texture_array[entry].z;
@@ -653,15 +815,206 @@ function loadGenericTexture_instancedMesh(fileTemplate, texture_array, histogram
 		index_value = Math.ceil( ((value - offset) / (maxValue - offset)) * 255);
 
 		var dummy = new THREE.Object3D();
-		dummy.position.set(x * ((params.voxel_size + 0.0) * scale_factor) - (params.width_X/2)*((params.voxel_size + 0.0) * scale_factor), 
-					 			 y * ((params.voxel_size + 0.0) * scale_factor) - (params.width_Y/2)*((params.voxel_size + 0.0) * scale_factor), 
-							 z * ((params.voxel_size + 0.0) * scale_factor) - (params.width_Z/2)*((params.voxel_size + 0.0) * scale_factor));
+		dummy.position.set(x * ((params.voxel_size) * scale_factor) - (params.width_X/2)*((params.voxel_size) * scale_factor), 
+			 			   y * ((params.voxel_size) * scale_factor) - (params.width_Y/2)*((params.voxel_size) * scale_factor), 
+						   z * ((params.voxel_size) * scale_factor) - (params.width_Z/2)*((params.voxel_size) * scale_factor));
 	 	dummy.updateMatrix();
-		voxelMeshes[index_value].setMatrixAt(index_array[index_value], dummy.matrix);
-	 	index_array[index_value]++;
-
-		voxelMeshes[index_value].instanceMatrix.needsUpdate = true;
+		if (voxelMeshes[index_value]){
+			voxelMeshes[index_value].setMatrixAt(index_array[index_value], dummy.matrix);
+	 		index_array[index_value]++;
+			voxelMeshes[index_value].instanceMatrix.needsUpdate = true;
+		}
 	}
+	document.body.removeChild( progressBarDiv );
+}
+
+var num_points = 0;
+async function loadPointCloud(fileTemplate, texture_array) {
+	const dm3_path = "models_and_data/mouseplaque_poisembwin_402x310x310_110um.3dm";
+    const X = 309;
+    const Y = 310;
+    const Z = 402;
+    const dm3 = await (await fetch(dm3_path)).text();
+    const MAX = Math.max(X, Y, Z);
+
+    let buf = new Uint8Array(dm3.split("	").map(x => +x));
+    if (buf.length != X * Y * Z) {
+        if (buf.length > X * Y * Z) {
+            buf = buf.slice(0, X * Y * Z);
+        } else {
+            let newBuf = new Uint8Array(X * Y * Z);
+            newBuf.set(buf);
+            buf = newBuf;
+        }
+    }
+    let positions = [];
+    let colors = [];
+    let sizes = [];
+    let boxes = [];
+    // Create a THREE.Box3() for every INITIALxINITIAL region
+    const INITIAL = 64;
+    for (let z = 0; z < Z; z += INITIAL) {
+        for (let y = 0; y < Y; y += INITIAL) {
+            for (let x = 0; x < X; x += INITIAL) {
+                let box = new THREE.Box3(
+                    new THREE.Vector3(x, y, z),
+                    new THREE.Vector3(x + INITIAL, y + INITIAL, z + INITIAL)
+                );
+                boxes.push(box);
+            }
+        }
+    }
+    // We are going to use recursive subdivision to create boxes, based off of the density
+
+    while (boxes.length > 0) {
+        let box = boxes.pop();
+        let density = 0;
+        let count = 0;
+        let minX = Math.max(Math.floor(box.min.x), 0);
+        let minY = Math.max(Math.floor(box.min.y), 0);
+        let minZ = Math.max(Math.floor(box.min.z), 0);
+        let maxX = Math.min(Math.ceil(box.max.x), X);
+        let maxY = Math.min(Math.ceil(box.max.y), Y);
+        let maxZ = Math.min(Math.ceil(box.max.z), Z);
+        for (let z = minZ; z < maxZ; z++) {
+            for (let y = minY; y < maxY; y++) {
+                for (let x = minX; x < maxX; x++) {
+                    density += buf[z * Y * X + y * X + x];
+                    count++;
+                }
+            }
+        }
+        density /= count;
+        // Compute standard deviation
+        let std = 0;
+        for (let z = minZ; z < maxZ; z++) {
+            for (let y = minY; y < maxY; y++) {
+                for (let x = minX; x < maxX; x++) {
+                    let v = (buf[z * Y * X + y * X + x] - density);
+                    std += v * v;
+                }
+            }
+        }
+        std /= count;
+        std = Math.sqrt(std);
+
+        if (std > appParams.stdev && count > 1) {
+            // Subdivide into 8 boxes
+            let x = (box.min.x + box.max.x) / 2;
+            let y = (box.min.y + box.max.y) / 2;
+            let z = (box.min.z + box.max.z) / 2;
+            boxes.push(
+                new THREE.Box3(
+                    new THREE.Vector3(box.min.x, box.min.y, box.min.z),
+                    new THREE.Vector3(x, y, z)
+                ),
+                new THREE.Box3(
+                    new THREE.Vector3(x, box.min.y, box.min.z),
+                    new THREE.Vector3(box.max.x, y, z)
+                ),
+                new THREE.Box3(
+                    new THREE.Vector3(box.min.x, y, box.min.z),
+                    new THREE.Vector3(x, box.max.y, z)
+                ),
+                new THREE.Box3(
+                    new THREE.Vector3(x, y, box.min.z),
+                    new THREE.Vector3(box.max.x, box.max.y, z)
+                ),
+                new THREE.Box3(
+                    new THREE.Vector3(box.min.x, box.min.y, z),
+                    new THREE.Vector3(x, y, box.max.z)
+                ),
+                new THREE.Box3(
+                    new THREE.Vector3(x, box.min.y, z),
+                    new THREE.Vector3(box.max.x, y, box.max.z)
+                ),
+                new THREE.Box3(
+                    new THREE.Vector3(box.min.x, y, z),
+                    new THREE.Vector3(x, box.max.y, box.max.z)
+                ),
+                new THREE.Box3(
+                    new THREE.Vector3(x, y, z),
+                    new THREE.Vector3(box.max.x, box.max.y, box.max.z)
+                )
+            );
+        } else {
+            // Create a point
+			num_points++;
+            if (density > 0) {
+                let amount = density;
+                let centerVec = new THREE.Vector3();
+                let size = Math.max(box.max.x - box.min.x, box.max.y - box.min.y, box.max.z - box.min.z);
+                sizes.push(
+                    size
+                )
+                box.getCenter(centerVec);
+
+                positions.push(
+                    centerVec.z - Z / 2, centerVec.y - Y / 2, centerVec.x - X / 2
+                );
+                colors.push(amount / 255, amount / 255, amount / 255);
+
+            }
+        }
+    }
+	console.log("Num. voxels: ", num_points);
+    const geometry = new THREE.BufferGeometry();
+    geometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+    geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
+    geometry.setAttribute('size', new THREE.Float32BufferAttribute(sizes, 1));
+    const material = new THREE.ShaderMaterial({
+        vertexColors: true,
+        depthWrite: false,
+        blendEquation: THREE.MaxEquation,
+        blending: THREE.CustomBlending,
+
+        uniforms: {
+             //uScale: { value: innerHeight / (2 * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2))) },
+            uScale: {
+                value: 1 //(innerHeight / Math.abs(camera.top - camera.bottom)) * camera.zoom
+            },
+            perspective: {
+                value: camera.isPerspectiveCamera
+            }
+        },
+        vertexShader: `
+        varying vec3 vColor;
+        varying float vSize;
+        uniform float uScale;
+        uniform bool perspective;
+        attribute float size;
+        
+        void main() {
+            vColor = color;
+            vSize = size;
+            vec4 mvPosition = viewMatrix * vec4( position, 1.0 );
+        
+            gl_PointSize = round( 1.6 * size * uScale / (perspective ? -mvPosition.z : 1.0));
+        
+            gl_Position = projectionMatrix * mvPosition;
+        }
+        
+        `,
+        fragmentShader: `
+        
+        varying vec3 vColor;
+        varying float vSize;
+        #include <dithering_pars_fragment>
+        void main() {
+            // Compute distance from the center of the point (which is (0.5, 0.5) in UV coordinates)
+            vec2 center = vec2(0.5, 0.5);
+            vec2 uv = gl_PointCoord - center;
+            if (dot(uv, uv) > 0.5 * 0.5) discard;
+            gl_FragColor = vec4(vColor, 1.0);
+        }
+        `,
+    });
+    points = new THREE.Points(geometry, material);
+	test = 1;
+    scene.add(points);
+	
+	document.body.removeChild( progressBarDiv );
+
 }
 
 var num_voxels = 0;
@@ -729,6 +1082,7 @@ function loadGenericTexture(fileTemplate, texture_array) {
 	}
 	implode(fileTemplate);
 	console.log("Voxels loaded: ", num_voxels);
+	document.body.removeChild( progressBarDiv );
 }
 
 function opacity_weight(x, maxValue, min, weight) {
@@ -748,21 +1102,24 @@ function opacity_weight(x, maxValue, min, weight) {
 function x_move(fileTemplate, value){
 	scene.traverse((object) => {
 		if (object instanceof THREE.Mesh && object.name === fileTemplate && object.position) {
-			object.position.x = object.userData.finalPosition.x + parseFloat(value,10);
+			if(appParams.loader !== 'Instanced voxels') object.position.x = object.userData.finalPosition.x + parseFloat(value,10);
+			else object.position.x = 0 + parseFloat(value,10);
 		}
 	});
 }
 function y_move(fileTemplate, value){
 	scene.traverse((object) => {
 		if (object instanceof THREE.Mesh && object.name === fileTemplate && object.position) {
-			object.position.y = object.userData.finalPosition.y + parseFloat(value,10);
+			if(appParams.loader !== 'Instanced voxels') object.position.y = object.userData.finalPosition.y + parseFloat(value,10);
+			else object.position.y = 0 + parseFloat(value,10);
 		}
 	});
 }
 function z_move(fileTemplate, value){
 	scene.traverse((object) => {
 		if (object instanceof THREE.Mesh && object.name === fileTemplate && object.position) {
-			object.position.z = object.userData.finalPosition.z + parseFloat(value,10);
+			if(appParams.loader !== 'Instanced voxels') object.position.z = object.userData.finalPosition.z + parseFloat(value,10);
+			else object.position.z = 0 + parseFloat(value,10);
 		}
 	});
 }
@@ -785,92 +1142,48 @@ function change_voxel_size (fileTemplate, value){
 	});
 }
 
-function change_LUT(fileTemplate, value) {
-	params.LUT = value;
-	if(params.color_offset) offset = maxValue * params.min_scale_factor / 100;
-	if(!params.color_offset) offset = minValue;
-	scene.traverse((object) => {
-		if (object instanceof THREE.Mesh) {
-			if (object.name == fileTemplate) {
-				if(params.LUT == 'jet') object.material.color = LUT_jet_color( Math.ceil(((object.userData.color_value - offset) / (maxValue - offset)) * 255) );
-				if(params.LUT == 'fire') object.material.color = LUT_fire_color( Math.ceil(((object.userData.color_value - offset) / (maxValue - offset)) * 255) );
-				if(params.LUT == 'viridis') object.material.color = LUT_viridis_color( Math.ceil(((object.userData.color_value - offset) / (maxValue - offset)) * 255) );
-				if(params.LUT == '5ramps') object.material.color = LUT_5ramps_color( Math.ceil(((object.userData.color_value - offset) / (maxValue - offset)) * 255));
-			}
-		}
-	});
-	/*
-	scene.traverse((object) => {
-		if (object instanceof THREE.Mesh) {
-			if (object.name == fileTemplate) {
-				if(params.LUT == 'jet') object.material.color = LUT_jet_color(object.userData.color_value);
-				if(params.LUT == 'fire') object.material.color = LUT_fire_color(object.userData.color_value);
-				if(params.LUT == 'viridis') object.material.color = LUT_viridis_color(object.userData.color_value);
-				if(params.LUT == '5ramps') object.material.color = LUT_5ramps_color(object.userData.color_value);
-			}
-		}
-	});
-	*/
-}
 
-function change_min_transp (fileTemplate, value ) {
-	params.min_scale_factor = value;
-	var voxels_n = 0;
+function update_material (fileTemplate, value ) {
+	if(params.color_offset) offset = maxValue * params.min_scale_factor / 100;
+	if(!params.color_offset) offset = minValue ;
+	var maxOffset = params.max_scale_factor * maxValue / 100;
+	var LUT;
+	if(params.LUT == 'jet') LUT = LUT_jet_color;
+	if(params.LUT == 'fire') LUT = LUT_fire_color;
+	if(params.LUT == 'viridis') LUT = LUT_viridis_color;
+	if(params.LUT == '5ramps') LUT = LUT_5ramps_color;
 	scene.traverse((object) => {
 		if (object instanceof THREE.Mesh) {
-			if (object.name == fileTemplate && object.userData.color_value < maxValue * params.min_scale_factor / 100 ) {
+			if (object.name == fileTemplate && (object.userData.color_value < maxValue * params.min_scale_factor / 100 || !params.visible) ) {
 				object.visible = false;
 			}
 			if (object.name == fileTemplate && object.userData.color_value > maxValue * params.min_scale_factor / 100 && params.visible) {
 				object.visible = true;
-				voxels_n = voxels_n + 1;
-				if(params.color_offset) {
-					offset = maxValue * params.min_scale_factor / 100;
-					if(params.LUT == 'jet') object.material.color = LUT_jet_color( Math.ceil(((object.userData.color_value - offset) / (maxValue - offset)) * 255) );
-					if(params.LUT == 'fire') object.material.color = LUT_fire_color( Math.ceil(((object.userData.color_value - offset) / (maxValue - offset)) * 255) );
-					if(params.LUT == 'viridis') object.material.color = LUT_viridis_color( Math.ceil(((object.userData.color_value - offset) / (maxValue - offset)) * 255) );
-					if(params.LUT == '5ramps') object.material.color = LUT_5ramps_color( Math.ceil(((object.userData.color_value - offset) / (maxValue - offset)) * 255));
-				}
-				// TODO fix this opacity max and min range!!!
-				//object.material.opacity = opacity_weight(object.userData.color_value, maxValue, minValue * params.min_scale_factor / 100, params.A);
+				//var object_value = Math.ceil( object.userData.color_value / ( (params.max_scale_factor * maxValue / 100) - offset ) * 255 );
+				var object_value = Math.ceil( ( ( maxValue - minValue) * ( object.userData.color_value - offset) ) / ( maxOffset - minValue - offset ) ); 
+				if(object_value > 255) object_value = 255;
+				if(object_value < 0) object_value = 0;
+				object.material.color = LUT( object_value );
+				object.material.opacity = opacity_weight(object.userData.color_value, maxValue, minValue * params.min_scale_factor / 100, params.A);
 			}
 		}
 	});
 	//console.log(voxels_n, " Voxels visible");
 }
 
-function change_transp_scale(fileTemplate, value ) {
-	params.A = value;
-	scene.traverse((object) => {
-		if (object instanceof THREE.Mesh) {
-			if (object.name == fileTemplate) {
-				// TODO fix this opacity max and min range!!!
-				object.material.opacity = opacity_weight(object.userData.color_value, maxValue, minValue * params.min_scale_factor / 100, params.A);
-			}
-		}
-	});
-} 
-
-function change_visibility(fileTemplate, value) {
-	var threshold_value;
-	if (appParams.loader === 'Voxel threshold' || appParams.loader === 'Instanced voxels') threshold_value = maxValue * params.min_scale_factor / 100; 
-	else if (appParams.loader === 'Num of voxels') threshold_value = 0;
-	params.visible = value;
-	scene.traverse((object) => {
-		if (object instanceof THREE.Mesh) {
-			if (object.name == fileTemplate && object.userData.color_value > threshold_value) {
-				object.visible = params.visible;
-			}
-		}
-	});
-}
+let needsUpdate = false;
 
 function change_alpha_hash(fileTemplate, value) {
 	params.alphaHash = value;
 	scene.traverse((object) => {
 		if (object instanceof THREE.Mesh && object.name == fileTemplate) {
 			object.material.alphaHash = params.alphaHash;
-			console.log("HERE ", object.material.alphaHash);
+			object.material.transparent = ! params.alphaHash;
+			object.material.depthWrite = params.alphaHash;
+
+			object.material.needsUpdate = true;
+			needsUpdate = true;
+			console.log("HERE ", object.alphaHash);
 		}
 	});
 }
@@ -1132,125 +1445,26 @@ function drawCylinder(x1, y1, z1, x2, y2, z2, cylinders_mesh) {
 //////////////////////////////////////////////////		   APP FUNCTIONS AND RUN			//////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-function setXY() {
-	const length = camera.position.length();
-	camera.position.x = 0;
-	camera.position.y = 0;
-	camera.position.z = length;
-	camera.up = new THREE.Vector3(0, 1, 0);
-	camera.lookAt(new THREE.Vector3(0, 0, 0));
-};
-function setYZ() {
-	const length = camera.position.length();
-	camera.position.x = -length;
-	camera.position.y = 0;
-	camera.position.z = 0;
-	camera.up = new THREE.Vector3(0, 1, 0);
-	camera.lookAt(new THREE.Vector3(0, 0, 0));
-};
-function settYZ() {
-	const length = camera.position.length();
-	camera.position.x = length;
-	camera.position.y = 0;
-	camera.position.z = 0;
-	camera.up = new THREE.Vector3(0, 1, 0);
-	camera.lookAt(new THREE.Vector3(0, 0, 0));
-};
-function setZX() {
-	const length = camera.position.length();
-	camera.position.x = 0;
-	camera.position.y = length;
-	camera.position.z = 0;
-	camera.up = new THREE.Vector3(1, 0, 0);
-	camera.lookAt(new THREE.Vector3(0, 0, 0));
-};
-function set45() {
-	camera.position.x = -580;
-	camera.position.y = 580;
-	camera.position.z = -580;
-	camera.lookAt( scene.position );
-}
-function updateRendererInfo() {
-	console.log(camera.position);
-	var info = renderer.info;
-	for (let prop in info.render) {
-		console.log(prop + " " + info.render[prop]);
-	}
-	if (info.memory) {
-		for (let prop in info.memory) {
-			console.log(prop + " " + info.memory[prop]);
-		}
-	}
-	console.log("Voxels loaded: ", num_voxels);
-}
-
 var stats = new Stats();
 stats.showPanel(0); // 0: fps, 1: ms, 2: mb, 3+: custom
-stats.domElement.style.cssText = 'position:absolute;top:144px;left:0px;';
+stats.domElement.style.cssText = 'position:absolute;top:110px;left:0px;';
 //document.body.appendChild(stats.dom);
 document.getElementById('scene-container').appendChild(stats.dom);
 var stats1 = new Stats();
 stats1.showPanel(1); // 0: fps, 1: ms, 2: mb, 3+: custom
-stats1.domElement.style.cssText = 'position:absolute;top:144px;left:80px;';
+stats1.domElement.style.cssText = 'position:absolute;top:160px;left:0px;';
 //document.body.appendChild(stats1.dom);
 document.getElementById('scene-container').appendChild(stats1.dom);
-var stats2 = new Stats();
-stats2.showPanel(2); // 0: fps, 1: ms, 2: mb, 3+: custom
-stats2.domElement.style.cssText = 'position:absolute;top:144px;left:160px;';
+//var stats2 = new Stats();
+//stats2.showPanel(2); // 0: fps, 1: ms, 2: mb, 3+: custom
+//stats2.domElement.style.cssText = 'position:absolute;top:144px;left:160px;';
 //document.body.appendChild(stats2.dom);
-document.getElementById('scene-container').appendChild(stats2.dom);
-
-/*
-import { RenderPass } from 'https://cdn.jsdelivr.net/npm/three@0.155.0/examples/jsm/postprocessing/RenderPass.js';
-import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
-import { TAARenderPass } from 'three/examples/jsm/postprocessing/TAARenderPass.js';
-import { OutputPass } from 'three/examples/jsm/postprocessing/OutputPass.js';
-
-// Rest of your code
-
-controls.addEventListener( 'change', () => ( needsUpdate = true ) );
-
-let composer, renderPass, taaRenderPass, outputPass;
-let needsUpdate = false;
-
-composer = new EffectComposer( renderer );
-
-renderPass = new RenderPass( scene, camera );
-renderPass.enabled = false;
-
-taaRenderPass = new TAARenderPass( scene, camera );
-
-outputPass = new OutputPass();
-
-composer.addPass( renderPass );
-composer.addPass( taaRenderPass );
-composer.addPass( outputPass );
-
-const taaFolder = gui.addFolder( 'Temporal Anti-Aliasing' );
-taaFolder.add( params, 'taa' ).name( 'enabled' ).onChange( () => {
-	renderPass.enabled = ! params.taa;
-	taaRenderPass.enabled = params.taa;
-	sampleLevelCtrl.enable( params.taa );
-	needsUpdate = true;
-} );
-
-const sampleLevelCtrl = taaFolder.add( params, 'sampleLevel', 0, 6, 1 ).onChange( () => ( needsUpdate = true ) );
-
-function render() {
-	if ( needsUpdate ) {
-		taaRenderPass.accumulate = false;
-		taaRenderPass.sampleLevel = 0;
-		needsUpdate = false;
-	} else {
-		taaRenderPass.accumulate = true;
-		taaRenderPass.sampleLevel = params.sampleLevel;
-	}
-	composer.render();
-
-}
-*/
+//document.getElementById('scene-container').appendChild(stats2.dom);
 
 function animate() {
+    if (test == 1) {
+        points.material.uniforms.uScale.value = (innerHeight / Math.abs(camera.top - camera.bottom)) * camera.zoom;
+    }
 	const time = - performance.now() * 0.0003;
 	if (params.rotationEnabled) {
 		camera.position.x = 1000 * Math.cos( time );
@@ -1263,7 +1477,7 @@ function animate() {
 	//render();
 	stats.update();
 	stats1.update();
-	stats2.update();
+	//stats2.update();
 }
 
 animate();

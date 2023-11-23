@@ -4,7 +4,7 @@
 title: "Internal pages"
 menu:
   main:
-    weight: 40
+    weight: 50
 ---
 
 Internal pages for documentation of the 100µPET scanner.

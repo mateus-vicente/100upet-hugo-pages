@@ -17,10 +17,10 @@ document.addEventListener('DOMContentLoaded', function () {
 	let scannerobj3 = new THREE.Object3D();
 
 	var config_scanner_vis = {
-		scaner_transparency: 0.5,
+		scaner_transparency: 0.01,
 		 side: sideOptions['DoubleSide'],
-		 wire_frame: false,
-		 depth_write: true,
+		 wire_frame: true,
+		 depth_write: false,
 	};
 
 	// Initialize Three.js
