@@ -488,70 +488,72 @@ document.getElementById('file_GEN').onchange = function () {
 			var file_gui = gui.addFolder(fileTemplate);
 			//var file_gui = gui.addFolder(fileTemplate + " [" + params.width_X + "x" + params.width_Y + "x" + params.width_Z + "]");
 			file_gui.add( params, 'visible').name('Visible').onChange( function( value ){ update_material(fileTemplate, value);} );
-			var voxel_folder = file_gui.addFolder('Voxels control');
-			voxel_folder.add( params, "voxel_size", params.voxel_size).name("Voxel size [mm]").onFinishChange( function( value ) {change_voxel_size(fileTemplate, value);});
-			voxel_folder.close();
-			var material_folder = file_gui.addFolder('Volume rendering');
-			material_folder.add( params, 'LUT', ['jet','fire','viridis','5ramps'] ).name( fileTemplate + 'LUT' ).onChange( function( value ){update_material(fileTemplate, value);} );
-			///*
-			material_folder.add( params, 'depth_write').onChange(function( value ) {
-				scene.traverse(function(child) {
-					if (child instanceof THREE.Mesh && child.name == fileTemplate) child.material.depthWrite = params.depth_write;
+			if(appParams.loader !== 'Point cloud (MIP)'){
+				var voxel_folder = file_gui.addFolder('Voxels control');
+				voxel_folder.add( params, "voxel_size", params.voxel_size).name("Voxel size [mm]").onFinishChange( function( value ) {change_voxel_size(fileTemplate, value);});
+				voxel_folder.close();
+				var material_folder = file_gui.addFolder('Volume rendering');
+				material_folder.add( params, 'LUT', ['jet','fire','viridis','5ramps'] ).name( fileTemplate + 'LUT' ).onChange( function( value ){update_material(fileTemplate, value);} );
+				///*
+				material_folder.add( params, 'depth_write').onChange(function( value ) {
+					scene.traverse(function(child) {
+						if (child instanceof THREE.Mesh && child.name == fileTemplate) child.material.depthWrite = params.depth_write;
+					});
 				});
-			});
-			material_folder.add( params, 'color_offset').name('Color offset').onChange(value => {
-				params.color_offset = value;
-				if(params.color_offset) offset = maxValue * params.min_scale_factor / 100;
-				if(!params.color_offset) offset = minValue;
-				scene.traverse((object) => {
-					if (object instanceof THREE.Mesh) {
-						if (object.name == fileTemplate) {
-							if(params.LUT == 'jet') object.material.color = LUT_jet_color( Math.ceil(((object.userData.color_value - offset) / (maxValue - offset)) * 255) );
-							if(params.LUT == 'fire') object.material.color = LUT_fire_color( Math.ceil(((object.userData.color_value - offset) / (maxValue - offset)) * 255) );
-							if(params.LUT == 'viridis') object.material.color = LUT_viridis_color( Math.ceil(((object.userData.color_value - offset) / (maxValue - offset)) * 255) );
-							if(params.LUT == '5ramps') object.material.color = LUT_5ramps_color( Math.ceil(((object.userData.color_value - offset) / (maxValue - offset)) * 255));
+				material_folder.add( params, 'color_offset').name('Color offset').onChange(value => {
+					params.color_offset = value;
+					if(params.color_offset) offset = maxValue * params.min_scale_factor / 100;
+					if(!params.color_offset) offset = minValue;
+					scene.traverse((object) => {
+						if (object instanceof THREE.Mesh) {
+							if (object.name == fileTemplate) {
+								if(params.LUT == 'jet') object.material.color = LUT_jet_color( Math.ceil(((object.userData.color_value - offset) / (maxValue - offset)) * 255) );
+								if(params.LUT == 'fire') object.material.color = LUT_fire_color( Math.ceil(((object.userData.color_value - offset) / (maxValue - offset)) * 255) );
+								if(params.LUT == 'viridis') object.material.color = LUT_viridis_color( Math.ceil(((object.userData.color_value - offset) / (maxValue - offset)) * 255) );
+								if(params.LUT == '5ramps') object.material.color = LUT_5ramps_color( Math.ceil(((object.userData.color_value - offset) / (maxValue - offset)) * 255));
+							}
 						}
-					}
+					});
+				} );
+				//*/
+				material_folder.add( params, 'alphaHash' ).name( 'Alpha hash' ).onChange( function( value ){change_alpha_hash(fileTemplate, value);} );
+				material_folder.add( params, 'min_scale_factor', min_visibility_control, 100 ).step( 0.1 ).name( 'Visibility cut [%]' ).onChange( function( value ){update_material(fileTemplate, value);} );
+				material_folder.add( params, 'max_scale_factor', min_visibility_control, 100 ).step( 0.1 ).name( 'Visibility ceiling [%]' ).onChange( function( value ){update_material(fileTemplate, value);} );
+				material_folder.add( params, 'A', 0, 100 ).step( 0.01 ).name( 'weight' ).onChange( function( value ){update_material(fileTemplate, value);} );
+				var section_folder = file_gui.addFolder('Cross-section config');
+				section_folder.add( params, 'clip' ).name( 'Section view' ).onChange( function ( value ) {
+					scene.traverse((obj) => {
+						if (obj instanceof THREE.Mesh && obj.name == fileTemplate){
+							if(value) obj.material.clippingPlanes = clipPlanes;
+							else obj.material.clippingPlanes = null;
+						}
+					});
+				} );
+				section_folder.add( params, 'clipIntersection' ).name( 'Inverted section' ).onChange( function ( value ) {
+					scene.traverse(function(obj){
+						if(obj.type === 'Mesh' && obj.name == fileTemplate){
+							obj.material.clipIntersection = value;
+						}
+					});
+				} );
+				section_folder.close();
+				var wire_folder = file_gui.addFolder('Bounding box wireframe');
+				wire_folder.add( params, 'wireframe_visible').name('Wireframe visible').onChange(value => {
+					scene.traverse((obj) => {
+						if (obj instanceof THREE.Mesh && obj.name == fileTemplate + '-wireframe'){
+							obj.visible = value;
+						}
+					});
 				});
-			} );
-			//*/
-			material_folder.add( params, 'alphaHash' ).name( 'Alpha hash' ).onChange( function( value ){change_alpha_hash(fileTemplate, value);} );
-			material_folder.add( params, 'min_scale_factor', min_visibility_control, 100 ).step( 0.1 ).name( 'Visibility cut [%]' ).onChange( function( value ){update_material(fileTemplate, value);} );
-			material_folder.add( params, 'max_scale_factor', min_visibility_control, 100 ).step( 0.1 ).name( 'Visibility ceiling [%]' ).onChange( function( value ){update_material(fileTemplate, value);} );
-			material_folder.add( params, 'A', 0, 100 ).step( 0.01 ).name( 'weight' ).onChange( function( value ){update_material(fileTemplate, value);} );
-			var section_folder = file_gui.addFolder('Cross-section config');
-			section_folder.add( params, 'clip' ).name( 'Section view' ).onChange( function ( value ) {
-				scene.traverse((obj) => {
-					if (obj instanceof THREE.Mesh && obj.name == fileTemplate){
-						if(value) obj.material.clippingPlanes = clipPlanes;
-						else obj.material.clippingPlanes = null;
-					}
-				});
-			} );
-			section_folder.add( params, 'clipIntersection' ).name( 'Inverted section' ).onChange( function ( value ) {
-				scene.traverse(function(obj){
-					if(obj.type === 'Mesh' && obj.name == fileTemplate){
-						obj.material.clipIntersection = value;
-					}
-				});
-			} );
-			section_folder.close();
-			var wire_folder = file_gui.addFolder('Bounding box wireframe');
-			wire_folder.add( params, 'wireframe_visible').name('Wireframe visible').onChange(value => {
-				scene.traverse((obj) => {
-					if (obj instanceof THREE.Mesh && obj.name == fileTemplate + '-wireframe'){
-						obj.visible = value;
-					}
-				});
-			});
-			wire_folder.addColor(params, 'wireframe_color').name('Wireframe color').onChange((colorValue) => {
-				scene.traverse((obj) => {
-					if (obj instanceof THREE.Mesh && obj.name == fileTemplate + '-wireframe'){
-						obj.material.color = new THREE.Color(colorValue);
-					}
-				});
-			} );
-			wire_folder.close();
+				wire_folder.addColor(params, 'wireframe_color').name('Wireframe color').onChange((colorValue) => {
+					scene.traverse((obj) => {
+						if (obj instanceof THREE.Mesh && obj.name == fileTemplate + '-wireframe'){
+							obj.material.color = new THREE.Color(colorValue);
+						}
+					});
+				} );
+				wire_folder.close();
+			}
 			var xyz_offset = file_gui.addFolder('XYZ offset');
 			xyz_offset.add( params, 'x_offset').name('X offset').onFinishChange( function( value ) { x_move(fileTemplate, value) } );
 			xyz_offset.add( params, 'y_offset').name('Y offset').onFinishChange( function( value ) { y_move(fileTemplate, value) } );
@@ -1012,6 +1014,7 @@ async function loadPointCloud(fileTemplate, fileName) {
     });
     points = new THREE.Points(geometry, material);
 	test = 1;
+	points.name = fileTemplate; 
     scene.add(points);
 	
 	document.body.removeChild( progressBarDiv );
@@ -1102,7 +1105,14 @@ function opacity_weight(x, maxValue, min, weight) {
 
 function x_move(fileTemplate, value){
 	scene.traverse((object) => {
-		if (object instanceof THREE.Mesh && object.name === fileTemplate && object.position) {
+		if ( object instanceof THREE.Points  && object.name === fileTemplate && object.position) {
+			const positions = object.geometry.attributes.position.array;
+            for (let i = 0; i < positions.length; i += 3) {
+                positions[i] += parseFloat(value, 10); // Shift the x-coordinate
+            }
+            object.geometry.attributes.position.needsUpdate = true; // Notify Three.js that the attribute has been updated
+		}
+		if (object instanceof THREE.Mesh  && object.name === fileTemplate && object.position) {
 			if(appParams.loader !== 'Instanced voxels') object.position.x = object.userData.finalPosition.x + parseFloat(value,10);
 			else object.position.x = 0 + parseFloat(value,10);
 		}
@@ -1110,6 +1120,13 @@ function x_move(fileTemplate, value){
 }
 function y_move(fileTemplate, value){
 	scene.traverse((object) => {
+		if ( object instanceof THREE.Points  && object.name === fileTemplate && object.position) {
+			const positions = object.geometry.attributes.position.array;
+            for (let i = 1; i < positions.length; i += 3) {
+                positions[i] += parseFloat(value, 10); // Shift the x-coordinate
+            }
+            object.geometry.attributes.position.needsUpdate = true; // Notify Three.js that the attribute has been updated
+		}
 		if (object instanceof THREE.Mesh && object.name === fileTemplate && object.position) {
 			if(appParams.loader !== 'Instanced voxels') object.position.y = object.userData.finalPosition.y + parseFloat(value,10);
 			else object.position.y = 0 + parseFloat(value,10);
@@ -1118,6 +1135,13 @@ function y_move(fileTemplate, value){
 }
 function z_move(fileTemplate, value){
 	scene.traverse((object) => {
+		if ( object instanceof THREE.Points  && object.name === fileTemplate && object.position) {
+			const positions = object.geometry.attributes.position.array;
+            for (let i = 2; i < positions.length; i += 3) {
+                positions[i] += parseFloat(value, 10); // Shift the x-coordinate
+            }
+            object.geometry.attributes.position.needsUpdate = true; // Notify Three.js that the attribute has been updated
+		}
 		if (object instanceof THREE.Mesh && object.name === fileTemplate && object.position) {
 			if(appParams.loader !== 'Instanced voxels') object.position.z = object.userData.finalPosition.z + parseFloat(value,10);
 			else object.position.z = 0 + parseFloat(value,10);
@@ -1154,6 +1178,10 @@ function update_material (fileTemplate, value ) {
 	if(params.LUT == 'viridis') LUT = LUT_viridis_color;
 	if(params.LUT == '5ramps') LUT = LUT_5ramps_color;
 	scene.traverse((object) => {
+		if ( object instanceof THREE.Points  && object.name === fileTemplate) {
+			if ( params.visible ) object.visible = true;
+			if ( !params.visible ) object.visible = false;
+		}
 		if (object instanceof THREE.Mesh) {
 			if (object.name == fileTemplate && (object.userData.color_value < maxValue * params.min_scale_factor / 100 || !params.visible) ) {
 				object.visible = false;
