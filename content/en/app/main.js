@@ -13,7 +13,7 @@ var minValue = Infinity;
 let offset;
 
 const appParams = {
-	loader: 'Instanced voxels',
+	loader: 'Point cloud (MIP)',
 	threshold: 1,
 	voxels_num: '10000',
 	stdev: 2,
@@ -337,12 +337,12 @@ function updateControls() {
 		voxels_control.enable = false;
 	}
 }
-file_loader.add(appParams, 'loader', ['Voxel threshold', 'Num of voxels', 'Instanced voxels', 'Point cloud (MIP)']).name('Loader type').onChange(updateControls);
+file_loader.add(appParams, 'loader', ['Point cloud (MIP)', 'Voxel threshold', 'Num of voxels', 'Instanced voxels']).name('Loader type').onChange(updateControls);
+var stdev_control = file_loader.add(appParams, 'stdev', 1,20).step(1).name('St. dev.');
 var threshold_control = file_loader.add(appParams, 'threshold', 0, 100).name('Voxel threshold');
 threshold_control.enable = false;
 var voxels_control = file_loader.add(appParams, 'voxels_num', appParams.voxels_num).name('# Voxels');
 voxels_control.enable = false;
-var stdev_control = file_loader.add(appParams, 'stdev', 1,20).step(1).name('St. dev.');
 updateControls();
 
 var display = app.addFolder('Display');
@@ -363,8 +363,8 @@ display.add( appParams, 'setXY').name('XY view');
 display.add( appParams, 'setYZ').name('YZ view');
 //display.add( appParams, 'settYZ').name('-YZ view');
 display.add( appParams, 'setXZ').name('XZ view');
-display.add( appParams, 'set45').name('XY view');
-display.add( appParams, 'updateRendererInfo').name('Show render info');
+//display.add( appParams, 'set45').name('45 view');
+display.add( appParams, 'updateRendererInfo').name('Render info');
 appear.close();
 var anim = display.addFolder('Animation');
 // TODO
