@@ -578,12 +578,12 @@ document.getElementById('file_GEN').onchange = function () {
 
 			console.log("Reading file " + fileName);
 			reader.onload = (event) => {
+				const file_generic = event.target.result;
 				if(appParams.loader == 'Point cloud (MIP)') {
-					loadPointCloud(fileTemplate, fileName);
+					loadPointCloud(fileTemplate, fileName, file_generic);
 					return;
 				}
 				const histogram_array = new Array(256).fill(0);
-				const file_generic = event.target.result;
 				generic_allLines = file_generic.split(/\r\n|\n/);
 
 				var x = 0;
@@ -829,12 +829,11 @@ function loadGenericTexture_instancedMesh(fileTemplate, texture_array, histogram
 }
 
 var num_points = 0;
-async function loadPointCloud(fileTemplate, fileName) {
-	const dm3_path = 'models_and_data/'+ fileName;
+async function loadPointCloud(fileTemplate, fileName, file_generic) {
     const X = params.width_Z; // 309;
     const Y = params.width_Y; // 310;
     const Z = params.width_X; // 402;
-    const dm3 = await (await fetch(dm3_path)).text();
+    const dm3 = file_generic;
     const MAX = Math.max(X, Y, Z);
 
     let buf = new Uint8Array(dm3.split("	").map(x => +x));
