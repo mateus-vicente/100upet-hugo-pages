@@ -337,7 +337,7 @@ function updateControls() {
 		voxels_control.enable = false;
 	}
 }
-file_loader.add(appParams, 'loader', ['Voxel threshold', 'Num of voxels', 'Instanced voxels', 'MIP point cloud']).name('Loader type').onChange(updateControls);
+file_loader.add(appParams, 'loader', ['Voxel threshold', 'Num of voxels', 'Instanced voxels', 'Point cloud (MIP)']).name('Loader type').onChange(updateControls);
 var threshold_control = file_loader.add(appParams, 'threshold', 0, 100).name('Voxel threshold');
 threshold_control.enable = false;
 var voxels_control = file_loader.add(appParams, 'voxels_num', appParams.voxels_num).name('# Voxels');
@@ -576,6 +576,10 @@ document.getElementById('file_GEN').onchange = function () {
 
 			console.log("Reading file " + fileName);
 			reader.onload = (event) => {
+				if(appParams.loader == 'Point cloud (MIP)') {
+					loadPointCloud(fileTemplate, fileName);
+					return;
+				}
 				const histogram_array = new Array(256).fill(0);
 				const file_generic = event.target.result;
 				generic_allLines = file_generic.split(/\r\n|\n/);
@@ -607,17 +611,11 @@ document.getElementById('file_GEN').onchange = function () {
 				console.log('Texture maximum value:', maxValue);
 				console.log('Texture minimum value:', minValue);
 
-				if(appParams.loader == 'MIP point cloud') {
-					loadPointCloud(fileTemplate, texture_array);
-					console.log('HEREPC');
-				}
 				if(appParams.loader == 'Voxel threshold' ||
 				   appParams.loader == 'Num of voxels') {
 					loadGenericTexture(fileTemplate, texture_array);
-					console.log('HERE');
 				}
 				if(appParams.loader == 'Instanced voxels') {
-					console.log('HERE2');
 					for (const entry of texture_array) {
 						const normalizedValue = (entry.value - minValue) / (maxValue - minValue);
 						const index = Math.ceil(normalizedValue * 255);
@@ -829,11 +827,11 @@ function loadGenericTexture_instancedMesh(fileTemplate, texture_array, histogram
 }
 
 var num_points = 0;
-async function loadPointCloud(fileTemplate, texture_array) {
-	const dm3_path = "models_and_data/mouseplaque_poisembwin_402x310x310_110um.3dm";
-    const X = 309;
-    const Y = 310;
-    const Z = 402;
+async function loadPointCloud(fileTemplate, fileName) {
+	const dm3_path = 'models_and_data/'+ fileName;
+    const X = params.width_Z; // 309;
+    const Y = params.width_Y; // 310;
+    const Z = params.width_X; // 402;
     const dm3 = await (await fetch(dm3_path)).text();
     const MAX = Math.max(X, Y, Z);
 
@@ -847,6 +845,7 @@ async function loadPointCloud(fileTemplate, texture_array) {
             buf = newBuf;
         }
     }
+
     let positions = [];
     let colors = [];
     let sizes = [];
@@ -864,8 +863,8 @@ async function loadPointCloud(fileTemplate, texture_array) {
             }
         }
     }
-    // We are going to use recursive subdivision to create boxes, based off of the density
 
+    // We are going to use recursive subdivision to create boxes, based off of the density
     while (boxes.length > 0) {
         let box = boxes.pop();
         let density = 0;
@@ -943,14 +942,16 @@ async function loadPointCloud(fileTemplate, texture_array) {
             if (density > 0) {
                 let amount = density;
                 let centerVec = new THREE.Vector3();
-                let size = Math.max(box.max.x - box.min.x, box.max.y - box.min.y, box.max.z - box.min.z);
+                let size = Math.max(box.max.x - box.min.x, box.max.y - box.min.y, box.max.z - box.min.z) * (params.voxel_size * 10);
                 sizes.push(
                     size
                 )
                 box.getCenter(centerVec);
 
                 positions.push(
-                    centerVec.z - Z / 2, centerVec.y - Y / 2, centerVec.x - X / 2
+                    (centerVec.z - Z / 2) * (params.voxel_size * 10), 
+					(centerVec.y - Y / 2) * (params.voxel_size * 10), 
+					(centerVec.x - X / 2) * (params.voxel_size * 10)
                 );
                 colors.push(amount / 255, amount / 255, amount / 255);
 
