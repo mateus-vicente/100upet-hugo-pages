@@ -10,3 +10,15 @@
 content/.DS_Store
 content/en/.DS_Store
 content/en/docs/.DS_Store
+*.icloud
+*.wasm
+*.wasm
+.DS_Store
+content/.DS_Store
+content/en/.DS_Store
+content/en/app/.DS_Store
+content/en/docs/.DS_Store
+node_modules/.DS_Store
+public/.DS_Store
+public/js/.DS_Store
+themes/.DS_Store
