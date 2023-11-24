@@ -16,7 +16,6 @@ const appParams = {
 	loader: 'Point cloud (MIP)',
 	threshold: 1,
 	voxels_num: '10000',
-	stdev: 2,
 	scene_anim: true,			//TODO
 	implosion_time: 2000, 		// [ms]
 	explosion_time: 1000, 		// [ms]
@@ -87,6 +86,7 @@ const appParams = {
 
 const params = {
 	jet_lut: false,
+	stdev: 2,
 	voxel_size: '1',			// [mm]
 	width_X: 100,
 	width_Y: 100,
@@ -339,7 +339,7 @@ function updateControls() {
 	}
 }
 file_loader.add(appParams, 'loader', ['Point cloud (MIP)', 'Instanced voxels', 'Voxel threshold', 'Num of voxels']).name('Loader type').onChange(updateControls);
-var stdev_control = file_loader.add(appParams, 'stdev', 1,20).step(1).name('St. dev.');
+//var stdev_control = file_loader.add(appParams, 'stdev', 1,20).step(1).name('St. dev.').onChange(resetPoints);
 var threshold_control = file_loader.add(appParams, 'threshold', 0, 100).name('Voxel threshold');
 threshold_control.enable = false;
 var voxels_control = file_loader.add(appParams, 'voxels_num', appParams.voxels_num).name('# Voxels');
@@ -558,6 +558,7 @@ document.getElementById('file_GEN').onchange = function () {
 			}
 			else {
 				file_gui.add( params, 'jet_lut').name('Jet LUT').onChange( function( value ){} );
+				file_gui.add( params, 'stdev', 1,20).step(1).name('St. dev.').onChange(resetPoints);
 			}
 			var xyz_offset = file_gui.addFolder('XYZ offset');
 			xyz_offset.add( params, 'x_offset').name('X offset').onFinishChange( function( value ) { x_move(fileTemplate, value) } );
@@ -834,15 +835,25 @@ function loadGenericTexture_instancedMesh(fileTemplate, texture_array, histogram
 	document.body.removeChild( progressBarDiv );
 }
 
+let positions = [];
+let colors = [];
+let sizes = [];
+let boxes = [];
+let buf = new Uint8Array();
 var num_points = 0;
 async function loadPointCloud(fileTemplate, fileName, file_generic) {
+	//let positions = [];
+	//let colors = [];
+	//let sizes = [];
+	//let boxes = [];
     const X = params.width_Z; // 309;
     const Y = params.width_Y; // 310;
     const Z = params.width_X; // 402;
     const dm3 = file_generic;
     const MAX = Math.max(X, Y, Z);
 
-    let buf = new Uint8Array(dm3.split("	").map(x => +x));
+    //let buf = new Uint8Array(dm3.split("	").map(x => +x));
+    buf = new Uint8Array(dm3.split("	").map(x => +x));
     if (buf.length != X * Y * Z) {
         if (buf.length > X * Y * Z) {
             buf = buf.slice(0, X * Y * Z);
@@ -853,10 +864,6 @@ async function loadPointCloud(fileTemplate, fileName, file_generic) {
         }
     }
 
-    let positions = [];
-    let colors = [];
-    let sizes = [];
-    let boxes = [];
     // Create a THREE.Box3() for every INITIALxINITIAL region
     const INITIAL = 64;
     for (let z = 0; z < Z; z += INITIAL) {
@@ -904,15 +911,7 @@ async function loadPointCloud(fileTemplate, fileName, file_generic) {
         std /= count;
         std = Math.sqrt(std);
 
-		//var LUT_r;
-		//var LUT_g;
-		//var LUT_b;
-		//if(params.LUT == 'jet') {LUT_r = LUT_red_jet; LUT_g = LUT_green_jet; LUT_b = LUT_blue_jet;}
-		//if(params.LUT == 'fire') {LUT_r = LUT_red_fire; LUT_g = LUT_green_fire; LUT_b = LUT_blue_fire;}
-		//if(params.LUT == 'viridis') {LUT_r = LUT_red_iridis; LUT_g = LUT_green_viridis; LUT_b = LUT_blue_viridis;}
-		//if(params.LUT == '5ramps') {LUT_r = LUT_red_5ramps; LUT_g = LUT_green_5ramps; LUT_b = LUT_blue_5ramps;}
-
-        if (std > appParams.stdev && count > 1) {
+        if (std > params.stdev && count > 1) {
             // Subdivide into 8 boxes
             let x = (box.min.x + box.max.x) / 2;
             let y = (box.min.y + box.max.y) / 2;
@@ -1033,6 +1032,151 @@ async function loadPointCloud(fileTemplate, fileName, file_generic) {
 	
 	document.body.removeChild( progressBarDiv );
 
+}
+
+function resetPoints() {
+	//TODO to make it work
+	progressBarDiv2 = document.createElement( 'div' );
+	progressBarDiv2.innerText = 'Grouping points...';
+	progressBarDiv2.style.fontSize = '6em';
+	progressBarDiv2.style.color = '#FFFFFF';
+	progressBarDiv2.style.display = 'block';
+	progressBarDiv2.style.position = 'absolute';
+	progressBarDiv2.style.top = '50%';
+	progressBarDiv2.style.width = '100%';
+	progressBarDiv2.style.textAlign = 'center';
+	document.body.appendChild( progressBarDiv2 );
+
+    // Assuming 'points' is a global variable representing your THREE.Points object
+    const X = params.width_Z; // 309;
+    const Y = params.width_Y; // 310;
+    const Z = params.width_X; // 402;
+    const INITIAL = 64;
+    for (let z = 0; z < Z; z += INITIAL) {
+        for (let y = 0; y < Y; y += INITIAL) {
+            for (let x = 0; x < X; x += INITIAL) {
+                let box = new THREE.Box3(
+                    new THREE.Vector3(x, y, z),
+                    new THREE.Vector3(x + INITIAL, y + INITIAL, z + INITIAL)
+                );
+                boxes.push(box);
+            }
+        }
+    }
+
+    // Reset arrays
+    positions = [];
+    colors = [];
+    sizes = [];
+	num_points = 0;
+
+    // Update point attributes based on your logic
+    while (boxes.length > 0) {
+        let box = boxes.pop();
+        let density = 0;
+        let count = 0;
+        let minX = Math.max(Math.floor(box.min.x), 0);
+        let minY = Math.max(Math.floor(box.min.y), 0);
+        let minZ = Math.max(Math.floor(box.min.z), 0);
+        let maxX = Math.min(Math.ceil(box.max.x), X);
+        let maxY = Math.min(Math.ceil(box.max.y), Y);
+        let maxZ = Math.min(Math.ceil(box.max.z), Z);
+        for (let z = minZ; z < maxZ; z++) {
+            for (let y = minY; y < maxY; y++) {
+                for (let x = minX; x < maxX; x++) {
+                    density += buf[z * Y * X + y * X + x];
+                    count++;
+                }
+            }
+        }
+        density /= count;
+        // Compute standard deviation
+        let std = 0;
+        for (let z = minZ; z < maxZ; z++) {
+            for (let y = minY; y < maxY; y++) {
+                for (let x = minX; x < maxX; x++) {
+                    let v = (buf[z * Y * X + y * X + x] - density);
+                    std += v * v;
+                }
+            }
+        }
+        std /= count;
+        std = Math.sqrt(std);
+
+        if (std > params.stdev && count > 1) {
+            // Subdivide into 8 boxes
+            let x = (box.min.x + box.max.x) / 2;
+            let y = (box.min.y + box.max.y) / 2;
+            let z = (box.min.z + box.max.z) / 2;
+            boxes.push(
+                new THREE.Box3(
+                    new THREE.Vector3(box.min.x, box.min.y, box.min.z),
+                    new THREE.Vector3(x, y, z)
+                ),
+                new THREE.Box3(
+                    new THREE.Vector3(x, box.min.y, box.min.z),
+                    new THREE.Vector3(box.max.x, y, z)
+                ),
+                new THREE.Box3(
+                    new THREE.Vector3(box.min.x, y, box.min.z),
+                    new THREE.Vector3(x, box.max.y, z)
+                ),
+                new THREE.Box3(
+                    new THREE.Vector3(x, y, box.min.z),
+                    new THREE.Vector3(box.max.x, box.max.y, z)
+                ),
+                new THREE.Box3(
+                    new THREE.Vector3(box.min.x, box.min.y, z),
+                    new THREE.Vector3(x, y, box.max.z)
+                ),
+                new THREE.Box3(
+                    new THREE.Vector3(x, box.min.y, z),
+                    new THREE.Vector3(box.max.x, y, box.max.z)
+                ),
+                new THREE.Box3(
+                    new THREE.Vector3(box.min.x, y, z),
+                    new THREE.Vector3(x, box.max.y, box.max.z)
+                ),
+                new THREE.Box3(
+                    new THREE.Vector3(x, y, z),
+                    new THREE.Vector3(box.max.x, box.max.y, box.max.z)
+                )
+            );
+        } else {
+            // Create a point
+			num_points++;
+            if (density > 0) {
+                let amount = density;
+                let centerVec = new THREE.Vector3();
+                let size = Math.max(box.max.x - box.min.x, box.max.y - box.min.y, box.max.z - box.min.z) * (params.voxel_size * 10);
+                sizes.push(
+                    size
+                )
+                box.getCenter(centerVec);
+
+                positions.push(
+                    (centerVec.z - Z / 2) * (params.voxel_size * 10), 
+					(centerVec.y - Y / 2) * (params.voxel_size * 10), 
+					(centerVec.x - X / 2) * (params.voxel_size * 10)
+                );
+                colors.push(amount / 255, amount / 255, amount / 255);
+
+            }
+        }
+    }
+	console.log("Num. voxels: ", num_points);
+
+    // Update the existing points' geometry attributes
+    points.geometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+    points.geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
+    points.geometry.setAttribute('size', new THREE.Float32BufferAttribute(sizes, 1));
+
+    // Notify Three.js that the attributes have been updated
+    points.geometry.attributes.position.needsUpdate = true;
+    points.geometry.attributes.color.needsUpdate = true;
+    points.geometry.attributes.size.needsUpdate = true;
+	
+	document.body.removeChild( progressBarDiv2 );
 }
 
 var num_voxels = 0;
