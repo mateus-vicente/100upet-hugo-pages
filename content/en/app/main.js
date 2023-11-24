@@ -86,6 +86,7 @@ const appParams = {
 };
 
 const params = {
+	jet_lut: false,
 	voxel_size: '1',			// [mm]
 	width_X: 100,
 	width_Y: 100,
@@ -93,7 +94,7 @@ const params = {
 	x_offset: '0',
 	y_offset: '0',
 	z_offset: '0',
-	LUT: 'jet',
+	LUT: 'bw',
 	//LUT: 'viridis',
 	alphaHash: true,
 	//alpha: 0.5,
@@ -205,7 +206,7 @@ const scene = new THREE.Scene();
             aspect * MAX / 2,
             1 * MAX / 2, -1 * MAX / 2,
             0.1,
-            MAX * 4
+            MAX * 8
         );
     camera.position.x = -1000;
     camera.position.y = 0;
@@ -337,7 +338,7 @@ function updateControls() {
 		voxels_control.enable = false;
 	}
 }
-file_loader.add(appParams, 'loader', ['Point cloud (MIP)', 'Voxel threshold', 'Num of voxels', 'Instanced voxels']).name('Loader type').onChange(updateControls);
+file_loader.add(appParams, 'loader', ['Point cloud (MIP)', 'Instanced voxels', 'Voxel threshold', 'Num of voxels']).name('Loader type').onChange(updateControls);
 var stdev_control = file_loader.add(appParams, 'stdev', 1,20).step(1).name('St. dev.');
 var threshold_control = file_loader.add(appParams, 'threshold', 0, 100).name('Voxel threshold');
 threshold_control.enable = false;
@@ -493,7 +494,7 @@ document.getElementById('file_GEN').onchange = function () {
 				voxel_folder.add( params, "voxel_size", params.voxel_size).name("Voxel size [mm]").onFinishChange( function( value ) {change_voxel_size(fileTemplate, value);});
 				voxel_folder.close();
 				var material_folder = file_gui.addFolder('Volume rendering');
-				material_folder.add( params, 'LUT', ['jet','fire','viridis','5ramps'] ).name( fileTemplate + 'LUT' ).onChange( function( value ){update_material(fileTemplate, value);} );
+				material_folder.add( params, 'LUT', ['bw','jet','fire','viridis','5ramps'] ).name( fileTemplate + 'LUT' ).onChange( function( value ){update_material(fileTemplate, value);} );
 				///*
 				material_folder.add( params, 'depth_write').onChange(function( value ) {
 					scene.traverse(function(child) {
@@ -507,6 +508,7 @@ document.getElementById('file_GEN').onchange = function () {
 					scene.traverse((object) => {
 						if (object instanceof THREE.Mesh) {
 							if (object.name == fileTemplate) {
+								if(params.LUT == 'bw') object.material.color = LUT_BW( Math.ceil(((object.userData.color_value - offset) / (maxValue - offset)) * 255) );
 								if(params.LUT == 'jet') object.material.color = LUT_jet_color( Math.ceil(((object.userData.color_value - offset) / (maxValue - offset)) * 255) );
 								if(params.LUT == 'fire') object.material.color = LUT_fire_color( Math.ceil(((object.userData.color_value - offset) / (maxValue - offset)) * 255) );
 								if(params.LUT == 'viridis') object.material.color = LUT_viridis_color( Math.ceil(((object.userData.color_value - offset) / (maxValue - offset)) * 255) );
@@ -553,6 +555,9 @@ document.getElementById('file_GEN').onchange = function () {
 					});
 				} );
 				wire_folder.close();
+			}
+			else {
+				file_gui.add( params, 'jet_lut').name('Jet LUT').onChange( function( value ){} );
 			}
 			var xyz_offset = file_gui.addFolder('XYZ offset');
 			xyz_offset.add( params, 'x_offset').name('X offset').onFinishChange( function( value ) { x_move(fileTemplate, value) } );
@@ -776,6 +781,7 @@ function loadGenericTexture_instancedMesh(fileTemplate, texture_array, histogram
 
 	const voxelGeometry = new THREE.BoxGeometry(params.voxel_size * scale_factor, params.voxel_size * scale_factor, params.voxel_size * scale_factor);
 	var LUT;
+	if(params.LUT == 'bw') LUT = LUT_BW;
 	if(params.LUT == 'jet') LUT = LUT_jet_color;
 	if(params.LUT == 'fire') LUT = LUT_fire_color;
 	if(params.LUT == 'viridis') LUT = LUT_viridis_color;
@@ -898,6 +904,14 @@ async function loadPointCloud(fileTemplate, fileName, file_generic) {
         std /= count;
         std = Math.sqrt(std);
 
+		//var LUT_r;
+		//var LUT_g;
+		//var LUT_b;
+		//if(params.LUT == 'jet') {LUT_r = LUT_red_jet; LUT_g = LUT_green_jet; LUT_b = LUT_blue_jet;}
+		//if(params.LUT == 'fire') {LUT_r = LUT_red_fire; LUT_g = LUT_green_fire; LUT_b = LUT_blue_fire;}
+		//if(params.LUT == 'viridis') {LUT_r = LUT_red_iridis; LUT_g = LUT_green_viridis; LUT_b = LUT_blue_viridis;}
+		//if(params.LUT == '5ramps') {LUT_r = LUT_red_5ramps; LUT_g = LUT_green_5ramps; LUT_b = LUT_blue_5ramps;}
+
         if (std > appParams.stdev && count > 1) {
             // Subdivide into 8 boxes
             let x = (box.min.x + box.max.x) / 2;
@@ -955,6 +969,7 @@ async function loadPointCloud(fileTemplate, fileName, file_generic) {
 					(centerVec.x - X / 2) * (params.voxel_size * 10)
                 );
                 colors.push(amount / 255, amount / 255, amount / 255);
+                //colors.push(LUT_r[Math.ceil(amount)], LUT_g[Math.ceil(amount)], LUT_b[Math.ceil(amount)]);
 
             }
         }
@@ -1051,6 +1066,7 @@ function loadGenericTexture(fileTemplate, texture_array) {
 		if (appParams.loader === 'Voxel threshold') threshold_value = maxValue * appParams.threshold / 100; 
 		else if (appParams.loader === 'Num of voxels') threshold_value = 0;
 		if (value > threshold_value && value != 0) {
+			if(params.LUT == 'bw') color_value = LUT_BW( Math.ceil( ((value - offset) / (maxValue - offset)) * 255) );
 			if(params.LUT == 'jet') color_value = LUT_jet_color( Math.ceil( ((value - offset) / (maxValue - offset)) * 255) );
 			if(params.LUT == 'fire') color_value = LUT_fire_color( Math.ceil( ((value - offset) / (maxValue - offset)) * 255) );
 			if(params.LUT == 'viridis') color_value = LUT_viridis_color( Math.ceil( ((value - offset) / (maxValue - offset)) * 255) );
@@ -1172,6 +1188,7 @@ function update_material (fileTemplate, value ) {
 	if(!params.color_offset) offset = minValue ;
 	var maxOffset = params.max_scale_factor * maxValue / 100;
 	var LUT;
+	if(params.LUT == 'bw') LUT = LUT_BW;
 	if(params.LUT == 'jet') LUT = LUT_jet_color;
 	if(params.LUT == 'fire') LUT = LUT_fire_color;
 	if(params.LUT == 'viridis') LUT = LUT_viridis_color;
@@ -1489,19 +1506,72 @@ document.getElementById('scene-container').appendChild(stats1.dom);
 //document.body.appendChild(stats2.dom);
 //document.getElementById('scene-container').appendChild(stats2.dom);
 
+
+// Build postprocessing stack
+// Render Targets
+const defaultTexture = new THREE.WebGLRenderTarget(clientWidth, clientHeight, {
+    minFilter: THREE.LinearFilter,
+    magFilter: THREE.LinearFilter,
+    type: THREE.FloatType,
+});
+defaultTexture.depthTexture = new THREE.DepthTexture(clientWidth, clientHeight, THREE.FloatType);
+
+// Post Effects
+const effectPass = new THREE.ShaderPass(EffectShader);
+const copyPass = new THREE.ShaderPass({
+    uniforms: {
+        diffuse: { value: defaultTexture.texture },
+    },
+    vertexShader: /* glsl */ `
+        varying vec2 vUv;
+        void main() {
+            vUv = uv;
+            gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+        }`,
+    fragmentShader: /* glsl */ `
+        uniform sampler2D diffuse;
+        varying vec2 vUv;
+        void main() {
+            gl_FragColor = vec4(texture2D(diffuse, vUv).rgb, 1.0);
+        }`
+});
+
+const composer = new THREE.EffectComposer(renderer);
+
+composer.addPass(copyPass);
+////////////////////////////////////////////////
+composer.addPass(effectPass); 
+////////////////////////////////////////////////
+
 function animate() {
     if (test == 1) {
         points.material.uniforms.uScale.value = (innerHeight / Math.abs(camera.top - camera.bottom)) * camera.zoom;
     }
-	const time = - performance.now() * 0.0003;
+	const time = - performance.now() * 0.00015;
 	if (params.rotationEnabled) {
 		camera.position.x = 1000 * Math.cos( time );
 		camera.position.z = 1000 * Math.sin( time );
 		camera.lookAt( scene.position );
 	}
+	controls.update();
+	//////
+	if(params.jet_lut){
+    	renderer.setRenderTarget(defaultTexture);
+    	renderer.clear();
+    	renderer.render(scene, camera);
+    	copyPass.uniforms.diffuse.value = defaultTexture.texture;
+    	composer.render();
+	}else {
+        // Render directly to the screen when post-processing is disabled
+        renderer.setRenderTarget(null);
+        renderer.clear();
+        renderer.render(scene, camera);
+    }
+	//////
 	requestAnimationFrame(animate);
+	
 	renderer.render(scene, camera);
-	//controls.update();
+	
 	//render();
 	stats.update();
 	stats1.update();
@@ -1513,6 +1583,12 @@ animate();
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////		   COLOR LUTS			//////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+function LUT_BW(value) {
+	const color = new THREE.Color();
+	color.setRGB(LUT_red_viridis[value] / 255, LUT_red_viridis[value] / 255, LUT_red_viridis[value] / 255);
+	return color;
+}
 
 function LUT_viridis_color(value) {
 	const color = new THREE.Color();

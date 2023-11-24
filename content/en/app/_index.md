@@ -21,6 +21,9 @@ menu:
   			.disabled .c input[type="text"] {
     		color: #999 !important;
   			}
+			html, body {
+            	overflow: hidden;
+        	}
 		</style>
 		<div style="margin-top: 3em; margin-left: -1em;">
 			<label for="file_GEN"></label>
@@ -30,6 +33,10 @@ menu:
 		<div style="display: flex; flex-direction: column; align-items: center; margin-top: 0em;">
 			<div id="scene-container" style="height: 86vh;"></div>
 			<script src="https://cdn.jsdelivr.net/npm/three@0.155.0/build/three.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/shaders/CopyShader.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/postprocessing/EffectComposer.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/postprocessing/ShaderPass.js"></script>
+			<script src="./EffectShader.js"></script>
 			<script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/loaders/GLTFLoader.js"></script>
 			<script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/libs/stats.min.js"></script>
 			<script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/libs/dat.gui.min.js"></script>
