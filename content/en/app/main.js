@@ -6,6 +6,12 @@ document.addEventListener('DOMContentLoaded', function () {
 let points = new THREE.Points();
 let test = 0;
 
+let array1 = [];
+let array1b = [];
+let array1c = [];
+let array2 = [];
+let array3 = [];
+
 const scale_factor = 10; // to convert unit from from mm to 0.1 mm (ex. 0.1 mm pixels x 10 turns to 1 0.1 mm)
 var maxValue = -Infinity;
 var minValue = Infinity;
@@ -76,6 +82,19 @@ const appParams = {
 			}
 		}
 		console.log("Voxels loaded: ", num_voxels);
+	},
+	print_voxels: function () {
+	    const combinedData = array1.map((e, i) => `${e}, ${array1b[i]}, ${array1c[i]}, ${array2[i]}, ${array3[i]}`).join('\n');
+	
+	    const downloadLink = document.createElement('a');
+	    downloadLink.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(combinedData);
+	    downloadLink.download = 'output.txt';
+	    downloadLink.style.display = 'none';
+	    document.body.appendChild(downloadLink);
+	
+	    downloadLink.click();
+	
+	    document.body.removeChild(downloadLink);
 	},
 
 	planeConstant_X: 550,
@@ -543,6 +562,7 @@ document.getElementById('file_GEN').onchange = function () {
 			else {
 				file_gui.add( params, 'jet_lut').name('Jet LUT').onChange( function( value ){} );
 				file_gui.add( params, 'stdev', 1,20).step(1).name('St. dev.').onChange(resetPoints);
+				file_gui.add( appParams, 'print_voxels').name('Print voxels');
 			}
 			var xyz_offset = file_gui.addFolder('XYZ offset');
 			xyz_offset.add( params, 'x_offset').name('X offset').onFinishChange( function( value ) { x_move(fileTemplate, value) } );
@@ -826,6 +846,11 @@ let boxes = [];
 let buf = new Uint8Array();
 var num_points = 0;
 async function loadPointCloud(fileTemplate, fileName, file_generic) {
+	array1 = [];
+	array1b = [];
+	array1c = [];
+	array2 = [];
+	array3 = [];
 	//let positions = [];
 	//let colors = [];
 	//let sizes = [];
@@ -936,8 +961,8 @@ async function loadPointCloud(fileTemplate, fileName, file_generic) {
             );
         } else {
             // Create a point
-			num_points++;
             if (density > 0) {
+				num_points++;
                 let amount = density;
                 let centerVec = new THREE.Vector3();
                 let size = Math.max(box.max.x - box.min.x, box.max.y - box.min.y, box.max.z - box.min.z) * (params.voxel_size * 10);
@@ -952,6 +977,12 @@ async function loadPointCloud(fileTemplate, fileName, file_generic) {
 					(centerVec.x - X / 2) * (params.voxel_size * 10)
                 );
                 colors.push(amount / 255, amount / 255, amount / 255);
+
+                array1.push( centerVec.x - X / 2);
+                array1b.push( centerVec.y - Y / 2);
+                array1c.push( centerVec.z - Z / 2);
+                array2.push(density);
+                array3.push(size);
             }
         }
     }
@@ -1016,6 +1047,11 @@ async function loadPointCloud(fileTemplate, fileName, file_generic) {
 }
 
 function resetPoints() {
+	array1 = [];
+	array1b = [];
+	array1c = [];
+	array2 = [];
+	array3 = [];
 	//TODO to make it work
 	progressBarDiv2 = document.createElement( 'div' );
 	progressBarDiv2.innerText = 'Grouping points...';
@@ -1125,8 +1161,8 @@ function resetPoints() {
             );
         } else {
             // Create a point
-			num_points++;
             if (density > 0) {
+				num_points++;
                 let amount = density;
                 let centerVec = new THREE.Vector3();
                 let size = Math.max(box.max.x - box.min.x, box.max.y - box.min.y, box.max.z - box.min.z) * (params.voxel_size * 10);
@@ -1141,6 +1177,12 @@ function resetPoints() {
 					(centerVec.x - X / 2) * (params.voxel_size * 10)
                 );
                 colors.push(amount / 255, amount / 255, amount / 255);
+
+                array1.push( centerVec.x - X / 2);
+                array1b.push( centerVec.y - Y / 2);
+                array1c.push( centerVec.z - Z / 2);
+                array2.push(density);
+                array3.push(size);
 
             }
         }
