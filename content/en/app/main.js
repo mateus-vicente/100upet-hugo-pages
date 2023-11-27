@@ -985,7 +985,7 @@ async function loadPointCloud(fileTemplate, fileName, file_generic) {
         blending: THREE.CustomBlending,
 
         uniforms: {
-             //uScale: { value: innerHeight / (2 * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2))) },
+            //uScale: { value: innerHeight / (2 * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2))) },
             uScale: {
                 value: 1 //(innerHeight / Math.abs(camera.top - camera.bottom)) * camera.zoom
             },
@@ -1005,7 +1005,7 @@ async function loadPointCloud(fileTemplate, fileName, file_generic) {
             vSize = size;
             vec4 mvPosition = viewMatrix * vec4( position, 1.0 );
         
-            gl_PointSize = round( 1.6 * size * uScale / (perspective ? -mvPosition.z : 1.0));
+            gl_PointSize = round( 1.0 * size * uScale / (perspective ? -mvPosition.z : 1.0));
         
             gl_Position = projectionMatrix * mvPosition;
         }
