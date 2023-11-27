@@ -197,57 +197,34 @@ var cylinder_material = new THREE.MeshBasicMaterial({
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 const scene = new THREE.Scene();
-    const clientWidth = window.innerWidth;
-    const clientHeight = window.innerHeight;
-    const aspect = clientWidth / clientHeight;
-	const MAX = 382;
-    const camera =
-        new THREE.OrthographicCamera(-aspect * MAX / 2,
-            aspect * MAX / 2,
-            1 * MAX / 2, -1 * MAX / 2,
-            0.1,
-            MAX * 8
-        );
-    camera.position.x = -1000;
-    camera.position.y = 0;
-    camera.position.z = 0;
-	camera.zoom = 0.3;
-	camera.updateProjectionMatrix();
-//var camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 0.1, 1000000 );
+const clientWidth = window.innerWidth;
+const clientHeight = window.innerHeight;
+const aspect = clientWidth / clientHeight;
+const MAX = 600;
+const offview = -100;
+//const camera = new THREE.PerspectiveCamera(75, clientWidth / clientHeight, 0.1, 1000);
+const camera =
+    new THREE.OrthographicCamera(-aspect * MAX / 2,
+        aspect * MAX / 2,
+        1 * MAX / 2, -1 * MAX / 2,
+        0.1,
+        MAX * 8
+    );
+camera.position.set(-MAX, offview, 0);
+camera.zoom = 0.5;
+camera.updateProjectionMatrix();
 
-//TODO check if the render option is working
-//const renderer = new THREE.WebGLRenderer({ powerPreference: "high-performance" });
-const highPerformanceRenderer = new THREE.WebGLRenderer({ powerPreference: "high-performance" });
-const lowPowerRenderer = new THREE.WebGLRenderer({ powerPreference: "low-power" });
-let renderer = highPerformanceRenderer;
-function setRendererPreference(useHighPerformance) {
-	if (useHighPerformance) {
-		currentRenderer = highPerformanceRenderer;
-	} else {
-		currentRenderer = lowPowerRenderer;
-	}
-			
-	// Update the scene and camera for the new renderer
-	currentRenderer.setSize(window.innerWidth, window.innerHeight);
-	currentRenderer.render(scene, camera);
-}
+const renderer = new THREE.WebGLRenderer();
 
-const container = document.getElementById('scene-container');
-const containerWidth = container.clientWidth;
-const containerHeight = container.clientHeight;
-
-// Specify the desired height (in viewport height units)
-const desiredHeight = container.clientHeight;
-const aspectRatio = window.innerWidth / window.innerHeight;
-// Calculate the new width based on the desired height and aspect ratio
-const newWidth = desiredHeight * aspectRatio;
-
-renderer.setSize(newWidth, containerHeight);
-renderer.setPixelRatio( window.devicePixelRatio );
+//const container = document.getElementById('scene-container');
+//const aspectRatio = window.innerWidth / window.innerHeight;
+//renderer.setSize(container.clientWidth * aspectRatio, container.clientHeight * aspectRatio);
+renderer.setSize(clientWidth, clientHeight);
 renderer.localClippingEnabled = true;
 
 //document.body.appendChild(renderer.domElement);
 document.getElementById('scene-container').appendChild(renderer.domElement);
+
 window.addEventListener('resize', function () {
 	camera.aspect = window.innerWidth / window.innerHeight;
 	camera.updateProjectionMatrix();
@@ -255,6 +232,14 @@ window.addEventListener('resize', function () {
 });
 
 const controls = new THREE.OrbitControls(camera, renderer.domElement);
+controls.target.set(0, offview, 0);
+
+// Create a sphere geometry
+//const sphereGeometry = new THREE.SphereGeometry(5, 32, 32); // (radius, widthSegments, heightSegments)
+//const sphereMaterial = new THREE.MeshStandardMaterial({ color: 0x00ff00 });
+//const sphereMesh = new THREE.Mesh(sphereGeometry, sphereMaterial);
+//sphereMesh.position.set(0, 0, 0);
+//scene.add(sphereMesh);
 
 const light1 = new THREE.AmbientLight(0xffffff, appParams.light1); // soft white light
 const light2 = new THREE.AmbientLight(0xFFFFC1, appParams.light2); // soft white light
@@ -339,7 +324,6 @@ function updateControls() {
 	}
 }
 file_loader.add(appParams, 'loader', ['Point cloud (MIP)', 'Instanced voxels', 'Voxel threshold', 'Num of voxels']).name('Loader type').onChange(updateControls);
-//var stdev_control = file_loader.add(appParams, 'stdev', 1,20).step(1).name('St. dev.').onChange(resetPoints);
 var threshold_control = file_loader.add(appParams, 'threshold', 0, 100).name('Voxel threshold');
 threshold_control.enable = false;
 var voxels_control = file_loader.add(appParams, 'voxels_num', appParams.voxels_num).name('# Voxels');
@@ -364,7 +348,7 @@ display.add( appParams, 'setXY').name('XY view');
 display.add( appParams, 'setYZ').name('YZ view');
 //display.add( appParams, 'settYZ').name('-YZ view');
 display.add( appParams, 'setXZ').name('XZ view');
-//display.add( appParams, 'set45').name('45 view');
+display.add( appParams, 'set45').name('45 view');
 display.add( appParams, 'updateRendererInfo').name('Render info');
 appear.close();
 var anim = display.addFolder('Animation');
@@ -968,8 +952,6 @@ async function loadPointCloud(fileTemplate, fileName, file_generic) {
 					(centerVec.x - X / 2) * (params.voxel_size * 10)
                 );
                 colors.push(amount / 255, amount / 255, amount / 255);
-                //colors.push(LUT_r[Math.ceil(amount)], LUT_g[Math.ceil(amount)], LUT_b[Math.ceil(amount)]);
-
             }
         }
     }
@@ -985,9 +967,8 @@ async function loadPointCloud(fileTemplate, fileName, file_generic) {
         blending: THREE.CustomBlending,
 
         uniforms: {
-            //uScale: { value: innerHeight / (2 * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2))) },
             uScale: {
-                value: 1 //(innerHeight / Math.abs(camera.top - camera.bottom)) * camera.zoom
+                value: 1 
             },
             perspective: {
                 value: camera.isPerspectiveCamera
@@ -1689,7 +1670,13 @@ composer.addPass(effectPass);
 
 function animate() {
     if (test == 1) {
-        points.material.uniforms.uScale.value = (innerHeight / Math.abs(camera.top - camera.bottom)) * camera.zoom;
+        if (camera.isPerspectiveCamera) {
+            points.material.uniforms.perspective.value = true;
+            points.material.uniforms.uScale.value = innerHeight / (2 * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)));
+        } else {
+            points.material.uniforms.uScale.value = (innerHeight / Math.abs(camera.top - camera.bottom)) * camera.zoom;
+        }
+        //points.material.uniforms.uScale.value = (innerHeight / Math.abs(camera.top - camera.bottom)) * camera.zoom;
     }
 	const time = - performance.now() * 0.00015;
 	if (params.rotationEnabled) {
@@ -1698,7 +1685,6 @@ function animate() {
 		camera.lookAt( scene.position );
 	}
 	controls.update();
-	//////
 	if(params.jet_lut){
     	renderer.setRenderTarget(defaultTexture);
     	renderer.clear();
@@ -1706,12 +1692,11 @@ function animate() {
     	copyPass.uniforms.diffuse.value = defaultTexture.texture;
     	composer.render();
 	}else {
-        // Render directly to the screen when post-processing is disabled
         renderer.setRenderTarget(null);
         renderer.clear();
         renderer.render(scene, camera);
     }
-	//////
+
 	requestAnimationFrame(animate);
 	
 	renderer.render(scene, camera);
