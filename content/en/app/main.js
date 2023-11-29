@@ -84,7 +84,7 @@ const appParams = {
 		console.log("Voxels loaded: ", num_voxels);
 	},
 	print_voxels: function () {
-	    const combinedData = array1.map((e, i) => `${e}, ${array1b[i]}, ${array1c[i]}, ${array2[i]}, ${array3[i]}`).join('\n');
+	    const combinedData = array1.map((e, i) => `${e}	${array1b[i]}	${array1c[i]}	${array2[i]}	${array3[i]}`).join('\n');
 	
 	    const downloadLink = document.createElement('a');
 	    downloadLink.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(combinedData);
@@ -330,12 +330,12 @@ var voxelsNumControl;
 function updateControls() {
 	//TODO fix enabling below
 	if (appParams.loader === 'Voxel threshold') {
-		threshold_control.enable(true);
-		voxels_control.enable(false);
+		threshold_control.enable = true;
+		voxels_control.enable = false;
 	}
 	else if (appParams.loader === 'Num of voxels') {
-		threshold_control.enable(false);
-		voxels_control.enable(true);
+		threshold_control.enable = false;
+		voxels_control.enable = true;
 	}
 	else {
 		threshold_control.enable = false;
@@ -639,6 +639,162 @@ document.getElementById('file_GEN').onchange = function () {
 		} else {
 			console.log("Please, check file name template required.");
 		}
+	}
+	if(fileExtension == "avm"){
+		var min_visibility_control = 0;
+		if (appParams.loader === 'Num of voxels' || appParams.loader === 'Instanced voxels') {
+			min_visibility_control = 0;
+			params.min_scale_factor = 0;
+		} else {
+			min_visibility_control = appParams.threshold; 
+			params.min_scale_factor = min_visibility_control;
+		}
+
+		
+		let fileTemplate = "TEST";
+		var file_gui = gui.addFolder(fileTemplate);
+		//var file_gui = gui.addFolder(fileTemplate + " [" + params.width_X + "x" + params.width_Y + "x" + params.width_Z + "]");
+		file_gui.add( params, 'visible').name('Visible').onChange( function( value ){ update_material(fileTemplate, value);} );
+		var voxel_folder = file_gui.addFolder('Voxels control');
+		voxel_folder.add( params, "voxel_size", params.voxel_size).name("Voxel size [mm]").onFinishChange( function( value ) {change_voxel_size(fileTemplate, value);});
+		voxel_folder.close();
+		var material_folder = file_gui.addFolder('Volume rendering');
+		material_folder.add( params, 'LUT', ['bw','jet','fire','viridis','5ramps'] ).name( fileTemplate + 'LUT' ).onChange( function( value ){update_material(fileTemplate, value);} );
+		///*
+		material_folder.add( params, 'depth_write').onChange(function( value ) {
+			scene.traverse(function(child) {
+				if (child instanceof THREE.Mesh && child.name == fileTemplate) child.material.depthWrite = params.depth_write;
+			});
+		});
+		maxValue = 255;
+		minValue = 0;
+		material_folder.add( params, 'color_offset').name('Color offset').onChange(value => {
+			params.color_offset = value;
+			if(params.color_offset) offset = maxValue * params.min_scale_factor / 100;
+			if(!params.color_offset) offset = minValue;
+			scene.traverse((object) => {
+				if (object instanceof THREE.Mesh) {
+					if (object.name == fileTemplate) {
+						if(params.LUT == 'bw') object.material.color = LUT_BW( Math.ceil(((object.userData.color_value - offset) / (maxValue - offset)) * 255) );
+						if(params.LUT == 'jet') object.material.color = LUT_jet_color( Math.ceil(((object.userData.color_value - offset) / (maxValue - offset)) * 255) );
+						if(params.LUT == 'fire') object.material.color = LUT_fire_color( Math.ceil(((object.userData.color_value - offset) / (maxValue - offset)) * 255) );
+						if(params.LUT == 'viridis') object.material.color = LUT_viridis_color( Math.ceil(((object.userData.color_value - offset) / (maxValue - offset)) * 255) );
+						if(params.LUT == '5ramps') object.material.color = LUT_5ramps_color( Math.ceil(((object.userData.color_value - offset) / (maxValue - offset)) * 255));
+					}
+				}
+			});
+		} );
+		//*/
+		material_folder.add( params, 'alphaHash' ).name( 'Alpha hash' ).onChange( function( value ){change_alpha_hash(fileTemplate, value);} );
+		material_folder.add( params, 'min_scale_factor', min_visibility_control, 100 ).step( 0.1 ).name( 'Visibility cut [%]' ).onChange( function( value ){update_material(fileTemplate, value);} );
+		material_folder.add( params, 'max_scale_factor', min_visibility_control, 100 ).step( 0.1 ).name( 'Visibility ceiling [%]' ).onChange( function( value ){update_material(fileTemplate, value);} );
+		material_folder.add( params, 'A', 0, 100 ).step( 0.01 ).name( 'weight' ).onChange( function( value ){update_material(fileTemplate, value);} );
+		var section_folder = file_gui.addFolder('Cross-section config');
+		section_folder.add( params, 'clip' ).name( 'Section view' ).onChange( function ( value ) {
+			scene.traverse((obj) => {
+				if (obj instanceof THREE.Mesh && obj.name == fileTemplate){
+					if(value) obj.material.clippingPlanes = clipPlanes;
+					else obj.material.clippingPlanes = null;
+				}
+			});
+		} );
+		section_folder.add( params, 'clipIntersection' ).name( 'Inverted section' ).onChange( function ( value ) {
+			scene.traverse(function(obj){
+				if(obj.type === 'Mesh' && obj.name == fileTemplate){
+					obj.material.clipIntersection = value;
+				}
+			});
+		} );
+		section_folder.close();
+		var wire_folder = file_gui.addFolder('Bounding box wireframe');
+		wire_folder.add( params, 'wireframe_visible').name('Wireframe visible').onChange(value => {
+			scene.traverse((obj) => {
+				if (obj instanceof THREE.Mesh && obj.name == fileTemplate + '-wireframe'){
+					obj.visible = value;
+				}
+			});
+		});
+		wire_folder.addColor(params, 'wireframe_color').name('Wireframe color').onChange((colorValue) => {
+			scene.traverse((obj) => {
+				if (obj instanceof THREE.Mesh && obj.name == fileTemplate + '-wireframe'){
+					obj.material.color = new THREE.Color(colorValue);
+				}
+			});
+		} );
+		wire_folder.close();
+		var xyz_offset = file_gui.addFolder('XYZ offset');
+		xyz_offset.add( params, 'x_offset').name('X offset').onFinishChange( function( value ) { x_move(fileTemplate, value) } );
+		xyz_offset.add( params, 'y_offset').name('Y offset').onFinishChange( function( value ) { y_move(fileTemplate, value) } );
+		xyz_offset.add( params, 'z_offset').name('Z offset').onFinishChange( function( value ) { z_move(fileTemplate, value) } );
+		xyz_offset.close();
+
+		progressBarDiv = document.createElement( 'div' );
+		progressBarDiv.innerText = 'Loading file...';
+		progressBarDiv.style.fontSize = '6em';
+		progressBarDiv.style.color = '#FFFFFF';
+		progressBarDiv.style.display = 'block';
+		progressBarDiv.style.position = 'absolute';
+		progressBarDiv.style.top = '50%';
+		progressBarDiv.style.width = '100%';
+		progressBarDiv.style.textAlign = 'center';
+
+		document.body.appendChild( progressBarDiv );
+
+		console.log("Reading file " + fileName);
+		reader.onload = (event) => {
+			const file = event.target.result;
+			const allLines = file.split(/\r\n|\n/);
+
+			let n_pixelhits=0;
+			var texture_array_length;
+			if (appParams.loader === 'Voxel threshold') texture_array_length = allLines.length -1; 
+			else if (appParams.loader === 'Num of voxels') texture_array_length = parseInt(appParams.voxels_num, 10);
+			for (var line = 0; line < texture_array_length; line = line + 1) {
+				var point1 = allLines[line].split("\t");
+					
+				var x = Math.round(point1[0]);
+				var y = Math.round(point1[1]);
+				var z = Math.round(point1[2]);
+				var value = Math.round(point1[3]);
+				var size = Math.round(point1[4]);
+
+				var threshold_value; 
+				if (appParams.loader === 'Voxel threshold') threshold_value = maxValue * appParams.threshold / 100; 
+				else if (appParams.loader === 'Num of voxels') threshold_value = 0;
+				if (value > threshold_value && value != 0) {
+					if(params.LUT == 'bw') color_value = LUT_BW( Math.ceil( ((value - offset) / (maxValue - offset)) * 255) );
+					if(params.LUT == 'jet') color_value = LUT_jet_color( Math.ceil( ((value - offset) / (maxValue - offset)) * 255) );
+					if(params.LUT == 'fire') color_value = LUT_fire_color( Math.ceil( ((value - offset) / (maxValue - offset)) * 255) );
+					if(params.LUT == 'viridis') color_value = LUT_viridis_color( Math.ceil( ((value - offset) / (maxValue - offset)) * 255) );
+					if(params.LUT == '5ramps') object.material.color = LUT_5ramps_color( Math.ceil( ((value - offset) / (maxValue - offset)) * 255) );
+					const cubeMaterial = new THREE.MeshBasicMaterial({ clippingPlanes: clipPlanes,
+																		clipIntersection: params.clipIntersection, 
+																		depthWrite: params.depth_write,
+																		color: color_value, 
+																		transparent: true });
+					cubeMaterial.opacity = opacity_weight(((value - offset) / (maxValue - offset)) * 255, 255, minValue, params.A);
+					var cubeGeometry = new THREE.BoxGeometry(size, size, size);
+					var cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+					//cube.position.set(  THREE.MathUtils.randFloatSpread(1200),
+					//					THREE.MathUtils.randFloatSpread(1200),
+					//					THREE.MathUtils.randFloatSpread(1200));
+					cube.position.set( x, y, z );
+					var targetPosition = new THREE.Vector3( x, y, z ); 
+					cube.name = "TEST";
+					cube.userData = { X: x, Y: y, Z: z, finalPosition: targetPosition, color_value: Math.ceil((value / maxValue) * 255) };
+					scene.add(cube);
+					var threshold_visibility = 0;
+					if (appParams.loader === 'Voxel threshold') threshold_visibility = maxValue * params.min_scale_factor / 100; 
+					else if (appParams.loader === 'Num of voxels') threshold_visibility = 0;
+					if (value < threshold_visibility) {
+						cube.visible = false;
+					}
+					num_voxels = num_voxels + 1;
+				}
+			}
+		};
+		//implode("TEST");
+		document.body.removeChild( progressBarDiv );
 	}
 	if(fileExtension == "epd"){
 		var x1, x2, y1, y2, z1, z2;
@@ -978,9 +1134,9 @@ async function loadPointCloud(fileTemplate, fileName, file_generic) {
                 );
                 colors.push(amount / 255, amount / 255, amount / 255);
 
-                array1.push( centerVec.x - X / 2);
-                array1b.push( centerVec.y - Y / 2);
-                array1c.push( centerVec.z - Z / 2);
+                array1.push( (centerVec.z - Z / 2) * (params.voxel_size * 10) );
+                array1b.push( (centerVec.y - Y / 2) * (params.voxel_size * 10) );
+                array1c.push( (centerVec.x - X / 2) * (params.voxel_size * 10) );
                 array2.push(density);
                 array3.push(size);
             }
@@ -1178,9 +1334,9 @@ function resetPoints() {
                 );
                 colors.push(amount / 255, amount / 255, amount / 255);
 
-                array1.push( centerVec.x - X / 2);
-                array1b.push( centerVec.y - Y / 2);
-                array1c.push( centerVec.z - Z / 2);
+                array1.push( (centerVec.z - Z / 2) * (params.voxel_size * 10) );
+                array1b.push( (centerVec.y - Y / 2) * (params.voxel_size * 10) );
+                array1c.push( (centerVec.x - X / 2) * (params.voxel_size * 10) );
                 array2.push(density);
                 array3.push(size);
 
