@@ -10,9 +10,12 @@ menu:
 Internal pages for documentation of the 100µPET scanner.
 These pages contains latest and up-to-date performance plots, design files, scanner specifications and etc.
 
-We have regular meetings at 16 hrs every Thursdays.
+We have regular meetings every Thursday at 15:30, alternating the discussions every week between.
 </br>
-We usually meet presentially at AEM, and remotelly in this <a href="https://unige.zoom.us/j/66152344124">ZOOM link</a>.
+- Simulation discussions steered by Mateus (held at AEM offices)
+- Engineering and  construction steered by Didier (held in the bibliothèque at Ecole de Physique)
+</br>
+One can connect remotely to the meeting in this <a href="https://unige.zoom.us/j/66152344124">ZOOM link</a>, but the physical presence in the meeting is encouraged.
 </br>
 The agendas of our meetings are hosted at UNIGE's Indico system (<a href="https://partphys-indico.unige.ch/category/33/">link</a>).
 
