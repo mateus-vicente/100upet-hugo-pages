@@ -5,7 +5,7 @@
 pages:
     stage: deploy
     tags:
-        - docker
+        - k8s-default
     image: klakegg/hugo:ext-debian-ci
     only:
       - master  # FIXME: change to master

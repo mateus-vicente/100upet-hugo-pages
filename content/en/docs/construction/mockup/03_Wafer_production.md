@@ -14,17 +14,21 @@ The wafer production is splitted in two:
 
 ### 6-inch
 We have started with 23 wafers in total, from a batch of 25 (two got brokem at the supplier).
-The list below is the wafer thickness measured by the supplier. The two wafers that were not delivered are the #X #Y.
-Moreover, from 23 wafers, 20 wafers (#X to #Y) were coated by the supplier with 100 Å ±10% / 10,000 Å ±10% Ti / Al (sputtered).
-<object data="../EH_measurements.pdf" type="application/pdf" width="100%" height="510px"></object>
+</br>
+20 wafers were coated by the supplier with 100 Å ±10% / 10,000 Å ±10% Ti / Al (sputtered).
+</br>
+The list below is the wafer thickness measured by the supplier after coating.
+</br>
+The wafers were delivered on a cassette with the same order as the list below.
+<object data="../EH_measurements_box_1.pdf" type="application/pdf" width="100%" height="510px"></object>
 
-The list below shows the status of each wafer.
+The following list shows the status of each wafer.
 | Wafer  | Where it is  | Production step    | Comments                   |
 |:-------|:-------------|:-------------------|:---------------------------|
-| 1      | CMi          | Diced              | Wrong mask, used for setup |
-| 2      | CMi          | Ready for dicing   | Wrong mask, used for setup |
-| 3      | CMi          | Ready for dicing   | Wrong mask, used for setup |
-| 4      | CMi          | Ready for dicing   | V2 mask                    |
+| 1      | UNIGE        | Diced              | Wrong mask, used for setup |
+| 2      | UNIGE        | Ready for dicing   | Wrong mask, used for setup - With Mateus |
+| 3      | UNIGE        | Ready for dicing   | Wrong mask, used for setup |
+| 4      | UNIGE        | Ready for dicing   | V2 mask                    |
 | 5      | CMi          | Ti/Al coated       |                            |
 | 6      | CMi          | Ti/Al coated       |                            |
 | 7      | CMi          | Ti/Al coated       |                            |
@@ -41,29 +45,69 @@ The list below shows the status of each wafer.
 | 18     | CMi          | Ti/Al coated       |                            |
 | 19     | CMi          | Ti/Al coated       |                            |
 | 20     | CMi          | Ti/Al coated       |                            |
-| 21     | CMi          | Ti/Al coated       |                            |
-| 22     | CMi          | Ti/Al coated       |                            |
-| 23     | CMi          | Ti/Al coated       |                            |
+
+The remaining 3 wafers, delivered on a second cassette, also had their thickness measured.
+<object data="../EH_measurements_box_2.pdf" type="application/pdf" width="100%" height="170px"></object>
+
+| Wafer  | Where it is  | Production step    | Comments                   |
+|:-------|:-------------|:-------------------|:---------------------------|
+| 21     | UNIGE        | Bare silicon       |                            |
+| 22     | UNIGE        | Bare silicon       |                            |
+| 23     | UNIGE        | Bare silicon       |                            |
 
 The list below tracks where the diced chips are.
-| Wafer  | Chip | Where it is  | Gold stud bumped?  | Comments                   |
-|:-------|:-----|:-------------|:-------------------|:---------------------------|
-| 1      | A2   | UNIGE        | No                 |                            |
-| 1      | A3   | UNIGE        | No                 |                            |
-| 1      | A4   | UNIGE        | No                 |                            |
-| 1      | B1   | UNIGE        | No                 |                            |
-| 1      | B2   | UNIGE        | No                 |                            |
-| 1      | B3   | UNIGE        | No                 |                            |
-| 1      | B4   | UNIGE        | No                 |                            |
-| 1      | B5   | UNIGE        | No                 |                            |
-| 1      | C1   | UNIGE        | No                 |                            |
-| 1      | C2   | UNIGE        | No                 |                            |
-| 1      | C3   | UNIGE        | No                 |                            |
-| 1      | C4   | UNIGE        | No                 |                            |
-| 1      | C5   | UNIGE        | No                 |                            |
-| 1      | D2   | UNIGE        | No                 |                            |
-| 1      | D3   | UNIGE        | No                 |                            |
-| 1      | D4   | UNIGE        | No                 |                            |
+<details>
+<summary>Wafer #01</summary>
+<pre>
+|&nbsp;&nbsp;&nbsp;Chip&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Where it is&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Gold stud bumped?&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Comments&nbsp;&nbsp;&nbsp;|
+|:-----:|:------------:|:------------------:|:--------------------------:|
+|  A2   | UNIGE        | No                 |                            |
+|  A3   | UNIGE        | No                 |                            |
+|  A4   | UNIGE        | No                 |                            |
+|  B1   | UNIGE        | No                 |                            |
+|  B2   | UNIGE        | No                 |                            |
+|  B3   | UNIGE        | No                 |                            |
+|  B4   | UNIGE        | No                 |                            |
+|  B5   | UNIGE        | No                 |  With Franck for jig testing  |
+|  C1   | UNIGE        | No                 |                            |
+|  C2   | UNIGE        | No                 |                            |
+|  C3   | UNIGE        | No                 |                            |
+|  C4   | UNIGE        | No                 |  With Franck for jig testing  |
+|  C5   | UNIGE        | No                 |  With Franck for jig testing  |
+|  D2   | UNIGE        | No                 |                            |
+|  D3   | UNIGE        | No                 |                            |
+|  D4   | UNIGE        | No                 |  With Franck for jig testing  |
+</pre>
+</details>
 
 ### 4-inch
+25 4-inch wafers were made available by Didier.
+The following table list their thickness
 
+|  Wafer | Thickness [um]  |
+|:------:|:---------------:|
+|  1     | 285             |
+|  2     | 288             |
+|  3     | 307             |
+|  4     | 316             |
+|  5     | 320             |
+|  6     | 313             |
+|  7     | 323             |
+|  8     | 307             |
+|  9     | 323             |
+|  10    | 286             |
+|  11    | 275             |
+|  12    | 281             |
+|  13    | 313             |
+|  14    | 302             |
+|  15    | 320             |
+|  16    | 318             |
+|  17    | 285             |
+|  18    | 283             |
+|  19    | 305             |
+|  20    | 322             |
+|  21    | 290             |
+|  22    | 307             |
+|  23    | 290             |
+|  24    | 290             |
+|  25    | 309             |
