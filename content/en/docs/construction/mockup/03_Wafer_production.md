@@ -23,28 +23,28 @@ The wafers were delivered on a cassette with the same order as the list below.
 <object data="../EH_measurements_box_1.pdf" type="application/pdf" width="100%" height="510px"></object>
 
 The following list shows the status of each wafer.
-| Wafer  | Where it is  | Production step    | Comments                   |
-|:-------|:-------------|:-------------------|:---------------------------|
-| 1      | UNIGE        | Diced              | Wrong mask, used for setup |
-| 2      | UNIGE        | Ready for dicing   | Wrong mask, used for setup - With Mateus |
-| 3      | UNIGE        | Ready for dicing   | Wrong mask, used for setup |
-| 4      | UNIGE        | Ready for dicing   | V2 mask                    |
-| 5      | CMi          | Ti/Al coated       |                            |
-| 6      | CMi          | Ti/Al coated       |                            |
-| 7      | CMi          | Ti/Al coated       |                            |
-| 8      | CMi          | Ti/Al coated       |                            |
-| 9      | CMi          | Ti/Al coated       |                            |
-| 10     | CMi          | Ti/Al coated       |                            |
-| 11     | CMi          | Ti/Al coated       |                            |
-| 12     | CMi          | Ti/Al coated       |                            |
-| 13     | CMi          | Ti/Al coated       |                            |
-| 14     | CMi          | Ti/Al coated       |                            |
-| 15     | CMi          | Ti/Al coated       |                            |
-| 16     | CMi          | Ti/Al coated       |                            |
-| 17     | CMi          | Ti/Al coated       |                            |
-| 18     | CMi          | Ti/Al coated       |                            |
-| 19     | CMi          | Ti/Al coated       |                            |
-| 20     | CMi          | Ti/Al coated       |                            |
+| Wafer  | Where it is  | Production step    | Batch - Date | Comments                   |
+|:-------|:-------------|:-------------------|:-------------|:---------------------------|
+| 1      | CMi          | Ti/Al coated       |              |                            |
+| 2      | CMi          | Ti/Al coated       |              |                            |
+| 3      | CMi          | Ti/Al coated       |              |                            |
+| 4      | CMi          | Ti/Al coated       |              |                            |
+| 5      | CMi          | Ti/Al coated       |              |                            |
+| 6      | CMi          | Ti/Al coated       |              |                            |
+| 7      | CMi          | Ti/Al coated       |              |                            |
+| 8      | CMi          | Ti/Al coated       |              |                            |
+| 9      | CMi          | Ti/Al coated       |              |                            |
+| 10     | CMi          | Ti/Al coated       |              |                            |
+| 11     | CMi          | Ti/Al coated       |              |                            |
+| 12     | CMi          | Ti/Al coated       |              |                            |
+| 13     | CMi          | Ti/Al coated       |              |                            |
+| 14     | CMi          | Ti/Al coated       |              |                            |
+| 15     | UNIGE        | Ready for dicing   | #3 - 01/2024 | V2 mask                    |
+| 16     | UNIGE        | Ready for dicing   | #3 - 03/2024 | V2 mask                    |
+| 17     | UNIGE        | Ready for dicing   | #2 - 02/2024 | V2 mask                    |
+| 18     | UNIGE        | Ready for dicing   | #1 - 01/2024 | Wrong mask, used for setup |
+| 19     | UNIGE        | Ready for dicing   | #1 - 01/2024 | Wrong mask, used for setup - With Mateus |
+| 20     | UNIGE        | Diced              | #1 - 01/2024 | Wrong mask, used for setup |
 
 The remaining 3 wafers, delivered on a second cassette, also had their thickness measured.
 <object data="../EH_measurements_box_2.pdf" type="application/pdf" width="100%" height="170px"></object>
