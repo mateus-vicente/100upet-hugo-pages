@@ -31,7 +31,7 @@ menu:
 			<label for="file_GEN">(Formats supported: 3dm, epd)</label>
 		</div>
 		<div style="display: flex; flex-direction: column; align-items: center; margin-top: 0em;">
-			<div id="scene-container" style="height: 86vh;"></div>
+			<div id="scene-container" style="height: 86vh; margin-top: -0em; margin-bottom: 0em;"></div>
 			<script src="https://cdn.jsdelivr.net/npm/three@0.155.0/build/three.js"></script>
 			<script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/shaders/CopyShader.js"></script>
 			<script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/postprocessing/EffectComposer.js"></script>
